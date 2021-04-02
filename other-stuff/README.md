@@ -1,6 +1,6 @@
 # Other Useful Stuff
 
-## Quick and Dirty Way of Injecting JS in WordPress
+## A Quick and Dirty Way of Injecting JS into WordPress
 
 Thanks to [hmwebdev](https://github.com/hmwebdev) for this tip.
 
@@ -14,5 +14,21 @@ Thanks to [hmwebdev](https://github.com/hmwebdev) for this tip.
 
 Thanks to [hmwebdev](https://github.com/hmwebdev) for this tip.
 
-1. Make sure the code is injected in your header, not your footer
+1. Make sure the code is injected in your , not your header
 2. Write something like **document.body.innerHTML = document.body.innerHTML.replace(/All Projects/g, 'Tous les projects');**
+
+## Dynamically Translating a Facebook Chat Plugin Depending on the Language of a Site
+
+1. Create a new line under **(function(d, s, id) {** and type:
+
+        const currLang = document.documentElement.lang;
+        const currLangLowDash = currLang.replace("-", "_")
+
+2. Change the line that starts with **js.src** to this:
+
+        js.src = `https://connect.facebook.net/${currLangLowDash}/sdk/xfbml.customerchat.js`;
+
+3. Remove these lines or anything that ressembles them. This way, the logged-in and logged-out messages will vary depending on the language of the site instead of always staying the same.
+
+         logged_in_greeting=“Bonjour, comment pouvons-nous vous aider? :parasol:”
+         logged_out_greeting=“Bonjour, comment pouvons-nous vous aider? :parasol:“>
