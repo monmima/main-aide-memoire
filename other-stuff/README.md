@@ -19,6 +19,8 @@ Thanks to [hmwebdev](https://github.com/hmwebdev) for this tip.
 
 ## Dynamically Translating a Facebook Chat Plugin Depending on the Language of a Site
 
+The procedure belows assumes the browser language looks like fr-FR or en-US and is not just a two-letter code.
+
 1. Create a new line under **(function(d, s, id) {** and type:
 
         const currLang = document.documentElement.lang;
