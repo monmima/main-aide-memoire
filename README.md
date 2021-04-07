@@ -18,7 +18,7 @@ This aide-mémoire assumes you have the following plugins installed on your Word
     - You need the pro version for the ability to use the gallery option.
 - Custom Post Type UI
     - Free plugin that works brilliantly with Advanced Custom Fields. Allows you to create your own post types, which you can then create inside of.
-- Ele Custom Skin
+- Ele Custom Skin (aka Elementor Custom Skin)
     - This is for Elementor and it allows you to create custom loops. Gives you more flexibility than with the Elementor way of listing out the different post types. 
 - Elementor Pro
 - Hello theme
@@ -31,8 +31,8 @@ Posts are just like a blog post. In this tutorial, you create your own post type
 2. Click Add/Edit Post Types
 3. Type **property** in the Post Type Slug field
 4. Fill out the Plural and Singular Label fields
-5. Select Hierarchical and set it to true so you can group things by flats and houses and so on. It makes it easier to organize things.
-6. Set Has Archive to true
+5. Select **Hierarchical** and set it to true so you can group things by flats and houses and so on. It makes it easier to organize things.
+6. Set Has **Archive** to true
 7. Leave the rest of the options as they are
 8. You can come later if you want to change something.
 9. Choose a dash icon so your post type has an icon in the dashboard
@@ -43,13 +43,14 @@ Posts are just like a blog post. In this tutorial, you create your own post type
 
 A taxonomy is what makes it possibly to group posts by category, etc.
 
-1. Type **property_type** in the Taxonomy Slug
-2. Type **Property Types** in the Plural Label field
-3. Type **Property Type** in the Singular Label field
-4. Select **Property** in the Attach to Post Type box
-5. Scroll down to the Settings and set Hierarchical to **True**
-6. Scroll back up and click on Add Taxonomy
-7. Now if you hover the Property option in the dashboard, you'll see a new option called Property Type
+1. In the Dashboard, go to CPT UI, and then Add/Edit Taxonomies
+2. Type **property_type** in the Taxonomy Slug
+3. Type **Property Types** in the Plural Label field
+4. Type **Property Type** in the Singular Label field
+5. Select **Property** in the Attach to Post Type box
+6. Scroll down to the Settings and set Hierarchical to **True**
+7. Scroll back up and click on Add Taxonomy
+8. Now if you hover the Property option in the dashboard, you'll see a new option called Property Type
 
 ## Step 3: Creating a Property Type
 
@@ -65,24 +66,66 @@ Without custom fields, you have a pretty basic set-up if you go to **Properties*
 
 1. In the dashboard, under Custom Fields, select Add New
 2. Give the title **Property** to the field group
-3. Add New button
+3. Click on the Add Field button
 4. Type **Location** in the Field Label box
 5. Select **Text** in the Field type menu
-6. Set the Required? option to Yes
+6. Set the **Required?** option to Yes
 7. Add as many fields as you want. For instance:
-    - Price
-    - Features
-    - Property Gallery
+    - Price (the prepend or append fields should be used for the dollar sign)
+    - Features (in the Instructions, you could type "Please select all that applies" so people know what a checkbox is for)
+    - Property Gallery (with an image gallery, you can choose if you upload your images to the post [Uploaded to post] or to the Media Library [All])
     - Bedrooms
     - Garage
-    - Number of cars
-8. Under Location, change **Post Type is equal to Post** to **Post Type is equal to Property**.
+8. Under Location (near the end of the page), change **Post Type is equal to Post** to **Post Type is equal to Property**.
 
 Remarks:
-- The prepend or append fields should be used for the dollar sign.
 - If you choose the **Checkbox** option under Field Type, you'll have the option to add the choices associated with the checkboxes.
-- In the Instructions, you could type "Please select all that applies" so people know what a checkbox is for.
-- To do basic stuff with a Image Gallery
-- With an image gallery, you can choose if you upload your images to the post (Uploaded to post) or to the Media Library (All)
+
+## Step 5
+
+1. Populate your database with content. (Fill in the form a few times.)
+2. Don't forget to use a Featured Image
+
+## Step 6
+
+Creating a Portfolio.
+
+1. Create a new page called **Properties for Sale**
+2. Create a line and add a **Portfolio** element to it
+3. If the portfolio doesn't take up most of the width, edit the page, but not with Elementor. Choose an option such as Elementor Full Width.
+4. Change the current **Query** to **Properties**
+5. Enable the Filter Bar with Property Types
+6. Under Layout, choose a resolution of Medium Large - 768 * 0
+7. Go to the Style tab
+8. Set the column gap to 10
+9. Set the row gap to 10
+10. Still under the Style tab, set the Item overlay to black
+11. Set the background to an opacity of 0.41
+12. Set the typography weight to 300
+13. Set the typography of the Filter Bar to 400
+14. Transform the Filter Bar typography to uppercase
+
+## Step 7
+
+Creating a Template for each individual page.
+
+1. Go to the dashboard (lef part of the screen)
+2. Click on Template (just under Elementor), and then click on Theme Builder
+3. Click on the Single tab
+4. Click on the Add New Single green button
+5. In the drop-down menus, you should select/type:
+    - Default
+    - Property
+    - Default Single Property
+    ===
+    - Single Page
+5. In the drop-down menu, select Single Pagee and give the name Default Single Property to your template.
+6. Close the modal window.
+7. You should now be in the normal Elementor editor.
+
+## Step 8
+
+
+
 
 
