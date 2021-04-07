@@ -4,7 +4,8 @@ This is an aide-mémoire which is meant to help me remember how to use ACF (Adva
 
 ## A Word of Thanks
 
-I'd like to thank WPTuts for his YouTube tutorial named [Advanced Custom Fields Pro & Elementor Pro - Real Estate Website](https://www.youtube.com/watch?v=HGs6MvHXh3w) and for the great content he provides. This aide-mémoire/cheat sheet is based on his tutorial.
+I'd like to thank WPTuts for his YouTube tutorials named [Advanced Custom Fields Pro & Elementor Pro - Real Estate Website](https://www.youtube.com/watch?v=HGs6MvHXh3w) and (WordPress Portfolio Page Tutorial with ACF & Anywhere Elementor Pro
+)[https://www.youtube.com/watch?v=bZKnHQ_2Zos] and for the great content he provides. This aide-mémoire/cheat sheet is based on his tutorials.
 
 I encourage you to check out [WPTuts's on Youtube](https://www.youtube.com/user/ipixeltutorials).
 
@@ -18,7 +19,7 @@ This aide-mémoire assumes you have the following plugins installed on your Word
     - You need the pro version for the ability to use the gallery option.
 - Custom Post Type UI
     - Free plugin that works brilliantly with Advanced Custom Fields. Allows you to create your own post types, which you can then create inside of.
-- Ele Custom Skin (aka Elementor Custom Skin)
+- Free version of Ele Custom Skin (aka Elementor Custom Skin) by Dudaster.com 
     - This is for Elementor and it allows you to create custom loops. Gives you more flexibility than with the Elementor way of listing out the different post types. 
 - Elementor Pro
 - Hello theme
@@ -49,8 +50,9 @@ A taxonomy is what makes it possibly to group posts by category, etc.
 4. Type **Property Type** in the Singular Label field
 5. Select **Property** in the Attach to Post Type box
 6. Scroll down to the Settings and set Hierarchical to **True**
-7. Scroll back up and click on Add Taxonomy
-8. Now if you hover the Property option in the dashboard, you'll see a new option called Property Type
+7. Set **Show in quick/bulk edit panel** to True
+8. Scroll back up and click on Add Taxonomy
+9. Now if you hover the Property option in the dashboard, you'll see a new option called Property Type
 
 ## Step 3: Creating a Property Type
 
@@ -107,23 +109,33 @@ Creating a Portfolio.
 
 ## Step 7
 
-Creating a Template for each individual page.
+Creating a Template for each individual page with Ele Custom Skin (aka Elementor Custom Skin) by Dudaster.com. The free version will do. 
 
-1. Go to the dashboard (lef part of the screen)
-2. Click on Template (just under Elementor), and then click on Theme Builder
-3. Click on the Single tab
-4. Click on the Add New Single green button
-5. In the drop-down menus, you should select/type:
-    - Default
-    - Property
+1. Go to the **Templates** tab, in the left-hand WP dashboard
+2. Click on **Theme Builder**
+3. Go to the Loop tab
+4. Click on Add New
+5. In the **Choose Template** modal window, type/select:
+    - Single
     - Default Single Property
-    ===
-    - Single Page
-5. In the drop-down menu, select Single Pagee and give the name Default Single Property to your template.
-6. Close the modal window.
-7. You should now be in the normal Elementor editor.
+6. Click Create Template
+7. Now you can close the modal window. You should now be in the Elementor editor.
+8. Using the left-hand panel, add a Featured Image to the page
+9. Click Publish (green button)
+10. Create a condition for the template where you associate Property with the Default Single Property
+11. Now you should see what you just created on your Web site!
 
-## Step 8
+# Step 8
+
+Adding more content to the template.
+
+1. Select a Text Editor element and drag and drop to the template
+2. Click on the Dynamic Tags tab (looks like a database icon)
+3. Choose ACF Field option
+4. Click on the wrench icon
+5. Select field
+6. In Advanced, you might want to write something before or after your element such as "Location: "
+7. Voilà!
 
 
 
