@@ -123,7 +123,7 @@ Creating a Template for each individual page.
 10. Create a condition for the template where you associate Property with the Default Single Property
 11. Now you should see what you just created on your Web site!
 
-# Step 8
+## Step 8
 
 Adding more content to the template.
 
@@ -134,8 +134,4 @@ Adding more content to the template.
 5. Select field
 6. In Advanced, you might want to write something before or after your element such as "Location: "
 7. Voilà!
-
-
-
-
 
