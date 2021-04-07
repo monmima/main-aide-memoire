@@ -4,8 +4,8 @@ This is an aide-mémoire which is meant to help me remember how to use ACF (Adva
 
 ## A Word of Thanks
 
-I'd like to thank WPTuts for his YouTube tutorials named [Advanced Custom Fields Pro & Elementor Pro - Real Estate Website](https://www.youtube.com/watch?v=HGs6MvHXh3w) and (WordPress Portfolio Page Tutorial with ACF & Anywhere Elementor Pro
-)[https://www.youtube.com/watch?v=bZKnHQ_2Zos] and for the great content he provides. This aide-mémoire/cheat sheet is based on his tutorials.
+I'd like to thank WPTuts for his YouTube tutorials named [Advanced Custom Fields Pro & Elementor Pro - Real Estate Website](https://www.youtube.com/watch?v=HGs6MvHXh3w) and [WordPress Portfolio Page Tutorial with ACF & Anywhere Elementor Pro
+](https://www.youtube.com/watch?v=bZKnHQ_2Zos) and for the great content he provides. This aide-mémoire/cheat sheet is based on his tutorials.
 
 I encourage you to check out [WPTuts's on Youtube](https://www.youtube.com/user/ipixeltutorials).
 
@@ -19,8 +19,6 @@ This aide-mémoire assumes you have the following plugins installed on your Word
     - You need the pro version for the ability to use the gallery option.
 - Custom Post Type UI
     - Free plugin that works brilliantly with Advanced Custom Fields. Allows you to create your own post types, which you can then create inside of.
-- Free version of Ele Custom Skin (aka Elementor Custom Skin) by Dudaster.com 
-    - This is for Elementor and it allows you to create custom loops. Gives you more flexibility than with the Elementor way of listing out the different post types. 
 - Elementor Pro
 - Hello theme
 
@@ -109,7 +107,7 @@ Creating a Portfolio.
 
 ## Step 7
 
-Creating a Template for each individual page with Ele Custom Skin (aka Elementor Custom Skin) by Dudaster.com. The free version will do. 
+Creating a Template for each individual page.
 
 1. Go to the **Templates** tab, in the left-hand WP dashboard
 2. Click on **Theme Builder**
