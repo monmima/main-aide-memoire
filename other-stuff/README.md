@@ -10,7 +10,7 @@ If you need to change the background color for your sticky menu, use this:
                 background-color: black;
         }
 
-You can do this all in Elementor, no need to create special CSS here.
+You can do this all in Elementor, no need to create special JS here.
 
 ## A Quick and Dirty Way of Injecting JS into WordPress
 
