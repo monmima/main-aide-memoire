@@ -4,6 +4,12 @@
 
 If you have a top bar and a navigation menu on your site, the best is to make the navigaton menu sticky, but not the top bar. Otherwise the top bar and the navigation menu are going to overlap.
 
+If you need to change the background color for your sticky menu, use this:
+
+        .bdt-sticky-fixed {
+                background-color: black;
+        }
+
 You can do this all in Elementor, no need to create special CSS here.
 
 ## A Quick and Dirty Way of Injecting JS into WordPress
