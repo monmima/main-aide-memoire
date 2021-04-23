@@ -1,5 +1,13 @@
 # Other Useful Stuff
 
+## Rescanning A Site With WPML
+
+Thanks to YB for this tip.
+
+To rescan a site that has WPML on it, go to your dashboard, and find Localisation du thème et des plugins under WPML. Then do this:
+
+![Rescannign WPML content](/img/rescan.png)
+
 ## Creating A Sticky Menu With Elementor
 
 If you have a top bar and a navigation menu on your site, the best is to make the navigaton menu sticky, but not the top bar. Otherwise the top bar and the navigation menu are going to overlap.
