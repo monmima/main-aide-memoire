@@ -1,5 +1,9 @@
 # Other Useful Stuff
 
+## No FTP Access: The Next Best Thing
+
+"Forget using FTP or cPanel! Use our [wp file manager](https://filemanagerpro.io/) plugin to take full control of your Wordpress website."
+
 ## Rescanning A Site With WPML
 
 Thanks to YB for this tip.
