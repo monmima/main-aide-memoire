@@ -1,0 +1,89 @@
+body {
+    background-color: lightblue;
+}
+
+figure:hover {
+    filter: brightness(150%);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+figure image:hover {
+    cursor: pointer;
+}
+
+h1, h2 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+header {
+    text-align: center;
+}
+
+.active {
+    background-color: lightgray;
+    color: aqua;
+}
+
+.bg-flex-navigation {
+    font-size: 1.5em;
+    margin: 20px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.companions {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-around;
+}
+
+.companions a {
+    font-size: 1.2em;
+}
+
+.companions figcaption {
+    text-align: center;
+    margin: 30px;
+}
+
+.crud-friends-center {
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.crud-friends-grid {
+    /* background-color: green; */
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
+}
+
+.page-baldurs-gate {
+    background-color: #fff;
+    padding-top: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    body
+    {
+        font-size: 1em;         
+    }
+    /*PLUS DE COLONNES GRID ICI, QUE DU FLEX*/
+    figure {
+        padding: 10px;
+    }
+
+    .companions {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
