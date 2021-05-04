@@ -1,0 +1,8 @@
+# Node #
+node_modules/
+package-lock.json
+
+# Autres #
+time.txt
+
+# Normally, you would ignore the .env file

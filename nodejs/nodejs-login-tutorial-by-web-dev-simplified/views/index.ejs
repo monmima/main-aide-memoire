@@ -1,0 +1,6 @@
+<h1>Hi <%= name %>!</h1>
+
+<!-- The underscore method below is what we're using to override our method. So we're going to override that with DELETE so that inside of our server.js file we can call app.delete instead of app.post for logout. This is safer because you should use DELETE when you're deleting things. -->
+<form action="/logout?_method=DELETE" method="post">
+    <button type="submit">Log Out</button>
+</form>
