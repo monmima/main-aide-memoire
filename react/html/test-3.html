@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>freeCodeCamp React Tutorial</title>
+
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, .center {
+            text-align: center;
+            
+        }
+
+        body, figure {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            margin: 20px;
+        }
+
+        figcaption {
+            padding-bottom: 20px;
+        }
+
+        figure, main {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        main {
+            flex-flow: row wrap;
+        }
+
+        main img {
+            height: 330px;
+            width: 220px;
+        }
+
+        div, p {
+            margin: 10px;
+        }
+
+        /* classes */
+
+        .bandeau {
+            background-color: #333;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .bandeau > img {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            height: auto;
+            width: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>API Fetching in React</h1>
+    <p class="center">Based on <a href="https://www.youtube.com/watch?v=hzLDsxPGctY" title="Link to YouTube">FullStack Development</a>'s tutorial</p>
+
+    <div id="root">Loading React...</div>
+
+    <!--CDN libraries-->
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js" crossorigin></script>
+
+    <!--other code-->
+    <script type="text/babel" src="../js/Test3.js"></script>
+
+
+</body>
+</html>

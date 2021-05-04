@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Tutorial freeCodeCamp</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+
+        dfn {
+            border-bottom: 1px dotted #333;
+        }
+
+        header, h4, h5 {
+            margin: 25px;
+
+            /* flex */
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h6 {
+            font-weight: bold;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        /* classes */
+        .bandeau {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .bandeau > img {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            height: auto;
+            width: 100px;
+        }
+
+    </style>
+</head>
+
+<body class="container">
+    <header>
+        <h1>React Aide-Mémoire</h1>
+
+        <p>
+            <strong>
+                <a title="Go to Github" href="http://github.com/monmima">http://github.com/monmima</a>
+            </strong>
+        </p>
+    </header>
+    
+    <p>Welcome to the Home Page of this React <dfn title="an aid to the memory (Merriam-Webster's Dictionary)">aide-mémoire</dfn>. This needs a <strong>local or remote server</strong> to run correctly.</p>
+
+    <h5>freeCodeCamp</h5>
+
+    <p>I would like to thank freeCodeCamp for making their <a href="https://www.freecodecamp.org/learn/front-end-libraries/react/" title="freeCodeCamp's React Tutorial">React tutorials</a> available and <a href="https://github.com/akashshakya/freecodecamp-react-solution/blame/master/all-in-one.jsx" title="Link to akashshakya's Github account">akashshakya</a> for creating his answer key. Most of the material I use here is basically what they have created.</p>
+
+    <hr>
+
+    <p>See the banner below? It is actually coded in React, even though the container is static HTML! This proves that with React, it doesn't have to be all or nothing. You can have just a small part of your site using React and the rest in plain old static HTML.</p>
+
+    <div id="banner"><strong>If you can read this in the browser, the React content has not been injected yet.</strong></div>
+
+    <p><strong>Watch out!</strong> Number 47 below is not working at the moment.</p>
+
+    <div id="root"><strong>If you can read this in the browser, the React content has not been injected yet.</strong></div>
+
+    <!--CDN libraries-->
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js" crossorigin></script>
+
+    <!--other code-->
+    <script type="text/babel" src="./js/Banner.js"></script>
+    <script type="text/babel" src="./js/List.js"></script>
+    <script type="text/babel" src="./js/LinkInList.js"></script>
+
+    <!--don't forget the type parameter!-->
+    <script type="text/babel">
+        ReactDOM.render(<div><Banner /></div>, document.querySelector("#banner"));
+        ReactDOM.render(<div><App /></div>, document.querySelector("#root"));
+    </script>
+
+    <h5>Note: CDN versus "npx create-react-app"?</h5>
+
+    <p>What should you choose between simple CDN links or "npx create-react-app"? I would certainly recommend the second option for most projects, but for the sake of convenience, I decided to use CDN for this <dfn title="an aid to the memory (Merriam-Webster's Dictionary)">aide-mémoire</dfn>. At a bare minimum, you should load libraries locally instead of remotely (CDN). This should really improve loading time.</p>
+
+    <h6>CDN</h6>
+
+    <p>If you use CDN, you have to load the following libraries.</p>
+
+    <p>The last library is <strong>useful</strong> if you want to force the type of your props.</p>
+
+    <ul>
+        <li>
+            &lt;script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin&gt;&lt;/script&gt;
+        </li>
+        <li>
+            &lt;script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin&gt;&lt;/script&gt;
+        </li>
+        <li>
+            &lt;script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js" crossorigin&gt;&lt;/script&gt;
+        </li>
+        <li>
+            &lt;script src="https://unpkg.com/prop-types@15.6/prop-types.min.js" crossorigin&gt;&lt;/script&gt;
+        </li>
+    </ul>
+
+    <h6>"npx create-react-app"</h6>
+
+    <div>
+        <pre><samp><code>
+/**
+* Start of the React files
+*/
+import React from 'react';
+
+/**
+* End of the React files.
+* "Banner" is just an example here and should be replaced with the name of your component.
+*/
+export default Banner;
+        </code></samp></pre>
+    </div>
+
+</body>
+</html>
