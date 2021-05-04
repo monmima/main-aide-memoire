@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Super formulaire incroyable hot</title>
+    <style>
+
+        /*/////BALISES*/
+
+        * {
+            margin: 0;
+        }
+        
+        abbr {
+            text-decoration: none;
+            margin: 0;
+        }
+        body {
+            background-color: #e8e8e8;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+        button {
+            background-color: #990100;
+            border-radius: 10px;
+            color: white;
+            height: 30px;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 200px;
+        }
+        div {
+            margin-bottom: 15px;
+        }
+        fieldset {
+            appearance: none;
+            border: 0px;
+        }
+        footer {
+            margin: 10px;
+        }
+        h1, h2, h3, h4 {
+            text-align: center;
+        }
+        h3  {
+            align-items: center;
+            background-color: #999999;
+            color: #DCC073;
+            display: flex;
+            height: 50px;
+            justify-content: center;
+            position: relative;
+            top: -30px;
+        }
+        i { /*pour les termes techniques*/
+            font-style: normal;
+            margin: 0;
+            padding: 0;
+        }
+        input {
+            margin: 0px 10px 0px 10px;
+        }
+        legend {
+            display: none;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        small {
+            font-weight: normal;
+        }
+        span {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        /*/////HIÉRARCHIE*/
+
+        /*colonnes*/
+        div > fieldset {
+            background-color: #bcbcbc;
+            box-shadow: 5px 5px 5px gray;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin: 10px;
+            margin-top: 50px;
+            width: 250px;
+        }
+        /*section de trois colonnes*/
+        form > div {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        /*espace soumettre*/
+        .espace-boutons {
+            display: table-cell; /*ce qui me permet de centrer correctement mes boutons dans Chromium*/
+            margin-top: 20px;
+            padding: 0px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /*/////CLASSES*/
+
+        .bouton-bleu {
+            background-color: #2068BC;
+        }
+        .boutons-radio-en-rangee {
+            display: flex;
+            flex-direction: row;
+        }
+        .colonne {
+            background-color: #7b7b7b;
+        }
+
+        /*/////INPUT*/
+
+        input:invalid + span:after {
+            content: 'x';
+            color: red;
+            padding-left: 5px;
+        }
+        input:valid + span:after {
+            content: '✓';
+            color: green;
+            padding-left: 5px;
+        }
+        input[type=date], input[type=datetime-local], input[type=week] {
+            width: 200px;
+        }
+        input[type=number] {
+            background-color: #6599FF;
+            color: white;
+            font-weight: bold;
+        }
+
+        /*SLIDER*/
+        /*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_rangeslider*/
+
+        .slider {
+            -webkit-appearance: none;
+            -webkit-transition: .2s;
+            background: #d3d3d3;
+            height: 25px;
+            margin: 0px;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity .2s;
+            width: 100%;
+        }
+
+        .slider::-moz-range-thumb {
+            background: #6599FF;
+            cursor: pointer;
+            height: 25px;
+            margin: 0px;
+            width: 25px;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            background: #6599FF;
+            cursor: pointer;
+            height: 25px;
+            margin: 0px;
+            width: 25px;
+        }
+
+        .conteneur-range-digits {
+            display: flex;
+            font-size: 0.5em;
+            justify-content: space-between;
+            line-height: 1px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Formulaire</h1>
+    <h4>Éléments variés <abbr title="HyperText Markup Language 5">HTML5</abbr></h4>
+
+    <!--CE MAIN EST UN MAIN.-->
+    <main>
+
+        <!--CE FORMULAIRE EST UN FORMULAIRE.-->
+        <form name="elements" id="elements" method="post" action="#">
+            <div>
+                <!--J'ai bien vu que Xavier utilisait <legend> à la place de <h1>, <h2>, etc. dans <fieldset>. Peut-être que c'est plus sémantique. En tout cas, la balise se comporte de façon imprévisible (Firefox vs Chromium). La solution la plus élégante pour moi en ce moment est de garder les deux et de cacher <legend>.-->
+
+                <!--COLONNE 1-->
+                <fieldset>
+                    <legend>Contact</legend>
+                    <h3>Contact</h3>
+                    <!--COURRIEL-->
+                    <!--required + autofocus-->
+                    <p><label for="adressecourriel">Adresse courriel (<i>email</i>)</label></p>
+                    <p><input type="email" name="adressecourriel" id="adressecourriel" placeholder="Courriel" autofocus required></p>
+
+                    <!--TÉLÉPHONE-->
+                    <p><label for="telephone">Téléphone (<i>tel</i>)</label></p>
+                    <p><input type="tel" name="telephone" id="telephone" placeholder="Téléphone"></p>
+
+                    <!--RECHERCHE-->
+                    <p><label for="recherche">Rechercher (<i>search</i>)</label></p>
+                    <p><input type="search" name="recherche" id="recherche" placeholder="Recherche"></p>
+                </fieldset>
+
+                <!--COLONNE 2-->
+                <fieldset class="colonne">
+                    <legend>Informations</legend>
+                    <h3>Informations</h3>
+                    <!--RADIO-->
+                    <div class="boutons-radio-en-rangee">
+                        <input type="radio" name="devise" id="dollars" value="dollars">Dollars ($)<br>
+                        <input type="radio" name="devise" id="euros" value="euros">Euros (€)<br>
+                    </div>
+                
+                    <!--NUMBER-->
+                    <p><label for="nombre">Combien (<i>number</i>)</label></p>
+                    <p><input type="number" id="nombre" name="nombre" min="5"
+                    max="20" value="15"><span></span></p>
+                    <div><small>Entrez un nombre entre 5 et 20.</small></div>
+                
+                    <!--RANGE-->
+                    <p><label for="montant">Combien (<i>range</i>)</label></p>
+                    <p><input id="montant" name="montant" type="range" class="slider" min="1" max="5" step="1"></p>
+                    <div class="conteneur-range-digits">
+                        <span>1</span>
+                        <span>5</span>
+                    </div>
+                </fieldset>
+
+                <!--COLONNE 3-->
+                <!--
+                    Warning: The week input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.
+
+                    Warning: The date input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.
+
+                    Warning: The datetime-local input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.
+
+                    Polyfill? Mmm... Voyons voir ce que c'est...
+                -->
+                <fieldset>
+                    <legend>Durée</legend>
+                    <h3>Durée</h3>
+                    <!--WEEK-->
+                    <p><label for="semaine-depart">Semaine (<i>week</i>)</label></p>
+                    <p><input type="week" id="semaine-depart" name="semaine-depart" value="2019-W16"></p>
+
+                    <!--DATE 1-->
+                    <p><label for="date-1">Date (<i>date</i>)</label></p>
+                    <p><input type="date" id="date-1" name="date-1" value="2019-04-17"></p>
+
+                    <!--DATE 2-->
+                    <p><label for="date-2">Date (<i>datetime-local</i> / <i>readonly</i>)</label></p>
+                    <p><input type="datetime-local" id="date-2" name="date-2" value="2019-04-26T17:00" readonly></p>
+                </fieldset>
+            </div>
+
+            <!--BOUTONS-->
+            <div class="espaces-boutons">
+                <button type="reset" value="Reset">Effacer l'info</button>
+                <button type="submit" value="Submit" class="bouton-bleu">Soumettre</button>
+            </div>
+
+            <!--CE FOOTER EST UN FOOTER.-->
+            <footer>
+                <time datetime="2019-04-26">26 avril 2019</time>
+            </footer>
+
+        </form>
+    </main>
+
+    <!--
+        https://www.alsacreations.com/tuto/lire/1372-formulaires-htm15-nouveaux-tvpes-champs%adinput.html
+
+        stepper; min de 4, max de 20, valeur par défaut de 15;
+
+    -->
+
+<!--
+    • Première colonne 
+        ◦ un champ de saisie de type Courriel ;
+        ◦ un champ de saisie de type Téléphone ;
+        ◦ un champ de saisie de type Rechercher ;
+    • Deuxième colonne
+        ◦ au minimum deux boutons « radio » ;
+        ◦ un champ de saisie de type Nombre ;
+        ◦ un champ de type Range ;
+    • Troisième colonne
+        ◦ un champ de saisie de type Semaine
+        ◦ un champ de saisie de type Date ;
+        ◦ un champ de type Date et temps local ;
+    • En dessous des trois colonnes
+        ◦ un bouton « soumettre » graphiquement élégant.
+        ◦ un bouton « effacer » graphiquement élégant.
+-->
+</body>
+</html>

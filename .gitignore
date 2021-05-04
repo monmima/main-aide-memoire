@@ -1,2 +1,6 @@
-# other files
+# Node #
+node_modules/
+package-lock.json
+
+# Autres #
 time.txt

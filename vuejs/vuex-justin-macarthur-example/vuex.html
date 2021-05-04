@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/2.1.1/vuex.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div>{{ $store.state.count }}</div>
+      <button v-on:click="buttonClick">Click Me</button>
+    </div>
+    <script>
+      // https://stackoverflow.com/questions/41781746/vue-js-vuex-without-webpack
+
+      const vm = new Vue(
+        {
+          'el': '#app',
+          'store': new Vuex.Store(
+            {
+              state: {
+                count: 0
+              },
+              mutations: {
+                increment (state) {
+                  state.count++
+                }
+              }
+            }
+          ),
+          'methods': {
+            'buttonClick': function() {
+              this.$store.commit('increment')
+            }
+          }
+        }
+      )
+    </script>
+  </body>
+</html>

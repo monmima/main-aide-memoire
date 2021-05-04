@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vuex"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Props: {{welcome}}</h1>
+        <h2>State: {{stateMessage}}</h2>
+        <h3>Getters: {{gettersMessage}}</h3>
+        <h3>Getters and mutations: {{count}}</h3>
+        <button @click="pressed">Increment Counter</button>
+    </div>
+
+    <script>
+        // YouTube tutorial (https://www.youtube.com/watch?v=LW9yIR4GoVU) by Program With Erik
+
+        // Vuex store
+        const store = new Vuex.Store({
+            state: {
+                stateMessage: "stateMessage",
+                gettersMessage: "gettersMessage",
+                count: 0
+            },
+            // synchronous
+            mutations: {
+                increment(state, payload) {
+                    state.count += payload;
+                }
+            },
+            // asynchronous
+            actions: {
+
+            },
+            getters: {
+                gettersMessage(state) {
+                    return state.gettersMessage.toUpperCase();
+                },
+                counter(state) {
+                    return state.count;
+                }
+            }
+        });
+
+        // the component logic
+        const vm = new Vue({
+            el: "#app",
+            data() {
+                return {
+                    welcome: "Hello World"
+                }
+            },
+            computed: {
+                stateMessage() {
+                    return store.state.stateMessage
+                },
+                gettersMessage() {
+                    return store.getters.gettersMessage
+                },
+                count(state) {
+                    return store.getters.counter;
+                }
+            },
+            methods: {
+                pressed() {
+                    store.commit("increment", 10);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

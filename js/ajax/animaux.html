@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta name="description" content="Prototype, Animaux, JSON">
+  <meta name="author" content="XM">
+
+  <title>Prototype Animaux | JSON</title>
+
+  <!-- Fontes -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Gafata">
+
+  <!-- Fontes icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style>
+    .contenu {
+      margin: 100px 30px 0;
+    }
+
+    section {
+      margin: 50px 0;
+    }
+
+    .taille-plus {
+      font-size: 160%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Étude AJAX ($.ajax - Animaux) | B4.</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="contenu">
+    <section id="bloc-affichage1"></section>
+
+    <section id="bloc-affichage2"></section>
+
+    <a href="javascript:;" class="btn btn-secondary">Génère l'information</a>
+  </main>
+
+
+  <!-- JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+  </script>
+
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script>
+    
+    
+    /**
+    * Transforme le tableau (aime, aime pas) en une chaîne
+    * de caractères lisible, séparée par des virgules.
+    * @author XM. <courriel.auteur@ok.com>
+    * @param {array} a
+    * @returns {string}
+    */
+    // function _e(a) {
+    //   console.log("Array : " + a);
+    //   return a.join(", ");
+    // }
+
+    const _e = (a) => a.join(", ");
+
+    
+    
+    
+    /**
+    * -------------------------- *
+    *       Document ready.
+    * -------------------------- *
+    */   
+    $(document).ready(function()
+    {
+
+
+      /**
+      * AJAX.
+      * Génère une chaîne de caractères à partir de données
+      * extraites d'un fichier JSON.
+      * @author XM. <courriel.auteur@ok.com>
+      */    
+      function genereMessage() {
+
+        // Méthode par enchaînement.
+        $.ajax({
+            "type": "GET",
+            "url": "https://learnwebcode.github.io/json-example/animals-1.json",
+            "dataType": "json"
+          })
+          .done(function(data, textStatus, jqXHR) { // textStatus : success
+
+            // debugger
+            console.log("TextStatus : " + textStatus);
+            console.dir(data);
+
+            // Modèle : "<p class='taille-plus'>" + data[i].name + " : " + data[i].species + " : " + data[i].foods.likes + ".</p>";
+
+
+            // -------------------------------------------------------------------
+            // Ex.1 - for vintage.
+            //
+
+            // let msg1 = "";
+            // const limite = data.length;
+
+            // for (let i = 0; i < limite; i+=1) {
+            //   msg1 += "<p class='taille-plus'>"; 
+            //   msg1 += data[i].name + " ("; 
+            //   msg1 += data[i].species + ") "; 
+            //   msg1 += data[i].foods.likes + " & ";
+            //   msg1 += data[i].foods.dislikes + ".</p>";
+            // }
+
+            // document.getElementById("bloc-affichage1").innerHTML = msg1;
+
+
+
+            // -------------------------------------------------------------------
+            // Ex.2 - for in.
+            //
+
+//            let msg2 = "";
+//            for (prop in data) {
+//              msg2 += "<p class='taille-plus'>"; 
+//              msg2 += data[prop].name + " (";
+//              msg2 += data[prop].species + ") ❤ "; 
+//              msg2 += data[prop].foods.likes + " & 💔 ";
+//              msg2 += data[prop].foods.dislikes + ".</p>";
+//            }
+//
+//            document.getElementById("bloc-affichage1").innerHTML = msg2;
+
+
+
+            // -------------------------------------------------------------------
+            // Ex.3 - join().
+            // https://www.w3schools.com/jsref/jsref_join.asp
+            //
+
+//            let msg3 = "";
+//
+//            for (prop in data) {
+//              msg3 += "<p class='taille-plus'> Le ";
+//              msg3 += data[prop].species == "cat" ? "chat " : "chien ";
+//              msg3 += "<strong>" + data[prop].name + " :</strong> ";
+//              
+//              // Likes
+////              for (let clef in data[prop].foods.likes) {
+////                msg3 += data[prop].foods.likes[clef] + " ";
+////              }              
+//                            
+//// OU              
+//              msg3 += "aime : " + data[prop].foods.likes.join(", ");
+//              msg3 += " et n'aime pas : " + data[prop].foods.dislikes.join(", ");
+//
+//
+//              msg3 += ".</p>";
+//            }
+//
+//            document.getElementById("bloc-affichage1").innerHTML = msg3;
+
+
+
+            // -------------------------------------------------------------------
+            // Ex.4 - Template literals.
+            //
+
+//            let msg4 = "";
+//
+//            for (prop in data) {
+//              let valeur = data[prop];
+//
+//              msg4 += `<p class='taille-plus'> Le ${valeur.species == "cat" ? "chat " : "chien "} <strong>${valeur.name}</strong> aime : ${valeur.foods.likes.join(", ")} et n'aime pas : ${valeur.foods.dislikes.join(", ")}.</p>`;
+//
+//              //document.getElementById("bloc-affichage2").innerHTML += valeur.foods.likes.join(" ") + "<br>";
+//            }  
+//
+//            document.getElementById("bloc-affichage1").innerHTML = msg4;
+
+
+
+            // -------------------------------------------------------------------
+            // Ex.5 - forEach()
+            //
+
+           let msg5 = "";
+           data.forEach((prop, i) => {
+             msg5 += `<div class='taille-plus'>${i + 1}. Le ${prop.species == "cat" ? "chat " : "chien "} <strong>${prop.name}</strong> <i class="fas fa-${prop.species}"></i> aime : ${_e(prop.foods.likes)} et n'aime pas : ${_e(prop.foods.dislikes)}.</div>`;
+           });
+
+            document.getElementById("bloc-affichage1").innerHTML = msg5;
+
+
+          
+
+          })
+          .fail(function(jqXHR, textStatus, errorThrown) { // textStatus : timeout, error, notmodified, parsererror
+            console.log("errorThrown");
+          })
+          .always(function(jqXHR, textStatus) {
+            console.log("Fin de l'exécution.");
+          });
+
+      } // FIN DE GÉNÈRE MESSAGE
+
+
+      $(".btn").on("click", function() {
+        genereMessage();
+      });
+
+    }); // FIN READY
+  </script>
+
+</body>
+</html>

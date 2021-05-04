@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+    <ul>
+        <li>v-if: </li>
+        <li>v-show: </li>
+    </ul>
+
+    <div id="root">
+        <div v-if="count === 1">
+            Green
+        </div>
+        <div v-else-if="count === 2">
+            Red
+        </div>
+        <div v-else>
+            Orange
+        </div>
+    </div>
+
+    <script>
+        // new instance of view
+        const newVue = new Vue({
+            el: "#root",
+            data: {
+                count: 0
+            }
+        });
+    </script>
+</body>
+</html>

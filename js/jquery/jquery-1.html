@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Piment jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <style>
+        div {
+            width: 300px;
+        }
+        footer {
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+        }
+        h1 {
+            background-color: lightblue;
+            padding: 10px;
+            text-align: center;
+        }
+        h2, p {
+            padding: 10px;
+        }
+        h2:hover, p:hover {
+            cursor: pointer;
+            background-color: red;
+        }
+        img {
+            height: 100px;
+            width: 100px;
+        }
+        main {
+            background-color: lightblue;
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 150px;
+            justify-content: center;
+            text-align: center;
+        }
+        .vert {
+            background-color: brown;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>TEST</h1>
+    <main>
+        <div>
+            <h2>test</h2>
+            <p>test</p>
+        </div>
+        <div>
+            <h2>test</h2>
+            <p>test</p>
+        </div>
+        <div>
+            <h2>test</h2>
+            <p>test</p>
+        </div>
+    </main>
+    <footer>
+        <img src="https://images.all-free-download.com/images/graphiclarge/red_pepper_310976.jpg" alt="Piment rouge">
+    </footer>
+    <script>
+        $(document).ready(function() {
+            let colorChanged = false;
+
+            // TOGGLE + MONTRE TOUT
+            $("img").click(function(event) {
+                $("p").show();
+                $("h2").show();
+                if (!colorChanged) {
+                    $("h1").addClass("vert");
+                    console.log("test1");
+                    colorChanged = true;
+                    console.log(colorChanged);
+                } else {
+                    $("h1").removeClass("vert");
+                    console.log("test2");
+                    colorChanged = false;
+                }
+            });
+
+            // CACHE P
+            $("p").click(function(event) {
+                console.log("Élément cliqué");
+                $(this).hide("slow");
+            });
+
+            // CACHE H2
+            $("h2").click(function(event) {
+                console.log("Élément cliqué");
+                $(this).hide("slow");
+            });
+        });        
+        // $(this).hide();
+    </script>
+</body>
+</html>

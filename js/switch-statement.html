@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Switch</title>
+    <style>
+        body {
+            background-image: linear-gradient(to right, gray, white);
+            font-size: 2em;
+        }
+        header {
+            text-align: center;
+            text-shadow: 5px 5px 10px white;
+        }
+        main > div {
+            border-radius: 20px;
+            cursor: pointer;
+            padding: 20px;
+            width: 200px;
+        }
+        main > div:hover {
+            background-color: white;
+        }
+        main {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        /*CLASSES*/
+        .div-reponse {
+            background-color: #555;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: inset 0 0 30px #000000;
+            color: white;
+            margin: 50px;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Switch</h1>
+    </header>
+
+    <main>
+        <div id="orange">
+            <img src="https://static.thenounproject.com/png/646318-200.png" alt="C'est une orange">
+        </div>
+        <div id="banane">
+            <img src="https://static.thenounproject.com/png/2493874-200.png" alt="C'est une banane">
+        </div>
+        <div id="cerise">
+            <img src="https://static.thenounproject.com/png/2003424-200.png" alt="Ce sont des cerises">
+        </div>
+        <div id="corossol">
+            <img src="https://static.thenounproject.com/png/2507377-200.png" alt="Corossol">
+        </div>
+    </main>
+
+    <footer>
+        <div class="div-reponse">
+            <p>Votre liste d'épicerie</p>
+        </div>
+    </footer>
+
+    <script>
+        // LOGIQUE
+        function selectFruit(quelFruit){
+            switch (quelFruit) {
+                case "orange":
+                    document.querySelector(".div-reponse").innerHTML += `Orange&nbsp;: 1&nbsp;$<br>`;
+                    break;
+                case "banane":
+                    document.querySelector(".div-reponse").innerHTML += `Banane&nbsp;: 2&nbsp;$<br>`;
+                    break;
+                case "cerise":
+                    document.querySelector(".div-reponse").innerHTML += `Cerise&nbsp;: 0,50&nbsp;$<br>`;
+                    break;
+                default:
+                    document.querySelector(".div-reponse").innerHTML += `Oups. Ce fruit est mystérieux.<br>`;
+            }
+        }
+
+        /*GESTIONNAIRES D'ÉVÉNEMENTS*/
+
+        document.querySelector("#orange").addEventListener("click", function(){
+            selectFruit(this.id);
+            console.log(this.id);
+        });
+        document.querySelector("#banane").addEventListener("click", function(){
+            selectFruit(this.id);
+            console.log(this.id);
+        });
+        document.querySelector("#cerise").addEventListener("click", function(){
+            selectFruit(this.id);
+            console.log(this.id);
+        });
+        document.querySelector("#corossol").addEventListener("click", function(){
+            selectFruit(this.id);
+            console.log(this.id);
+        });
+    </script>
+</body>
+</html>

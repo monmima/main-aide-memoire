@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Page CV personnelle jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <style>
+        /*CLASSES*/
+        .bandeau-noir {
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            color: white;
+            background-color: black;
+            margin: 10px 0px;
+            padding: 10px;
+            text-align: center;
+        }
+        .curseur {
+            cursor: pointer;
+        }
+        .curseur:hover {
+            color: black;
+            background-color: lightgreen;
+        }
+        /*HIÉRARCHIE*/
+        body {
+            font-size: 1.5em;
+        }
+        main {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!--Ce fichier n'a pas le viewport, etc.
+
+    Travail maison (prochain cours)
+
+    1. Produire une page CV personnelle entièrement dynamique, à l'aide de jQuery.
+    A. Doit avoir une image
+    B. Doit avoir 3 sections de contenu. Ex.: Infos personnelles, Expériences profesionnelles, Formations
+    C. Doit avoir une en-tête et un pied de page-->
+
+    <header class="bandeau-noir curseur">Cliquer ici pour découvrir un monde de découvertes jQuery</header>
+    <main>
+        <div class="portrait"></div>
+        <section class="infos"></section>
+        <section class="exp"></section>
+        <section class="form"></section>
+    </main>
+    <footer></footer>
+
+    <script>
+        $(document).ready(function(){
+            $("header").click(function(){
+            // HEADER
+                $("header").html("Mon super CV incroyable");
+
+            // MAIN
+                $(".infos").html(`<h2>Infos</h2>`);
+
+                $(".infos").append(`<p>Je m'appelle <abbr title="avian learning experiment">Alex</abbr>. Je suis né en <time datetime="1976">1976</time> en Grande-Bretagne.</p>`);
+
+                // https://en.wikipedia.org/wiki/Alex_(parrot)
+                $(".portrait").html(`<img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Alex_the_Parrot.jpg/220px-Alex_the_Parrot.jpg" alt="Ma super image">`);
+
+                $(".exp").html(`<h2>Expériences</h2>`);
+
+                $(".exp").append(`<p>Mes recherches scientifiques m'ont rendu célèbre dans le domaine de l'acquisition du vocabulaire.</p>`);
+
+                $(".form").html(`<h2>Formation</h2>`);
+
+                $(".form").append(`<p>Sans pourtant avoir de formation traditionnelle, j'ai été l'employé de l'Université Brandeis pendant une trentaine d'années à titre de chercheur.`);
+
+            // FOOTER
+                $("footer").html("Fin de mon super CV incroyable.");
+
+            // RETRAIT CLASSE .CURSEUR À L'EN-TÊTE
+                $("header").removeClass("curseur");
+
+            // AJOUT CLASSE .BANDEAU-NOIR AU PIED DE PAGE
+                $("footer").addClass("bandeau-noir");
+            });
+        });
+        
+    </script>
+</body>
+</html>

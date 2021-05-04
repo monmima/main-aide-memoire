@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mmm... camembert!</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+
+    <!--
+        Je comprends que l'importation de librairies inutilement n'est pas optimal.
+        Idéalement, il ne faut charger que ce qui est strictement nécessaire.
+        Mais comme j'ai dû passer par de nombreux essais et erreurs
+        et que le retrait d'une ligne de code ci-dessous risque
+        de casser le code, je me permets de laisser cela ici.
+        En un mot : le mieux est l'ennemi du bien / if it ain't broken, don't fix it.
+    -->
+
+    <script src="librairies_rgraph/RGraph.bar.js" ></script>
+    <script src="librairies_rgraph/RGraph.common.core.js"></script>
+    <script src="librairies_rgraph/RGraph.common.csv.js"></script>
+    <script src="librairies_rgraph/RGraph.common.dynamic.js"></script>
+    <script src="librairies_rgraph/RGraph.common.effects.js"></script>
+    <script src="librairies_rgraph/RGraph.common.tooltips.js"></script>
+    <script src="librairies_rgraph/RGraph.drawing.text.js" ></script>
+    <script src="librairies_rgraph/RGraph.drawing.image.js"></script>
+    <script src="librairies_rgraph/RGraph.hbar.js"></script>
+    <script src="librairies_rgraph/RGraph.pie.js"></script>
+    <script src="librairies_rgraph/RGraph.svg.common.core.js"></script>
+    <script src="librairies_rgraph/RGraph.svg.common.csv.js"></script>
+    <script src="librairies_rgraph/RGraph.svg.common.fx.js"></script>
+    <script src="librairies_rgraph/RGraph.svg.common.key.js"></script>
+    <script src="librairies_rgraph/RGraph.svg.common.sheets.js"></script>
+    <script src="librairies_rgraph/RGraph.svg.common.tooltips.js"></script>
+    <script src="librairies_rgraph/RGraph.svg.gauge.js"></script>
+    <script src="librairies_rgraph/RGraph.svg.pie.js"></script>
+    <script src="librairies_rgraph/RGraph.svg.radar.js"></script>
+    <script src="librairies_rgraph/RGraph.svg.semicircularprogress.js"></script>
+
+    <style>
+        body {
+            counter-reset: figcaption;
+        }
+        figcaption::before {
+            content: "Figure " counter(figcaption);
+            counter-increment: figcaption;
+        }
+        figure > div {
+            /*border: 2px solid black;*/
+            height: 300px;
+            margin: 20px;
+            width: 300px;
+        }
+        figcaption, figure {
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+        }
+        h1, footer {
+            font-family: 'Anton', sans-serif;
+        }
+        main {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        footer, header {
+            background-color: #c3a879;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+        img {
+            /*height: 225px;*/
+            margin: 20px;
+            /*width: 400px;*/
+        }
+
+        /*PSEUDO-CLASSES*/
+        a:link, a:visited, a:active {
+            color: black;
+        }
+        a:focus, a:hover {
+            background-color: lightgreen;
+        }
+
+        /*ID*/
+
+        #diagramme-5 {
+            height: 300px;
+            width: 500px;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mmm... camembert!</h1>
+    </header>
+    
+    <!--
+        Alsa Creation
+
+        aller voir - https://www.alsacreations.com/tuto/lire/1484-introduction.html
+
+        revoir les exemples de xavier, comme le smiley
+
+        6 beaux graphiques Rgraph - pour 8 juillet - en flexible
+    -->
+
+    <main>
+        <figure>
+            <div id="diagramme-1"></div>
+            <figcaption>
+                <p>Taux d'obésité dans le monde en 2013</p>
+                <p>Source&nbsp;: <a href="https://www.lemonde.fr/planete/article/2014/05/29/pres-du-tiers-de-l-humanite-souffre-d-obesite-ou-de-surpoids_4428302_3244.html" title="Le Monde">Le Monde</a></p>
+            </figcaption>
+        </figure>
+
+        <figure>
+            <canvas id="diagramme-2" width="300" height="300" style="border: 1px solid #ddd">
+                [No canvas support]
+            </canvas>
+            <figcaption>
+                    <p>Accès à Internet dans le monde en 2009</p>
+                    <p>Source&nbsp;: <a href="https://www.le-cartographe.net/index.php/dossiers-carto/monde/110-le-monde-en-quelques-statistiques" title="Le Monde">Le Cartographe</a></p>
+                </figcaption>
+        </figure>
+
+        <figure>
+            <canvas id="diagramme-3" width="500" height="350" style="float: right">
+                    [No canvas support]
+            </canvas>
+            <figcaption></figcaption>
+        </figure>
+
+        <figure>
+            <canvas id="diagramme-4" width="750" height="250">
+                [No canvas support]
+            </canvas>
+            <figcaption></figcaption>
+        </figure>
+
+        <figure>
+            <div id="diagramme-5">
+
+            </div>
+            <figcaption></figcaption>
+        </figure>
+
+        <figure>
+            <canvas id="diagramme-6" width="650" height="300">
+                [No canvas support]
+            </canvas>
+            <figcaption></figcaption>
+        </figure>
+
+        <figure>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Camembert_de_Normandie_%28AOP%29_11.jpg/800px-Camembert_de_Normandie_%28AOP%29_11.jpg" alt="Camembert de Normandie" width="400" height="225">
+            <figcaption>
+            </figcaption>
+        </figure>
+    </main>
+
+    <footer>
+        <p><time datetime="2019-07-10">10 juillet 2019</time></p>
+        <p>Diagrammes produits avec RGraph</p>
+    </footer>
+
+    <script>
+
+        window.onload = function() {
+
+            // DIAGRAMME 1 - PIE
+
+            function appelerDiagramme1(quelIdentifiant) {
+
+                let scp = new RGraph.SVG.SemiCircularProgress({
+                id: quelIdentifiant,
+                min: 0,
+                max: 3,
+                value: 1,
+                options: {
+                    color: "lightgreen",
+                    labelsCenterDecimals: 0
+                }
+                }).draw();
+
+            }
+
+            // DIAGRAMME 2 - HORSESHOE
+
+            function appelerDiagramme2(quelIdentifiant) {
+
+                // Some variables that define the appearance
+                let color            = 'lightgreen';
+                let colorsBackground = '#ddd';
+                let textColor        = 'black'
+                let width            = 5;
+                let value            = 23;
+
+                // Create the main Pie chart
+                let pie = new RGraph.Pie({ // icigo
+                    id: quelIdentifiant,
+                    data: [value, 100 - value],
+                    options: {
+                        variant: 'donut',
+                        variantDonutWidth: width,
+                        colors: [color, colorsBackground],
+                        colorsStroke: 'transparent',
+                        shadow: false,
+                        marginLeft: 15,
+                        marginRight: 15,
+                        marginTop: 15,
+                        marginBottom: 15,
+                    }
+                }).roundRobin().on('draw', function (obj)
+                {
+                    // The draw event adds the text that sits in the center of the donut.
+                    // Because it's in the draw event it gets redrawn on every frame.
+                    RGraph.text2(obj, {
+                        text:   parseInt(obj.data[0] * obj.get('effect.roundrobin.multiplier')) + '%',
+                        x:      obj.centerx,
+                        y:      obj.centery,
+                        size:   60,
+                        halign: 'center',
+                        valign: 'center',
+
+                        color: textColor
+                    });
+                }).on('beforedraw', function (obj)
+                {
+                    // These two path commands draw the gray background to the donut
+                    RGraph.path2(obj.context,
+                        'b a % % % 0 6.29 false',
+                        obj.centerx,
+                        obj.centery,
+                        obj.radius
+                    );
+
+                    RGraph.path2(obj.context,
+                        ' a % % % 0 6.29 true f %',
+                        obj.centerx,
+                        obj.centery,
+                        obj.radius - width,
+                        colorsBackground
+                    );
+                }).on('draw', function (obj)
+                {
+                    // Get the coordinates to the start point of the donut chart
+                    let coords1 = RGraph.getRadiusEndPoint(
+                        obj.centerx,
+                        obj.centery,
+                        RGraph.PI + RGraph.HALFPI,
+                        obj.radius - (width / 2)
+                    );
+
+                    // Get the coordinates to the end point of the donut chart
+                    let coords2 = RGraph.getRadiusEndPoint(
+                        obj.centerx,
+                        obj.centery,
+                        obj.angles[0][1],
+                        obj.radius - (width / 2)
+                    );
+
+                    // Draw a white circle at the start of the donut
+                    RGraph.path2(obj.context,
+                        'b a % % % 0 6.29 false f white',
+                        coords1[0],
+                        coords1[1],
+                        14
+                    );
+
+                    // Draw a smaller black circle at the start of the donut
+                    RGraph.path2(obj.context,
+                        'b a % % % 0 6.29 false f ' + color,
+                        coords1[0],
+                        coords1[1],
+                        8
+                    );
+
+                    // Draw a white circle at the end of the donut
+                    RGraph.path2(obj.context,
+                        'b a % % % 0 6.29 false f white',
+                        coords2[0],
+                        coords2[1],
+                        14
+                    );
+
+                    // Draw a smaller black circle at the end of the donut
+                    RGraph.path2(obj.context,
+                        'b a % % % 0 6.29 false f ' + color,
+                        coords2[0],
+                        coords2[1],
+                        8
+                    );
+                });
+
+            }
+
+            // DIAGRAMME-3
+
+            function appelerDiagramme3(quelIdentifiant) {
+
+                let myColors = ['Gradient(black:lightgreen)', "Gradient(black:#00FF00)", "Gradient(black:#00CC00)", "Gradient(black:#009900)"];
+                let myLabels = [ 'Vélo', 'Auto', 'Moto', 'Radeau'];
+                let myData = [20,1,1,1];
+        
+                let maTarte = new RGraph.Pie({ // icigo
+
+                    id: quelIdentifiant,
+                    data: myData,
+                    options: {
+                        colors: myColors,
+                        exploded: 10,
+                        tooltips: myLabels,
+                        labels: myLabels,
+                        shadow: false,
+                        colorsStroke: 'white'
+                    }
+                }).roundRobin();
+
+            }
+
+            // DIAGRAMME 4
+
+            function appelerDiagramme4(quelIdentifiant) {
+
+                let myColors = ['Gradient(lightgreen:black)'];
+                let myData = [1,5,7,10];
+                let myXaxisLabels = ['Minuscule','Petit','Moyen','Grand'];
+
+                let maTarte = new RGraph.Bar({
+                    id: quelIdentifiant,
+                    data: myData,
+                    options: {
+                        xaxisLabels: myXaxisLabels,
+                        yaxisScaleUnitsPost: 'k',
+                        colors: myColors,
+                        textSize: 14,
+                        title: '',
+                        titleSize: 16,
+                        axes: false,
+                        marginLeft: 50,
+                        marginInner: 10
+                    }
+                }).draw();
+
+            }
+
+            // DIAGRAMME 5
+
+            function appelerDiagramme5(quelIdentifiant) {
+
+                let maTarte = new RGraph.SVG.Gauge({
+                id: quelIdentifiant,
+                innerMin: 0,
+                innerMax: 10,
+                outerMin: 0,
+                outerMax: 100,
+                value: 7.8,
+                options: {
+                    adjustable: true,
+                    scaleInnerUnitsPost: '%',
+                    centerpinRadius: 10,
+                    labelsIngraphUnitsPost: '%',
+                    labelsIngraphDecimals: 1,
+                    colors: ['red','blue']
+                }
+                }).draw();
+
+            }
+
+            // DIAGRAMME 6
+
+            function appelerDiagramme6(quelIdentifiant) {
+
+                myData = [50,40,10,-25, -20];
+                myYaxisLabelsSpecific = ['Très cool', 'Peu cool'];
+                myLabelsAboveSpecific = ['Musique', 'Gravlax', 'Champignons', 'Pommes', 'Bogues'];
+
+                let monDiagramme = new RGraph.Bar({ // icigo
+                    id: quelIdentifiant,
+                    data: myData,
+                    options: {
+                        colors: ['black'],
+                        yaxisLabelsSpecific: myYaxisLabelsSpecific,
+                        marginLeft: 100,
+                        marginBottom: 135,
+                        marginInner: 15,
+                        variant: 'sketch',
+                        //variantSketchVerticals: false,
+                        textFont: 'Comic sans MS',
+                        textSize: 12,
+                        linewidth: 1.25,
+                        backgroundGrid: false,
+                        labelsAbove: true,
+                        labelsAboveSpecific: myLabelsAboveSpecific
+                    }
+                }).draw();
+
+            }
+
+            // APPEL DE FONCTIONS
+
+            function main() {
+                appelerDiagramme1("diagramme-1");
+                appelerDiagramme2("diagramme-2");
+                appelerDiagramme3("diagramme-3");
+                appelerDiagramme4("diagramme-4");
+                appelerDiagramme5("diagramme-5");
+                appelerDiagramme6("diagramme-6");
+            }
+
+            main();
+        };
+
+</script>
+
+        <!--
+            Travail 1 - PIIA 2019
+            Gr.05
+
+            Remise le 10 juillet 
+
+            Produire 6 graphiques de données stylisés dans une interface Web utilisant la technologie HTML5 Canvas et SVG, et la librairie RGraph.
+
+            Contraintes :
+            - OK - Les 6 items graphiques seront flexibles (responsives). - les graphiques ne se redimensionnent pas; c'est la mise en page qui doit être flexible
+            - OK - Deux graphiques sur les six seront produits en SVG. - attendre le cours sur le SVG pour cela
+            - OK - Deux graphiques apparaîtront à l'aide d'animations. - parmi les graphiques qu'il y a déjà dans les démos, plusieurs sont déjà animés
+            - Les 6 graphiques sont créés et affichés par des fonctions JS indépendantes et paramétrées. - en d'autres termes, chaque graphique est une fonction
+            - OK - Deux graphiques auront des données pertinentes et réelles (références à l'appui).
+            - OK - Un graphique devra être à progression semi-circulaire
+            - OK - Un graphique devra être illustré à l'aide de barres verticales ou horizontales - avoir un graphique à barres
+
+            La démo Pink Pie a des couleurs
+        -->
+
+        <!--
+            FINALEMENT
+            - Valider le contenu du document sur W3C: https://validator.w3.org/
+            - Relire l'énoncé
+        -->
+    </body>
+</html>

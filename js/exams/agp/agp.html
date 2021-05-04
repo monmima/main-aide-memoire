@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>AGP - Question finale</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header></header>
+
+    <main>
+       
+        <!-- Section des boutons Médias -->
+        <section class="zone-boutons">
+            <!-- Bouton 1 -->
+            <div id="films">
+                <img src="images/films-128.png" width="100" height="100" alt="Films">
+                <h3>Films</h3>
+            </div>
+            <!-- Bouton 2 -->
+            <div id="musiques">
+                <img src="images/musiques-128.png" width="100" height="100" alt="Musiques">
+                <h3>Musiques</h3>
+            </div>
+            <!-- Bouton 3 -->
+            <div id="jeux">
+                <img src="images/jeux-128.png" width="100" height="100" alt="Jeux">
+                <h3>Jeux</h3>
+            </div>
+            <!-- Bouton 4 -->
+            <div id="livres">
+                <img src="images/livres-128.png" width="100" height="100" alt="Livres">
+                <h3>Livres</h3>
+            </div>
+        </section>
+
+       
+        <!-- Section d'information (texte dynamique) -->
+        <section id="medias-texte" class="couleur-info"></section>
+
+       
+        <!-- Section image d'arrière-plan (dynamique) -->
+        <section id="medias-image" class="img-choisir"></section>
+        
+    </main>
+
+   
+    <script>
+        /* Placez vos scripts ci-dessous. */
+
+        /* ---------------------- Question A ---------------------- */
+        // AFFICHE PRENOM
+
+        votrePrenom = "<h2>Examen.</h2>"; // Je fais une variable globale ici, à l'extérieur de ma fonction affichePrenom().
+
+        function affichePrenom() {
+            headerTitre = "<h1>Question finale</h1>"
+            document.querySelector("header").innerHTML = headerTitre + votrePrenom;
+        }
+
+        /* ---------------------- Question B ---------------------- */
+        // ÉCRIRE DU TEXTE DYNAMIQUE DANS #MEDIAS-TEXTE
+        
+        // Je fais cela dans une fonction. Je comprends que ce n'était pas demandé de l'intégrer dans une fonction nécessairement.
+        function afficheChoisir() {
+            document.querySelector("#medias-texte").innerHTML = "Choisir un divertissement...";
+        }
+        
+        /* ---------------------- Question C ---------------------- */
+        // *LOGIQUE* DERRIÈRE LE CLIC SUR UN BOUTON
+
+        function divertissementMedia(quelleSection) {
+
+            document.querySelector("#films").style.backgroundColor = "red";
+
+            // querySelector("#films")
+            
+            if (quelleSection === "films"){
+                texte = "⭐ films ⭐";
+                classe = "bleu-films";
+                image = "img-films";
+            } else if (quelleSection === "musiques"){
+                texte = "⭐ musiques ⭐";
+                classe = "gris-musiques";
+                image = "img-musiques";
+            } else if (quelleSection === "jeux"){
+                texte = "⭐ jeux ⭐";
+                classe = "rose-jeux";
+                image = "img-jeux";
+            } else {
+                texte = "⭐ livres ⭐";
+                classe = "jaune-livres";
+                image = "img-livres";
+            }
+
+            document.querySelector("#medias-texte").innerHTML = `Sélection de la section ${texte}`;
+            document.querySelector("#medias-texte").className = classe;
+            document.querySelector('#medias-image').className = image;
+        }
+
+        // MES PETITS GESTIONNAIRES D'ÉVÉNEMENTS
+        // *AFFICHAGE DES RÉSULTATS*
+
+        document.querySelector("#films").addEventListener("click", function() {
+            divertissementMedia("films");
+        });
+
+        document.querySelector("#musiques").addEventListener("click", function() {
+            divertissementMedia("musiques");
+        });
+
+        document.querySelector("#jeux").addEventListener("click", function() {
+            divertissementMedia("jeux");
+        });
+
+        document.querySelector("#livres").addEventListener("click", function() {
+            divertissementMedia("livres");
+        });
+      
+        // MAIN
+
+        function main() {
+            affichePrenom();
+            afficheChoisir();
+        }
+
+        main();
+
+    </script>
+</body>
+
+</html>

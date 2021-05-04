@@ -1,0 +1,149 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 100vh;
+}
+
+figure {
+    border: 2px solid black;
+}
+
+figure, .images {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    padding: 5px;
+}
+
+footer, header {
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 50px;
+    padding: 5px;
+}
+
+img {
+    max-height: 50px;
+    max-width: auto;
+}
+
+/* each paragraph of text */
+.contenu-flex {
+    margin-top: 50px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.contenu-flex-header {
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.database {
+    /* color: white; */
+    margin: 5px;
+    padding: 5px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.database > div {
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.language-column {
+    background-color: #f5f5f5;
+    text-align: justify;
+    margin: 0  10px 0px 10px;
+}
+
+.ligne-resultat-et-numero {
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.technologies {
+    background-color: #f5f5f5;
+    padding: 15px;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (max-width: 759px) {
+    h1, h2, h3 {
+        font-size: 1em;
+    }
+
+    .language-column {
+        text-align: left;
+        margin: 0  5px 0px 5px;
+    }
+
+    /*PLUS DE COLONNES GRID ICI, QUE DU FLEX*/
+    .database {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* OLD RULES BELOW */
+
+body {
+    background-color: aliceblue;
+}
+figure {
+    border: 2px solid black;
+}
+footer, header {
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 50px;
+    padding: 5px;
+}
+img {
+    max-height: 50px;
+    max-width: auto;
+}
+.database {
+    background-color: lightgrey;
+    /* color: white; */
+    margin: 5px;
+    padding: 5px;
+}
+.database-name {
+    font-size: 1.2em;
+    text-align: center;
+}
+figure, .images {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    padding: 5px;
+}
+
+
+
+

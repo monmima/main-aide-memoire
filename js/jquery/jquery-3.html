@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <style>
+        h1, .onglet {
+            border: 2px solid black;
+            background-color: white;
+            padding: 10px;
+        }
+        div {
+            border: 2px solid black;
+            background-color: lightgreen;
+            padding: 10px;
+        }
+        ul li {
+            display: inline;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="onglets">
+        <h1>Onglets</h1>
+            <ul>
+                <li><a href="#onglet_1">Page 1</a></li>
+                <li><a href="#onglet_2">Page 2</a></li>
+                <li><a href="#onglet_3">Page 3</a></li>
+            </ul>
+            <div class="onglet" id="onglet_1">
+                <h3>Onglet 1</h3>
+                <p>Lorem ipsum 1</p>
+            </div>
+            <div class="onglet" id="onglet_2">
+                <h3>Onglet 2</h3>
+                <p>Lorem ipsum 2</p>
+            </div>
+            <div class="onglet" id="onglet_3">
+                <h3>Onglet 3</h3>
+                <p>Lorem ipsum 3</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#onglets .onglet").not(":first").hide();
+
+            $("#onglets ul a").click(function() {
+                $("#onglets .onglet").slideUp("fast");
+                $(this.hash).slideDown("fast");
+                this.blur();
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <style>
+        .green {
+            border: 2px solid green;
+        }
+        .red {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <!-- the two lines below do the same -->
+        <p v-text="email"></p>
+        <p>{{ email }}</p>
+
+        <!-- ":" is the same as "v-bind:" -->
+        <input v-model="email" :class="[ email.length < 2 ? 'red' : 'green'  ]">
+        <p>
+            <button onclick="alert('signed up')" v-bind:disabled="email.length < 2">Submit</button>
+        </p>
+    </div>
+
+    <script>
+        const app = new Vue({
+            el: "#root",
+            data: {
+                email: ""
+            }
+        });
+    </script>
+</body>
+</html>

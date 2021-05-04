@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Examen 2019</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+    
+    <style>
+        /*GÉNÉRAL*/
+        article {
+            padding: 30px;
+            width: 300px;
+        }
+        body {
+            background-image: url("images/fond-a-repeter.jpg");
+            font: 0.7em 'Open Sans', Verdana, Geneva, sans-serif;
+        }
+        dfn {
+            font-style: normal;
+        }
+        figcaption {
+            text-align: center;
+        }
+        footer {
+            color: white;
+            padding-top: 20px;
+            text-align: center;
+        }
+        /*GRANDE PHOTO DE PARIS*/
+        header {
+            align-items: center;
+            background: #535353 url("images/paris-1150x435.jpg");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            border: 10px solid #2a8dfa;
+            border-radius: 30px;
+            display: flex;
+            height: 370px;
+        }
+        h1 {
+            color: white;
+            background-color: #2a8dfa;
+            font-size: 1.5em;
+            margin-top: -270px;
+            opacity: 0.7;
+            padding: 10px;
+            text-align: center;
+            width: 150px;
+        }
+        h2 {
+            display: none;
+        }
+        nav {
+            background-color: #535353;
+            border-radius: 30px;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 1.25em;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        section {
+            background-color: #535353;
+            border-radius: 30px;
+            display: flex;
+            flex-flow: wrap;
+            font-size: 1.75em;
+            font-weight: bold;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        ul > li {
+            display: inline;
+            padding-right: 30px;
+        }
+        ul {
+            align-items: center;
+            display: inline;
+        }
+        
+        /*zone de recherche*/
+        nav > div {
+            align-items: center;
+            display: flex;
+            margin-right: 10px;
+            padding-left: 40px;
+        }
+
+        /*INPUT*/
+        input[type=search] {
+            background: url("images/champ-recherche.png");
+            border-radius: 30px;
+            color: white; /*bogue*/
+            height: 30px;
+            margin-left: 10px;
+            outline: none;
+            padding-left: 20px;
+            width: 165px;
+        }
+
+        /*PSEUDO-CLASSES*/
+
+        .articles-images:hover {
+            background-color: red;
+        }
+
+        /*LIENS NAVIGATION*/
+
+        nav a:link {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav a:visited, nav a:active {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:focus, nav a:hover {
+            color: red;
+            border-bottom: 2px solid red;
+        }
+
+        /*LIENS SECTION*/
+
+        article a:link, article a:visited,  article a:active {
+            color: black;
+            text-decoration: underline;
+        }
+        article a:focus, article a:hover {
+            background-color: red;
+            text-decoration: underline
+        }
+
+        /*CLASSES*/
+
+        .active {
+            border-bottom: 2px solid white;
+            cursor: default;
+            font-weight: bold;
+        }
+        .articles-images {
+            text-align: center;
+        }
+        .cache {
+            display: none;
+        }
+        .div-gris {
+            background-color: #333;
+            margin: 25px 30px 60px;
+            min-width: 400px;
+            padding: 30px 60px 30px 60px;
+        }
+    </style>
+</head>
+    <body>
+
+        <div class="div-gris">
+            <header>
+                <h1>Examen 2019</h1>
+                <div class="div-paris"></div>
+            </header>
+            
+            <nav>
+                <ul>
+                    <li><a href="javascript:;" class="active" title="Accueil">Accueil</a></li>
+                    <li><a href="javascript:;" title="Découverte">Découverte</a></li>
+                    <li><a href="javascript:;" title="Contact">Contact</a></li>
+                </ul>
+                <div>
+                    <form action="#" method="GET" name="recherche" id="recherche">
+                        Rechercher&nbsp;:
+                        <input type="search" placeholder="ici..." name="champ-recherche" id="champ-recherche" autofocus required>
+                    </form>
+                </div>
+            </nav>
+            
+            <section>
+                <h2>Informations</h2>
+                <article>
+                    <h3>Paris</h3>
+                    <p><dfn>Paris</dfn> (prononcé [<a href="https://fr.wikipedia.org/wiki/Fichier:Paris1.ogg" title="Lien vers la prononciation de Paris">pa.ʁi</a>] <img src="images/11px-Loudspeaker.svg.png" alt="Image de haut-parleur">) est la <a href="https://fr.wikipedia.org/wiki/Capitale" title="Lien vers l'article capitale de Wikipédia">capitale</a> de la <a href="https://fr.wikipedia.org/wiki/France" title="Lien vers l'article France de Wikipédia">République française</a>.</p>
+                        
+                    <p>Ville longtemps la plus peuplée d'<a href="https://fr.wikipedia.org/wiki/Europe" title="Lien vers l'article Europe de Wikipédia">Europe</a>, elle reste la plus peuplée de <a href="https://fr.wikipedia.org/wiki/France" title="Lien vers l'article France de Wikipédia">France</a> et la <abbr title="vingt-neuvième">29<sup>e</sup></abbr> plus peuplée du monde<sup>1</sup>.</p>
+                </article>
+                <article class="articles-images">
+                    <h3>Arrondissements de Paris</h3>
+
+                    <figure>
+                        <img src="images/arrondissements-parisiens.png" alt="Icones de paris"
+                        height="130" width="160">
+                        <figcaption>
+                            <p>Paris est divisée en 20 arrondissements.</p>
+                        </figcaption>
+                    </figure>
+
+                </article>
+                <article class="articles-images">
+                    <h3 class="cache">Illustration artistique</h3>
+                    <figure>
+                        <img src="images/paris-icones-570.jpg" alt="Icônes de paris" height="200" width="200">
+                        <figcaption>
+                            <p>Illustration artistique au crayon.</p>
+                        </figcaption>
+                    </figure>
+                </article>
+            </section>
+            <footer>
+                <p>Prototype Web - 582-AHA-LI</p>
+            </footer>
+        </div>
+        <script>
+            /*pas sûr du tout que c'est ça qu'il faut faire, ça ne semble pas marcher :-(*/
+            document.getElementById("#recherche").addEventListener("submit", function(event){
+                event.preventDefault();
+            });
+        </script>
+</body>
+</html>

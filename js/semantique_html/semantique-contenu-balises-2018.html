@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex">
+    <title>Liste des balises sémantiques utiles | version 2018</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Great+Vibes">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arizonia">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="balises-semantiques-v8-dl.css">
+    
+    <style>
+        /*  VIDE  */
+    </style>
+    
+</head>
+
+<body>
+<!-- 
+    Voir la référence : http://developers.whatwg.org/text-level-semantics.html#text-level-semantics
+
+    @TODOS :
+    - Visualiser le site sans CSS.
+    - Vérifier et corriger les fautes de français.
+    - Vérifier / Ajuster le chemin des images <img src="" alt="">.
+    - Vérifier / Ajuster l'attribut alt="" images.
+    - Vérifier / Ajuster tous les codes avec la balise <code></code>  (Entités &#32;, espaces, balises...)
+    
+    - Valider class="lang-en" et class="lang-fr" | https://www.w3schools.com/tags/ref_language_codes.asp
+    
+    - Vérifier les lang="". Ex. : pour les abbr > HTML, CSS, ASCII, ISO, UTF ... 
+    - Vérifier les attributs translate="no" > Google Translate / Bing Translators.xx
+    
+    - CSS : white-space: nowrap;
+    
+    - Balise <s> Inaccurate text - Ex. : Price: <s>£4.50</s> £2.00!
+        
+    - CLASSES NO-CSS :
+        - class="taxonomie"
+        - class="voiceover" - class="voiceover lang-en"
+        - class="romain"
+        - class="abbr"
+        - class="taxonomie"
+        - class="icone"
+        - class="ascii-art"
+        - class="lang-css"
+        - class="lang-basic"
+        - class="num-reference"
+        - class="long-mot"
+                
+        - IDs :
+        - id="kbd"
+        - id="wbr"
+        - id="strike"
+        - id="fish-caption"
+        
+        - VRAC : 
+        - Compléter bdi.
+        - wbr : acronyme?
+        - Time de l'article
+        - cite attribute
+        - Ajouter Adresse Microdata.
+        - class="technical-term" pour i?
+
+-->
+
+<!--  HEADER  -->
+<header>
+    <h1>Sémantique <abbr title="HyperText Markup Language">HTML</abbr> <time datetime="2018">2018</time></h1>
+</header>
+
+<!-- SECTION PRINCIPALE -->
+<main>
+
+    <!--  NAVIGATION PRINCIPALE  -->
+    <!-- ********************** -->
+    <nav>
+        <h2>Sommaire (table des matières)</h2>
+        <ol>
+            <li><a href="#semantique">Balises sémantiques XHTML/HTML5</a></li>
+            <li><a href="#citations">Les citations</a></li>
+            <li><a href="#revision">Les marques de révision, exposants et indices</a></li>
+            <li><a href="#entites">Les entités</a></li>
+            <li><a href="#espaces">Les espaces</a></li>
+            <li><a href="#cesures">Les césures</a></li>
+            <li><a href="#preformates">Les éléments préformatés</a></li>
+            <li><a href="#adresse">Adresse sémantique</a></li>
+            <li><a href="#direction">Direction du texte</a></li>
+            <li><a href="#surmesure">Sémantique personnalisée</a></li>
+        </ol>
+    </nav>
+
+    <!--  CONTENU  PRINCIPAL - MAIN  -->
+    <!-- ********************** -->
+    <section>
+
+        <dl>
+            <!-- Balises XHTML pour le texte -->
+            <dt id="semantique">Balises sémantiques <abbr title="eXtended HyperText Markup Language">XHTML</abbr>/<abbr title="HyperText Markup Language 5">HTML5</abbr></dt>
+            <dd>
+                <ul class="semantique">
+
+                    <li><em>Exprimer une emphase</em> <strong><code>&lt;em&gt;</code></strong></li>
+
+                    <li><strong>Exprimer une forte intonation</strong> <strong><code>&lt;strong&gt;</code></strong></li>
+
+                    <li><code>Montrer un code source</code> <strong><code>&lt;code&gt;</code></strong></li>
+
+                    <li><!--<samp> -->Montrer un exemple<!--</samp> --> <strong><code>&lt;samp&gt;</code></strong></li>
+
+                    <li><dfn>Définition</dfn> <strong><code>&lt;dfn&gt;</code></strong></li>
+
+                    <li><cite>Citer le titre d'une œuvre</cite> <strong><code>&lt;cite&gt;</code></strong> <samp>Exemple&nbsp;: Le film <cite lang="fr">Le Parrain</cite> de <span class="auteur">Francis Ford Coppola</span> (<time datetime="1972">1972</time>).</samp> <samp>Autre exemple&nbsp;: L'œuvre <cite>Guernica</cite> de <a href="https://fr.wikipedia.org/wiki/Pablo_Picasso" title="Pablo Picasso | Définition Wikipédia" target="_blank" rel="author">Pablo Picasso</a>.</samp> <samp>Autre exemple&nbsp;: Référence&nbsp;: <cite lang="en"><a href="https://developers.whatwg.org/text-level-semantics.html#text-level-semantics" title="Text-level semantics — HTML&nbsp;: The Living Standard" target="_blank">HTML&nbsp;: The Living Standard</a></cite>,<dfn> <abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr>.</dfn></samp> <small>Note&nbsp;: il existe plusieurs méthodes pour citer un auteur.</small></li>
+
+                    <li><abbr title="abréviation">Abréviation</abbr> <strong><code>&lt;abbr&gt;</code></strong> <samp>Exemple&nbsp;: Le <time datetime="2009-07-02">2 juillet 2009</time>, le <abbr title="World Wide Web Consortium">W3C</abbr> a <span class="surligne-primaire">officiellement</span> annoncé l'abandon du développement du <abbr title="eXtensible HyperText Markup Language">XHTML</abbr>2.</samp> <samp>Autres exemples&nbsp;: <abbr lang="fr" title="Madame">Mme</abbr>, <abbr lang="fr" title="Mademoiselle">M<sup>lle</sup></abbr>, <abbr lang="fr" title="Monsieur">M.</abbr>, <abbr class="abbr" title="20ᵉ siècle"><span class="romain">XX</span><sup>e</sup></abbr>, <abbr title="et cætera">etc</abbr>.</samp></li>
+                    
+                    <li id="strike"><s><span class="nevalidepas surligne-attention"><acronym title="Acronyme">Acronyme</acronym></span> <strong><code>&lt;acronym&gt;</code></strong></s><p>(Sonar, ASAP, Codec, Ovni, etc.).</p> 
+    <!--              <span class="nevalidepas"> <samp>Exemples (ne valide pas au W3C)&nbsp;: <acronym lang="en" title="Sound Navigation and Ranging">Sonar</acronym> &ndash; <acronym lang="en" title="As Soon As Possible"><em>ASAP</em></acronym> &ndash; <acronym title="COmpressionDECompression">Codec</acronym> &ndash; <acronym title="Objet volant non identifié">Ovni</acronym>, <abbr title="et cætera &#124; Voir 'abréviation'">etc</abbr>.</samp> </span>--><strong>Attention&nbsp;:</strong> pas de support <abbr title="HyperText Markup Language 5">HTML5</abbr>. Utilisez plutôt <strong><code>&lt;abbr&gt;</code></strong>.
+                    </li>
+
+                    <!-- Deux voiliers à l'horizon d'une mer bleue luisante sur fond de ciel bleu, un cumulus au centre. -->
+                    <li>Intégrer une image avec <strong><code>&lt;figure&gt;</code></strong>, <strong><code>&lt;img&gt;</code></strong> et <strong><code>&lt;figcaption&gt;</code></strong>
+                        <samp>Exemple (non-adaptatif)&nbsp;: </samp>
+                        <figure>
+                            <img src="images/deux-voiliers.jpg" alt="Deux voiliers avec mer et ciel bleu et un cumulus." width="500" height="180">
+                            <figcaption>Deux voiliers à l'horizon d'une mer bleue.</figcaption>
+                        </figure>
+                        <samp>Autre exemple (non-adaptatif)&nbsp;: </samp>
+                        <figure>
+                            <img src="images/icone-cinema.png" alt="Icône cinématographique" width="192" height="192">
+                            <figcaption hidden>Icône cinématographique.</figcaption>
+                        </figure>
+                        <!--  @TODO : <aside>-</aside> -->
+                        <small>Note&nbsp;: il existe une balise <strong><code>&lt;picture&gt;</code></strong>.</small>
+                    </li>
+
+                    <li><h4>Trois balises médias nouvelles&nbsp;:</h4>
+                        <ul>
+                            <li><strong><code>&lt;audio&gt;</code></strong> pour intégrer des pistes sonores variées.</li>
+                            <li><strong><code>&lt;video&gt;</code></strong> avec ses options de contrôle.</li>
+                            <li><strong><code>&lt;canvas&gt;</code></strong> pour broder et dessiner dynamiquement.</li>
+                        </ul>
+                        <br>
+                    </li>
+
+                    <li><var>Exprimer une variable dans un langage de programmation</var> <strong><code>&lt;var&gt;</code></strong> <samp>Exemple&nbsp;: <var>$_GET</var> et <var>$_POST</var> <dfn>sont des tableaux de données associatifs super globaux générés par <abbr title="PHP: Hypertext Preprocessor">PHP</abbr>.</dfn></samp> <samp>Autre exemple&nbsp;: var <var>score</var> = <var>score</var> + 100;<!-- ou (<var>score</var> += 100) --></samp> <small>Note&nbsp;: balise peu utilis&eacute;e.</small></li>
+
+                    <li id="kbd"><kbd>Utiliser une touche de clavier</kbd> <strong><code>&lt;kbd&gt;</code></strong> <samp>Exemple&nbsp;: Verrouiller son ordinateur avec les touches <kbd>Ctrl&#8209;Alt&#8209;Suppr</kbd> ou <kbd>Windows&nbsp;+&nbsp;L</kbd> <span class="lang-en" lang="en">(Lock)</span>.</samp> <samp>Autres exemples&nbsp;: n<sup>o</sup>1)&nbsp;<!-- Symbole no : &#8470; -->&laquo;&nbsp;Afin d'obtenir de l'aide, appuyer sur <kbd>F1</kbd>&nbsp;&raquo;. n<sup>o</sup>2)&nbsp;Quitter&nbsp;: <kbd>Alt&#8209;F4</kbd>. n<sup>o</sup>3)&nbsp;Panneau des fichiers&nbsp;: <kbd>F8</kbd>. n<sup>o</sup>4)&nbsp;Préférences du logiciel&nbsp;: <kbd>Ctrl&#8209;U</kbd>.</samp> <small>Note&nbsp;: balise peu utilis&eacute;e.</small></li>
+
+                    <li id="wbr"><span class="lang-en" translate="no" lang="en">The Word Break Opportunity</span> <strong><code>&lt;wbr&gt;</code></strong> permet une opportunité de césure lors de la présence d'un long mot que l'on ne veut pas couper. Son entité équivalente est&nbsp;: <code>&amp;#8203</code>. <samp>Exemple&nbsp;: Ceci est l'illustration d'une phrase qui commence par&nbsp;: &laquo;&nbsp;Il était une fois un paragraphe assez long  pour démontrer un exemple constitué de... plusieurs&#8203;mots&#8203;collés&#8203;qui&#8203;vont&#8203;toujours&#8203;créer&#8203;une&#8203;bonne&#8203;césure&#8203;&nbsp;&raquo;.<!--<wbr>une <wbr>phrase <wbr>constituée <wbr>de <wbr> plusieurs <wbr>mots <wbr>qui <wbr>vont <wbr>créer <wbr>une <wbr>bonne <wbr>césure<wbr>  &#8203; \200B --></samp> <small>Note&nbsp;: nouvel élément <abbr title="HyperText Markup Language 5">HTML5</abbr>.</small></li>
+
+                    <li>
+                        <h4 class="margetop">Les balises structurelles <abbr title="HyperText Markup Language 5">HTML5</abbr> utiles&nbsp;:</h4>
+                        <ul>
+                            <li><code>&lt;header&gt;</code></li>
+                            <li><code>&lt;section&gt;</code></li>
+                            <li><code>&lt;nav&gt;</code></li>
+                            <li><code>&lt;main&gt;</code></li>
+                            <li><code>&lt;article&gt;</code></li>
+                            <li><code>&lt;aside&gt;</code></li>
+                            <li><code>&lt;footer&gt;</code></li>
+                        </ul>
+                        <br>
+                    </li>
+
+                    <li>L'élément <strong><code>&lt;time&gt;</code></strong> permet l'insertion de la date et du temps. <samp>Exemple&nbsp;: Annonce de la sortie du premier <a href="https://en.wikipedia.org/wiki/IPhone_(1st_generation)" title="Première génération d'iPhone | Wikipedia IPhone" target="_blank">iPhone</a>, le <time datetime="2007-01-09">9 janvier 2007</time>.</samp> <small>Note&nbsp;: nouvel élément <abbr title="HyperText Markup Language 5">HTML5</abbr>.</small></li>
+
+                    <li>L'élément <strong><code>&lt;mark&gt;</code></strong>. <samp>Exemple&nbsp;: mise en valeur du mot <mark>marquage</mark>.</samp> <small>Note&nbsp;: nouvel élément <abbr title="HyperText Markup Language 5">HTML5</abbr>.</small></li>
+
+                    <!-- https://www.k12.gov.sk.ca/docs/francais/fransk/fran/sec/prg_etudes/expi.html -->
+                    <li class="element-i">L'élément <strong><code>&lt;i&gt;</code></strong> est utilisé afin de marquer un changement de voix, de ton ou d'accent dans le texte <span class="lang-en" lang="en">(text in an <q>alternate voice</q>)</span>. Cette balise permet de représenter une désignation taxonomique (taxinomie/classification), un terme technique, une expression idiomatique dans une autre langue, une pensée, un rêve, le nom d'un bateau. 
+
+                    <samp>Exemple (désignation taxonomique)&nbsp;: Les <i lang="la" title="Famille des Felidae de l'ordre Carnivora." class="taxonomie">Felis silvestris catus</i> sont, en général, très appréciés par les <em>programmeurs JavaScript</em>.</samp>
+
+                    <samp>Autre exemple (désignation taxonomique)&nbsp;: Le cheval appartient aux espèces de la famille des <i lang="fr" title="Famille des Équidés de l'ordre Perissodactyla." class="taxonomie">Équidés (Equidae)</i>.</samp>
+
+                    <samp>Exemple (terme dans une autre langue avec traduction)&nbsp;: Le sushi <span class="icone"><!-- 🍣 -->&#x1f363;</span> <i lang="ja-latn" title="Pieuvre.">tako</i> est excellent.</samp>
+
+                    <samp>Exemple (expression idiomatique)&nbsp;: L'équité est son <i lang="fr" title="Expression idiomatique">cheval de bataille</i>.</samp>
+
+                    <samp>Autre exemple (expression idiomatique)&nbsp;: <i lang="fr" title="Expression idiomatique"><q> Avoir une mémoire d'éléphant </q></i>.</samp>
+
+                    <samp>Autre exemple (expression idiomatique dans une autre langue)&nbsp;: <q class="voiceover lang-en" lang="en">There is a certain <i class="lang-fr" lang="fr">je ne sais quoi</i> in the air.</q></samp>
+
+                    <p>Cette balise <strong><code>&lt;i&gt;</code></strong> est parfois utilisée pour insérer un(e) icône. Les librairies qui gèrent les polices d'icônes telles que&nbsp;: <i translate="no" lang="en">Bootstrap, Font-Awesome, Google Material Design Icons</i>, <abbr title="et cætera">etc</abbr>. intègrent leurs icônes avec cette balise.</p>
+
+                    <!-- 
+                        https://www.w3schools.com/icons/fontawesome_icons_intro.asp
+                        https://www.w3schools.com/icons/fontawesome_icons_webapp.asp      
+                    -->
+                    <samp>Exemples&nbsp;: icônes avec <i translate="no" lang="en">Font-awesome</i> <i class="fa fa-globe fa-2x"></i> <i class="fa fa-tv fa-2x"></i> <i class="fa fa-motorcycle fa-2x"></i> <i class="fa fa-camera fa-2x"></i> <i class="fa fa-camera-retro fa-2x"></i> <i class="fa fa-bath fa-2x"></i> <i class="fa fa-eye fa-2x"></i> <i class="fa fa-shopping-cart fa-2x"></i> <i class="fa fa-microphone fa-2x"></i> <i class="fa fa-rocket fa-2x"></i></samp>
+                    <!-- <i class="fa fa-spinner fa-pulse fa-2x"> -->
+
+                    <samp>Exemples&nbsp;: icônes avec <i translate="no" lang="en">Google Material Design</i> <i class="material-icons md-24">fingerprint</i> <i class="material-icons md-24">tv</i> <i class="material-icons md-24">motorcycle</i> <i class="material-icons md-24">camera_alt</i> <i class="material-icons md-24">camera</i> <i class="material-icons md-24">local_gas_station</i> <i class="material-icons md-24">remove_red_eye</i> <i class="material-icons md-36">local_grocery_store</i> <i class="material-icons md-36">local_shipping</i></samp>
+
+                    <br><strong>Attention&nbsp;:</strong> veuiller à bien utiliser cette balise dans un contexte sémantique <abbr title="HyperText Markup Language 5">HTML5</abbr> approprié.
+
+                    <!-- https://en.wikibooks.org/wiki/Unicode/List_of_useful_symbols -->
+                    <small>Note&nbsp;: la balise <code>&lt;span&gt;</code> est parfois utilisée avec un simple caractère icône (décimal/hexadécimal), par exemples&nbsp;: <samp><span class="icone">&#x1f4fa;</span> <span class="icone">&#x1f418;<!-- 🐘 --></span> <span class="icone"><!-- 🍣 -->&#x1f363;</span> <span class="icone"><!-- 🐙 -->&#128025;</span> <span class="icone">&#x1F345;</span> <span class="icone">&#x1F35E;</span> <span class="icone">&#x23CE;</span> <span class="icone">&#x22F0;</span> </samp> (Symboles <em lang="en">Unicode</em>).</small>
+                    </li>
+
+                    <li><strong>Attention</strong> aux nouveaux éléments <abbr title="HyperText Markup Language 5">HTML5</abbr> qui ne sont pas implémentés dans tous les navigateurs standards. <samp>Exemples&nbsp;:  <code>&lt;details&gt;</code> et <code>&lt;summary&gt;</code></samp> <small>Note&nbsp;: ces deux balises ne sont pas supportées par les navigateurs <span class="surligne-attention">IE/Edge</span>.</small></li>
+
+                </ul>
+            </dd><!-- Fin id="semantique" -->
+
+
+            <!-- ********************** “ ” -->
+            <dt id="citations">Les citations avec les éléments <code>&lt;q&gt;</code> et <code>&lt;blockquote&gt;</code></dt>
+            <dd class="citation">
+                <p>Les caractères guillemets &laquo; &raquo; ou &quot; &quot; <em lang="en">(quotation marks)</em> existent sous plusieurs formes en <abbr title="HyperText Markup Language">HTML</abbr>. Ils peuvent varier selon la langue <em translate="no" lang="en">(charset)</em> et de l'utilité que l'on veut leur en donner.</p>
+
+                <h4>Deux balises pour gérer les citations&nbsp;: </h4>
+                <ul>
+                    <li>
+                        <!-- q : pour la sémantique - met le texte entre guillemet - balise “inline”, dépend de lang="" -->
+                        <p>La balise <strong><code>&lt;q&gt;</code></strong> met le texte entre <q>&nbsp;guillemets&nbsp;</q> (balise de type <em lang="en">inline</em>). Les guillemets avec <strong><code>&lt;q&gt;</code></strong> seront dépendants de langue du navigateur (balise <code>&lt;html&gt;</code>) et de l'attribut <strong><code>lang=""</code></strong>.</p><p hidden>Ne pas/plus utiliser la balise <s><code>&lt;meta http-equiv="content-language" content="fr-CA"&gt;</code></s>.</p><samp>Exemple&nbsp;: <q lang="en">Apple</q>.</samp> <samp>Autre exemple&nbsp;: <q lang="fr" cite="https://fr.wikipedia.org/wiki/Pomme">&nbsp;Pomme&nbsp;</q>.</samp>
+                    </li>
+                    <li>
+                        <p>La balise <strong><code>&lt;blockquote&gt;</code></strong> crée une marge (indentation automatique) et un retour de chariot (ou retour à la ligne, comme avec un <code>&lt;br&gt;</code>) automatique (balise de type <em lang="en">block</em>). Cette balise est souvent utilisée avec un paragraphe <code>&lt;p&gt;</code> imbriqué (voire plusieurs &sect; imbriqués).</p>
+                    </li>
+                </ul>
+
+                <h4>Exemples stylisés de citations&nbsp;: </h4>
+                <div>
+                <samp>Exemple de citation avec la fonte <em>"Great Vibes"</em>&nbsp;: </samp>
+                
+                <blockquote cite="http://www.mondomaine.com/voltaire.html" lang="fr"><q>&nbsp;L'art de la citation est l'art de ceux qui ne savent pas réfléchir par eux&#8209;mêmes.&nbsp;</q> &mdash;<span class="auteur">Voltaire</span>.</blockquote>
+                
+                <samp>Autre exemple de citation stylisée&nbsp;:</samp>
+                    <!-- paragraphe dans le blockquote -->
+                <blockquote lang="fr">
+                    <p>
+                        <!-- cite : pour la sémantique - met le texte en italique - balise “inline” -->
+                        <q>&nbsp;<span class="lettrine">L</span>es temps sont bien changés; la lumière luit de toutes parts.&nbsp;</q>
+                    </p>
+                    <p><span class="auteur">Voltaire</span> (<time datetime="1800" title="18ᵉ siècle" class="romain">XVIII</time><sup>e</sup> siècle).</p>
+                </blockquote>
+                <figure>
+                    <img src="images/voltaire.jpg" alt="Peinture de l'écrivain Voltaire" width="134" height="166" />
+                    <figcaption hidden>Peinture à l'huile de l'écrivain philosophe Voltaire de profil.</figcaption>
+                </figure>
+                </div>
+                <small>Note&nbsp;: l'utilisation de l'<strong>attribut</strong> <strong><code>cite=""</code></strong> permet de spécifier une adresse <abbr title="Uniform Resource Locator">URL</abbr> pour la source de la citation.</small>
+                
+            </dd><!-- Fin id="citations" -->
+
+
+            <!-- ********************** -->
+            <dt id="revision">Les marques de révision, exposants et indices</dt>
+            <dd>
+                <ul>
+                    <li>
+                        <!-- <del> remplace <s> et <strike> -->
+                        <p>Les marques de révision avec les éléments <strong><code>&lt;del&gt;</code></strong> et <strong><code>&lt;ins&gt;</code></strong></p>
+                        <samp>Exemple&nbsp;: &laquo;&nbsp;Ma couleur préférée est le <del datetime="2010-01-06T08:15:30-05:00" cite="http://www.mondoamine.com/explications.html" title="Les navigateurs vont &laquo;biffer&raquo; le texte encadré avec &laquo;del&raquo; (strikethrough deleted text) et souligner le texte inséré.">vert</del> <ins cite="http://www.mondoamine.com/recommandations.html">bleu</ins>.&nbsp;&raquo;
+                        </samp>  
+                    </li>
+                    <li>
+                        <!-- ☞ -->
+                        <p>Les indices et les exposants avec les éléments <strong><code>&lt;sup&gt;</code></strong> et <strong><code>&lt;sub&gt;</code></strong></p>
+                        <samp>Exemples variés&nbsp;: <span lang="fr" title="Mademoiselle">M<sup>lle</sup> Joséphine</span> &ndash; <var><abbr title="Énergie (joules)">E</abbr></var> = <var><abbr title="masse (kilogrammes)">m</abbr></var><var><abbr title="célérité (~3×10exp.8 m/s)">c</abbr></var><sup>2</sup> &ndash; Le 7<sup>e</sup> jour &ndash; <var>x</var><sup>2</sup>&nbsp;+&nbsp;<var>y</var><sup>2</sup> = 0 &ndash; Palette de couleurs&nbsp;: 2<sup>8</sup> <i>bits</i> = 256 couleurs &ndash; <abbr title="Hydrogène">H</abbr><sub>2</sub><abbr title="Oxygène">O</abbr>.
+                        </samp>
+                    </li>
+                    <li>
+                        <p>L'élément <strong><code>&lt;small&gt;</code></strong></p>
+                        <samp>Exemple&nbsp;: <small class="petit">Cette phrase de taille réduite est obtenue à l'aide de la balise <strong><code>&lt;small&gt;</code></strong>.</small></samp>
+                        <p><strong class="flamboyant">Attention&nbsp;:</strong> utilisation sémantique et non visuelle.</p>
+                        <p><small>Note&nbsp;: il est possible que d'autres règles de styles réduisent déjà la taille des caractères <code class="lang-css">font-size</code> de la balise <code>&lt;small&gt;</code>.</small></p>
+                    </li>
+                </ul>
+            </dd><!-- Fin id="revision" -->
+
+
+            <!-- ********************** -->
+            <dt id="entites">Les entités</dt>
+            <dd>
+                <p>Certaines références d'<strong>entités de caractères</strong> méritent une attention particulière car elles sont fréquemment utilisées pour masquer et remplacer certains caractères spéciaux.</p>
+
+                <h4>En voici quelques exemples&nbsp;:</h4>
+                <ul>
+                    <li><strong><code>&amp;lt;</code></strong> représente le caractère <strong>&lt;</strong> <em>(chevron gauche | <span class="lang-en" translate="no" lang="en">Lower Than</span> | <code>&amp;#60;</code>)</em></li>
+                    <li><strong><code>&amp;gt;</code></strong> représente le caractère <strong>&gt;</strong> <em>(chevron droit | <span class="lang-en" translate="no" lang="en">Greater Than, Antilambda</span> | <code>&amp;#62;</code>)</em></li>
+                    <li><strong><code>&amp;amp;</code></strong> représente le caractère <strong>&amp;</strong> <em>(esperluette | <span class="lang-en" translate="no" lang="en">Ampersand</span> | <code>&amp;#38;</code>)</em></li>
+                    <li><strong><code>&amp;aro;</code></strong> représente le caractère <strong>&#64;</strong> <em>(arobas, arrobase | <span class="lang-en" translate="no" lang="en">At Sign, Commercial A</span> | <code>&amp;#64;</code>)</em></li>
+                    <li><strong><code>&amp;quot;</code></strong> représente le caractère <strong>&quot;</strong> <em>(guillemet double | <span class="lang-en" translate="no" lang="en">Double Quote</span> | <code>&amp;#34;</code>)</em></li>
+                    <li><strong><code>&amp;apos;</code></strong> représente le caractère <strong>&#39;</strong> <em>(apostrophe, guillemet simple | <span class="lang-en" translate="no" lang="en">Single Quote</span> | <code>&amp;#39;</code>)</em></li><!-- (n'est pas une entité reconnue par les anciennes versions d'IE). -->
+                </ul>
+
+                <h4>Et une petite sélection pratique</h4>
+                <div>
+                    <table>
+                        <caption hidden>Liste de quelques symboles</caption>
+                        <thead>
+                            <tr>
+                                <th>👀</th>
+                                <th>Décimale</th>
+                                <th>hexadécimale</th>
+                                <th>Entité</th>
+                                <th>Nom (anglais)</th>
+                            </tr>
+                        </thead>
+                        <tbody lang="en">
+                            <tr>
+                                <td><code>&copy;</code></td>
+                                <td><code>&amp;#169;</code></td>
+                                <td><code>&amp;#xa9;</code></td>
+                                <td><code>&amp;copy;</code></td>
+                                <td><em>copyright</em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&frac12;</code></td>
+                                <td><code>&amp;#189;</code></td>
+                                <td><code>&amp;#xbd;</code></td>
+                                <td><code>&amp;frac12;</code></td>
+                                <td><em>fraction <code>&frac12;</code></em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&iquest;</code></td>
+                                <td><code>&amp;#191;</code></td>
+                                <td><code>&amp;#xbf;</code></td>
+                                <td><code>&amp;iquest;</code></td>
+                                <td><em>inverted question mark</em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&divide;</code></td>
+                                <td><code>&amp;#247;</code></td>
+                                <td><code>&amp;#xf7;</code></td>
+                                <td><code>&amp;divide;</code></td>
+                                <td><em>division</em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&sup1;</code></td>
+                                <td><code>&amp;#185;</code></td>
+                                <td><code>&amp;#xb9;</code></td>
+                                <td><code>&amp;sup1;</code></td>
+                                <td><em>superscript 1</em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&sup2;</code></td>
+                                <td><code>&amp;#178;</code></td>
+                                <td><code>&amp;#xb2;</code></td>
+                                <td><code>&amp;sup2;</code></td>
+                                <td><em>superscript 2</em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&sup3;</code></td>
+                                <td><code>&amp;#179;</code></td>
+                                <td><code>&amp;#xb3;</code></td>
+                                <td><code>&amp;sup3;</code></td>
+                                <td><em>superscript 3</em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&sect;</code></td>
+                                <td><code>&amp;#167;</code></td>
+                                <td><code>&amp;#xa7;</code></td>
+                                <td><code>&amp;sect;</code></td>
+                                <td><em>section</em></td>
+                            </tr>
+                            <tr>
+                                <td>|</td>
+                                <td><code>&amp;#124;</code></td>
+                                <td><code>&amp;#x7c;</code></td>
+                                <td>&amp;verbar;</td>
+                                <td><em>vertical bar (pipe)</em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&deg;</code></td>
+                                <td><code>&amp;#176;</code></td>
+                                <td><code>&amp;#xb0;</code></td>
+                                <td><code>&amp;deg;</code></td>
+                                <td><em>degree</em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&bull;</code></td>
+                                <td><code>&amp;#8226;</code></td>
+                                <td><code>&amp;#x2022;</code></td>
+                                <td><code>&amp;bull;</code></td>
+                                <td><em>bullet</em></td>
+                            </tr>                         
+                            <tr>
+                                <td><code>&#x2023;</code></td>
+                                <td><code>&amp;#8227;</code></td>
+                                <td><code>&amp;#x2023;</code></td>
+                                <td><code>-</code></td>
+                                <td><em>Triangular bullet</em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&middot;</code></td>
+                                <td><code>&amp;#183;</code></td>
+                                <td><code>&amp;#xb7;</code></td>
+                                <td><code>&amp;middot;</code></td>
+                                <td><em>middle dot</em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&laquo;</code></td>
+                                <td><code>&amp;#171;</code></td>
+                                <td><code>&amp;#xab;</code></td>
+                                <td><code>&amp;laquo;</code></td>
+                                <td><em>angle quotation mark (left)</em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&raquo;</code></td>
+                                <td><code>&amp;#187;</code></td>
+                                <td><code>&amp;#xbb;</code></td>
+                                <td><code>&amp;raquo;</code></td>
+                                <td><em>angle quotation mark (right)</em></td>
+                            </tr>                          
+                            <tr>
+                                <td><code>&#x2103;</code></td>
+                                <td><code>&amp;#8451;</code></td>
+                                <td><code>&amp;#x2103;</code></td>
+                                <td><code>-</code></td>
+                                <td><em>Degré Celsius ℃</em></td>
+                            </tr>                          
+                            <tr>
+                                <td><code>&#x2109;</code></td>
+                                <td><code>&amp;#8457;</code></td>
+                                <td><code>&amp;#x2109;</code></td>
+                                <td><code>-</code></td>
+                                <td><em>Degré Fahrenheit 	℉</em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&eacute;</code></td>
+                                <td><code>&amp;#233;</code></td>
+                                <td><code>&amp;#xe9;</code></td>
+                                <td><code>&amp;eacute;</code></td>
+                                <td><em>small e, acute accent&nbsp;</em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&egrave;</code></td>
+                                <td><code>&amp;#232;</code></td>
+                                <td><code>&amp;#xe8;</code></td>
+                                <td><code>&amp;egrave;</code></td>
+                                <td><em>small e, grave accent</em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&agrave;</code></td>
+                                <td><code>&amp;#224;</code></td>
+                                <td><code>&amp;#xe0;</code></td>
+                                <td><code>&amp;agrave;</code></td>
+                                <td><em>small a, grave accent</em></td>
+                            </tr>
+                            <tr>
+                                <td><code>&ugrave;</code></td>
+                                <td><code>&amp;#249;</code></td>
+                                <td><code>&amp;#xf9;</code></td>
+                                <td><code>&amp;ugrave;</code></td>
+                                <td><em>small u, grave accent</em></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                            <!-- &#8364; &#x20ac; &euro; - https://www.w3.org/International/questions/qa-escapes -->
+                            <td colspan="5"><p><strong><abbr title="Nota Bene">N.B.</abbr>&nbsp;:</strong> L'<abbr title="International Standard Organisation">ISO</abbr>&#8209;<span class="num-reference">8859-1</span> ne possède pas le symbole <em>Euro</em> (<strong>&euro;</strong>). Toujours utiliser l'<abbr title="Universal Character Set Transformation Format">UTF</abbr>&#x2011;<span class="num-reference">8</span>.</p></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div><!-- Fin du tableau -->
+
+                <p>Consultez également les codes des entités <abbr title="HyperText Markup Language">HTML</abbr> pour les caractères <strong><abbr title="American Standard Code for Information Interchange">ASCII</abbr></strong>, disponibles au <a href="https://www.w3schools.com/charsets/ref_html_ascii.asp" title="Références Ascii | W3Schools" target="_blank">w3schools.com</a>.</p>
+                
+                <p>Windows propose un utilitaire <strong>Table des caractères</strong> <em>(charmap.exe)</em>.</p>
+
+                <div>Quelques références que j'<span class="flambloyant">&hearts;</span> bien&nbsp;: <!-- C&oelig;ur &hearts; &#x2764; -->
+                    <ul>
+                        <!-- https://www.binaryhexconverter.com/decimal-to-hex-converter -->
+                        <li><a href="http://www.asciitable.com/" title="Tables ASCII | asciitable.com" target="_blank">asciitable.com</a></li>
+                        <li><a href="http://www.evotech.net/articles/testjsentities.html" title="Conversions d'entités" target="_blank">Convertisseur d'entités</a></li>
+                        <li><a href="https://dev.w3.org/html5/html-author/charref" title="Character Entity Reference Chart" target="_blank"><span class="lang-en" translate="no" lang="en">Character Entity Reference Chart</span></a></li>
+                        <li><a href="https://www.w3.org/TR/html5/syntax.html#named-character-references" title="Named character references (W3C)" target="_blank"><span class="lang-en" translate="no" lang="en">Named character references <abbr title="World Wide Web Consortium">(W3C)</abbr></span></a></li>
+                    </ul>
+                </div>
+
+            </dd><!-- Fin id="entites" -->
+
+
+            <!-- https://fr.wikipedia.org/wiki/Espace_(typographie)
+                W2C Internationalisation
+                Using character escapes in markup and CSS
+                https://www.w3.org/International/questions/qa-escapes
+
+                https://www.microsoft.com/typography/developers/fdsspec/spaces.aspx
+                https://www.cs.tut.fi/~jkorpela/chars/spaces.html
+
+                How can I use character escapes in markup and CSS, and when should I use or not use them?
+            -->
+            <dt id="espaces">Les espaces</dt>
+            <dd class="espaces">
+                <p>Il existe une grande variété de <strong>caractères d'espacement&nbsp;␠</strong>. Une espace ou espacement blanc <span class="lang-en" translate="no" lang="en">(white space)</span> sert le plus souvent de séparateur de mots. La plupart d'entre eux sont des éléments typographiques, qui sont utilisés dans certaines applications pour produire un effet particulier d'espacement visuel.</p> 
+
+                <h4>En <abbr title="HyperText Markup Language">HTML</abbr>, les caractères suivants sont définis comme <strong>caractères d'espacement</strong>&nbsp;:</h4>
+                <ul>
+                    <li><span lang="en" title="Definition&nbsp;: &quot;Depends on font, typically 1/4 em.&quot;">Espace</span>&nbsp;: <code>&amp;32;</code> ou <code>&amp;#x0020;</code> <samp>Exemple (visuel)&nbsp;: <span class="espace">&#x0020;</span></samp>
+                    </li>
+                    <li><span lang="en" title="Definition&nbsp;: &quot;Unicode: U+00A0.&quot;">Espace insécable <i translate="no" lang="en" title="Espace insécable">(Non breaking space)</i></span>&nbsp;: <code>&amp;#160;</code> ou <code>&amp;#xA0;</code> ou <code>&amp;nbsp;</code> <samp>Exemple (visuel)&nbsp;: <span class="espace">&nbsp;</span></samp>
+                    </li>
+                    <li><span lang="en" title="Definition&nbsp;: &quot;1/2 of the em space. 1024 units in a 2048 unit per em font.&quot;">Espace en</span>&nbsp;: <code>&amp;#8194;</code> ou <code>&amp;ensp;</code> <samp>Exemple (visuel)&nbsp;: <span class="espace">&ensp;</span></samp>
+                    </li>
+                    <li><span lang="en" title="Definition&nbsp;: &quot;Traditionally defined as a space character with an advance width value equal to the current point size.&quot;">Espace em</span> <a href="https://en.wikipedia.org/wiki/Em_(typography)" title="Em Typography | Définition Wikipedia" target="_blank">&#9784;</a>&nbsp;: <code>&amp;#8195;</code> ou <code>&amp;emsp;</code> <samp>Exemple (visuel)&nbsp;: <span class="espace">&emsp;</span></samp>
+                    </li>
+                    <li><span lang="en" title="Definition&nbsp;: &quot;equal to 1/3 of the em space. 683 units in a 2048 unit per em font.&quot;">Espace 3-per-em</span>&nbsp;: <code>&amp;#8196;</code> <samp>Exemple (visuel)&nbsp;: <span class="espace">&#8196;</span></samp>
+                    </li>
+                    <li><span lang="en" title="Definition&nbsp;: &quot;equal to 1/4 of the em space. 512 units in a 2048 unit per em font.&quot;">Espace 4-per-em</span>&nbsp;: <code>&amp;#8197;</code> <samp>Exemple (visuel)&nbsp;: <span class="espace">&#8197;</span></samp>
+                    </li>
+                    <li><span lang="en" title="Definition&nbsp;: &quot;equal to 1/6 of the em space. 341 units in a 2048 unit per em font.&quot;">Espace 6-per-em</span>&nbsp;: <code>&amp;#8198;</code> <samp>Exemple (visuel)&nbsp;: <span class="espace">&#8198;</span></samp>
+                    </li>
+                    <li><span translate="no" lang="en" title="Definition&nbsp;: &quot;Standard setting is equal to the advance width of the figures, or figure zero.&quot;">Espace figure</span>&nbsp;: <code>&amp;#8199;</code> <samp>Exemple (visuel)&nbsp;: <span class="espace">&#8199;</span></samp>
+                    </li>
+                    <li><span translate="no" lang="en" title="Definition&nbsp;: &quot;Standard setting is equal to the advance width of the period U+002e and comma U+002c.&quot;">Espace de ponctuation</span>&nbsp;: <code>&amp;#8200;</code> <samp>Exemple (visuel)&nbsp;: <span class="espace">&#8200;</span></samp>
+                    </li>
+                    <li><span translate="no" lang="en" title="Definition&nbsp;: &quot;Standard setting is 1/5 of the em space. 410 units in a 2048 unit per em font.&quot;">Espace fine <em translate="no" lang="en">(Thin space)</em></span>&nbsp;: <code>&amp;#8201;</code>  ou <code>&amp;thinsp;</code> <samp>Exemple (visuel)&nbsp;: <span class="espace">&#8201;</span></samp>
+                    </li>
+                    <li><span lang="en" title="Note&nbsp;: &quot;The thinnest space in a typeface. Recommended standard setting is 1/10..1/16 of the em.&quot;">Espace ultra-fine <em translate="no" lang="en">(Hair space)</em></span>&nbsp;: <code>&amp;#8202;</code> <samp>Exemple (visuel)&nbsp;: <span class="espace">&#8202;</span></samp>
+                    </li>
+                    <li><!-- Zero-width space--><span lang="en" title="Note&nbsp;: &quot;Nominally no width, but may expand.&quot;">Espace sans chasse (alternative à la balise</span> <a href="#wbr" title="Information sur la balise &lt;wbr&gt;"><code>&lt;wbr&gt;</code> cité ci-haut</a>)&nbsp;: <code>&amp;#8203;</code> ou <code>&amp;#x200B;</code> <samp>Exemple (visuel)&nbsp;: <span class="espace">&#x200B;</span></samp>
+                    </li>
+                    <li><span lang="en" title="Note&nbsp;: &quot;Horizontal Tab.&quot;">Tabulation &#8677;</span>&nbsp;: <code>&amp;#9;</code> ou <code>&amp;#x0009;</code> <samp>Exemple (visuel)&nbsp;: <span class="espace">&#x0009;</span></samp>
+                    </li>
+                    <li>Saut de page <em translate="no" lang="en">(Form Feed)</em>&nbsp;: <code>&amp;#12;</code> ou <code>&amp;#x000C;</code> <samp>Exemple (visuel)&nbsp;: <span class="espace">&#x000C;</span></samp>
+                    </li>
+                </ul>
+            </dd><!-- Fin id="espaces" -->
+
+
+            <!-- ********************** -->
+            <!-- 
+                https://fr.wikipedia.org/wiki/Tiret" title="Tirets | Définition Wikipédia 
+            -->
+            <dt id="cesures">Les césures, tirets, cadratins et signe moins</dt>
+            <dd>
+                <h5>Tirets, cadratin, demi-cadratin</h5>
+                <p><dfn>Le tiret est un signe de ponctuation. Il ne doit pas être confondu avec le trait d’union ni avec le signe moins. Il existe trois types de tirets, selon leur longueur&nbsp;: le tiret court, le tiret moyen et le tiret long (cadratin).</dfn> <dfn>En typographie, le cadratin est une unité de mesure de longueur des espaces.</dfn></p>
+
+                <h4>Description des principaux tirets&nbsp;:</h4>
+                <ul>
+                    <li>
+                        <!-- 
+                        Le Tiret cadratin &#151; ne valide pas au W3C car c'est une entité décimale (Error: A numeric character reference expanded to the C1 controls range.) - 0x80 to 0x9f (128 to 159).
+                        https://stackoverflow.com/questions/5379963/html5-a-numeric-character-reference-expanded-to-the-c1-controls-range-error-wh
+                        -->
+                        <p>Tiret cadratin&nbsp;: — &emsp;<span class="nevalidepas surligne-attention"><code>&amp;#151;</code> &#151;</span> &emsp;<code>&amp;#8212;</code> &#8212; &emsp;<code>&amp;#x2014;</code> &#x2014; &emsp;<code>&amp;mdash;</code> &mdash; &emsp;<em class="lang-en" translate="no" lang="en">(<a href="https://en.wikipedia.org/wiki/Em_(typography)" title="Em Typography" target="_blank">em</a> dash)</em></p>
+
+                        <p>Il sert, par exemple, pour indiquer un changement de locuteur dans les dialogues.</p>
+
+                        <samp>Exemple&nbsp;(sans guillemet)&nbsp;: <br>&mdash; Bonjour, Monsieur. <br>&mdash; Bonjour, Madame.</samp>
+
+                        <samp>Autre exemple&nbsp;(une note de bas de page)&nbsp;: 1. Tome <span class="romain">VIII</span>, p. 537. &mdash; 2. Ci-dessus, p.248.</samp>
+
+                        <samp>Autre exemple&nbsp;(citer une source)&nbsp;: <br> <q lang="fr">&nbsp;On ne voit bien qu'avec le cœur. L'essentiel est invisible pour les yeux. 👀&nbsp;</q> <br>&mdash; <span class="auteur">Antoine de Saint&#8209;Exupéry</span>.</samp>
+                        <!-- http://emojipedia.org/eyes/ : 👀 | Codepoints U+1F440 | œ &oelig; - Œ &OElig; -->
+                    </li>
+                    <li>
+                        <p>Tiret court (demi-cadratin)&nbsp;: – &emsp;<span class="nevalidepas surligne-attention"><code>&amp;#150;</code> &#150;</span> &emsp;<code>&amp;#8211;</code> &#8211; &emsp;<code>&amp;#x2013;</code> &#x2013; &emsp;<code>&amp;ndash;</code> &ndash; &emsp;<em class="lang-en" translate="no" lang="en">(<a href="https://en.wikipedia.org/wiki/En_(typography)" title="En Typography" target="_blank">en</a> dash)</em></p>
+
+                        <samp>Exemple&nbsp;(avec guillemets)&nbsp;: <br>&laquo;&nbsp;Bonjour, Monsieur. <br>&ndash; Bonjour, Madame.&nbsp;&raquo;</samp> <samp>Autre exemple&nbsp;: La région <a href="https://fr.wikipedia.org/wiki/Saguenay%E2%80%93Lac-Saint-Jean" title="Saguenay–Lac-Saint-Jean" target="_blank">Saguenay&ndash;Lac&#8209;Saint&#8209;Jean</a> se situe au nord du Québec.</samp>
+
+                        <samp>Autre exemple&nbsp;(encadrer des éléments &ndash; incise)&nbsp;: <q>&nbsp;Cette personne &ndash;&nbsp;charmante par ailleurs&nbsp;&ndash; a toute mon estime.&nbsp;</q></samp> <samp>Autre exemple&nbsp;(séparer les éléments d'une liste)&nbsp;: Rouge &ndash; Vert &ndash; Bleu.</samp>
+                    </li>
+                    <li>
+                        <p>Trait d'union (ou signe moins) : - &emsp;<code>&amp;#45;</code> &#45; &emsp;<code>&amp;#x2d;</code> &#x2d; &emsp;<span class="lang-en" translate="no" lang="en">(Hyphen-minus)</span></p>
+
+                        <p>Ce symbole est principalement utilisé comme <strong>signe moins</strong>, comme séparateur de chiffre, tiret d’intervalle, pour la césure d’un mot en deux (sans espace) en fin de ligne, et comme &laquo;&nbsp;trait d’union&nbsp;&raquo;.<samp>Exemple&nbsp;(mot composé)&nbsp;: &laquo;&nbsp;tire&#x2d;bouchon&nbsp;&raquo;.</samp><samp>Autres exemples&nbsp;(segmenter des intervalles, des périodes)&nbsp;: pages 12&#x2d;54 <!-- &mdash;&mdash;&mdash; --> ——— (1939&#x2d;1945) ——— 01&#x2d;08&#x2d;2006.</samp></p>
+                    </li>
+                </ul>
+
+                <h4>En <abbr title="HyperText Markup Language">HTML</abbr>, il existe deux types de tiret&nbsp;:</h4>
+                <ul>
+                    <li>le tiret, trait d'union <strong>insécable</strong> <span class="lang-en" translate="no" lang="en">(plein hyphen)</span>&nbsp;: &#x2d; &emsp;<code>&amp;#8209;</code> &#8209; &emsp;<code>&amp;#x2011;</code> &#x2011; &emsp;<code>&amp;#x2d;</code> &#x2d; &emsp;(<a href="#kbd" title="Information sur la balise &lt;kbd&gt;">cf. balise &lt;kbd&gt; ci-haut</a>)</li>
+                    <li>le tiret conditionnel <strong>sécable</strong> <span class="lang-en" translate="no" lang="en">(soft hyphen)</span>&nbsp;: &emsp;<code>&amp;shy;</code> &shy; &emsp;<code>&amp;#0173;</code> &#0173; &emsp;<code>&amp;#x00ad;</code> &#x00ad;</li><!-- &#xAD; -->
+                </ul>
+
+                <p hidden>Les agents utilisateurs qui gèrent les tirets conditionnels doivent observer les règles sémantiques suivantes&nbsp;: si le texte se coupe sur un tiret conditionnel, le tiret doit être affiché à la fin de la ligne coupée et si le texte ne se coupe pas sur un tiret conditionnel, alors le tiret ne doit pas s'afficher du tout. En outre, le tiret conditionnel doit être ignoré lors des opérations de recherche et de tri.</p>
+
+                <samp class="long-mot">Exemple avec un tiret conditionnel (sécable, césure avec <em lang="en">shy</em>)&nbsp;: Voici un exemple de phrase qui utilise l'entité <em lang="en">shy</em> afin de démontrer commentutiliser&#173;Shy&shy;afindebiencouper&shy;untrestrestreslongmot.</samp> <samp>Autre exemple avec un tiret conditionnel (sécable, césure avec <em lang="en">shy</em>)&nbsp;: anti&shy;cons&shy;ti&shy;tu&shy;tion&shy;nel&shy;le&shy;ment.</samp>
+
+            </dd><!-- Fin id="cesures" -->
+
+
+            <!-- ********************** -->
+            <dt id="preformates">Les éléments préformatés avec la balise <code>&lt;pre&gt;</code></dt>
+            <dd class="preformates">
+                <pre class="lang-basic"><samp>Exemple avec la balise <strong><code>&lt;code&gt;</code></strong> (Le rendu visuel est &ne; selon les navigateurs)
+                <code>            
+                for i = 1 to 10
+                    print i
+                next i</code>
+                </samp></pre>
+
+                <pre class="lang-basic"><samp>Exemple sans la balise <strong><code>&lt;code&gt;</code></strong><br>
+                                
+                for i = 1 to 10
+                    print i
+                next i
+                </samp></pre>
+                <pre class="ascii-art"><samp>Exemple d'art <abbr title="American Standard Code for Information Interchange">ASCII</abbr>
+                
+                 \\\||||||////
+                  \\  ~ ~  //
+                   (  @ @  )
+          ______ oOOo-(_)-oOOo___________
+          .......
+          .......
+          .......
+          _____________Oooo._____________
+             .oooO     (   )
+              (   )     ) /
+               \ (     (_/
+                \_)
+                <small>Source&nbsp;: <a href="http://fr.wikipedia.org/wiki/ASCII_Art" title="ASCII Art." target="_blank">http://fr.wikipedia.org/wiki/ASCII_Art</a></small></samp></pre>
+
+                <pre class="ascii-art"><samp>Autres exemples d'art <abbr title="American Standard Code for Information Interchange">ASCII</abbr>
+               
+                .( * .
+               .*  .  ) .
+             . . BOOM .* .
+              '* . (  .) '
+               ` ( . *
+
+              +------+.
+              |`.    | `.
+              |  `+--+---+
+              |   |  |   |
+              +---+--+   |
+               `. |   `. |
+                 `+------+
+                </samp></pre>
+                
+                <samp role="img">Le poisson de <span class="auteur">Joan <abbr title="George">G.</abbr> Stark</span></samp><!-- Accessible... -->
+                <figure aria-labelledby="fish-caption" class="poisson"><pre>
+         o           .'`/
+             '      /  (
+           O    .-'` ` `'-._      .')
+              _/ (o)        '.  .' /
+              )       )))     &gt;&lt;  &lt;
+              `\  |_\      _.'  '. \
+                '-._  _ .-'       '.)
+            jgs     `\__\            
+                </pre>
+                <figcaption id="fish-caption">
+                    <span class="auteur">Joan <abbr title="George">G.</abbr> Stark</span>, &quot;<cite>fish</cite>&quot;. <time lang="en" datetime="1997-10">October 1997</time>. <abbr title="American Standard Code for Information Interchange">ASCII</abbr> on electrons. 28×8.
+                </figcaption>
+                </figure>
+            <small>Source&nbsp;: <a href="https://developers.whatwg.org/content-models.html" title="Poisson en ASCII Art." target="_blank">https://developers.whatwg.org/content-models.html</a>
+            </small>
+
+            <div class="preformate"><samp>Exemple avec l'équivalent CSS (<code>white-space: pre;</code>)&nbsp;:
+              +------+.
+              |`.    | `.
+              |  `+--+---+
+              |   |  |   |
+              +---+--+   |
+               `. |   `. |
+                 `+------+
+            </samp></div>
+            </dd><!-- Fin id="preformates" -->
+
+
+            <!-- ********************** -->
+            <!-- @TODO : à améliorer (version Desktop) fa fa-address-card -->
+            <dt id="adresse">Adresse sémantique</dt>
+            <dd>
+                <h5><i class="fa fa-address-card fa-2x"></i>&nbsp;&mdash;Adresse postale</h5>
+                <samp>Exemple&nbsp;:</samp>
+                <address>
+                    <p class="nom-destinataire" role="contentinfo">
+                        <br>
+                        <a class="url-destinataire" href="mailto:claude.lachance@exemple.org" title="Adresse courriel du destinataire" target="_self"><abbr title="Docteur">D<sup>r</sup></abbr>&nbsp;Claude Lachance</a>
+                    </p>
+                    <p class="adresse-destinataire">
+                        <span class="rue"><span class="numero-rue">3</span>, rue des framboisiers</span><br>
+                        <span class="ville">Québec</span>, <span class="province">Québec</span><br>
+                        <span class="code-postal">T5R 3C6</span><br>
+                        <span class="nom-pays">Canada</span>
+                    </p>
+                    <!-- Version Desktop ℡ : &#8481; -->
+                    <p class="tel-destinataire"><span>&#8481;&nbsp;: </span>+1 (418) 654-2310</p>
+                </address>
+                
+                <!-- http://microformats.org/wiki/hcard-fr -->
+                <samp>Autre exemple (en anglais)&nbsp;:</samp>
+                <address class="lang-en" translate="no" lang="en"><br>
+                    <div class="vcard" role="contentinfo" >
+                        <a class="fn org url" href="http://www.commerce.net/">CommerceNet</a>
+                        <div class="adr">
+                            <span class="type">Work</span>&nbsp;:
+                            <div class="street-address">169 University Avenue</div>
+                            <span class="locality">Palo Alto</span>,  
+                            <abbr class="region" title="California">CA</abbr>&nbsp;
+                            <span class="postal-code">94301</span>
+                            <div class="country-name"><abbr title="United State of America">USA</abbr></div>
+                        </div>
+                        <div class="tel">
+                            <span class="type">&phone; Work&nbsp;:</span> <a class="tel" href="tel:+6502894040" title="Tel">+1-650-289-4040</a>
+                        </div>
+                        <div class="tel">
+                            <span class="type">Fax&nbsp;:</span> +1-650-289-4041
+                        </div>
+                        <div>Email&nbsp;: <a class="email" href="mailto:info@commerce.net" title="Email" target="_self">info@commerce.net</a>
+                        </div>
+                        <br>
+                    </div>
+                </address>
+            </dd><!-- Fin id="adresse" -->
+
+
+            <!-- ********************** -->
+            <!--  Warning : 
+            bdi element is not supported in all browsers. Please be sure to test, and consider using a polyfill.
+            
+            https://www.w3.org/TR/2014/REC-html5-20141028/text-level-semantics.html#the-bdi-element
+            https://www.w3.org/TR/2011/WD-html5-20110525/elements.html
+            
+            Attention CSS : direction: ltr; https://www.w3.org/TR/html5/dom.html#the-lang-and-xml:lang-attributes
+                            أرمينيا جميلة
+                                
+            https://fr.wikipedia.org/wiki/Kufi
+            Le kufi (en arabe : كوفي, on trouve aussi les graphies koufi, coufique ou koufique) est un style de calligraphie arabe...
+
+            https://fr.wikipedia.org/wiki/Marque_gauche-%C3%A0-droite | &rlm;
+            -->
+            <dt id="direction">Direction du texte avec les balises <code>&lt;<abbr title="bidirectional override" lang="en">bdo</abbr>&gt;</code> et <code>&lt;<abbr title="bidirectional isolation" lang="en">bdi</abbr>&gt;</code></dt>
+            <dd>
+                <h5>Balise utilisée pour une langue étrangère qui se lit de droite à gauche ou un palindrome.</h5>
+                <samp>Exemple (bdo)&nbsp;: <bdo dir="rtl">« Engage le jeu que je le gagne »</bdo>.</samp><samp>Autre exemple (bdo)&nbsp;: <bdo dir="rtl">Laval</bdo>.</samp><samp>Exemple (bdi)&nbsp;: l'utilisateur <bdi>إيان</bdi> a gagné 90 points.</samp> <samp>Autre exemple&nbsp;: le mot café s'écrit <i lang="ar" title="qahwah"><bdi>قهوة</bdi></i> en Arabe.</samp>
+                <small>Note&nbsp;: <strong><code>&lt;<abbr title="bidirectional isolation" lang="en">bdi</abbr>&gt;</code></strong> est un nouvel élément <abbr title="HyperText Markup Language 5">HTML5</abbr>, et n'est pas supporté par <span class="surligne-attention"><abbr title="Microsoft Internet Explorer">IE</abbr>/Edge</span>.</small>
+            </dd><!-- Fin id="direction" -->
+
+
+            <!-- ********************** -->
+            <dt id="surmesure">Balises  à utiliser dans un contexte sémantique approprié</dt>
+            <dd>
+                <h5>Réfléchir au contexte sémantique et éviter les abus.</h5>
+                <samp>Exemples&nbsp;: <strong><code>&lt;small&gt; &lt;hr&gt; &lt;br&gt; &lt;h5&gt; &lt;h6&gt; &lt;span&gt;</code></strong>.</samp>
+                <small>Référence&nbsp;: <a href="https://www.w3schools.com/tags/ref_byfunc.asp" lang="en" title="HTML Tags Ordered by Category | W3Schools" target="_blank">HTML Tags Ordered by Category (W3Schools)</a>.</small>
+            </dd><!-- Fin id="surmesure" -->
+        </dl>
+    </section>
+</main>
+
+
+<!--  FOOTER  -->
+<footer>
+	<br><p><span class="note" title="Tous droits réservés.">&#169;</span><span class="auteur-site"></span> <i class="classification" title="№ de référence du cours.">(582-AGS-LI)</i> | <time datetime="2018">2018</time>. <a href="#top" title="Retour en haut" role="button">HAUT&nbsp;&#9650;</a></p>
+</footer>
+
+</body>
+</html>

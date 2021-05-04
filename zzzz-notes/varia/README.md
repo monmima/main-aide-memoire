@@ -1,4 +1,4 @@
-# Other Useful Stuff
+# Varia
 
 ## No FTP Access: The Next Best Thing
 
@@ -10,7 +10,7 @@ Thanks to YB for this tip.
 
 To rescan a site that has WPML on it, go to your dashboard, and find Localisation du thème et des plugins under WPML. Then do this:
 
-![Rescannign WPML content](/img/rescan.png)
+![Rescannign WPML content](./img/rescan.png)
 
 ## Creating A Sticky Menu With Elementor
 

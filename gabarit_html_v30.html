@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mon document HTML</title>
+
+    <!--BIBLIOTHEQUES CSS POUR BOOTSTRAP-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+    <style>
+        /*HIÉRARCHIE*/
+        a:link, a:visited, a:active {
+            color: black;
+        }
+        a:focus, a:hover {
+            color: red;
+        }
+        button {
+            min-height: 44px;
+            min-width: 44px;
+        }
+        /*CLASSES*/
+        /*- Rendre les images "responsives":*/
+        /*
+        img.photo {
+            height: auto;
+            max-width: 500px; 
+            width: 100%;
+        }
+        */
+        /*MEDIA QUERIES*/
+        @media screen and (max-width: 759px) {
+            body {
+                font-size: 0.8em;         
+            }
+        }
+        @media screen and (min-width: 760px) and (max-width: 960px) {
+            body {
+                font-size: 1.1em;
+            }
+        }
+        @media screen and (min-width: 961px) and (max-width: 1100px) {
+            body {
+                font-size: 1.2em;
+            }
+        }
+        @media screen and (min-width: 1100px) {
+            body {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!--DÉBUT HEADER-->
+    <header>
+        <h1>Classmarker</h1>
+    </header>
+    <!--FIN HEADER-->
+
+    <!--DÉBUT MAIN-->
+    <main>
+        <h3>Martin</h3>
+        <p>H...v...1</p>
+        <p>groupe@pmi5</p>
+        <hr>
+        <h3>Xavier</h3>
+        <p>h...v... (sans espace)</p>
+        <p>7rmqqvda</p>
+    </main>
+    <!--FIN MAIN-->
+
+    <!--DÉBUT FOOTER-->
+    <footer>
+        <p><small><time datetime="2020-02-29">20 février 2019</time></small></p>
+    </footer>
+    <!--FIN FOOTER-->
+
+    <!--BIBLIOTHEQUES POUR BOOTSTRAP-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!--FONT AWESOME-->
+
+
+    <script>
+        // FONCTIONS UTILITAIRES
+        //// Idéalement créer ma propre fonction $ si je n'utilise pas jQuery:
+    
+        /*
+        function $(el) {
+            return document.querySelector(el);
+        }
+        */
+    
+        // GESTIONNAIRES D'ÉVÉNEMENTS
+        //// Utiliser de préférence une boucle pour gérer les événements de façon dynamique:
+    
+        // GESTIONNAIRES D'ÉVÉNEMENT FORMULAIRE
+
+        /*
+        document.querySelector("#form-spam").addEventListener("click", function(event){
+            event.preventDefault()
+        });
+        */
+
+        // GESTIONNAIRES D'ÉVÉNEMENTS BOUTONS
+        /*
+        const boutons = document.querySelectorAll(".zone-boutons > div");
+    
+        function gereEvenements() {
+            for (let i = 0; i < boutons.length; i += 1) {
+                boutons[i].addEventListener("click", function(e) {
+                    divertissementMedia(this.id);
+                });
+            }
+        }
+        
+        gereEvenements();
+        */
+
+        ////// AJAX JQUERY
+        ////// BIEN SÛR, IL FAUT CHARGER JQUERY SI ON VEUT UTILISER CE CODE //////
+
+        /// SI ÇA NE MARCHE PAS
+        /// UTILISER CHROME
+        /// UTILISER LE LIVE SERVER
+        /// UTILISER LE FICHIER EN LOCAL POUR TESTER S'IL NE SE CHARGE PAS
+        /// FIREFOX DONNE QUELQUES MESSAGES D'ERREUR QUE CHROME NE DONNE PAS
+
+        /// ATTENTION, LES FICHIERS JSON EN LOCAL CRÉENT DES BOGUES (DE TYPE CROSSORIGIN, JE CROIS)
+        /// POUR RÉGLER CES BOGUES, IL FAUT LANCER UN "LIVE SERVER"
+        
+
+        $(document).ready(function() {
+
+            // application/json; charset=utf-8
+
+            $.ajax({
+                "type": "GET",
+                "url": "http://api.openweathermap.org/data/2.5/weather?id=6325494&units=metric&APPID=0c98af945c8169d1e0fb538cd4ff153f",
+                // "url": "https://api.randomuser.me/",
+                "crossDomain": true,
+                "dataType": "json"
+            })
+
+            // POUR RENSEIGNER SUR LA NATURE DE LA RÉPONSE DU SERVEUR
+            .done(function(data, textStatus, jqXHR) {
+                // console.dir(data);
+
+                /// DÉBUT "url": "http://api.openweathermap.org/data/2.5/weather?id=6325494&units=metric&APPID=0c98af945c8169d1e0fb538cd4ff153f",
+                // let maChaine = `Vous êtes à ${data.name}. La cité du froid. Il fait actuellement ${data.main.temp}`;
+                console.log(data.name);
+                console.log(data.main.temp);
+                console.log(data.main.humidity);
+                console.log(data.weather[0].main);
+                console.log(data.weather[0].description);
+                console.log(data.wind.speed);
+                console.log(data.weather[0].icon);
+                /// FIN "url": "http://api.openweathermap.org/data/2.5/weather?id=6325494&units=metric&APPID=0c98af945c8169d1e0fb538cd4ff153f",
+
+                /// DÉBUT "url": "https://api.randomuser.me/",
+                // console.log("===");
+                // console.log(`${data.results[0].name.first}`);
+                // console.log(`${data.results[0].name.last}`);
+                // console.log(`${data.results[0].gender}`);
+                // console.log(`${data.results[0].location.street.number} ${data.results[0].location.street.name}`);
+                // console.log(`${data.results[0].email}`);
+                // console.log(`${data.results[0].login.username}`);
+                // console.log(`${data.results[0].picture.large}`);
+                // console.log("===");
+                /// FIN "url": "https://api.randomuser.me/",
+
+                console.log(`TextStatus : ${textStatus} Data : ${data}`);
+
+                // POUR TOUT IMPRIMER DANS DES BALISES AVEC UNE BOUCLE
+                // let items = [];
+                // for(prop in data) {
+                //     let valeur = data[prop];
+                //     let message = `<div id="${prop}">${valeur}</div>`;
+                //     items.push(message);
+                //     //document.querySelector("#bloc-affichage").innerHTML += message;
+                //     console.log(message);
+                // }
+                // TRAITEMENT DES DONNÉES
+            })
+
+            //TEXTSTATUS RENSEIGNE SUR LA NATURE DE LA RÉPONSE DU SERVEUR
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                console.log("errorThrown");
+            })
+
+            .always(function(jqXHR, textStatus) {
+                console.log("Fin de l'exécution.");
+            });
+        });
+
+        // AJAX en JS de base
+        /* 
+        function extraireToutesLesInfosDunTableauDobjets() {
+            document.querySelector("#affichage").innerHTML += `<br>===`;
+
+            for (employe of mesEmployesJSON) {
+                    console.log(mesEmployesJSON[i]);
+
+                    for (prop in employe) {
+                        var valeur = employe[prop];
+                        console.log(valeur);
+                        document.querySelector("#affichage").innerHTML += `<br>${valeur}`;
+                    }
+                    document.querySelector("#affichage").innerHTML += `<br>===`;
+            }
+        };
+
+        extraireToutesLesInfosDunTableauDobjets();
+        */
+
+        ///
+
+    </script>
+    <!--
+        AIDE-MÉMOIRE
+
+        HTML
+        - Utiliser rel="noopener noreferrer" pour une meilleur sécurité/confidentialité
+        - Mettre la date à jour dans le pied de page
+        - Utiliser, au besoin, l'attribut "lang" dans le <body> (par exemple: <q lang="en">this is english</q>)
+        - Vérifier la langue du document (<html lang="fr">)
+        - Modifier contenu balise <title>
+        - Écrire les raisons sociales dans <strong> ou <em> ou <strong> si c'est celle d'un tiers.
+        - Donner une couleur d'arrière-plan aux images au cas où elles se chargeraient mal. P. ex.: "background: {{c1::#...}} url("images/paris-1150x435.jpg");".
+        - Placer les liens vers fontes, polices, CDN, etc. APRÈS <title>
+        - Travailler avec margin/padding de préférence à width
+        - Employer "cursor: default" pour avoir la flèche de base
+        - Utiliser "cursor: default" dans "class="active"
+        - Remplacer <strike> par <del>
+        - Ajouter user-scalable=no à la balise <meta> (<meta name="viewport" content="width =device-width, initial-scale=1, user-scalable=no">)
+        - Éviter les positions absolues et relatives
+        - Gérer les polices de caractère et mesures des éléments à l’aide de l’unité em/rem, ou pourcentage, selon le besoin ;
+        - Liens fictifs: "javascript:;" de préférence à "#" (dans Bootstrap en particulier)
+        - Vérifier la présence de l'attribut "title" pour chaque "<a"
+        - Entourer les noms d'oeuvres, de jeux vidéo, etc. de <cite>
+        - Utiliser au besoin pour avoir une image de fond d'écran fixe:
+            body {
+                background: url(../img/chicago-illinois-1300x1080.jpg) no-repeat left bottom fixed;
+                background-color: azure; /*couleur si l'image se charge mal*/
+                background-size: cover;
+            }
+
+        CSS
+        - Mettre règles CSS en ordre
+        - Changer "width" pour "flex-basis" dans la mesure du possible
+        - Employer la casse kebab en CSS
+        - @media all and (orientation: portrait) = mauvais
+        cursor: {{c1::default}}; = flèche de base; À utiliser pour class="{{c2::active}}"
+        100{{c1::vh}} = 100 % de la hauteur d'affichage
+        - utiliser les media queries (voir ci-dessus)
+
+        JS
+        - Avec target="_blank" employer aussi rel="noopener noreferrer" pour plus de sécurité/amélioration de la vie privée
+        - Déclarer chaque variable avec "let" ou "const"
+        - Utiliser les majuscules pour les variables déclarées avec const
+        - Remplacer "var" par "let" ou "const" en JS
+        - Utiliser, au pis-aller, une boucle for normale pour les tableaux
+        - Passer par les paramètres pour faire entrer une variable dans une fonction autant que possible
+        - Utiliser "for in" pour les objets ({}) et "for of" pour les arrays/tableaux ([])
+        - Éviter les parenthèses dans une fonction découplée
+        - Utiliser de préférence une boucle pour gérer les événements de façon dynamique:
+        - Employer la casse camelCase en JS
+        - Découpler les fonctions autant que possible
+        - Déclarer les compteurs des boucles avec let
+
+        FORMULAIRES
+        - Ajouter une balise <form>
+        - Ajouter aux formulaire:
+            - attributs method + action
+            - attributs name + id
+            - Exemple: <form action="javascript:;" method="get" name="form-sondage-peinture" id="form-sondage-peinture">
+        - Au besoin, employer la balise <p> pour les éléments de formulaire
+        - Employer l'attribut autofocus pour choisir une section par défaut
+        - Employer "min" et "max" au besoin (<input type="number" min="15" max="20">)
+        - Éviter la balise <form> dans la balise <form>
+        - Utiliser datetime-local et non datetime dans les calendriers
+
+        NOTES
+        - On peut indiquer directement dans <img> ou <canvas> les attributs "height" et "width".
+        - Taille minimale des boutons: 44px sur 44px (question d'ergonomie).
+
+        ANIMATE
+        - Déclarer les variables avec "var"
+        - Écrire "var self (voire "scene") = this;". Sinon, une fois à l'intérieur des fonctions, Animate ne reconnaîtra plus le "this" Pourquoi? PCQ "this" ne peut faire référence qu'au bloc de la fonction.
+        - Écrire "self.jouerRond_mc.goToAndPlay("r{{c1::ond}}")" de préférence à "self.jouerRond_mc.goToAndPlay("0")"
+        - La seconde couche (layer) doit être celui des labels/étiquettes
+
+        RGRAPH
+        - new RGraph.SVG.Pie({ = mauvais / const maPie = new RGraph.SVG.Pie({ = bon
+
+        LOGIGRAMMES
+        - Indiquer le début par "Début" (ou rond vide) et fin par "Fin" (ou rond plein)
+        - même niveau hiérarchiquement = même niveau dans le logigramme
+
+        SCHÉMAS HEURISTIQUES
+        - Se lisent dans le sens horaire
+        - En commençant à une heure
+        - 7 + ou - 2 branches selon Xavier, mais pas selon Martin
+        - Avec numérotation dès que c'est possible
+
+        COURS DE KARL
+        - Raccords: 
+            - Champ/contre-champ
+            - Raccord de mouvement (comme Draco qui lève des poids)
+            - Raccord de regard
+            - Sortie de champ
+
+        ARCHITECTURE DE L'INFO DE MARTIN
+        - pages externes = p{{c1::ointillés}}
+        - architecture de l'info = avec des numéros placés dans des c{{c2::ercle}}s pour représenter pages présentes dans squelette annoté
+
+        QUESTIONS POTENTIELLES À L'EXAM
+        - indexOf = chaîne de caractères / search = RegExp
+        - http://www.css3create.com/Animation-effet-bounce-en-CSS
+        - le .woff2 est choisi en priorité sur .woff par le système, car il est mieux compressé
+        - 2012 = année charnière; plus d'achats de mobiles que d'ordinateurs portables/PC
+        - objet pur =  nom: "Golf" / objet JSON = "nom": "Golf"
+        - DIP iPhone 3 = 163 = 1 dp; / DIP iPhone 4 = 326 = 2 dp;
+        - $hauteur: $largeur = l{{c1::argeur}} est la taille par défaut si aucune dimension par défaut n'est fournie
+
+        FINALEMENT
+        - Valider le contenu du document sur W3C: https://validator.w3.org/
+        - Relire l'énoncé
+    -->
+</body>
+</html>

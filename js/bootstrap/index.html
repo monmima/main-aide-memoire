@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Composants Bootstrap</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Modak&display=swap" rel="stylesheet"> 
+    <style>
+        /*HIÉRARCHIE*/
+        button {
+            min-height: 44px;
+            min-width: 44px;
+        }
+        body {
+            /*J'ai trouvé ça sur Internet. Voir lien ci-dessous.*/
+            counter-reset: h2; /* Set a counter named 'h2', and its initial value is 0. */
+            font-family: Roboto, sans-serif;
+        }
+        h1 {
+            font-family: Modak, sans-serif;
+        }
+        h1, h2 {
+            padding: 10px;
+            text-align: center;
+        }
+        /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Lists_and_Counters/Using_CSS_counters*/
+        h2::before {
+            counter-increment: h2;
+            content: "Composant\00a0" counter(h2) "\00a0: ";
+        }
+        q::before {
+            content: "\00ab\00a0";
+        }
+        q::after {
+            content: "\00a0\00bb";
+        }
+        tr:nth-child(even) {
+            background-color: #22aad3;
+        }
+        /*CLASSES*/
+        .gradient {
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ebf1f6+0,abd3ee+50,89c3eb+51,d5ebfb+100;Blue+Gloss+%234 */
+            background: rgb(235,241,246); /* Old browsers */
+            background: -moz-linear-gradient(top,  rgba(235,241,246,1) 0%, rgba(171,211,238,1) 50%, rgba(137,195,235,1) 51%, rgba(213,235,251,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  rgba(235,241,246,1) 0%,rgba(171,211,238,1) 50%,rgba(137,195,235,1) 51%,rgba(213,235,251,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  rgba(235,241,246,1) 0%,rgba(171,211,238,1) 50%,rgba(137,195,235,1) 51%,rgba(213,235,251,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f6', endColorstr='#d5ebfb',GradientType=0 ); /* IE6-9 */
+        }
+        .romain {
+            font-variant: small-caps;
+        }
+        .responsive img {
+            border: 3px solid #22aad3;
+            margin-bottom: 1em;
+            width: 100%;
+        }
+        .six-rem {
+            width: 6rem;
+        }
+        .width-60 {
+            width: 60px;
+        }
+        .width-400 {
+            width: 400px;
+        }
+        /*LIENS*/
+        a:link, a:visited, a:active {
+            color: black;
+        }
+        a:focus, a:hover {
+            color: red;
+        }
+        /*MEDIA QUERIES*/
+        @media screen and (max-width: 759px) {
+            body {
+                font-size: 0.8em;         
+            }
+        }
+        @media screen and (min-width: 760px) and (max-width: 960px) {
+            body {
+                font-size: 1.1em;
+            }
+        }
+        @media screen and (min-width: 961px) and (max-width: 1100px) {
+            body {
+                font-size: 1.2em;
+            }
+        }
+        @media screen and (min-width: 1100px) {
+            body {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body class="container">
+    <main class="bg-light">
+
+    <!--CE HEADER EST UN HEADER-->
+    <header class="container">
+            <!--https://getbootstrap.com/docs/4.0/components/navbar/-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="javascript:;" title="Recharger la page d'accueil">
+                    <h1 class="text-dark bg-secondary">Bootstrap</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:;" title="Accueil">Accueil</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link active-override" href="javascript:;" title="Boutique">Boutique <span class="sr-only">(page actuelle)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:;" title="Mission">Mission</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:;" title="Contact">Contact</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+        </header>
+
+        <!--1. Un paragraphe texte très sémantique et un exemple d'adresse-->
+        <section class="p-5">
+            <h2>Paragraphe texte très sémantique et adresse</h2>
+            <blockquote>
+                <!--initialement publié en feuilleton dans le journal Le Siècle de mars à juillet 1844 (Wikipédia), l'expression "il y a un an" revient donc à dire "en 1843"-->
+                <p>Il y a <time datetime="1843">un an</time> à peu près, qu'en faisant à la <abbr title="Bibliothèque nationale de France">Bibliothèque royale</abbr> des recherches pour mon histoire de Louis&nbsp;<span class="romain"><abbr title="14">XIV</abbr></span>, je tombai par hasard sur les <cite>Mémoires de <abbr title="monsieur">M.</abbr>&nbsp;<abbr title="Charles de Batz de Castelmore, dit d'Artagnan">d'Artagnan</abbr></cite>, imprimés -- comme la plus grande partie des ouvrages de cette époque, où les auteurs tenaient à dire la vérité sans aller faire un tour plus ou moins long à la Bastille -- à Amsterdam, chez Pierre Rouge. Le titre me séduisit&nbsp;: je les emportai chez moi, avec la permission de <abbr title="monsieur">M.</abbr>&nbsp;le conservateur bien entendu, je les dévorai.</p>
+            </blockquote>
+            <address>
+                <!--LES CLASSES CI-DESSOUS SONT SÉMANTIQUES ET NE CHANGENT RIEN AU VISUEL-->
+                <div class="destinataire"><strong>Bibliothèque nationale de France</strong></div>
+                <div class="numero-et-nom-de-rue">11 quai François-Mauriac</div>
+                <div><span class="code-postal">75013</span> <span class="nom-de-la-ville">PARIS</span></div>
+                <div class="nom-du-pays">FRANCE</div>
+            </address>
+        </section>
+
+        <!--2. Une grille multicomportement (col-4 col-sm-3 col-md-2)-->
+        <section class="p-5">
+            <h2>Grille multicomportement</h2>
+            <div class="starter-template bg-dark text-light">
+                <div class="row bg-dark p-3 m-4 responsive">
+                    <div class="col-4 col-sm-3 col-md-2"><img class="p-1" src="img/tigre_1.jpg" alt="Tigre"></div>
+                    <div class="col-4 col-sm-3 col-md-2"><img class="p-1" src="img/tigre_2.jpg" alt="Tigre"></div>
+                    <div class="col-4 col-sm-3 col-md-2"><img class="p-1" src="img/tigre_3.jpg" alt="Tigre"></div>
+                    <div class="col-4 col-sm-3 col-md-2"><img class="p-1" src="img/tigre_4.jpg" alt="Tigre"></div>
+                    <div class="col-4 col-sm-3 col-md-2"><img class="p-1" src="img/tigre_5.jpg" alt="Tigre"></div>
+                    <div class="col-4 col-sm-3 col-md-2"><img class="p-1" src="img/tigre_6.jpg" alt="Tigre"></div>
+                    <div class="col-4 col-sm-3 col-md-2"><img class="p-1" src="img/tigre_7.jpg" alt="Tigre"></div>
+                    <div class="col-4 col-sm-3 col-md-2"><img class="p-1" src="img/tigre_8.jpg" alt="Tigre"></div>
+                    <div class="col-4 col-sm-3 col-md-2"><img class="p-1" src="img/tigre_9.jpg" alt="Tigre"></div>
+                    <div class="col-4 col-sm-3 col-md-2"><img class="p-1" src="img/tigre_10.jpg" alt="Tigre"></div>
+                    <div class="col-4 col-sm-3 col-md-2"><img class="p-1" src="img/tigre_11.jpg" alt="Tigre"></div>
+                    <div class="col-4 col-sm-3 col-md-2"><img class="p-1" src="img/tigre_12.jpg" alt="Tigre"></div>
+                </div>
+            </div>
+        </section>
+
+        <!--3. Un tableau (striped) minimum 4 rangées et 3 colonnes-->
+        <section class="p-5">
+            <h2><i>Table-striped</i></h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Prénom</th>
+                        <th>Nom de famille</th>
+                        <th>Mél</th>
+                        <th>Argent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jean</td>
+                        <td>Dupont</td>
+                        <td>jean@example.com</td>
+                        <td>15&nbsp;$</td>
+                    </tr>
+                    <tr>
+                        <td>Albert</td>
+                        <td>Dupont</td>
+                        <td>albert@example.com</td>
+                        <td>215&nbsp;$</td>
+                    </tr>
+                    <tr>
+                        <td>Marie</td>
+                        <td>Dupont</td>
+                        <td>marie@example.com</td>
+                        <td>7215&nbsp;$</td>
+                    </tr>
+                    <tr>
+                        <td>Julie</td>
+                        <td>Tremblay</td>
+                        <td>julie@example.com</td>
+                        <td>17&nbsp;215&nbsp;$</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!--4. trois exemples de listes (ul, ol, dl)-->
+        <section class="p-5">
+            <h2>Trois exemples de listes</h2>
+            <h3 class="p-3">UL</h3>
+            <ul class="list-group">
+                <li class="list-group-item" lang="la">Cras justo odio</li>
+                <li class="list-group-item" lang="la">Dapibus ac facilisis in</li>
+                <li class="list-group-item" lang="la">Morbi leo risus</li>
+                <li class="list-group-item" lang="la">Porta ac consectetur ac</li>
+                <li class="list-group-item" lang="la">Vestibulum at eros</li>
+            </ul>
+
+            <h3 class="p-3">OL</h3>
+            <ol class="list-group">
+                <li class="list-group-item list-group-item-action list-group-item-primary"><i>list-group-item-primary</i></li>
+                <li class="list-group-item list-group-item-action list-group-item-secondary"><i>list-group-item-secondary</i></li>
+                <li class="list-group-item list-group-item-action list-group-item-success"><i>list-group-item-success</i></li>
+                <li class="list-group-item list-group-item-action list-group-item-danger"><i>list-group-item-danger</i></li>
+                <li class="list-group-item list-group-item-action list-group-item-warning"><i>list-group-item-warning</i></li>
+                <li class="list-group-item list-group-item-action list-group-item-info"><i>list-group-item-info</i></li>
+                <li class="list-group-item list-group-item-action list-group-item-light"><i>list-group-item-light</i></li>
+                <li class="list-group-item list-group-item-action list-group-item-dark"><i>list-group-item-dark</i></li>
+            </ol>
+
+            <h3 class="p-3">DL</h3>
+            <dl class="list-group">
+                <dt class="list-group-item active">Bête de Bodmin <span class="glyphicon glyphicon-asterisk"></span></dt>
+                <dd class="pl-5">Un grand félin habitant la bruyère de Bodmin.</dd>
+            
+                <dt class="list-group-item">Morgawr</dt>
+                <dd class="pl-5">Un serpent de mer.</dd>
+            
+                <dt class="list-group-item">Owlman</dt>
+                <dd class="pl-5">Une créature géante en forme de chouette.</dd>
+            </dl> 
+        </section>
+
+        <!--5. Un formulaire complet (input text, radios, cases à cocher textarea, submit)-->
+        <!--https://www.w3schools.com/bootstrap4/bootstrap_forms.asp-->
+        <section class="p-5">
+            <h2>Formulaire horizontal</h2>
+            <form action="javascript:;" method="get" name="form-horizontal" id="form-horizontal">
+                <fieldset>
+                    <legend class="sr-only">Mot préféré et commentaire</legend>
+                    <div class="mot-prefere ">
+                        <label for="mot-prefere">Mot préféré&nbsp;:</label>
+                        <input type="text" class="form-control" id="mot-prefere">
+                    </div>
+                    <div class="form-group">
+                        <label for="commentaire">Commentaire&nbsp;:</label>
+                        <textarea class="form-control" id="commentaire" rows="3"></textarea>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="sr-only">Fruits, légumes et courriel</legend>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" id="fruits">J'aime les fruits
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" id="legumes">J'aime les légumes
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Courriel&nbsp;:</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend class="sr-only">Bonheur ou tristesse</legend>
+                    <div class="radio form-group">
+                        <label><input type="radio" name="optradio" checked id="bonheur"> Bonheur</label>
+                    </div>
+                    <div class="radio form-group">
+                        <label><input type="radio" name="optradio" id="tristesse"> Tristesse</label>
+                    </div>
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Soumettre</button>
+            </form> 
+        </section>
+
+        <!--6. Un formulaire (form-inline) avec input-group-text-->
+        <section class="p-5">
+            <h2><i>Form-inline</i></h2>
+            <form action="javascript:;" method="get" name="form-vertical" id="form-vertical" class="form-inline">
+                <label class="sr-only" for="inline-form-input-name-deux">Prénom</label>
+                <input type="text" class="form-control mb-2 mr-sm-2" id="inline-form-input-name-deux" placeholder="Gaius Julius Caesar">
+            
+                <label class="sr-only" for="inline-form-input-group-username-deux">Nom d'utilisateur</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                    </div>
+                    <input type="text" class="form-control" id="inline-form-input-group-username-deux" placeholder="Nom d'utilisateur">
+                </div>
+                
+                <div class="form-check mb-2 mr-sm-2">
+                    <input class="form-check-input" type="checkbox" id="inline-form-check">
+                    <label class="form-check-label" for="inline-form-check">
+                        Se souvenir de moi
+                    </label>
+                </div>
+            
+                <button type="submit" class="btn btn-primary mb-2">Soumettre</button>
+            </form>
+        </section>
+
+        <!--7. Une collection de boutons variés (simples et avec icônes), avec des boutons groupés horizontalement et verticalement-->
+        <!--https://getbootstrap.com/docs/4.3/components/button-group/-->
+        <section class="p-5">
+            <h2>Boutons verticaux et horizontaux</h2>
+            <div class="btn-group" role="group" aria-label="Exemple 1">
+                <button type="button" class="btn"><i>Basic</i> <i class="fas fa-cloud"></i></button>
+                <button type="button" class="btn btn-primary"><i>Primary</i> <i class="fas fa-coffee"></i></button>
+                <button type="button" class="btn btn-secondary"><i>Secondary</i> <i class="fas fa-car"></i></button>
+                <button type="button" class="btn btn-success"><i>Success</i> <i class="fas fa-file"></i></button>
+                <button type="button" class="btn btn-info"><i>Info</i> <i class="fas fa-bars"></i></button>
+                <button type="button" class="btn btn-warning"><i>Warning</i> <i class="fas fa-thumbs-up"></i></button>
+                <button type="button" class="btn btn-danger"><i>Danger</i> <i class="fas fa-horse"></i></button>
+                <button type="button" class="btn btn-dark"><i>Dark</i> <i class="fas fa-water"></i></button>
+                <button type="button" class="btn btn-light"><i>Light</i> <i class="fas fa-dog"></i></button>
+                <button type="button" class="btn btn-link"><i>Link</i> <i class="fas fa-cat"></i></button>
+            </div>
+            <div>
+                <div class="btn-group-vertical" role="group" aria-label="Exemple 2">
+                    <button type="button" class="btn">Basic</button>
+                    <button type="button" class="btn btn-primary">Primary</button>
+                    <button type="button" class="btn btn-secondary">Secondary</button>
+                    <button type="button" class="btn btn-success">Success</button>
+                    <button type="button" class="btn btn-info">Info</button>
+                    <button type="button" class="btn btn-warning">Warning</button>
+                    <button type="button" class="btn btn-danger">Danger</button>
+                    <button type="button" class="btn btn-dark">Dark</button>
+                    <button type="button" class="btn btn-light">Light</button>
+                    <button type="button" class="btn btn-link">Link</button>
+                </div>
+            </div>
+        </section>
+
+        <!--8. Un carrousel de trois images-->
+        <!--W3School-->
+        <section class="p-5">
+            <h2><i>Bootstrap 4 Carousel</i></h2>
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/los_angeles.jpg" alt="Los Angeles" width="1100" height="500">
+                        <div class="carousel-caption">
+                            <h3>Los Angeles</h3>
+                            <p>On s'est tellement bien amusés à L.A.!</p>
+                        </div>     
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/chicago.jpg" alt="Chicago" width="1100" height="500">
+                        <div class="carousel-caption">
+                            <h3>Chicago</h3>
+                            <p>Merci, Chicago!</p>
+                        </div>     
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/new_york.jpg" alt="New York" width="1100" height="500">
+                        <div class="carousel-caption">
+                            <h3>New York</h3>
+                            <p>On adore la Grosse Pomme!</p>
+                        </div>     
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#demo" title="Lien vers l'élément précédent" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" title="Lien vers l'élément suivant" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </section>
+
+        <!--9. Un menu déroulant (dropdown)-->
+        <!--https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_dropdown-menu&stacked=h-->
+        <section class="p-5">
+            <h2><i>Dropdowns</i></h2>
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Exemple
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="javascript:;" title="HTML">HTML</a></li>
+                <li><a href="javascript:;" title="CSS">CSS</a></li>
+                <li><a href="javascript:;" title="JavaScript">JavaScript</a></li>
+            </ul>
+        </section>
+
+        <!---10. Une collection de badges (minimum 4 badges)-->
+        <!--W3School-->
+        <section class="p-5">
+            <h2><i>Badges</i></h2>
+            <button type="button" class="btn btn-primary">
+                Messages <span class="badge badge-light">4</span>
+            </button>
+            <button type="button" class="btn btn-danger">
+                Notifications <span class="badge badge-light">7</span>
+            </button>
+            <!--W3School-->
+            <div>
+                <span class="badge badge-pill badge-primary">Primary</span>
+                <span class="badge badge-pill badge-secondary">Secondary</span>
+                <span class="badge badge-pill badge-success">Success</span>
+                <span class="badge badge-pill badge-danger">Danger</span>
+                <span class="badge badge-pill badge-warning">Warning</span>
+                <span class="badge badge-pill badge-info">Info</span>
+                <span class="badge badge-pill badge-light">Light</span>
+                <span class="badge badge-pill badge-dark">Dark</span>
+            </div>
+        </section>
+
+        <!--11. Une carte/fiche (card) avec image et bouton (en savoir plus)-->
+        <!--W3School-->
+        <section class="p-5">
+            <div class="container">
+                <h2><i>Card</i> (<i>card-img-top</i>)</h2>
+                <div class="card width-400">
+                    <img class="card-img-top w-100" src="img/img_avatar3.png" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">Gaius Julius Caesar</h4>
+                        <p class="card-text"><q lang="la">Eodem die ab exploratoribus certior factus hostes sub monte consedisse milia passuum ab ipsius castris octo, qualis esset natura montis et qualis in circuitu ascensus qui cognoscerent misit. Renuntiatum est facilem esse.</q></p>
+                        <a href="javascript:;" class="btn btn-primary" title="En savoir plus">En savoir plus</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </section>
+
+        <!--12. Une alerte (success)-->
+        <section class="p-5">
+            <h2><a href="https://getbootstrap.com/docs/4.3/components/alerts/" title="Lien vers site de Bootstrap"><i>Alerts</i></a></h2>
+            <div class="alert alert-primary" role="alert">
+                <i>alert-primary</i>
+            </div>
+            <div class="alert alert-secondary" role="alert">
+                <i>alert-secondary</i>
+            </div>
+            <div class="alert alert-success" role="alert">
+                <i>alert-success</i>
+            </div>
+            <div class="alert alert-danger" role="alert">
+                <i>alert-danger</i>
+            </div>
+            <div class="alert alert-warning" role="alert">
+                <i>alert-warning</i>
+            </div>
+            <div class="alert alert-info" role="alert">
+                <i>alert-info</i>
+            </div>
+            <div class="alert alert-light" role="alert">
+                <i>alert-light</i>
+            </div>
+            <div class="alert alert-dark" role="alert">
+                <i>alert-dark</i>
+            </div>
+        </section>
+
+        <!--13. Un menu collapse.-->
+        <!--EN FAIT, IL FAUT QUE CE SOIT UN ÉLÉMENT, PAS FORCÉMENT UN MENU-->
+        <section class="p-5">
+            <h2><i>Collapsible</i></h2>
+            <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo-collapsible"><i>Collapsible</i> simple</button>
+            <div id="demo-collapsible" class="collapse">
+                <blockquote lang="la">
+                    Gallia est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur. Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit.
+                </blockquote>
+            </div>
+        </section>
+        
+        <section class="p-5">
+            <h2><a href="https://getbootstrap.com/docs/4.3/components/alerts/#dismissing" title="Lien vers site de Bootstrap"><i>Dismissing</i></a></h2>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                Nom d'un guacamole! Vous devriez vérifier certains de ces champs ci-dessous.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="p-5">
+            <h2><a href="https://getbootstrap.com/docs/4.3/components/progress/" title="Lien vers site de Bootstrap"><i>Progress bar</i></a></h2>
+            <div class="progress">
+                <div class="progress-bar w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+            </div>
+        </section>
+
+        <section class="p-5">
+            <h2><a href="https://getbootstrap.com/docs/4.3/components/pagination/" title="Lien vers site de Bootstrap"><i>Pagination</i></a></h2>
+            <nav aria-label="...">
+                <ul class="pagination pagination-lg">
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">
+                            1
+                            <span class="sr-only">(current)</span>
+                        </span>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="javascript:;" title="Aller à la page 2">2</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:;" title="Aller à la page 3">3</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="p-5">
+            <h2><a href="https://getbootstrap.com/docs/4.3/utilities/text/#text-wrapping-and-overflow" title="Lien vers site de Bootstrap"><i>Text wrapping</i> et <i>overflow</i></a></h2>
+            <div class="badge badge-primary text-wrap six-rem">
+                Retour à la ligne.
+            </div>
+        </section>
+
+        <section class="p-5">
+            <h2><a href="https://getbootstrap.com/docs/4.3/utilities/text/#text-transform" title="Lien vers le site de Bootstrap"><i>Text transform</i></a></h2>
+            <p class="text-lowercase">Texte en minuscules</p>
+            <p class="text-uppercase">Texte en majuscules</p>
+        </section>
+
+        <section class="p-5">
+            <h2><a href="https://getbootstrap.com/docs/4.3/components/button-group" title="Lien vers le site de Bootstrap"><i>Button groups</i></a></h2>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">Gauche</button>
+                <button type="button" class="btn btn-secondary">Milieu</button>
+                <button type="button" class="btn btn-secondary">Droite</button>
+            </div>
+        </section>
+
+        <section class="p-5">
+            <h2><a href="https://getbootstrap.com/docs/4.3/utilities/close-icon/" title="Lien vers le site de Bootstrap"><i>Close icons</i></a></h2>
+            <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </section>
+
+        <section class="p-5">
+            <h2><a href="https://getbootstrap.com/docs/4.3/utilities/flex/" title="Lien vers site de Bootstrap"><i>Flex</i></a></h2>
+            <div class="d-flex flex-row bd-highlight mb-3">
+                <div class="p-2 bg-dark text-white">Flex 1</div>
+                <div class="p-2 bg-dark text-white">Flex 2</div>
+                <div class="p-2 bg-dark text-white">Flex 3</div>
+            </div>
+            <div class="d-flex flex-row-reverse bd-highlight">
+                <div class="p-2 bg-dark text-white">Flex 1</div>
+                <div class="p-2 bg-dark text-white">Flex 2</div>
+                <div class="p-2 bg-dark text-white">Flex 3</div>
+            </div>
+        </section>
+
+        <section class="p-5">
+            <h2><i>Bootstrap grid</i></h2>
+            <div class="row">
+                <div class="col bg-success">.col</div>
+                <div class="col bg-warning">.col</div>
+                <div class="col bg-success">.col</div>
+            </div>
+        </section>
+
+        <section class="p-5">
+            <h2><i>Spinner</i></h2>
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Chargement...</span>
+            </div>
+        </section>
+
+        <section class="p-5">
+            <h2><i>Breadcrumbs</i></h2>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:;" title="Lien vers Home">Home</a></li>
+                    <li class="breadcrumb-item"><a href="javascript:;" title="Lien vers Library">Library</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Data</li>
+                </ol>
+            </nav>
+        </section>
+
+        <section class="p-5">
+            <h2><i>Jumbotron</i></h2>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <p class="lead">Ceci est un jumbotron modifié qui occupe tout l'espace horizontal de son parent.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="p-5">
+            <h2><i>Card</i> (<i>card-img-bottom</i>)</h2>
+            <div class="card width-400">
+                <div class="card-body">
+                    <h4 class="card-title">Gaius Julius Caesar</h4>
+                    <p class="card-text"><q lang="la">Eodem die ab exploratoribus certior factus hostes sub monte consedisse milia passuum ab ipsius castris octo, qualis esset natura montis et qualis in circuitu ascensus qui cognoscerent misit. Renuntiatum est facilem esse.</q></p>
+                    <a href="javascript:;" class="btn btn-primary" title="En savoir plus">En savoir plus</a>
+                </div>
+                <img class="card-img-bottom w-100" src="img/img_avatar3.png" alt="Card image">
+            </div>
+        </section>
+
+        <!--W3School-->
+        <section class="p-5">
+            <h2><i>Media object</i></h2>
+            <div class="media border p-3">
+                <img src="img/img_avatar3.png" alt="John Doe" class="mr-3 mt-3 rounded-circle width-60">
+                <div class="media-body">
+                    <h4>Gaius Julius Caesar <small>Posté le <time datetime="2016-02-19">19 février 2016</time></small></h4>
+                    <p><q lang="la">Belgae ab extremis Galliae finibus oriuntur, pertinent ad inferiorem partem fluminis Rheni, spectant in septentrionem et orientem solem.</q></p>
+                </div>
+            </div>
+        </section>
+
+        <!--W3School-->
+        <section class="p-5">
+            <h2><i>Tooltip</i></h2>
+            <div class="container">
+                <a href="javascript:;" data-toggle="tooltip" title="Bravo!">Survolez-moi!</a>
+            </div>
+        </section>
+
+        <!--https://getbootstrap.com/docs/4.3/components/popovers/-->
+        <section class="p-5">
+            <h2><i>Popover</i></h2>
+            <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="arcanum boni tenoris animae">
+                <i>Popover</i> sur le dessus
+            </button>
+        </section>
+
+        <!--W3School-->
+        <section class="p-5">
+            <h2><i>Modal</i></h2>
+            <!-- Button to Open the Modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    Ouvrir la fenêtre modale
+            </button>
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+    
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">En-tête de la fenêtre modale</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+            
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            Corps de la fenêtre modale.
+                        </div>
+            
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--https://getbootstrap.com/docs/4.3/components/popovers/-->
+        <section class="p-5">
+            <h2><i>Popover</i> <i>bottom</i> et dégradé Colorzilla</h2>
+            <button type="button" class="btn gradient" data-container="body" data-toggle="popover" data-placement="bottom" data-content="arcanum boni tenoris animae">
+                <i>Popover</i> <i>bottom</i> et dégradé Colorzilla
+            </button>
+        </section>
+    </main>
+    <footer class="d-flex justify-content-center">
+        <p><time datetime="2019-10-23">23 octobre 2019</time></p>
+    </footer>
+
+    <!--LIBRAIRIES BOOTSTRAP-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        // FONCTIONS UTILITAIRES
+        
+        // GESTIONNAIRES D'ÉVÉNEMENT FORMULAIRE
+
+        // POUR PERMETTRE À CERTAINS COMPOSANTS DE FONCTIONNER CORRECTEMENT
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+            $('[data-toggle="popover"]').popover();
+
+            document.querySelector("#form-horizontal").addEventListener("click", function(event) {
+                event.preventDefault();
+            });
+
+            document.querySelector("#form-vertical").addEventListener("click", function(event) {
+                event.preventDefault();
+            });
+        });
+    </script>
+
+</body>
+</html>

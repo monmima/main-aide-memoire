@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJS 4</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+<body>
+    <%- include("header") %>
+
+    <!-- <h1>Node.js + SQLite <dfn title="mnemonic device">Aide-Mémoire</dfn></h1>
+
+    <h2>Reading stuff from the database</h2>
+    <ul>
+        <li><a href="/get-posts" title="get-posts">get-posts</a></li>
+    </ul>
+
+    <h2>.ejs files</h2>
+
+    <p>The page that you are currently reading is an HTML file. If you want to replace this index.html file by an index.ejs file, you would need to:</p>
+
+    <ol>
+        <li>Delete the index.html file</li>
+        <li>Create a file with the name index.ejs in the views folder</li>
+        <li>Make sure the route "/" is taken into account in the app.js file</li>
+    </ol> -->
+
+    <div class="contenu-flex">
+
+        <!--for a more complex form, please consider the possibility of using the <legend> and <fieldset> tags-->
+        <form name="form-search-data" id="form-search-data" method="GET" action="/get-data-form">
+            <p><label>Search:</label></p>
+            <p><input type="text" name="searchQuery" required></p>
+    
+            <p>Direction:</p>
+            <input type="radio" id="passage_fr" name="language" value="passage_fr" checked>
+            <label for="passage_fr">FR-DE</label><br>
+            <input type="radio" id="passage_autre" name="language" value="passage_autre">
+            <label for="passage_autre">DE-FR</label><br>
+    
+            <!-- <p>Other language:</p>
+            <input type="radio" id="en" name="corpus" value="en" required checked>
+            <label for="en">EN</label><br>
+            <input type="radio" id="it" name="corpus" value="it">
+            <label for="it">IT</label><br>
+    
+            <p>Query Type:</p>
+            <input type="radio" id="regexp" name="queryType" value="regexp" required>
+            <label for="regexp">regular expression</label><br>
+            <input type="radio" id="full-words" name="queryType" value="full-words" checked>
+            <label for="full-words">one full word</label><br> -->
+            
+            <p><input type="submit" value="Soumettre"></p>
+        </form>
+    
+        <div class="technologies">
+            <p>Cette application est rendue possible grâce à...</p>
+    
+            <ul>
+                <li>NodeJS</li>
+                <li>Express</li>
+                <li>SQLite</li>
+                <li>EJS</li>
+                <li>Heroku</li>
+                <li>Tatoeba</li>
+                <li>ResponsiveVoice</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <%- include("footer") %>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJS 5</title>
+
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <%- include("header") %>
+
+    <% const singOrPlural = data.length === 1 || data.length === 0 ? "résultat" : "résultats" %>
+
+    <h3><%= data.length %> <%= singOrPlural %> pour la requête «&nbsp;<%= queryTerm %>&nbsp;» en français</h3>
+
+    <p><%if (data.length > 1000) { %>
+        Attention! Seuls les 1000 premiers résultats sont affichés.
+    <% } %></p>
+
+    <div>
+
+        <% for (let i = 0; i < data.length && i < 1000; i++) { %>
+
+            <div class="ligne-resultat-et-numero">
+                <p><%= i + 1 %></p>
+
+                <div class="database">
+
+                    <div class="language-column passage_fr">
+                        <p><%= data[i].passage_fr %></p>
+                        <div>
+                            <button>🔊</button>
+                        </div>
+                    </div>
+
+                    <div class="language-column passage_autre">
+                        <p><%= data[i].passage_autre %></p>
+                        <div>
+                            <button>🔊</button>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+
+        <% } %>
+    </div>
+    
+    <%- include("footer") %>
+
+    <script src="js/responsivevoice.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>
+
+

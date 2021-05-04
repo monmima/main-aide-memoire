@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <style>
+        .green {
+            border: 2px solid green;
+        }
+        .red {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <p>{{ kittifyName }}</p>
+
+        <input v-model="newCat" id="newCat" @keyup.enter="addKitty">
+        <button @click="addKitty">+ ADD</button>
+
+        <ul>
+            <li v-for="cat in cats">{{ cat.name | kittify | capitalize }}</li>
+        </ul>
+    </div>
+
+    <script>
+        const app = new Vue({
+            el: "#root",
+            data: {
+                cats: [
+                    { name: "kitty" },
+                    { name: "meow" },
+                    { name: "kitkat" }
+                ],
+                newCat: ""
+            },
+            methods: {
+                addKitty: function() {
+                    this.cats.push({ name: this.newCat });
+                    this.newCat = ""; // now clear the input box
+                }
+            },
+            computed: {
+                kittifyName: function() {
+                    if (this.newCat.length > 1) {
+                        return this.newCat + "y"
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+/**
+*	Version pour la liste de définition : dl/dt/dd.
+*	CSS à nettoyer. Ex. : h3 + div...
+*/
+/* ---------------------------------- 1. Global ---------------------------------- */
+body {
+  background-color: #221f1f;
+/*    background-color: #4e8fbf;*/
+  font-family: 'Noto Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+/*  font-weight: 400;*/
+  margin: 20px;
+  padding: 10px 10px 0;
+}
+
+/* ---------------------------------- 2. Règles utilitaires #1. ----------------- */
+/* Exemples, notes, Retour (HAUT), etc. en "bloc". */
+samp, small {
+  display: block;
+  margin: 0.5em 0;
+  padding: 0.5em;
+}
+
+footer a {
+  display: block;
+  text-align: center;
+/*     float: right;*/
+}
+
+/* Réalignement de certains exemples. */
+.petit, .espaces samp, small samp {
+  display: inline;
+}
+.petit:before {
+  content: none;
+}
+
+/* Tableau de base. Cf. 9. Tableau */
+th, td {
+  text-align: left;
+}
+      
+.nevalidepas, .nevalidepas samp {
+  background-color: #bbb;
+}
+
+.semantique figure:last-of-type, figure + aside {
+/*  background-color: #900;*/
+/*  display: inline-table;*/
+/*  height: 250px;*/
+/*  margin: 10px;*/
+  width: 35%;
+}
+
+/* ---------------------------------- 8. Règles utilitaires #2. ----------------- */
+samp {
+  background-color: #b6ddff;
+}
+
+/* Cf. .petit:before */
+small:before {
+  content: "\272a\00a0";
+}
+
+acronym, abbr {
+  border-bottom: 1px dotted #999;
+  cursor: help;
+}
+
+#cesures + dd samp {
+/*  margin: 0;*/
+  padding: .8em;
+}
+
+samp > br:first-child {
+  line-height: 2em;
+}
+
+samp kbd {
+  background-color: #fffcb3;
+  border: 1px solid #727272;
+  border-radius: 0.4em;
+  line-height: 1.5em;
+  padding: 0 0.4em;
+}
+
+samp var {
+  background-color: #99c0ef;
+  padding: 0 0.4em;
+}
+
+/* ---------------------------------- 3. Contenu ------------------- */
+header + main {
+  background-color: #dfdfdf;
+  padding: 1em;
+/*    width: 760px;*/
+}
+
+header, footer {
+  background-color: #4e8fbf;
+  color: #fff;
+  margin: 0;
+  padding: 1em;
+}
+
+h1 {
+  background-color: #333;
+  margin-right: 40%;
+  margin-top: 35px;
+  padding: 0.5em;
+/*  width: 500px; */
+}
+
+h4 {
+  margin: 0.5em 0;
+}
+
+/*h3 + div, padding-right: 4em; */
+address {
+  padding-left: 2em;
+}
+
+
+/* ---------------------------------- 5. TITRES SECTIONS ---------------------- */
+dl {
+  counter-reset: compteurAlpha;
+}	
+dt {
+  background-color: #4e8fbf;
+  border-bottom: 1px solid #333;
+  border-spacing: 20px;
+/*	display:list-item;*/
+  font-weight: 900;
+/* list-style: upper-alpha; upper-latin not supported by IE */
+/* list-style-position: inside; */
+  margin: 35px 0 25px;
+  padding: 5px;
+}
+dt:before {
+  counter-increment: compteurAlpha;
+  content: counter(compteurAlpha, upper-alpha) ". ";
+}
+dd {
+  margin: 0;
+}
+
+
+/* ---------------------------------- 4. Décoration ------------------- */
+.surligne-info {
+  background-color: #eded1f;
+  font-weight: normal;
+}
+.surligne-attention {
+  background-color: #ed1f1f;
+}
+.surligne-primaire {
+  background-color: #88a7b4;
+}
+
+/* Lettrine de citation. */
+.lettrine {
+  font-family: "Roboto";
+  font-size: 150%;
+  line-height: 80%;
+}
+
+.lang-fr {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.lang-en {
+  font-style: italic;    
+}
+
+
+/* ---------------------------------- 6. NAV - SOMMAIRE ------------------- */
+nav ol {
+  background-color: #222;
+  border: 10px solid #88A7b4;
+  line-height: 1.8em;
+  margin-right: 40%;
+  padding: 0.7em 0 0.7em 4em;
+}
+nav ol li {
+  color: #fff;
+  list-style-type: upper-alpha;
+}
+
+nav a:link, nav a:visited, footer a:link, footer a:visited {
+  color: #fff;
+}
+a:link, a:visited {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* ---------------------------------- 7. PREMIERE PARTIE ------------------------ */
+.semantique {
+  list-style-type: decimal;
+  width: 720px;
+}
+.semantique li:nth-child(odd) {
+  background-color: #fff;
+}
+.semantique li:nth-child(even) {
+  background-color: #91b0c4;
+}
+.semantique li {
+  padding: 0.2em;
+}
+.semantique > li {
+  padding: 1em;
+}
+.semantique li ul li {
+  list-style-type: none;
+  margin-right: 10em;
+  padding-left: 1em;
+}
+
+
+/* ---------------------------------- 9. TABLEAU --------------------------------- */
+table {
+  background-color: #ccc;
+  margin-left: 2em;
+  padding: .75em;
+}
+
+th, tbody td {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3em;
+  padding-left: 2em;
+}
+tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+
+/* ---------------------------------- 10. CITATIONS -------------------------------- */
+.citation h4:last-of-type {
+  padding: 1em 0.5em -0.5em;
+}
+
+blockquote:first-of-type {
+  font-family: "Great Vibes", Georgia, "Times New Roman", Times, serif;
+}
+
+blockquote {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+blockquote:first-of-type {
+  font-size: 2.2em;
+  max-width: 450px;
+}
+
+.citation div {
+  background-color: #fff;
+  margin-left: 2.5em;
+  max-width: 600px;
+}
+
+blockquote .auteur {
+  font-size: 1.2em;
+  line-height: 2em;
+  padding-left: 0.5em;
+}
+
+/* Deuxième citation de Voltaire. */
+blockquote:last-of-type {
+  background-color: #2a2a2a;
+  color: #fff;
+  float: left;
+  margin-top: 0.5em;
+  max-width: 280px;
+  padding: 0.2em 0.2em 1em 1em;
+}
+
+div blockquote p {
+  font-size: 1.4em;
+  line-height: 1.2em;
+  margin: 0;
+  padding: .5em .5em 0 0;  
+  text-align: right;
+}
+
+/* .auteur-citation */
+blockquote p + p {
+  color: #b3d6ff;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.1em;
+  font-style: italic;
+}
+
+.citation figure {
+  padding-bottom: 1em;
+}
+
+
+/* ---------------------------------- 11. Révisions -------------------------------- */
+.revision li {
+  background-color: transparent;
+  list-style-type: decimal;
+  margin-top: 1.2em;
+}
+
+
+/* ---------------------------------- 12. Epaces -------------------------------- 
+  &#x21e8;<span class="espace">&#x0020;</span>&#x21e6;
+*/
+span.espace:before {
+  background-color: #b6ddff;
+  content: "\00a0\21e8";
+}
+
+span.espace:after {
+  background-color: #b6ddff;
+  content: "\21e6\00a0";
+}
+
+.espace {
+  background-color: #fff;
+}
+
+/* ---------------------------------- 13. Extras -------------------------------- */
+/*.auteur, a[rel=author] {
+    background-color: #de6b8a;
+}*/
+
+.flambloyant {
+/*    background-color: #900;*/
+    color: #f00;
+/*    font-size: 120%;*/
+/*    padding: 2px 5px;*/
+}
+
+strong code, td code, h3 code {
+  font-size: 1.3em;
+}
+code {
+  font-size: 1.2em;
+}
+
+/*
+.preformate {
+    white-space: pre;
+}
+*/
+.preformates figure {
+  padding: 1em;
+}
+
+.preformates figure + small {
+  background-color: #b6ddff;
+  margin-bottom: 1em;
+}
+
+/* Seulement la section césures/tirets - . */
+p + samp q[lang=fr] {
+  font-style: italic;    
+}
+
+/* Seulement les exemples Unicode de l'élément i */
+.element-i small samp {
+  padding: 0.2em;
+}
+
+.poisson {
+  background-color: #b6ddff;
+  margin: -1em 0;
+  padding-bottom: 0.5em;
+}
+
+address {
+  background-color: #fff;
+  margin-top: -0.5em;
+}
+
+address:first-of-type p {
+  margin-top: -0.5em;
+/*  padding-top: 0.5em;*/
+  padding-bottom: 0.5em;
+}
+
+/* .material-icons - ICONES MATERIAL DESIGN */
+.md-18 { font-size: 18px; }
+.md-24 { font-size: 24px; }
+.md-36 { font-size: 36px; }
+.md-48 { font-size: 48px; }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJAX jQuery simple</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="bloc-affichage"></div>
+
+    <script>
+        $(document).ready(function() {
+
+            $.ajax({
+                "type": "GET",
+                "url": "data.json",
+                "dataType": "json"
+            })
+
+            // POUR RENSEIGNER SUR LA NATURE DE LA RÉPONSE DU SERVEUR
+            .done(function(data, textStatus, jqXHR) {
+
+                console.log(`TextStatus : ${textStatus} Data : ${data}`);
+                console.dir(data);
+
+                let items = [];
+                for(prop in data) {
+
+                    let valeur = data[prop];
+
+                    let message = `<div id="${prop}">${valeur}</div>`;
+
+                    items.push(message);
+
+                    document.querySelector("#bloc-affichage").innerHTML += message;
+
+                }
+                // TRAITEMENT DES DONNÉES
+            })
+
+            //TEXTSTATUS RENSEIGNE SUR LA NATURE DE LA RÉPONSE DU SERVEUR
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                console.log("errorThrown");
+            })
+
+            .always(function(jqXHR, textStatus) {
+                console.log("Fin de l'exécution.");
+            });
+        });
+    </script>
+    
+</body>
+</html>

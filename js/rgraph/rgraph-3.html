@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ma tarte au camembert</title>
+    <script src="librairies_rgraph/RGraph.common.core.js"></script>
+    <script src="librairies_rgraph/RGraph.pie.js"></script>
+    <script></script>
+    <style>
+        div {
+            display: flex;
+            justify-content: center;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ma tarte au camembert</h1>
+    <!--
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> = pour appareils mobiles
+        p. 107
+    -->
+    <div>
+        <canvas id="cvs" width="350" height="250">
+            [No canvas support]
+        </canvas>
+    </div>
+
+    <script>
+        new RGraph.Pie({
+            id: 'cvs',
+            data: [3,7.9,62,10.3,11.1,1,2.9],
+            options: {
+                //radius: 150,
+                colors: [
+                    'gradient(#faa:rgb(221,68,119))',
+                    'rgb(51,102,204)',
+                    'rgb(220,57,18)',
+                    'gradient(#faa:rgb(221,68,119))',
+                    'rgb(255,153,0)',
+                    'rgb(16,150,24)',
+                    'gradient(#faa:rgb(221,68,119))',
+                    'rgb(0,153,198)'
+                ],
+                linewidth: 2,
+                shadow: false,
+                labels: ['3%','7.9%','62%','10.3%','11.1%','1%','2.9%'],
+                textSize: 10,
+                textColor: '#444'
+            }
+        }).draw();
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jeu de ballon</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <style>
+        #ballon {
+            box-shadow: 5px 10px 10px #000;
+            cursor: pointer;
+            position: relative;
+            font-size: 1.5em;
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+
+            /*https://codepen.io/ThatGuySam/pen/CytDA*/
+            color: white;
+            font-family: Helvetica;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+            }
+        #meilleur-score, #dernier-score {
+            align-items: center;
+            background-color: lightgreen;
+            display: flex;
+            font-size: 1.435em;
+            height: 150px;
+            justify-content: center;
+            
+            padding: 10px;
+            position: absolute;
+            right: 0;
+            text-align: center;
+            width: 150px;
+
+            /*https://codepen.io/ThatGuySam/pen/CytDA*/
+            color: #fff;
+            font-family: Helvetica;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+        }
+        #dernier-score {
+            margin: 200px 0;
+        }
+</style>
+</head>
+<body>
+    <main>
+        <div id="ballon">
+            <div class="message">test</div>
+            <div class="message">2</div>
+        </div>
+
+        <div id="meilleur-score"></div>
+        <div id="dernier-score"></div>
+    </main>
+
+    <script>
+        // variables qui sert à ajuster le background size via Jquery
+        const h = 100;
+        const w = 100;
+        $("html").width(500);
+        $("html").height(400);
+        $("html").css("background-image", "url(terrain.jpg)");
+        $("html").css("background-repeat", "no-repeat");
+        $("#ballon").css("background-image", "url(ball.png)");
+        $("#ballon").css("background-repeat", "no-repeat");     
+        $("#ballon").css("background-size", w +"px " + h + "px");
+
+        var meilleurScore = null; // pas encore joué
+        function placementAleatoireDuBouton() {
+            let monObj = $("#ballon");
+            monObj.css("left", $("html").width() * Math.random());
+            monObj.css("top", $("html").height() * Math.random());
+            monObj.html("bottez-moi!");
+            monObj.one(
+                "click touchstart",
+                {"dateDepart": new Date()},
+                jeuTempsReaction
+            );
+        }
+
+        function jeuTempsReaction(event) {
+            var dateDuClic = new Date();
+            var tempsDeReaction = dateDuClic - event.data.dateDepart;
+            $("#ballon").html(`rejouer?`)
+            $("#ballon").off("click touchstart");
+            $("#ballon").on("click touchstart", placementAleatoireDuBouton);
+
+            afficheRecord(tempsDeReaction);
+        }
+
+        function afficheRecord(score) {
+            if(meilleurScore == null || meilleurScore > score) {
+                meilleurScore = score;
+                $("#meilleur-score").html(`Record&nbsp;:<br>${score} ms`);
+            }
+            $("#dernier-score").html(`Dernier score&nbsp;:<br>${score} ms`);
+        }
+
+    placementAleatoireDuBouton();
+
+    </script>
+</body>
+</html>
