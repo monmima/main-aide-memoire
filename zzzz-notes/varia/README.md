@@ -1,5 +1,18 @@
 # Varia
 
+## Swapping Paragraphs And Image When On Mobile
+
+```
+@media only screen and (max-width: 769px) {
+        {
+                .swap-on-mobile {
+                display: flex !important;
+                flex-direction: column-reverse;
+                }
+        }
+}
+```
+
 ## No FTP Access: The Next Best Thing
 
 "Forget using FTP or cPanel! Use our [wp file manager](https://filemanagerpro.io/) plugin to take full control of your Wordpress website."
