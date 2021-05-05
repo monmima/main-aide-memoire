@@ -36,6 +36,36 @@ Specifying your settings:
 
 Only works if you haven't already included a file or a directory in your repository.
 
+## Creating Branches
+
+Branching is used to test out new features without messing up the main branch.
+
+Action | Command
+------------ | -------------
+To display the log of changes to the branch | git log --oneline
+To create a new branch | git branch my-new-branch-name
+To show all the branches, to see what branch you're on | git branch -a
+To move to a new branch | git checkout my-new-branch-name
+To delete a branch which has not been merged | git branch -D my-branch-to-delete
+To delete a branch which has been merged | git branch -d my-branch-to-delete
+To create a branch and then check out | git checkout -b my-new-branch
+
+## Merging Branches
+
+Action | Command
+------------ | -------------
+To merge a branch (you need to be in the branch where your other branch is going to get merged, which is typically the master branch)) | git merge my-non-main-branch | git merge my-new-feature-branch
+
+## Solving Merging Conflicts
+
+1. Go to VS Code.
+2. Find the location of the conflict.
+3. Save the file.
+4. git add .
+5. git commit (without a message)
+6. In the scary merge screen, type **SHIFT + :**
+7. wq
+
 ## Command Table (plus a few Unix commands)
 ___
 
@@ -67,4 +97,6 @@ Removing file from both working directory and staging area | git rm file.txt
 Renaming a file | mv file1.txt main.js
 Renaming a file in both the working directory and the staging area | git mv file1.txt main.js
 Removing a file/folder only in the staging area (git add...) | git rm --cached -r dir/
-
+Git status with the short flag (less wordy) | git status -s
+To compare all files with the remote repository and see unstaged changes | git diff
+To compare all files with the remote repository and see staged changes | git diff --staged
