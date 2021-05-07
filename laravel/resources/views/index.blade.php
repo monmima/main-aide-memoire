@@ -78,6 +78,7 @@
             <li><a href="/bg-json-pagination">Baldur's Gate example as JSON with pagination</a></li>
             <li><a href="/bg-html-pagination">Baldur's Gate example as HTML with pagination</a></li>
             <li><a href="/crud">CRUD</a></li>
+            <li><a href="/zh">Chinese Words</a></li>
         </ul>
 
         <hr>

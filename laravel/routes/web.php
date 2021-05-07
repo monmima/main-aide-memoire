@@ -168,6 +168,10 @@ Route::get('/example-011', function () {
         ]);
 });
 
+// ZH Routes
+
+Route::get('/zh', "App\Http\Controllers\ZHcontroller@index");
+
 // BG Routes
 
 Route::get('/bg-json', "App\Http\Controllers\BGcontroller@bgJson");
