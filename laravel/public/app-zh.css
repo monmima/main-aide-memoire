@@ -1,0 +1,42 @@
+
+h1, h2 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+header {
+    text-align: center;
+}
+
+.active {
+    background-color: lightgray;
+    color: aqua;
+}
+
+.crud-zh-center {
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.crud-zh-grid {
+    /* background-color: green; */
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 800px) {
+    body
+    {
+        font-size: 1em;         
+    }
+    /*PLUS DE COLONNES GRID ICI, QUE DU FLEX*/
+    figure {
+        padding: 10px;
+    }
+}
