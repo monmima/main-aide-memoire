@@ -22,6 +22,10 @@ class ZHcontroller extends Controller
         //     "data" => $data
         // ];
 
+        // return view("zh/index", [
+        //     "data" => $data
+        // ]);
+
         return view("zh/index", [
             "data" => $data
         ]);

@@ -1,6 +1,9 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+}
 
 h1, h2 {
-    font-family: 'Roboto', sans-serif;
     text-align: center;
 }
 
@@ -13,6 +16,10 @@ header {
     color: aqua;
 }
 
+.button-all-sounds {
+    margin: 30px auto;
+}
+
 .crud-zh-center {
     /* background-color: pink; */
     display: flex;
@@ -22,12 +29,13 @@ header {
 }
 
 .crud-zh-grid {
-    /* background-color: green; */
-    text-align: center;
-
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-around;
+}
+
+.crud-zh-grid button {
+    margin: 0 50px 0;
 }
 
 @media screen and (max-width: 800px) {

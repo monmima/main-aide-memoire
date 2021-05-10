@@ -2,10 +2,6 @@
 
 @section("content")
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"> 
-
-
     <main>
 
 
@@ -17,10 +13,14 @@
 
         <hr>
 
+        
+
         <div class="crud-zh-center">
+            <button class="button-all-sounds" onclick="handleClickMainButton()">Tous les sons</button>
+
             @foreach($data as $item)
 
-                <div id="id-{{ $item->id }}">
+                <div id="id-{{ $item->id }}" class="crud-zh-grid">
 
                     <button class="chinese" onclick="handleClick('id-{{ $item->id }}', 'chinese')">{{ $item->zh }}</button>
 
@@ -28,9 +28,9 @@
                     
                     <button class="french" onclick="handleClick('id-{{ $item->id }}', 'french')">{{ $item->fr }}</button>
 
-                    <hr>
-
                 </div>
+
+                <hr>
 
             @endforeach
         </div>
