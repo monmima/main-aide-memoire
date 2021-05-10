@@ -171,6 +171,8 @@ Route::get('/example-011', function () {
 // ZH Routes
 
 Route::get('/zh', "App\Http\Controllers\ZHcontroller@index");
+Route::post('/zh', "App\Http\Controllers\ZHcontroller@store");
+Route::get('/zh/create', "App\Http\Controllers\ZHcontroller@create");
 
 // BG Routes
 

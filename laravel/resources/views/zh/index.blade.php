@@ -13,8 +13,6 @@
 
         <hr>
 
-        
-
         <div class="crud-zh-center">
             <button class="button-all-sounds" onclick="handleClickMainButton()">Tous les sons</button>
 
@@ -22,11 +20,11 @@
 
                 <div id="id-{{ $item->id }}" class="crud-zh-grid">
 
-                    <button class="chinese" onclick="handleClick('id-{{ $item->id }}', 'chinese')">{{ $item->zh }}</button>
+                    <button class="french" onclick="handleClick('id-{{ $item->id }}', 'french')">{{ $item->fr }}</button>
 
                     <p>{{ $item->pinyin }}</p>
                     
-                    <button class="french" onclick="handleClick('id-{{ $item->id }}', 'french')">{{ $item->fr }}</button>
+                    <button class="chinese" onclick="handleClick('id-{{ $item->id }}', 'chinese')">{{ $item->zh }}</button>
 
                 </div>
 
