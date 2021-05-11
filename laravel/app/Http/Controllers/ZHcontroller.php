@@ -69,5 +69,38 @@ class ZHcontroller extends Controller
         // end return index page
     }
 
+    // show the edit form
+    public function edit($id)
+    {
+        $data = \DB::table('zh_tb')
+            ->where('id', $id)
+            ->get();
+
+        return view("zh/edit", [
+            "data" => $data
+        ]);
+    }
+
+    // submit to edit form
+    public function update($id)
+    {
+        \DB::table('zh_tb')
+            ->where('id', $id)
+            ->update(
+                [
+                    'fr' => request("fr"),
+                    'pinyin' => request("pinyin"),
+                    'zh' => request("zh")
+                ]);
+
+        $data = \DB::table("zh_tb")
+            ->get();
+
+        // result
+        return view("zh/index", [
+            "data" => $data
+        ]);
+    }
+
 
 }

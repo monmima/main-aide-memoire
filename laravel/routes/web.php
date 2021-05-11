@@ -173,6 +173,8 @@ Route::get('/example-011', function () {
 Route::get('/zh', "App\Http\Controllers\ZHcontroller@index");
 Route::post('/zh', "App\Http\Controllers\ZHcontroller@store");
 Route::get('/zh/create', "App\Http\Controllers\ZHcontroller@create");
+Route::get('/zh/{entry}/edit', "App\Http\Controllers\ZHcontroller@edit");
+Route::put('/zh/{entry}', "App\Http\Controllers\ZHcontroller@update");
 
 // BG Routes
 
