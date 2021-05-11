@@ -18,7 +18,6 @@ function handleClick(id, language) {
 }
 
 async function handleClickMainButton() {
-    console.log("test");
 
     // pour inclure tous les boutons dans le sélecteur, sauf le tout premier
     const BUTTONS = document.querySelectorAll(".crud-zh-grid button");
@@ -28,9 +27,10 @@ async function handleClickMainButton() {
     for (item of BUTTONS) {
         const TEXT = item.innerHTML;
 
-        let voice = "";
+        console.log(item.className.split(" ")[0]);
 
-        if (item.className === "chinese") {
+        // if the first class in the class list is the string "chinese"
+        if (item.className.split(" ")[0] === "chinese") {
             voice = "Chinese Female";
         } else {
             voice = "French Female";

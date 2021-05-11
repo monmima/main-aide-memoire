@@ -14,23 +14,28 @@
         <hr>
 
         <div class="crud-zh-center">
-            <button class="button-all-sounds" onclick="handleClickMainButton()">Tous les sons</button>
+            <p><a href="/zh/create">Create Entry</a></p>
+            <button class="button-all-sounds btn btn-success" onclick="handleClickMainButton()">Jouer tous les sons</button>
 
-            @foreach($data as $item)
 
-                <div id="id-{{ $item->id }}" class="crud-zh-grid">
+            <div class="crud-zh-grid">
 
-                    <button class="french" onclick="handleClick('id-{{ $item->id }}', 'french')">{{ $item->fr }}</button>
+                @foreach($data as $item)
 
-                    <p>{{ $item->pinyin }}</p>
-                    
-                    <button class="chinese" onclick="handleClick('id-{{ $item->id }}', 'chinese')">{{ $item->zh }}</button>
+                    <div class="center-figures">
+                        <figure id="id-{{ $item->id }}" class="bg-gray">
+                            <button class="french btn btn-primary" onclick="handleClick('id-{{ $item->id }}', 'french')">{{ $item->fr }}</button>
+                            
+                            <button class="chinese btn btn-success" onclick="handleClick('id-{{ $item->id }}', 'chinese')">{{ $item->zh }}</button>
 
-                </div>
+                            <p>{{ $item->pinyin }}</p>
+                            <p><a href="/zh/{{ $item->id }}/edit">Edit</a></p>
+                        </figure>
+                    </div>
 
-                <hr>
+                @endforeach
 
-            @endforeach
+            </div>
         </div>
 
     </main>

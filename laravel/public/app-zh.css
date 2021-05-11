@@ -3,8 +3,28 @@ body {
     font-size: 1.5em;
 }
 
+button {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 200px;
+}
+
 h1, h2 {
     text-align: center;
+}
+
+figure {
+    /* background-color: green; */
+
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+
+    width: 250px;
+}
+
+figure p {
+    margin: 10px;
 }
 
 header {
@@ -16,27 +36,38 @@ header {
     color: aqua;
 }
 
+.bg-gray {
+    background-color: #f2f2f2;
+}
+
 .button-all-sounds {
     margin: 30px auto;
 }
 
 .crud-zh-center {
     /* background-color: pink; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+
     text-align: center;
 }
 
 .crud-zh-grid {
+    /* background-color: blue; */
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-around;
 }
 
-.crud-zh-grid button {
-    margin: 0 50px 0;
+.center-figures {
+    /* background-color: red; */
+
+    display: flex;
+    justify-content: center;
 }
+
+/* .crud-zh-grid button {
+    margin: 0 50px 0;
+} */
 
 @media screen and (max-width: 800px) {
     body

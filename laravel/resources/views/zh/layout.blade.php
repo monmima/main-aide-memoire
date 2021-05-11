@@ -19,7 +19,7 @@
     @yield ("content")
 
     <!-- custom JS file -->
-    <script src="responsivevoice.js"></script>
-    <script src="script-zh.js"></script>
+    <script src="/responsivevoice.js"></script>
+    <script src="/script-zh.js"></script>
 </body>
 </html>
