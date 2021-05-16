@@ -4,6 +4,11 @@ The content of this Git Aide-Mémoire is heavily inspired by [The Net Ninja's Yo
 
 ______
 
+## Configuring Git
+
+    $ git config --global user.name "monmima"
+    $ git config --global user.email monmima@example.com
+
 ## Creating Branches
 
 Branching is used to test out new features without messing up the main branch.
