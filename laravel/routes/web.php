@@ -175,6 +175,7 @@ Route::post('/zh', "App\Http\Controllers\ZHcontroller@store");
 Route::get('/zh/create', "App\Http\Controllers\ZHcontroller@create");
 Route::get('/zh/{entry}/edit', "App\Http\Controllers\ZHcontroller@edit");
 Route::put('/zh/{entry}', "App\Http\Controllers\ZHcontroller@update");
+Route::delete('/zh/{entry}/delete', "App\Http\Controllers\ZHcontroller@delete");
 
 // BG Routes
 

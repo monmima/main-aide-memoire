@@ -35,21 +35,14 @@
                     </div>
                 </form>
 
-                {{-- <form method="POST" action="/crud/{{ $friends[0]->id }}" name="crud" id="crud">
-                    <!-- cross-site request forgery -->
-                    @csrf 
-                    <!-- because modern browsers/forms can only take two different methods -->
-                    @method('PUT')
-        
-                    <input type="text" name="first_name" id="first_name" placeholder="first name" value="{{ $friends[0]->first_name }}" required>
-                    <input type="text" name="last_name" id="last_name"  placeholder="last name" value="{{ $friends[0]->last_name }}" required>
-        
-                    <!--BOUTONS-->
-                    <div class="espaces-boutons">
-                        <button type="reset" value="Reset">Reset</button>
-                        <button type="submit" value="Submit" class="bouton-bleu">Submit</button>
-                    </div>
-                </form> --}}
+                <!-- delete button -->
+                <div class="crud-friends-center">
+                    <form action="/zh/{{ $data[0]->id }}/delete" method="post">
+                        <input class="btn btn-default" type="submit" value="Delete" />
+                        @csrf
+                        @method('delete')
+                    </form>
+                </div>
         
             </main>
 

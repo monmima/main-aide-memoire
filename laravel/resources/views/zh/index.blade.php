@@ -29,7 +29,10 @@
                             <button class="chinese btn btn-success" onclick="handleClick('id-{{ $item->id }}', 'chinese')">{{ $item->zh }}</button>
 
                             <p>{{ $item->pinyin }}</p>
-                            <p><a href="/zh/{{ $item->id }}/edit">Edit</a></p>
+                            <p><a class="btn btn-default" href="/zh/{{ $item->id }}/edit">Edit</a></p>
+
+
+
                         </figure>
                     </div>
 

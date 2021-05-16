@@ -102,5 +102,25 @@ class ZHcontroller extends Controller
         ]);
     }
 
+    // delete the resource
+    public function delete($id)
+    {
+
+        // delete one friend
+        \DB::table('zh_tb')
+            ->where('id', $id)
+            ->delete();
+
+        /// 
+
+        // list all data
+        $data = \DB::table("zh_tb")
+            ->get();
+
+        // result
+        return view("zh/index", [
+            "data" => $data
+        ]);
+    }
 
 }
