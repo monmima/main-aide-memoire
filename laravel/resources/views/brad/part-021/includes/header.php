@@ -1,1 +1,0 @@
-<header class="d-flex justify-content-center">This is the header.</header>
