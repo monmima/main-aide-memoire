@@ -27,7 +27,7 @@ To create a branch and then check out | git checkout -b my-new-branch
 
 Action | Command
 ------------ | -------------
-To merge a branch (you need to be in the branch where your other branch is going to get merged, which is typically the master branch) | git merge my-new-feature-branch
+To merge a branch (you need to be in the branch where your other branch is going to get merged, which is typically the master branch) | git merge my-secondary-main-branch | git merge my-new-feature-branch
 
 ## Solving Merging Conflicts
 
