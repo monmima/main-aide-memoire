@@ -39,3 +39,8 @@ To merge a branch (you need to be in the branch where your other branch is going
 6. In the scary merge screen, type **SHIFT + :**
 7. wq
 
+## Unadding and uncommiting a change to the master branch
+
+Action | Command
+------------ | -------------
+To unadd and uncommit a change | git reset HEAD~
