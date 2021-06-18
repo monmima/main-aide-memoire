@@ -6,7 +6,7 @@
 
 Source des noms des États pour le français: [Banque de dépannage linguistique](http://bdl.oqlf.gouv.qc.ca/bdl/gabarit_bdl.asp?id=2040).
 
-Pour le français, j'ai décidé de travailler à partir de la liste d'États de l'Office québécois de la langue française pour assurer la qualité du contenu. ("Virginie-Occidentale", et non "Virginie occidentale"), etc.
+Pour le français, j'ai décidé de travailler à partir de la liste d'États de l'Office québécois de la langue française pour assurer la qualité du contenu ("Virginie-Occidentale", et non "Virginie occidentale"), etc.
 
 ===français/French===
 
