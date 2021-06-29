@@ -387,6 +387,15 @@ As a rule of thumb, you should have one controller per table in your database.
 ### SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: songs.name (SQL: update "songs" set "name" = ?, "artist" = ?, "lyrics" = ?, "link" = ?, "updated_at" = 2021-06-28 19:59:50 where "id" = 1)
 
 - Something is wrong with the "name" and "id" attributes of your input fields. Are you sure they exist and they are named properly?
+- Another possibility is that you're leaving a field empty and submitting the form when the database expects a non-null value. To solve this, to to your migrate file.
+
+- And change this:
+
+       $table->string('lyrics');
+
+- To this:
+
+       $table->string('lyrics')->nullable();
 
 ## Creating A Many-To-Many Relationship (Pivot Table)
 
@@ -429,7 +438,7 @@ If your product and categories won't work together, please think about doing the
             }
         }
 
-4. Your category table could be name "produit_categories" and things should work just fine.
+4. Your category table could be named "produit_categories" and things should work just fine.
 
 ## VS Code Extensions
 
@@ -463,3 +472,7 @@ Optionals
     - Indented Sass syntax Hightlighting, Autocomplete & Formatter
 - Vue Peek
     - Allows peek and goto definition for Vue single-file components
+
+Recent discovery
+
+- Laravel Extension Pack
