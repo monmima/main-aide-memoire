@@ -408,13 +408,84 @@ ____
 
 ___
 
-If your product and categories won't work together, please think about doing the following:
+1. To create a new model and migration, type this in your terminal:
 
-1. Your ProduitController.php file should look like this:
+        php artisan make:model Category -m
+
+2. Find the place in your new migration that looks like this:
+
+        $table->id();
+        $table->timestamps();
+
+3. Insert a new line so it looks like this:
+
+        $table->id();
+        $table->string('title');
+        $table->timestamps();
+
+4. Go back to the terminal and force a new migration with this:
+
+        php artisan migrate:fresh
+
+5. Go to the category table in your database and create this categories manually. Don't forget to save your modifications.
+
+6. Now is time to create a migration for the pivot table. Let's assume you have two table. One is called "song" and the other is called "category". Create a pivot table using this command **while respecting the alphabetical order** (***category*** comes before ***song***):
+
+        php artisan make:migration create_category_song_table --create=category_song
+
+7. Go to the newest migration file and find this:
+
+        $table->id();
+        $table->timestamps();
+
+8. Insert a new line so it looks like this (**once again, assuming one of the tables is called categories and the other songs**):
+
+        $table->id();
+        $table->integer('category_id')->unsigned();
+        $table->integer('song_id')->unsigned();
+        $table->timestamps();
+
+9. Migrate again using the following command:
+
+        php artisan migrate:fresh
+
+10. Now, go to the **Song** model (assuming that's its name) under app/Models.
+
+11. Find something that looks like this:
+
+        use HasFactory;
+
+12. Change it to this:
+
+        use HasFactory;
+
+        public function categories()
+        {
+                return $this->belongsToMany(SongCategory::class);
+        }
+
+13. Now, go to the **Category** model (assuming that's its name) under app/Models.
+
+14. Find something that looks like this:
+
+        use HasFactory;
+
+15. Change it to this:
+
+        use HasFactory;
+
+        public function songs()
+        {
+                return $this->belongsToMany(Song::class);
+        }
+
+___
+
+2. Your ProduitController.php file should look like this:
 
         "categories" => $produit->categories
 
-2. Your Produit.php model should look like this:
+3. Your Produit.php model should look like this:
 
         class Produit extends Model
         {
@@ -426,7 +497,7 @@ If your product and categories won't work together, please think about doing the
             }
         }
 
-3. Your ProduitController.php model should look like this:
+4. Your ProduitController.php model should look like this:
 
         class ProduitCategorie extends Model
         {
@@ -438,7 +509,7 @@ If your product and categories won't work together, please think about doing the
             }
         }
 
-4. Your category table could be named "produit_categories" and things should work just fine.
+5. Your category table could be named "produit_categories" and things should work just fine.
 
 ## VS Code Extensions
 
