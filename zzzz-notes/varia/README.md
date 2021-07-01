@@ -1,5 +1,9 @@
 # Varia
 
+## Adding shortcode in PHP/WordPress
+
+        do_shortcode()
+
 ## Swapping Paragraphs And Image When On Mobile
 
 ```
