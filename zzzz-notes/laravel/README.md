@@ -479,37 +479,27 @@ ___
                 return $this->belongsToMany(Song::class);
         }
 
-___
+16. Create a controller for your categories;
 
-2. Your ProduitController.php file should look like this:
+17. Add an index function that returns JSON to your CategoryController. This will confirm that everything is working just fine.
 
-        "categories" => $produit->categories
-
-3. Your Produit.php model should look like this:
-
-        class Produit extends Model
+        /**
+        * Display a listing of the resource.
+        *
+        * @return \Illuminate\Http\Response
+        */
+        public function index()
         {
-            use HasFactory;
 
-            public function categories()
-            {
-                return $this->belongsToMany(ProduitCategorie::class);
-            }
+                $categories = Category::all();
+
+                return [
+                "categories" => $categories,
+                ];
+
         }
 
-4. Your ProduitController.php model should look like this:
-
-        class ProduitCategorie extends Model
-        {
-            use HasFactory;
-
-            public function produits()
-            {
-                return $this->belongsToMany(Produit::class);
-            }
-        }
-
-5. Your category table could be named "produit_categories" and things should work just fine.
+17. Create a route that returns a page with the content of the above index function.
 
 ## VS Code Extensions
 
