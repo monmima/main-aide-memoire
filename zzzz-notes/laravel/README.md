@@ -359,6 +359,48 @@ As a rule of thumb, you should have one controller per table in your database.
         use App\Models\Karaoke;
 
 
+- If you're dealing with a many-to-many relationship, you might not have created your migration, controller and model at the same time, which is better. Just make sure your model has the right name. For instance this:
+
+        return $this->belongsToMany(Category::class);
+
+- Instead of this:
+
+        return $this->belongsToMany(SongCategory::class);
+
+### Unable to see categories/many-to-many relationships in JSON.
+
+Make sure you have this in your controller file:
+
+    "song" => $song->load('categories');
+
+or this in your model:
+
+    $with = ['categories']
+
+### Unable to load CSS on Heroku (in production)
+
+This is likely caused by CSS being loaded with HTTP instead of HTTPS when the rest of the app is loaded with HTTPS.
+
+Change this:
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+
+To this:
+
+    <link rel="stylesheet" href="css/style.css" />
+
+This might not be the cleanest solution, but at least it works.
+
+### could not find driver (SQL: PRAGMA foreign_keys = ON;)
+
+This has to do with the SQLite database. Make sure you added this line to the require block composer.json file:
+
+        "ext-pdo_sqlite": "*"
+
+Then run:
+
+        composer update
+
 ### 500 - Server Error
 
 - Your project is probably missing the .env file. For security reasons, the .env file is not typically uploaded to Git repositories.
@@ -408,9 +450,9 @@ ____
 
 ___
 
-1. To create a new model and migration, type this in your terminal:
+1. To create a new model, migration and controller, type this in your terminal:
 
-        php artisan make:model Category -m
+        php artisan make:model Category -mc
 
 2. Find the place in your new migration that looks like this:
 
@@ -461,7 +503,7 @@ ___
 
         public function categories()
         {
-                return $this->belongsToMany(SongCategory::class);
+                return $this->belongsToMany(Category::class);
         }
 
 13. Now, go to the **Category** model (assuming that's its name) under app/Models.
@@ -499,7 +541,19 @@ ___
 
         }
 
-17. Create a route that returns a page with the content of the above index function.
+18. Create a route that returns a page with the content of the above index function.
+
+19. Add a line such as this one to load the model in the SongController:
+
+        use App\Models\Category;
+
+##  Tinker - Laravel Debugging Tool
+
+1. Open a Terminal window.
+
+2. Type something like this:
+
+        Song::first();
 
 ## VS Code Extensions
 
