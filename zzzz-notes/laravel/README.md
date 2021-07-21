@@ -352,6 +352,16 @@ As a rule of thumb, you should have one controller per table in your database.
 
 ## Solving Different Bugs
 
+### Not being able to load CSS locally and remotely.
+
+- This is probably caused by the fact that you are using HTTP locally and HTTPS remotely.
+- The quick and dirty way of solving this is to load your assets twice:
+
+        <link rel="stylesheet" href="{{asset('css/style.css')}}" />
+        <link rel="stylesheet" href="{{secure_asset('css/style.css')}}" />
+
+- The asset() function is for local HTTP stuff and the secure_asset is for remote HTTPS stuff.
+
 ### Error Class 'App\Http\Controllers\Karaoke' not found
 
 - Add this at the beginning of your controller file:
