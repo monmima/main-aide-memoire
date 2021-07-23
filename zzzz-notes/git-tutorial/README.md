@@ -47,11 +47,26 @@ To unadd and uncommit a change | git reset HEAD~
 
 ## Creating an SSH key on Linux Mint
 
-1. Open a Terminal window
-2.  Type this:
+This is probably very much like what you'd have to do on any other machine (Windows or MacIntosh). The only difference that I can think of are steps 4 and 5, where the path is going to be slightly different.
+
+1. Open a Terminal window.
+2. Type this:
 
         ssh-keygen
 
+3. Choose a passphrase or press Enter (leaving the field empty) not to use one.
+4. Copy the path just given to you (e.g., /home/[your-username]/.ssh/id_rsa.pub)
+5. Type the following to display the content of the file in Terminal or manually open the file. **Watch out!** .ssh is a hidden folder so you might have to do something for it to show up:
 
+        cat /home/[your-username]/.ssh/id_rsa.pub
 
-
+6. Copy the content of the file.
+7. Log into your Github account.
+8. Click on the profile icon (circle at the top right corner of the screen).
+9. Go to your settings.
+10. Go to the tab called **SSH and GPG keys**.
+11. Click the green button called **New SSH key**.
+12. Paste the line that was copied step 6.
+13. Give the new SSH key a name.
+14. Voilà! Now you have to clone existing projects using the SSH option for this to work.
+15. Bear in mind that if you keep using an old project folder that was cloned using HTTPS and not SSH, you'll still be using HTTPS. Being asked to manually type your Github credentials (password, etc.) would be a hint that you are still using HTTPS.
