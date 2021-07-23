@@ -44,3 +44,8 @@ To merge a branch (you need to be in the branch where your other branch is going
 Action | Command
 ------------ | -------------
 To unadd and uncommit a change | git reset HEAD~
+
+## Creating an SSH key on Linux Mint
+
+
+
