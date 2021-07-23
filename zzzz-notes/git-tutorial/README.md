@@ -47,5 +47,11 @@ To unadd and uncommit a change | git reset HEAD~
 
 ## Creating an SSH key on Linux Mint
 
+1. Open a Terminal window
+2.  Type this:
+
+        ssh-keygen
+
+
 
 
