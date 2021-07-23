@@ -352,6 +352,10 @@ As a rule of thumb, you should have one controller per table in your database.
 
 ## Solving Different Bugs
 
+### 500 | Server Error showing up instead of app
+
+- Are you sure you have a .env file in your project? By default, it is excluded in the .gitignore file.
+
 ### Not being able to load CSS locally and remotely.
 
 - This is probably caused by the fact that you are using HTTP locally and HTTPS remotely.
