@@ -70,4 +70,4 @@ This is probably very much like what you'd have to do on any other machine (Wind
 13. Give the new SSH key a name.
 14. Voilà! Now you have to clone existing projects using the SSH option for this to work.
 15. Bear in mind that if you keep using an old project folder that was cloned using HTTPS and not SSH, you'll still be using HTTPS. Being asked to manually type your Github credentials (password, etc.) would be a hint that you are still using HTTPS.
-16. Now, if you format your computer, you can reuse your SSH keys by dropping a copy of the .ssh folder where it belongs, which would be here on Linux Mint: **/home/[your-username]/**.
+16. Now, if you format your computer, you can reuse your SSH keys by dropping a copy of the .ssh folder where it belongs, which would be here on Linux Mint: **/home/[your-username]/**. Ideally, you would use different SSH keys for different computers.
