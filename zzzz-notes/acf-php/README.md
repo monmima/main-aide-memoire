@@ -71,17 +71,28 @@ Based on [CodeTime's YouTube tutorial](https://www.youtube.com/watch?v=PWK20gHXJ
     - Conditional Logic: Yes.
     - Show this field if: Event RSVP Link or Email value is equal to Email.
     - Close field.
-
-### Apparently impossible to do now with the modern ACF Pro interface.
-
-- Go to Button Label.
-    - Change "Add Row" to "Add Event".
+- Go under the list of fields you have created.
+- Button Label: change "Add Row" to "Add Event" since it's more relevent to the context.
 - Layout: Row.
-- Go to Location:
-    - Show this field if Page Template is equal to Default Template.
-    - This is going to change later on when we replace the Default Template with the Event Template.
+- Location: Show this field if Page Template is equal to Default Template.
+- The Location is going to change later on when we replace the Default Template with the Event Template.
 - Hit Publish (blue button) or Update (same button with a different label if you clicked it before this point).
 
-##  [Creating a child theme](https://www.youtube.com/watch?v=Bqf-F_B4VcU&list=PLylMDDjFIp1C1s6PKwzmd-sm2G__ZhGWf&index=4)
+##  Creating a child theme
+
+The them CodeTime uses in his tutorial is Twenty Seventeen.
+
+The method given in the tutorial by CodeTime doesn't work very well since a link he provides is dead and since the content of the page whose link is dead might be out of date too.
+
+- Install Child Theme Configurator Theme.
+- Go to Tools ===> Child Themes
+- Select a theme from the drop-down menu.
+- Tick the box next to "Copy Menus, Widgets and other Customizer Settings from the Parent Theme to the Child Theme:"
+- Click Create Child Theme.
+- Go to Appearance ===> Themes
+- Activate the child theme.
+- At the end of the process, you should have one new folder containing three files under /home/[username]]/Local Sites/[my-website-name]/app/public/wp-content/themes/. (This path assumes you are under Linux Mint).
+
+## Creating a page template for our fields
 
 - 
