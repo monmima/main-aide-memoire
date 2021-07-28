@@ -14,7 +14,7 @@ Based on [CodeTime's YouTube tutorial](https://www.youtube.com/watch?v=PWK20gHXJ
     - Call the field "Event" (singular).
     - The Field Type should be "Repeater".
     - The free version of ACF won't have a Repeater option for you to play with. This is why you absolutely need ACF Pro.
-    - Required.
+    - **Not required or else everytime you try and edit the events page it's going to force you to add an event.**
 - **Before going any further, watch out! You are going to add subfields to the Event field under "Sub Fields" from now on.**
 - Add a field.
     - Field Label: Event Title.
@@ -162,4 +162,126 @@ get_template_part( 'template-parts/page/content', 'events' );
 
 ## [Populating our custom fields](https://www.youtube.com/watch?v=8hklJZjQu38&list=PLylMDDjFIp1C1s6PKwzmd-sm2G__ZhGWf&index=6)
 
-- 
+- Go to Dashboard ===> Pages ===> Events.
+- Click on Add Event.
+- Create three new events.
+- Once you're done, click "update".
+
+## [Outputting Our Custom Fields with PHP](https://www.youtube.com/watch?v=I40YjcjjrSA&list=PLylMDDjFIp1C1s6PKwzmd-sm2G__ZhGWf&index=7)
+
+- Go to content-event.php.
+- Just below the_content() is where you want to insert your code.
+- Select this:
+```
+    <?php
+        the_content();
+
+        wp_link_pages(
+            array(
+                'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
+                'after'  => '</div>',
+            )
+        );
+    ?>
+```
+- Replace the content above with this:
+```
+    <?php the_content(); ?>
+
+
+
+    <?php
+        wp_link_pages(
+            array(
+                'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
+                'after'  => '</div>',
+            )
+        );
+    ?>
+```
+- Documentation is available at https://www.advancedcustomfields.com/resources.
+- Search for "repeater" in the documentation and click on the link or go to https://www.advancedcustomfields.com/resources/repeater.
+- Alternatively, use this instead as a starting point:
+```
+    <?php
+        // Check rows exists.
+        if( have_rows('event') ):
+
+            // Loop through rows.
+            while( have_rows('event') ) : the_row();
+
+                the_sub_field('event_title');
+
+            // End loop.
+            endwhile;
+
+        // No value.
+        else :
+            // Do something...
+        endif;
+    ?>
+```
+- Alternatively, use this for CodeTime's Tutorial:
+```
+    <?php
+        // Start of CodeTime's Tutorial Code
+        // Check rows exists.
+        if( have_rows('event') ):
+
+            // Loop through rows.
+            while( have_rows('event') ) : the_row();
+            
+                if (get_sub_field("event_rsvp_link_or_email") == "Link") {
+                    $rsvp_link = get_sub_field("event_rsvp_link");
+                } else {
+                    $rsvp_link = "mailto:".get_sub_field("event_rsvp_email");
+                };
+            
+            ?>
+
+            <h2 class="entry-title">
+                <?php the_sub_field('event_title'); ?>
+            </h2>
+
+            <p>
+                <?php the_sub_field('event_date'); ?> at
+                <?php the_sub_field('event_start_time'); ?>
+
+                <?php
+                if (get_sub_field('event_end_time'))
+                    {
+                        echo ' until ';
+                        the_sub_field('event_end_time');
+                    }
+                ?>
+            </p>
+
+            <p>
+                <?php the_sub_field('event_descripton'); ?>
+            </p>
+
+            <p>
+                <a href="<?php echo $rsvp_link; ?>" title="RSVP">RSVP</a>
+            </p>
+
+            <?php 
+            // End loop.
+            endwhile;
+
+        // No value.
+        else :
+            // Do something...
+            echo "<p>There are currently no events planned.</p>";
+        endif;
+
+        // End of CodeTime's Tutorial Code
+    ?>
+```
+- Place the code sample between the_content() and wp_link_pages().
+- Make sure the new code sample ends with a closing php tag (**?>**).
+
+## [Outputting Custom Field Images](https://www.youtube.com/watch?v=Ytkr9smEpQ0&list=PLylMDDjFIp1C1s6PKwzmd-sm2G__ZhGWf&index=8)
+
+
+
+
