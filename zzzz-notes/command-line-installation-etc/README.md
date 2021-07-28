@@ -64,13 +64,7 @@ ___
 ## Anki
 
     sudo apt install anki
-
-___
-
-## keepassx
-
-    sudo apt install keepassx
-
+    
 ___
 
 ## Brightness Controller
