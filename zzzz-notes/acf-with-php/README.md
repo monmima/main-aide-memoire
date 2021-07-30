@@ -407,17 +407,20 @@ Indeed, I haven't been able to make this work even though I'm using Twenty Seven
 ## [Creating Nested Repeater Fields](https://www.youtube.com/watch?v=kh9pgYdg7qg&list=PLylMDDjFIp1C1s6PKwzmd-sm2G__ZhGWf&index=12)
 
 - Go to Dashboard ===> Custom Fields ===> Add New.
+- Enter title here: Menu.
+- Click on Add Field.
+- Field Label: Menu Section.
 - Field Type: Repeater.
 - Not required.
     - Sub Fields ===> Add field.
         - Field Name: Menu Section Title.
         - Required.
-        - Close Fields.
+        - Close Field.
     - Sub Fields ===> Add field.
         - Field Name: Menu Description.
         - Field Type: Text Area.
         - Not required.
-        - Close Fields.
+        - Close Field.
     - Sub Fields ===> Add field.
         - Field Name: Menu Item.
         - Field Type: Repeater.
@@ -427,22 +430,66 @@ Indeed, I haven't been able to make this work even though I'm using Twenty Seven
         - Sub Fields: ===> Add field.
             - Field Name: Menu Title.
             - Required.
-            - Close Fields.
+            - Close Field.
         - Sub Fields: ===> Add field.
             - Field Name: Meal Description.
             - Field Type: Text Area.
             - Required.
-            - Close Fields.
+            - Close Field.
         - Sub Fields: ===> Add field.
             - Field Name: Meal Price.
             - Field Type: Number.
             - Required.
-            - Close Fields.
-        - Close Fields.
+            - Close Field.
+        - Close Field.
 - Layout: Row.
 - Button Label: Add Menu Section.
-- Close Fields.
+- Close Field.
+- Publish.
 
 ## [Creating a Page Template for Nested Repeater Fields](https://www.youtube.com/watch?v=V81eifHy0sM&list=PLylMDDjFIp1C1s6PKwzmd-sm2G__ZhGWf&index=13)
 
-- 
+- Go to your child theme folder. It should look like this: /home/[your-username]/Local Sites/acf20210727/app/public/wp-content/themes/twentyseventeen-child/template-parts.
+- Copy the page.php file.
+- Paste it in the same folder.
+- Rename the new file page-menu.php.
+- Find this line:
+
+        Template Name: Events
+- Change the line like so:
+
+        Template Name: Menu
+
+- Find this line:
+
+        get_template_part( 'template-parts/page/content', 'events' );
+
+- Change the line like so:
+
+        get_template_part( 'template-parts/page/content', 'menu' );
+
+- Go to /home/[your-username]/Local Sites/acf20210727/app/public/wp-content/themes/twentyseventeen-child/template-parts/.
+- Copy and rename content-events.php to content-menu.php.
+- Delete everything between those lines:
+
+        <?php the_content(); ?>
+
+        <!-- delete everything here -->
+        
+        <?php
+            wp_link_pages(.
+- Go to Dashboard ===> Pages ===> Add New.
+- Create a "Menu" page.
+- Select the Menu template.
+- Hit the blue Publish button.
+- At this point, it's normal that the custom fields don't show up yet.
+- Go to Dashboard ===> Custom Fields ===> Field Groups.
+- Click Edit under Menu.
+- Rules: Page Template is equal to Menu.
+- Hit the blue Update button.
+- Now your Menu custom field will appear only when your page template is set to Menu.
+
+## [Populating Nested Repeater Fields](https://www.youtube.com/watch?v=NvowpqON2AU&list=PLylMDDjFIp1C1s6PKwzmd-sm2G__ZhGWf&index=14)
+
+
+
