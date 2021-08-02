@@ -491,5 +491,54 @@ Indeed, I haven't been able to make this work even though I'm using Twenty Seven
 
 ## [Populating Nested Repeater Fields](https://www.youtube.com/watch?v=NvowpqON2AU&list=PLylMDDjFIp1C1s6PKwzmd-sm2G__ZhGWf&index=14)
 
+- Go to Dashboard ===> Pages ===> All Pages.
+- Menu ===> Edit Page.
+- The Menu template should be the one selected.
+- Scroll down and click Add Menu.
+    - Menu Section Title: Breakfast
+    - Menu Section Description: We serve a really awesome breakfast. Try our French toast.
+    - Click on Add Menu Item.
+        - Meal Title: French Toast.
+        - Meal Description: Our world-famous French toast is created using our own home-baked bread.
+        - Meal Price: 8.
+    - Click on Add Menu Item.
+        - Meal Title: Fried Eggs.
+        - Meal Description: Like eggs? Try our fried eggs over easy.
+        - Meal Price: 6.
+    - Click on Add Menu Item.
+        - Meal Title: Cereals.
+        - Meal Description: We serve a variety of cereals including hot ones like oatmeal and cold ones like Corn Chex.
+        - Meal Price: 4.
+    - You can drag-and-drop items to reorder them.
+- Scroll down and click Add Menu Section.
+    - Menu Section Title: Lunch.
+    - Menu Section Description: [Left blank].
+    - Click on Add Menu Item.
+        - Menu Title: Hot Dogs.
+        - Meal Description: We cook our hot dogs over an open flame.
+        - Menu Price: 4.
+    - Click on Add Menu Item.
+        - Menu Title: Hamburgers.
+        - Meal Description: We cook our burgers over an open flame as well.
+        - Menu Price: 8.
+    - Click on Add Menu Item.
+        - Menu Title: Salad.
+        - Meal Description: Enjoy a nice, refreshing, spring green salad.
+        - Menu Price: 2.
+    - Menu Section Title: Dinner.
+    - Menu Section Description: [Left blank].
+    - Click on Add Menu Item.
+        - Menu Title: Tortilla Soup.
+        - Meal Description: Try out our famous tortilla soup. Perfect for cold weather.
+        - Menu Price: 6.
+    - Click on Add Menu Item.
+        - Menu Title: Steak.
+        - Meal Description: Try our grass-fed steak.
+        - Menu Price: 14.
+    - Click on Fresh Salmon.
+        - Menu Title: Steak.
+        - Meal Description: Enjoy some fresh salmon caught this morning.
+        - Menu Price: 20.
 
+## [Outputting Nested Repeater Fields](https://www.youtube.com/watch?v=W03efCo9_Lo&list=PLylMDDjFIp1C1s6PKwzmd-sm2G__ZhGWf&index=15)
 
