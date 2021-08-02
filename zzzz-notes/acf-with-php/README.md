@@ -535,10 +535,118 @@ Indeed, I haven't been able to make this work even though I'm using Twenty Seven
         - Menu Title: Steak.
         - Meal Description: Try our grass-fed steak.
         - Menu Price: 14.
-    - Click on Fresh Salmon.
-        - Menu Title: Steak.
+    - Click on Add Menu Item.
+        - Menu Title: Salmon.
         - Meal Description: Enjoy some fresh salmon caught this morning.
         - Menu Price: 20.
+- Hit Update.
 
 ## [Outputting Nested Repeater Fields](https://www.youtube.com/watch?v=W03efCo9_Lo&list=PLylMDDjFIp1C1s6PKwzmd-sm2G__ZhGWf&index=15)
 
+- Go to https://www.advancedcustomfields.com/resources/repeater/.
+- Copy the code for the basic loop.
+- Open content-menu.php.
+- Copy and paste the code just below the_content().
+- Add a closing PHP tag like so:
+
+        while( have_rows('repeater_field_name') ) : the_row(); ?>
+
+- The final result of your content-menu.php file should look something like this:
+
+        <?php
+        /**
+        * Template part for displaying page content in page.php
+        *
+        * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+        *
+        * @package WordPress
+        * @subpackage Twenty_Seventeen
+        * @since Twenty Seventeen 1.0
+        * @version 1.0
+        */
+
+        ?>
+
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <header class="entry-header">
+                <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+                <?php twentyseventeen_edit_link( get_the_ID() ); ?>
+            </header><!-- .entry-header -->
+            <div class="entry-content">
+                <?php the_content(); ?>
+
+                <?php
+
+                    // Check rows exists.
+                    if( have_rows('menu_section') ):
+
+                        // Loop through rows.
+                        while( have_rows('menu_section') ) : the_row(); ?>
+
+                            <h2 class="entry-title">
+                                <?php the_sub_field('menu_section_title'); ?>
+                            </h2>
+
+                            <?php if (get_sub_field("menu_section_description")): ?>
+                                <p>
+                                    <?php the_sub_field("menu_section_description"); ?>
+                                </p>
+                            <?php endif; ?>
+
+                            <?php
+
+                                // Check rows exists.
+                                if( have_rows('menu_item') ):
+
+                                    // Loop through rows.
+                                    while( have_rows('menu_item') ) : the_row(); ?>
+
+                                        <h3>
+                                            <?php the_sub_field("menu_title"); ?>
+                                        </h3>
+
+                                        <p>
+                                            <?php the_sub_field("meal_description"); ?>
+                                        </p>
+
+                                        <p>
+                                            $<?php the_sub_field("meal_price"); ?>
+                                        </p>
+
+                            <?php
+                                    // End loop.
+                                    endwhile;
+
+                                // No value.
+                                else :
+                                    // Do something...
+                                endif;
+
+                            ?>
+
+
+
+                <?php
+                        // End loop.
+                        endwhile;
+
+                    // No value.
+                    else :
+                        // Do something...
+                    endif;
+
+                ?>
+
+                <?php
+                    wp_link_pages(
+                        array(
+                            'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
+                            'after'  => '</div>',
+                        )
+                    );
+                ?>
+            </div><!-- .entry-content -->
+        </article><!-- #post-<?php the_ID(); ?> -->
+
+
+## [Styling Nested Repeater Fields](https://www.youtube.com/watch?v=9q5US4kZqTA&list=PLylMDDjFIp1C1s6PKwzmd-sm2G__ZhGWf&index=16)
