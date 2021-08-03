@@ -188,54 +188,56 @@ Based on [CodeTime's YouTube tutorial](https://www.youtube.com/watch?v=PWK20gHXJ
 
                 <?php
 
-                    // Check rows exists.
-                    if( have_rows('menu_section') ):
+                    <section class="menu__section">
 
-                        // Loop through rows.
-                        while( have_rows('menu_section') ) : the_row(); ?>
+                        // Check rows exists.
+                        if( have_rows('menu_section') ):
 
-                            <h2 class="entry-title">
-                                <?php the_sub_field('menu_section_title'); ?>
-                            </h2>
+                            // Loop through rows.
+                            while( have_rows('menu_section') ) : the_row(); ?>
 
-                            <?php if (get_sub_field("menu_section_description")): ?>
-                                <p>
-                                    <?php the_sub_field("menu_section_description"); ?>
-                                </p>
-                            <?php endif; ?>
+                                <h2 class="entry-title">
+                                    <?php the_sub_field('menu_section_title'); ?>
+                                </h2>
 
-                            <?php
+                                <?php if (get_sub_field("menu_section_description")): ?>
+                                    <p>
+                                        <?php the_sub_field("menu_section_description"); ?>
+                                    </p>
+                                <?php endif; ?>
 
-                                // Check rows exists.
-                                if( have_rows('menu_item') ):
+                                <?php
 
-                                    // Loop through rows.
-                                    while( have_rows('menu_item') ) : the_row(); ?>
+                                    // Check rows exists.
+                                    if( have_rows('menu_item') ):
 
-                                        <h3>
-                                            <?php the_sub_field("menu_title"); ?>
-                                        </h3>
+                                        // Loop through rows.
+                                        while( have_rows('menu_item') ) : the_row(); ?>
 
-                                        <p>
-                                            <?php the_sub_field("meal_description"); ?>
-                                        </p>
+                                            <h3>
+                                                <?php the_sub_field("menu_title"); ?>
+                                            </h3>
 
-                                        <p>
-                                            $<?php the_sub_field("meal_price"); ?>
-                                        </p>
+                                            <p>
+                                                <?php the_sub_field("meal_description"); ?>
+                                            </p>
 
-                            <?php
-                                    // End loop.
-                                    endwhile;
+                                            <p>
+                                                $<?php the_sub_field("meal_price"); ?>
+                                            </p>
 
-                                // No value.
-                                else :
-                                    // Do something...
-                                endif;
+                                <?php
+                                        // End loop.
+                                        endwhile;
 
-                            ?>
+                                    // No value.
+                                    else :
+                                        // Do something...
+                                    endif;
 
+                                ?>
 
+                    </section>
 
                 <?php
                         // End loop.
@@ -262,5 +264,13 @@ Based on [CodeTime's YouTube tutorial](https://www.youtube.com/watch?v=PWK20gHXJ
 
 ## [Styling Nested Repeater Fields](https://www.youtube.com/watch?v=9q5US4kZqTA&list=PLylMDDjFIp1C1s6PKwzmd-sm2G__ZhGWf&index=16)
 
-- Go to the style.css file which is associated the project child theme.
-- 
+- Go to the style.css file which is associated the project child theme (your path should look like this: /home/[your-username]/Local Sites/[your-site-name]/app/public/wp-content/themes/twentyseventeen-child/template-parts).
+- Give your menu the style that you want it to have.
+
+## [Adding Nested Repeater Fields to the Homepage](https://www.youtube.com/watch?v=9x2sG2lBJrc&list=PLylMDDjFIp1C1s6PKwzmd-sm2G__ZhGWf&index=17)
+
+Only applicable to the Twenty Seventeen theme. Skipping this part...
+
+## [Adding Nested Repeater Fields to the Homepage](https://www.youtube.com/watch?v=9x2sG2lBJrc&list=PLylMDDjFIp1C1s6PKwzmd-sm2G__ZhGWf&index=17)
+
+Only applicable to the Twenty Seventeen theme. Skipping this part...
