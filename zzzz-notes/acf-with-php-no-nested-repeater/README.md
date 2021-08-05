@@ -304,7 +304,6 @@ get_template_part( 'template-parts/page/content', 'events' );
 
 ## [Styling Our Custom Fields with CSS](https://www.youtube.com/watch?v=tsn3oVr9YtI&list=PLylMDDjFIp1C1s6PKwzmd-sm2G__ZhGWf&index=9)
 
-
 To change the visual styling of your page, just use style.css and content-events.php.
 
 ## [Displaying Custom Fields on Your Homepage](https://www.youtube.com/watch?v=jBAwsI8H3j0&list=PLylMDDjFIp1C1s6PKwzmd-sm2G__ZhGWf&index=10)
