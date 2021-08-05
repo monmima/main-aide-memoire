@@ -263,7 +263,7 @@ Answer:
 
 let x = 50, y = 6;
 
-This may seem shorter, but is also less readable.`
+This may seem shorter, but is also less readable.
 
 ___
 
@@ -2089,7 +2089,7 @@ Answer:
 - 2. Realize one more thing needs to be done and do it
 - 3. Realize step 2 added a mistake
 
-Now I make sure to go over my checklist once more before considering I'm done.`
+Now I make sure to go over my checklist once more before considering I'm done.
 
 ___
 
@@ -2136,7 +2136,7 @@ Answer:
 - vscode-icons
 - Node/NPM
 
-* This question is meant to understand your proficiency level, the idea is that experienced developers use tools to make their lives easier.`
+* This question is meant to understand your proficiency level, the idea is that experienced developers use tools to make their lives easier.
 ___
 
 Varia HTML: Should you use datetime or datetime-local for a calendar?
