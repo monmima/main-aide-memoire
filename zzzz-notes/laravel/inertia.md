@@ -102,6 +102,12 @@ laravel new [inertia-app]
     npm i vue / npm install vue
     npm run watch
 
-Run this command again:
+- Run this command again:
 
     npm run watch
+
+- And maybe this other one too:
+
+    php artisan serve
+
+- Make sure the app is running on port 8000 **and not on port 3000**.

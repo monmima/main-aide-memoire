@@ -1,607 +1,113 @@
-# Laravel Aide-Mémoire
+# Using Inertia.js and Laravel
 
-___
+https://www.youtube.com/watch?v=JZDmBWRPWlw
+https://www.youtube.com/watch?v=XEW2d2XHkAk
 
-## A Word of Thanks
+## Perks of Inertia.js
 
-I am indebted to many people for being able to create this aide-mémoire. I had to figure out a way to do many different things, including:
+- One codebase and therefore one repository on Github
+- No API to create
 
-- Installing Laravel on Linux Mint
-- Using SQLite
-- Deploying a Laravel project to Heroku
+## Downsides of Inertia.js
 
-On top of that, I had to wrap my head around the ways of Laravel, and this was made possible thanks to [Jeffrey Way from Laracast](https://laracasts.com/series/laravel-8-from-scratch). His tutorial is crisp, comes with all the code in a Github repository and is explained is plain terms. And on top of that, it's free.
+- Code is generated on the client side, so it's not so good for SEO
 
-___
+## Steps to follow
 
-## Installing Laravel on Linux Mint
+- Open a Terminal window:
 
-Thanks to Ceed Media for his [YouTube tutorial](https://www.youtube.com/watch?v=cVecpIbonnU) on how to install Laravel on Linx Mint. The steps he follows are below.
+        laravel new [inertia-app]
 
-1. Update your system
-
-        sudo apt-get update
-
-2. Install curl
-
-        sudo apt install curl
-
-3. Install PHP
-
-        sudo apt install php
-
-4. Install Composer
-
-        curl -s https://getcomposer.org/installer | php
-
-5. Move the file
-
-        sudo mv composer.phar /usr/local/bin/composer
-
-6. Confirm Composer is installed
-
-        composer
-
-7. Install Laravel
-
-        composer global require laravel/installer
-
-8. Edit .bashrc
-
-        nano .bashrc
-
-9. Under "esac", type:
-
-        export PATH="$PATH:$HOME/.config/composer/vendor/bin"
-
-10. Use CTRL + X to save
-11. Press Enter to confirm the name of the file
-
-12. Refresh the file:
-
-        source ~/.bashrc
-
-13. Install Laravel
-
-        laravel (to install laravel)
-
-14. Go to the Desktop folder
-
-        cd Desktop
-
-15. Install php-mbstring
-
-        sudo apt-get install php-mbstring
-
-16. Install php-xml
-
-        sudo apt-get install php-xml
-
-17. Download the lastest dependencies
-
-        composer update
-
-18. Use CTRL + H in the project folder
-19. Rename **.env.example** to **.env** (there might already be a file with this name and therefore this step might be useless)
-
-___
-
-### The Net Ninja Way
-
-The Net Ninja installs Laravel globally in [one of his tutorials](https://www.youtube.com/watch?v=E74_WZpjeKA) with **composer global require laravel/installer**. This means that you can create Laravel projects wherever you want.
-
-___
-
-### Creating a Project and Running it
-
-    laravel new [my-web-app-name]
-    php artisan key:generate
-    php artisan serve
-
-Now go to your browser and type http://localhost:8000/ in the address bar.
-
-___
-
-## Deleting Your Dependencies To Move A Project Around
-
-All dependencies are stored in your **vendor** and **node_module** subfolders. To reinstall your dependencies, for instance after downloading your project from a git repository, use **composer update** and **npm install**.
-
-___
-
-## Using An Existing Laravel Project On Another Machine
-
-If you have formatted your computer or are using another computer and want to use a pre-existing project, you'll have to go through the following steps:
-
-1. Install NPM:
-
-        sudo apt install npm
-
-2. Install Composer:
-
-        sudo apt install Composer
-
-3. Install the SQLite module for PHP:
-
-        sudo apt-get install php-sqlite3
-
-4. Install whatever this is:
-
-        sudo apt-get install php-xml
-
-5. Install the composer dependencies:
-
-        composer install
-
-6. Install the NPM dependencies:
-
-        npm install
-
-___
-
-
-## Using And Running MySQL On Linux Mint
-
-Obviously, you can use Microsoft, Linux or the Macintosh operating system to run this project, but I'm keeping these steps below just in case I get stuck again, and I use Linux Mint as my main OS.
-
-1. Download XAMPP for Linux from https://www.apachefriends.org/download.html
-2. Run the .run file as a root user
-3. To run XAMPP, go to /opt/lampp/ as a root user
-4. Go to localhost/dashboard/ or go to localhost/phpmyadmin
-5. Double-click on manager-linux-x64.run
-6. Create a database and then import the content into it if needs be (you cannot create a database directly from a file you want to import)
-7. Go to the .env file and make sure your environment variables look like this:
-
-        DB_CONNECTION=mysql
-        DB_HOST=127.0.0.1
-        DB_PORT=3306
-        DB_DATABASE=name_of_my_database
-        DB_USERNAME=root
-        DB_PASSWORD=
-
-8. Go to root folder, open a Terminal window and type:
+- Open app in VS Code.
+- Go to .env.
+- Delete all lines starting with "DB_".
+- Replace with DB_CONNECTION=sqlite.
+- Go to /database.
+- Create a database.sqlite file.
+- Open a Terminal window:
 
         php artisan migrate
 
-9. If everything went fine, your database should now have a few tables that were automatically created such as failed_jobs, etc.
+## [Server-side setup](https://inertiajs.com/server-side-setup)
 
-Notes:
+- Open a Terminal window.
 
-- Apparently, the path can be a bit different from one Linux distro to the other.
-- If your Apache server won't start (red dot next to it in XAMPP), run this command:
+    composer require inertiajs/inertia-laravel
 
-        sudo systemctl stop apache2
+- Create a new /resources/views/app.blade.php file next to the existing welcome.blade.php file.
+- Go to https://inertiajs.com/server-side-setup.
+- Copy the the root template for Laravel into /resources/views/app.blade.php.
+- Go back to https://inertiajs.com/server-side-setup.
+- Install the Inertia middleware with this command:
 
-- If the above really won't work, I suggest restarting your computer, and then running the same command.
+    php artisan inertia:middleware
 
-___
+- Go to /app/Http/Kernel.php.
+- At the bottom of the web array, add this line:
 
-## Using SQLite locally on Linux Mint
+    \App\Http\Middleware\HandleInertiaRequests::class,
 
-https://www.codementor.io/@goodnesskay/developing-locally-using-sqlite-with-laravel-on-ubuntu-8s8358503
+## [Client-side setup](https://inertiajs.com/client-side-setup)
 
-Thanks to [Coder's Tape
-](https://www.youtube.com/watch?v=kWmnQvznkUI) for creating his tutorial on YouTube on how to change the default SQL database settings to SQLite.
+- Open a Terminal window.
 
-1. Go to the .env file
-2. Replace **DB_CONNECTION=mysql** with **DB_CONNECTION=sqlite**
-3. Erase all the other database-related lines (all lines starting with the prefix "DB_") such as DB_HOST=127.0.0.1, DB_PASSWORD=, etc.
-4. Create a database through the Terminal or manually
+    npm install @inertiajs/inertia @inertiajs/inertia-vue
 
-        touch database/database.sqlite
+- Go to https://inertiajs.com/client-side-setup.
+- Copy the code under Initialize app.
+- Go to /resources/js/app.js.
+- Replace the content of the file with what you have just copied.
+- Delete /resources/js/bootstrap.js.
+- Install the progress indicator:
 
-5. Update Composer
+    npm install @inertiajs/progress
 
-        composer update
+- Copy the code to initialize your app:
 
-6. Install possibly missing dependencies
+    import { InertiaProgress } from '@inertiajs/progress'
 
-        composer require doctrine/dbal
+    InertiaProgress.init()
 
-7. Go to the .env file and make sure your environment variables look like this:
+- Paste it at the beginning of app/resources/js/app.js after the other import statements.
 
-        DB_CONNECTION=sqlite
+## Using a CDN file (not ideal, but works)
 
-8. Go to the root folder, open a Terminal window and type:
-
-        php artisan migrate
-
-9. If everything went fine, your database should nonw have a few tables that were automatically created such as failed_jobs, etc.
-
-___
-
-## Heroku
-
-My references here were a [tutorial on YouTube by Jonny Kalambay](https://www.youtube.com/watch?v=MxfxiR8TVNU) and an answer on the [Trailblazer Community](https://trailblazers.salesforce.com/answers?id=9064S000000DHq1QAG).
-
-Also, for the details that pertain to Laravel in particular, [codigofacilito and his tutorial on YouTube](https://www.youtube.com/watch?v=GE2Kmy8WL3g) were very useful to me. By the way his tutorial is in Spanish. He also explains how to upload a PostgreSQL database to the project at the end of his video.
-
-### Installing the CLI
-
-1. Install snap ([documentation available on snapcraft](https://snapcraft.io/docs/installing-snap-on-linux-mint))
-
-        sudo rm /etc/apt/preferences.d/nosnap.pref
-        sudo apt update
-        sudo apt install snapd
-
-2. Install Heroku
-
-        snap install --classic heroku
-
-### Creating a Heroku Project
-
-1. Go to Heroku
-    - https://dashboard.heroku.com/apps
-2. Create a new project such as [my-web-app-name]
-3. Go to the Terminal Window and make sure the app/project is initialized as a Git repository by typing:
-
-        git status
-
-4. On the Heroku web site, you can find more information about the name of your project under the **deploy** tab.
-5. Create a file named **Procfile** (no extension) at the root of your project. It should contain this:
-    - web: vendor/bin/heroku-php-apache2 public/
-6. Go to the .env file. You'll need to copy and paste a series of lines to the Terminal window.
-
-        heroku git:remote -a [my-web-app-name]
-
-        heroku config:add APP_NAME=Laravel
-
-        heroku config:add APP_ENV=production
-
-        heroku config:add APP_KEY=...
-
-        heroku config:add APP_DEBUG=true
-
-        heroku config:add APP_URL=http://[my-web-app-name].test
-
-7. Push your project to Heroku:
-
-        git push heroku HEAD:master
-
-8. On the Heroku's web site, click on **Open app**, which should be located somewhere in the top right corner of the page of your project
-9. Now you should see your app.
-11. See below if you want to use SQLite as a database in Heroku.
-
-### Updating Your Project
-
-Now all you have to do is to update your remote project and type:
+- Go to /resources/js/app.js.
+- Copy this after the other link tag:
     
-    git push heroku HEAD:master
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
-### Using SQLite in Heroku
+## Setting up routes
 
-Your app might run perfectly locally. Setting it up so it runs remotely as well is slightly more complicated.
+- Go to /routes/web.php
+- Copy and paste this:
 
-The first thing you have to keep in mind if you use a combination of SQLite and Heroku, you will overwrite your remote database with each redeployment, thus resetting it to what you have locally.
+        Route::get("/hello", function () {
+            return inertia("Hello");
+        });
 
-For more information on using Heroku and SQLite, please visit [David Tang's Deploying Laravel with SQLite to Heroku article](https://davidtang.io/deploying-laravel-with-sqlite-to-heroku/). 
+- Go to /resources/js.
+- Create a new folder called /resources/js/Pages.
+- Within the new folder, create a file called Hello.vue.
+- Go to webpack.mix.js.
+- Replace the code near the end of the file with this:
 
-Here are the steps you have to follow:
+        mix.js('resources/js/app.js', 'public/js')
+            .vue()
+            .postCss('resources/css/app.css', 'public/css', [
+                //
+            ])
+            .browserSync("inertia.test");
 
-1. Make sure you are on the right branch and the features you want are on the main branch too.
-2. Delete .sqlite reference from the .gitignore file located within the /database folder.
-3. Add **"ext-pdo_sqlite": "*"** to the **require** block in **composer.json**
-4. Open a Terminal window
-5. Run this:
+- Watch out! The string "inertia.test" above might need to be replaced by [your-project-name.test]. Not sure about this one yet.
+- Go to the Terminal window.
 
-        composer update
+        npm i / npm install
+        npm i vue / npm install vue
+        npm run watch
 
-6. Type these lines one by one to set your environment variables:
+Run this command again:
 
-        heroku config:add APP_NAME=Laravel
-        heroku config:add APP_ENV=production
-        heroku config:add APP_DEBUG=true
-        heroku config:add DB_CONNECTION=sqlite
-        heroku config:add
+    npm run watch
 
-7. Type these lines one by one as well, correcting them with the correct information:
-
-        heroku config:add APP_URL=https://app-name.com/
-        heroku config:add APP_KEY=...
-
-8. Finally, I used to type **heroku config:add DB_DATABASE=database** in the Terminal, but this created a bug. This is probably a **step to avoid**. It apparently created the bug where I would get a message about **PRAGMA**, **foreign keys**, and the online app **not connecting to the database** properly.
-
-___
-
-## Downloading A Laravel Project From Github And Setting It Up
-
-This information was found on [stackoverflow](http://stackoverflow.com/questions/48116952/ddg#48117041).
-
-- Do this:
-
-        composer install
-
-- Rename .env.example as .env and update it with your database credentials (**DB_CONNECTION=sqlite**
-and **DB_HOST=127.0.0.1** for this project).
-
-- Then do this:
-
-
-        php artisan key:generate
-
-        php artisan serve 
-
-___
-
-## Tables, Migrations And Models
-
-### Creating A New Table, Migration, Model And So Forth
-
-To generate multiples files in a single command, use:
-
-        php artisan make:model ModelName -mc
-
-Note: In **-mc**, **m** stands for ***migration*** and **c** stands for ***controller***. You can also add **api** to the end of the string if you want to use AJAX.
-
-This will create the:
-
-- Migration
-- Project model
-- Controller
-
-### Redoing A Migration
-
-If you want to drop previously-created columns in your database and recreate them, use this command:
-
-        php artisan migrate:fresh
-
-## Creating A Controller By Itself
-
-As a rule of thumb, you should have one controller per table in your database.
-
-        php artisan make:controller AweSomeController
-
-## Solving Different Bugs
-
-### 500 | Server Error showing up instead of app
-
-- Are you sure you have a .env file in your project? By default, it is excluded in the .gitignore file.
-
-### Not being able to load CSS locally and remotely.
-
-- This is probably caused by the fact that you are using HTTP locally and HTTPS remotely.
-- The quick and dirty way of solving this is to load your assets twice:
-
-        <link rel="stylesheet" href="{{asset('css/style.css')}}" />
-        <link rel="stylesheet" href="{{secure_asset('css/style.css')}}" />
-
-- The asset() function is for local HTTP stuff and the secure_asset is for remote HTTPS stuff.
-
-### Error Class 'App\Http\Controllers\Karaoke' not found
-
-- Add this at the beginning of your controller file:
-
-        use App\Models\Karaoke;
-
-
-- If you're dealing with a many-to-many relationship, you might not have created your migration, controller and model at the same time, which is better. Just make sure your model has the right name. For instance this:
-
-        return $this->belongsToMany(Category::class);
-
-- Instead of this:
-
-        return $this->belongsToMany(SongCategory::class);
-
-### Unable to see categories/many-to-many relationships in JSON.
-
-Make sure you have this in your controller file:
-
-    "song" => $song->load('categories');
-
-or this in your model:
-
-    $with = ['categories']
-
-### Unable to load CSS on Heroku (in production)
-
-This is likely caused by CSS being loaded with HTTP instead of HTTPS when the rest of the app is loaded with HTTPS.
-
-Change this:
-
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-
-To this:
-
-    <link rel="stylesheet" href="css/style.css" />
-
-This might not be the cleanest solution, but at least it works.
-
-### could not find driver (SQL: PRAGMA foreign_keys = ON;)
-
-This has to do with the SQLite database. Make sure you added this line to the require block composer.json file:
-
-        "ext-pdo_sqlite": "*"
-
-Then run:
-
-        composer update
-
-### 500 - Server Error
-
-- Your project is probably missing the .env file. For security reasons, the .env file is not typically uploaded to Git repositories.
-
-### Target class [PizzaController] does not exist.
-
-- Make sure you are using the right namespace. The namespace is not working the same way in older versions of Laravel. Go to your web.php file and change this:
-
-        Route::get('/pizzas', 'PizzaController@index');
-
-- To this:
-
-        Route::get('/pizzas', 'App\Http\Controllers\PizzaController@index');
-
-### Getting a token in the address bar instead of storing/updating the database
-
-- Something is likely to be wrong with your form. This could be caused by:
-
-    - The "method" attribute that your forgot for the &lt;form&gt; tag
-    - Nesting a &lt;form&gt; tag inside of another form tag, etc.
-
-### The PUT method is not supported for this route. Supported methods: GET, HEAD.
-
-- Something is wrong with your route. The form route and the web.php route doesn't seem to be the same.
-
-### SQLSTATE[23000]: Integrity constraint violation: 19 NOT NULL constraint failed: songs.name (SQL: update "songs" set "name" = ?, "artist" = ?, "lyrics" = ?, "link" = ?, "updated_at" = 2021-06-28 19:59:50 where "id" = 1)
-
-- Something is wrong with the "name" and "id" attributes of your input fields. Are you sure they exist and they are named properly?
-- Another possibility is that you're leaving a field empty and submitting the form when the database expects a non-null value. To solve this, to to your migrate file.
-
-- And change this:
-
-       $table->string('lyrics');
-
-- To this:
-
-       $table->string('lyrics')->nullable();
-
-## Creating A Many-To-Many Relationship (Pivot Table)
-
-Thanks to [Code with Daryl](https://www.youtube.com/watch?v=2oFNu_RhTt4) for providing his tutorial on YouTube. Also, thanks to [Qirolab](https://www.youtube.com/watch?v=JQ01o10Mva4).
-
-____
-
-- https://appdividend.com/2018/05/17/laravel-many-to-many-relationship-example/
-- https://www.larashout.com/laravel-eloquent-many-to-many-relationship
-
-___
-
-1. To create a new model, migration and controller, type this in your terminal:
-
-        php artisan make:model Category -mc
-
-2. Find the place in your new migration that looks like this:
-
-        $table->id();
-        $table->timestamps();
-
-3. Insert a new line so it looks like this:
-
-        $table->id();
-        $table->string('title');
-        $table->timestamps();
-
-4. Go back to the terminal and force a new migration with this:
-
-        php artisan migrate:fresh
-
-5. Go to the category table in your database and create this categories manually. Don't forget to save your modifications.
-
-6. Now is time to create a migration for the pivot table. Let's assume you have two table. One is called "song" and the other is called "category". Create a pivot table using this command **while respecting the alphabetical order** (***category*** comes before ***song***):
-
-        php artisan make:migration create_category_song_table --create=category_song
-
-7. Go to the newest migration file and find this:
-
-        $table->id();
-        $table->timestamps();
-
-8. Insert a new line so it looks like this (**once again, assuming one of the tables is called categories and the other songs**):
-
-        $table->id();
-        $table->integer('category_id')->unsigned();
-        $table->integer('song_id')->unsigned();
-        $table->timestamps();
-
-9. Migrate again using the following command:
-
-        php artisan migrate:fresh
-
-10. Now, go to the **Song** model (assuming that's its name) under app/Models.
-
-11. Find something that looks like this:
-
-        use HasFactory;
-
-12. Change it to this:
-
-        use HasFactory;
-
-        public function categories()
-        {
-                return $this->belongsToMany(Category::class);
-        }
-
-13. Now, go to the **Category** model (assuming that's its name) under app/Models.
-
-14. Find something that looks like this:
-
-        use HasFactory;
-
-15. Change it to this:
-
-        use HasFactory;
-
-        public function songs()
-        {
-                return $this->belongsToMany(Song::class);
-        }
-
-16. Create a controller for your categories;
-
-17. Add an index function that returns JSON to your CategoryController. This will confirm that everything is working just fine.
-
-        /**
-        * Display a listing of the resource.
-        *
-        * @return \Illuminate\Http\Response
-        */
-        public function index()
-        {
-
-                $categories = Category::all();
-
-                return [
-                "categories" => $categories,
-                ];
-
-        }
-
-18. Create a route that returns a page with the content of the above index function.
-
-19. Add a line such as this one to load the model in the SongController:
-
-        use App\Models\Category;
-
-##  Tinker - Laravel Debugging Tool
-
-1. Open a Terminal window.
-
-2. Type something like this:
-
-        Song::first();
-
-## VS Code Extensions
-
-Must-Haves
-
-- ESLint
-    - Integrates ESLint JavaScript into VS Code
-- Vetur
-    - Vue tooling for VS Code
-- PHP Intelephense / PHP IntelliSense
-
-Optionals
-
-- DotENV
-    - support for dotenv file syntax
-- favorites
-    - mark resources (files or folders, local and remote) as favorites, so they can be esasily accessed
-- Laravel blade snippets
-    - Laravel blade snippets and syntax highlight support
-- Laravel goto view
-    - Quick jump to view
-- Laravel-goto-controller
-    - ALT + click to navigate from a route to a respective controller file
-- Material Icon Theme
-    - Material Design Icons for Visual Studio Code
-- pgFormatter
-    - A PostgreSQL formatter
-- PHP Debug
-    - Debug support for PHP with Xdebug
-- Sass
-    - Indented Sass syntax Hightlighting, Autocomplete & Formatter
-- Vue Peek
-    - Allows peek and goto definition for Vue single-file components
-
-Recent discovery
-
-- Laravel Extension Pack
+Now, your app should run on port 8000, even though the window that is going to launch will be on port 3000 (which will display a blank page loading infinitely).
