@@ -29,6 +29,14 @@ To rescan a site that has WPML on it, go to your dashboard, and find Localisatio
 
 ![Rescannign WPML content](./img/rescan.png)
 
+## Clearing WPML Cache
+
+- You can flush WPML cache in WPML > Support > Troubleshooting (dépannage) > "Clear the cache in WPML" [https://wpml.org/forums/topic/wpml-cache-2/]
+
+## Translation function in WPML
+
+        <?= __('Demander une soumission', 'domain-name') ?>
+
 ## Creating A Sticky Menu With Elementor
 
 If you have a top bar and a navigation menu on your site, the best is to make the navigaton menu sticky, but not the top bar. Otherwise the top bar and the navigation menu are going to overlap.
