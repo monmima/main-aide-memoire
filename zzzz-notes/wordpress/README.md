@@ -2,18 +2,18 @@
 
 ## Adding shortcode in PHP/WordPress
 
-        do_shortcode()
+	do_shortcode()
 
 ## Swapping Paragraphs And Image When On Mobile
 
 ```
 @media only screen and (max-width: 769px) {
-        {
-                .swap-on-mobile {
-                display: flex !important;
-                flex-direction: column-reverse;
-                }
-        }
+	{
+		.swap-on-mobile {
+			display: flex !important;
+			flex-direction: column-reverse;
+		}
+	}
 }
 ```
 
@@ -25,7 +25,7 @@
 
 Thanks to YB for this tip.
 
-To rescan a site that has WPML on it, go to your dashboard, and find Localisation du thème et des plugins under WPML. Then do this:
+To rescan a site that has WPML in it, go to your dashboard, and find Localisation du thème et des plugins under WPML. Then do this:
 
 ![Rescannign WPML content](./img/rescan.png)
 
@@ -33,9 +33,25 @@ To rescan a site that has WPML on it, go to your dashboard, and find Localisatio
 
 - You can flush WPML cache in WPML > Support > Troubleshooting (dépannage) > "Clear the cache in WPML" [https://wpml.org/forums/topic/wpml-cache-2/]
 
-## Translation function in WPML
+## Translation function with the WPML extension in WordPress
 
-        <?= __('Demander une soumission', 'domain-name') ?>
+	<?= __('Demander une soumission', 'domain-name') ?>
+
+## Translation without WPML in WordPress
+
+	<?php if (ICL_LANGUAGE_CODE == "fr"): ?>
+	
+		<input name="NOM" type="text" placeholder="Prénom et nom" required>
+		<input name="EMAIL" type="email" placeholder="Courriel" required>
+		<button type="submit" class="button expanded">Je m'abonne</button>
+
+	<?php else: ?>
+
+		<input name="NOM" type="text" placeholder="First & last name" required>
+		<input name="EMAIL" type="email" placeholder="Email" required>
+		<button type="submit" class="button expanded">SIGN ME UP</button>
+
+	<?php endif; ?>
 
 ## Creating A Sticky Menu With Elementor
 
@@ -43,9 +59,9 @@ If you have a top bar and a navigation menu on your site, the best is to make th
 
 If you need to change the background color for your sticky menu, use this:
 
-        .bdt-sticky-fixed {
-                background-color: black;
-        }
+	.bdt-sticky-fixed {
+			background-color: black;
+	}
 
 You can do this all in Elementor, no need to create special JS here.
 
@@ -72,8 +88,8 @@ The procedure belows assumes the browser language looks like fr-FR or en-US and 
 
 1. Create a new line under **(function(d, s, id) {** and type:
 
-        const currLang = document.documentElement.lang;
-        const currLangLowDash = currLang.replace("-", "_")
+		const currLang = document.documentElement.lang;
+		const currLangLowDash = currLang.replace("-", "_")
 
 2. Change the line that starts with **js.src** to this:
 
@@ -81,5 +97,6 @@ The procedure belows assumes the browser language looks like fr-FR or en-US and 
 
 3. Remove these lines or anything that ressembles them. This way, the logged-in and logged-out messages will vary depending on the language of the site instead of always staying the same.
 
-         logged_in_greeting=“Bonjour, comment pouvons-nous vous aider? :parasol:”
-         logged_out_greeting=“Bonjour, comment pouvons-nous vous aider? :parasol:“>
+        logged_in_greeting=“Bonjour, comment pouvons-nous vous aider? :parasol:”
+
+        logged_out_greeting=“Bonjour, comment pouvons-nous vous aider? :parasol:“>
