@@ -1,4 +1,4 @@
-# Using Inertia.js
+# Using Inertia.js and Laravel
 
 https://www.youtube.com/watch?v=JZDmBWRPWlw
 https://www.youtube.com/watch?v=XEW2d2XHkAk
@@ -8,11 +8,15 @@ https://www.youtube.com/watch?v=XEW2d2XHkAk
 - One codebase and therefore one repository on Github
 - No API to create
 
-## Steps to follow
+## Downsides of Inertia.js
+
+- Code is generated on the client side, so it's not so good for SEO
+
+## Creating a new project
 
 - Open a Terminal window:
 
-laravel new [inertia-app]
+        laravel new [inertia-app]
 
 - Open app in VS Code.
 - Go to .env.
@@ -22,7 +26,28 @@ laravel new [inertia-app]
 - Create a database.sqlite file.
 - Open a Terminal window:
 
-    php artisan migrate
+        php artisan migrate
+
+## Setting up the database
+
+- Open a Terminal window:
+
+        php artisan make:model Message -mc
+
+- Go to /app/Models/Message.php.
+- Under "use HasFactory;" add this:
+
+        protected $fillable = ['text'];
+
+- Go to  /database/migrations/[messages-table].
+- Find "$table->id();".
+- Under the line you found add this:
+
+        $table->string("text")->nullable();
+
+- Create your database:
+
+        php artisan migrate
 
 ## [Server-side setup](https://inertiajs.com/server-side-setup)
 
@@ -30,9 +55,9 @@ laravel new [inertia-app]
 
     composer require inertiajs/inertia-laravel
 
-- Create a new /app/resources/views/app.blade.php file next to the existing welcome.blade.php file.
+- Create a new /resources/views/app.blade.php file next to the existing welcome.blade.php file.
 - Go to https://inertiajs.com/server-side-setup.
-- Copy the the root template for Laravel.
+- Copy the the root template for Laravel into /resources/views/app.blade.php.
 - Go back to https://inertiajs.com/server-side-setup.
 - Install the Inertia middleware with this command:
 
@@ -47,13 +72,13 @@ laravel new [inertia-app]
 
 - Open a Terminal window.
 
-    npm install @inertiajs/inertia @inertiajs/inertia-vue3
+    npm install @inertiajs/inertia @inertiajs/inertia-vue
 
 - Go to https://inertiajs.com/client-side-setup.
 - Copy the code under Initialize app.
-- Go to app/resources/js/app.js.
+- Go to /resources/js/app.js.
 - Replace the content of the file with what you have just copied.
-- Delete app/resources/js/bootstrap.js.
+- Delete /resources/js/bootstrap.js.
 - Install the progress indicator:
 
     npm install @inertiajs/progress
@@ -68,7 +93,7 @@ laravel new [inertia-app]
 
 ## Using a CDN file (not ideal, but works)
 
-- Go to app/resources/js/app.js.
+- Go to /resources/js/app.js.
 - Copy this after the other link tag:
     
         <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
@@ -78,9 +103,9 @@ laravel new [inertia-app]
 - Go to /routes/web.php
 - Copy and paste this:
 
-    Route::get("/hello", function () {
-        return inertia("Hello");
-    });
+        Route::get("/hello", function () {
+            return inertia("Hello");
+        });
 
 - Go to /resources/js.
 - Create a new folder called /resources/js/Pages.
@@ -95,19 +120,34 @@ laravel new [inertia-app]
             ])
             .browserSync("inertia.test");
 
-- Watch out! "inertia.test" might need to be replaced by [your-project-name.test].
+- Watch out! The string "inertia.test" above might need to be replaced by [your-project-name.test]. Not sure about this one yet.
 - Go to the Terminal window.
 
-    npm i / npm install
-    npm i vue / npm install vue
+        npm i / npm install
+        npm i vue / npm install vue
+        npm run watch
+
+Run this command again:
+
     npm run watch
 
-- Run this command again:
+Now, your app should run on port 8000, even though the window that is going to launch will be on port 3000 (which will display a blank page loading infinitely).
 
-    npm run watch
+## Making sure inertia-link is loaded
 
-- And maybe this other one too:
+- Go to /resources/js/Pages/Hello.vue.
+- Import inertia-vue like so:
 
-    php artisan serve
+        <script>
+            import { Link } from '@inertiajs/inertia-vue';
 
-- Make sure the app is running on port 8000 **and not on port 3000**.
+            export default { components: { Link } };
+        </script>
+
+- Create links like so:
+
+        <li><Link href="/hello">Hello page</Link></li>
+
+## Adding data to the view
+
+
