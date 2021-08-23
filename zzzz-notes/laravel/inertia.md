@@ -258,6 +258,13 @@ Now, your app should run on port 8000, even though the window that is going to l
 			{{ errors.message }}
 		</div>
 
+- In the same file, add a line that will return an errors object:
+
+        props: {
+            messages: Array,
+            errors: Object
+        },
+
 ## Possible Bugs
 
 ### Clicking on a link won't load a new component
