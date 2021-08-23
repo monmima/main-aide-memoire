@@ -45,7 +45,7 @@ It all depends on what you want to achieve. If you want different apps to access
 
 - Go to  /database/migrations/[messages-table].
 - Find "$table->id();".
-- Under the line you found add this:
+- Under this line add this:
 
 		$table->string("text")->nullable();
 
@@ -95,9 +95,11 @@ It all depends on what you want to achieve. If you want different apps to access
 
 - Paste it at the beginning of app/resources/js/app.js after the other import statements.
 
-## Using a CDN file (not ideal, but works)
+## Using a CDN file like Tailwind CSS (not ideal, but works)
 
-- Go to /resources/js/app.js.
+Tailwind is a tool similar to Bootstrap
+
+- Go to /resources/views/app.blade.php.
 - Copy this after the other link tag:
     
 		<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
@@ -180,6 +182,57 @@ Now, your app should run on port 8000, even though the window that is going to l
 		};
 
 - Make sure your database is not empty so you have something to render.
+
+## Storing data in the database
+
+- Go to your controller in the /app/Http/Controllers folder and add this:
+
+		/**
+		* Store a newly created resource in storage.
+		*/
+		public function store(Request $request)
+		{
+			NewMessage::create($request->all());
+
+			return redirect("/hello-database");
+		}
+
+- Go to /routes/web.php and add something similar to this:
+
+		Route::post('/messages', "App\Http\Controllers\NewMessageController@store");
+
+- Go to /resources/js/Pages/Hello.vue and add this to the template:
+
+		<form @submit.prevent="submit">
+			<!-- form.message refers to the name of the column in the database -->
+			<textarea v-model="form.message" rows="8"></textarea>
+			<button type="submit">Add a message</button>
+		</form>
+
+- Still in /resources/js/Pages/Hello.vue, but this time in the script part, add this:
+
+		import { Link } from '@inertiajs/inertia-vue';
+
+		export default {
+			components: { Link },
+			props: {
+				messages: Array
+			},
+			data() {
+				return {
+					// refers to the name of the column in the database
+					form: { message: "" }
+				}
+			},
+			methods: {
+				submit() {
+					// send data to the backend
+					this.$inertia.post("/messages", this.form);
+				}
+
+			}
+
+		};
 
 ## Possible Bugs
 
