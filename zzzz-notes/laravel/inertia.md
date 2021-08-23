@@ -12,11 +12,15 @@ https://www.youtube.com/watch?v=XEW2d2XHkAk
 
 - Code is generated on the client side, so it's not so good for SEO
 
+## Should you create one or two repositories for a VueJS + Laravel project?
+
+It all depends on what you want to achieve. If you want different apps to access the same program, it's better to have distinct repositories (for instance, you could have a mobile app and a desktop app that both need to access the same API).
+
 ## Creating a new project
 
 - Open a Terminal window:
 
-        laravel new [inertia-app]
+		laravel new [inertia-app]
 
 - Open app in VS Code.
 - Go to .env.
@@ -26,34 +30,34 @@ https://www.youtube.com/watch?v=XEW2d2XHkAk
 - Create a database.sqlite file.
 - Open a Terminal window:
 
-        php artisan migrate
+		php artisan migrate
 
 ## Setting up the database
 
 - Open a Terminal window:
 
-        php artisan make:model Message -mc
+		php artisan make:model Message -mc
 
 - Go to /app/Models/Message.php.
 - Under "use HasFactory;" add this:
 
-        protected $fillable = ['text'];
+		protected $fillable = ['text'];
 
 - Go to  /database/migrations/[messages-table].
 - Find "$table->id();".
 - Under the line you found add this:
 
-        $table->string("text")->nullable();
+		$table->string("text")->nullable();
 
 - Create your database:
 
-        php artisan migrate
+		php artisan migrate
 
 ## [Server-side setup](https://inertiajs.com/server-side-setup)
 
 - Open a Terminal window.
 
-    composer require inertiajs/inertia-laravel
+    	composer require inertiajs/inertia-laravel
 
 - Create a new /resources/views/app.blade.php file next to the existing welcome.blade.php file.
 - Go to https://inertiajs.com/server-side-setup.
@@ -81,13 +85,13 @@ https://www.youtube.com/watch?v=XEW2d2XHkAk
 - Delete /resources/js/bootstrap.js.
 - Install the progress indicator:
 
-    npm install @inertiajs/progress
+    	npm install @inertiajs/progress
 
 - Copy the code to initialize your app:
 
-    import { InertiaProgress } from '@inertiajs/progress'
+		import { InertiaProgress } from '@inertiajs/progress'
 
-    InertiaProgress.init()
+		InertiaProgress.init()
 
 - Paste it at the beginning of app/resources/js/app.js after the other import statements.
 
@@ -96,16 +100,16 @@ https://www.youtube.com/watch?v=XEW2d2XHkAk
 - Go to /resources/js/app.js.
 - Copy this after the other link tag:
     
-        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+		<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
 ## Setting up routes
 
 - Go to /routes/web.php
 - Copy and paste this:
 
-        Route::get("/hello", function () {
-            return inertia("Hello");
-        });
+		Route::get("/hello", function () {
+			return inertia("Hello");
+		});
 
 - Go to /resources/js.
 - Create a new folder called /resources/js/Pages.
@@ -113,19 +117,19 @@ https://www.youtube.com/watch?v=XEW2d2XHkAk
 - Go to webpack.mix.js.
 - Replace the code near the end of the file with this:
 
-        mix.js('resources/js/app.js', 'public/js')
-            .vue()
-            .postCss('resources/css/app.css', 'public/css', [
-                //
-            ])
-            .browserSync("inertia.test");
+		mix.js('resources/js/app.js', 'public/js')
+			.vue()
+			.postCss('resources/css/app.css', 'public/css', [
+			//
+			])
+			.browserSync("inertia.test");
 
 - Watch out! The string "inertia.test" above might need to be replaced by [your-project-name.test]. Not sure about this one yet.
 - Go to the Terminal window.
 
-        npm i / npm install
-        npm i vue / npm install vue
-        npm run watch
+		npm i / npm install
+		npm i vue / npm install vue
+		npm run watch
 
 Run this command again:
 
@@ -138,26 +142,56 @@ Now, your app should run on port 8000, even though the window that is going to l
 - Go to /resources/js/Pages/Hello.vue.
 - Import inertia-vue like so:
 
-        <script>
-            import { Link } from '@inertiajs/inertia-vue';
+		<script>
+			import { Link } from '@inertiajs/inertia-vue';
 
-            export default { components: { Link } };
-        </script>
+			export default { components: { Link } };
+		</script>
 
 - Create links like so:
 
-        <li><Link href="/hello">Hello page</Link></li>
+		<li><Link href="/hello">Hello page</Link></li>
 
-## Adding data to the view
+## Passing data to the view
 
+- Use this syntax in your controller or web.php file:
+
+		public function index()
+		{
+			$messages = NewMessage::all();
+			return inertia("Hello", ["messages" => $messages]);
+		}
+
+- Use this syntax in your view template:
+
+		<div v-for="(message, index) in messages" v-bind:key="index">
+			{{ message.message }}
+		</div>
+
+- Use this syntax in your view script:
+
+		import { Link } from '@inertiajs/inertia-vue';
+
+		export default {
+			components: { Link },
+			props: {
+				messages: Array
+			}
+		};
+
+- Make sure your database is not empty so you have something to render.
 
 ## Possible Bugs
 
-### Cliking on your won't reload a new component
+### Clicking on a link won't load a new component
 
 - See if you can render a string instead of a view.
 - Make sure the name of your VueJS component is capitalized properly in your controller or web.php file, depending on what you're using.
 
-### After clicking a link, you get a pop-up with a 404 error instead of your view
+### After clicking on a link, you get a pop-up with a 404 error instead of your view
 
-- Your link is probably not named correctly. This is the default behaviour when your route leads to a non-existing page.
+- The href attribute for your link doesn't seem to match an existing route. The pop-up with the 404 error is the default behaviour when a route leads to a non-existing page.
+
+### After you created a loop to render the content of the database, nothing shows up in the interface
+
+- Make sure your database is not empty.
