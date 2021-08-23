@@ -352,6 +352,16 @@ As a rule of thumb, you should have one controller per table in your database.
 
 ## Solving Different Bugs
 
+### When attempting a new migration, you get the message "Dropped all tables successfully." and then the Terminal window hangs
+
+- Your database is probably buggy and the migration cannot be finished. The most likely cause for this is having a line similar to this in your migration file:
+
+        $table->message();
+
+- Use this instead:
+
+        $table->string('message');
+
 ### 500 | Server Error showing up instead of app
 
 - Are you sure you have a .env file in your project? By default, it is excluded in the .gitignore file.
