@@ -234,6 +234,30 @@ Now, your app should run on port 8000, even though the window that is going to l
 
 		};
 
+## Validating data in the store route
+
+- Go to your controller in the /app/Http/Controllers folder and change the store function so it looks like this:
+
+		/**
+		* Store a newly created resource in storage.
+		*/
+		public function store(Request $request)
+		{
+			$validated = $request->validate([
+				"message" => "required|min:50"
+			]);
+
+			NewMessage::create($validated);
+
+			return redirect("/hello-database");
+		}
+
+- Go to /resources/js/Pages/Hello.vue and add this:
+
+		<div v-if="errors.message">
+			{{ errors.message }}
+		</div>
+
 ## Possible Bugs
 
 ### Clicking on a link won't load a new component
