@@ -151,3 +151,13 @@ Now, your app should run on port 8000, even though the window that is going to l
 ## Adding data to the view
 
 
+## Possible Bugs
+
+### Cliking on your won't reload a new component
+
+- See if you can render a string instead of a view.
+- Make sure the name of your VueJS component is capitalized properly in your controller or web.php file, depending on what you're using.
+
+### After clicking a link, you get a pop-up with a 404 error instead of your view
+
+- Your link is probably not named correctly. This is the default behaviour when your route leads to a non-existing page.
