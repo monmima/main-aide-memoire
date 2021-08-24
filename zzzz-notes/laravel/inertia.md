@@ -244,7 +244,7 @@ Now, your app should run on port 8000, even though the window that is going to l
 		public function store(Request $request)
 		{
 			$validated = $request->validate([
-				"message" => "required|min:50"
+				"message" => "required|min:1"
 			]);
 
 			NewMessage::create($validated);
