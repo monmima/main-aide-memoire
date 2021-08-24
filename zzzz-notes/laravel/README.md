@@ -258,7 +258,7 @@ Also, for the details that pertain to Laravel in particular, [codigofacilito and
         git push heroku HEAD:master
 
 8. On the Heroku's web site, click on **Open app**, which should be located somewhere in the top right corner of the page of your project
-9. Now you should see your app.
+9. Now you should see your /resources/views/app.blade.php should.
 11. See below if you want to use SQLite as a database in Heroku.
 
 ### Updating Your Project
@@ -644,6 +644,18 @@ This assumes your controller has already been created.
     }
 
 - Change **return view("index"** to **return inertia("index"** if you are using InertiaJS instead of Blade.
+
+## How to load assets (CSS, JS, etc.)
+
+There are three ways of loading assets in Laravel.
+
+- assets() (HTTP)
+- secure_assets (HTTPS)
+- mix() (apparently both, so this is what you should you if you intend to run your site both locally and remotely)
+
+So for instance, your /resources/views/app.blade.php file should have a line like this one:
+
+	<link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
 
 ## Populating your database automatically instead of manually
 
