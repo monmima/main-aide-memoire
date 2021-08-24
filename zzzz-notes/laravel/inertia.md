@@ -265,6 +265,22 @@ Now, your app should run on port 8000, even though the window that is going to l
             errors: Object
         },
 
+## Conditional rendering depending if something was found in the database or not
+
+		<div>
+
+			<!-- if no messages in database -->
+			<div v-if="messages.length === 0">
+				Nothing do display.
+			</div>
+
+			<!-- if no messages in database -->
+			<div v-else v-for="(message, index) in messages" v-bind:key="index" class="bg-white p-8 mb-4 rounded shadow">
+				{{ message.message }}
+			</div>
+
+		</div>
+
 ## Possible Bugs
 
 ### Clicking on a link won't load a new component
