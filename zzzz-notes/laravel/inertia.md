@@ -106,7 +106,7 @@ Tailwind is a tool similar to Bootstrap
 
 ## Setting up routes
 
-- Go to /routes/web.php
+- Go to /routes/web.php.
 - Copy and paste this:
 
 		Route::get("/hello", function () {
@@ -156,7 +156,7 @@ Now, your app should run on port 8000, even though the window that is going to l
 
 ## Passing data to the view
 
-- Use this syntax in your controller or web.php file:
+- Use this syntax in your controller or /routes/web.php file:
 
 		public function index()
 		{
@@ -233,6 +233,34 @@ Now, your app should run on port 8000, even though the window that is going to l
 			}
 
 		};
+
+## Deleting a record
+
+- Go to /routes/web.php.
+- Add these lines:
+
+	// this is probably not ideal, but at least it works
+	Route::get('/{id}/delete', "App\Http\Controllers\[NameOfMyController]@destroy");
+
+- Go to /app/Http/Controllers/[NameOfMyController].
+- Add these lines:
+
+		/**
+		* delete one record
+		*/
+		public function destroy($id)
+		{
+			//
+			$record = NewMessage::findOrFail($id);
+			$record->delete();
+
+			return redirect("/hello-database");
+		}
+
+- Go to /resources/js/Pages/Hello.vue.
+- Add this line:
+
+		<Link title="Delete this record" v-bind:href="`/${ message.id }/delete`">Delete</Link>
 
 ## Validating data in the store route
 
