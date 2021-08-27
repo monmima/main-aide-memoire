@@ -18,9 +18,29 @@ It all depends on what you want to achieve. If you want different apps to access
 
 ## Creating a new project
 
+### Option 1
+
 - Open a Terminal window:
 
 		laravel new [inertia-app]
+
+### Option 2
+
+- Alternately, your can use the following to create an app using JetStream:
+
+		laravel new [inertia-app] --jet
+
+- Which Jetstream stack do you prefer?
+	- [0] livewire
+  	- [1] inertia
+
+			1
+
+- Will your application use teams? (yes/no) [no]:
+
+		no
+
+## Setting up the database
 
 - Open app in VS Code.
 - Go to .env.
@@ -32,16 +52,21 @@ It all depends on what you want to achieve. If you want different apps to access
 
 		php artisan migrate
 
-## Setting up the database
-
 - Open a Terminal window:
 
-		php artisan make:model Message -mc
+		php artisan make:model Message -mc --resource
 
+- The --resource flag pre-generates your functions in the controller (create, destroy, etc.).
 - Go to /app/Models/Message.php.
-- Under "use HasFactory;" add this:
+- Under "use HasFactory;" add this (to list the attributes **you want** to be fillable):
 
 		protected $fillable = ['text'];
+
+- Alternatively, you could use this (to list the attributes **you don't want** to be fillable):
+
+		protected $guarded = [
+			'id',
+		];
 
 - Go to  /database/migrations/[messages-table].
 - Find "$table->id();".
