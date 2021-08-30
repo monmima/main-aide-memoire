@@ -100,3 +100,16 @@ The procedure belows assumes the browser language looks like fr-FR or en-US and 
         logged_in_greeting=“Bonjour, comment pouvons-nous vous aider? :parasol:”
 
         logged_out_greeting=“Bonjour, comment pouvons-nous vous aider? :parasol:“>
+
+## Adding a CAPTCHA to a form
+
+Assuming you already have Contact Form 7 installed on your site, the steps are pretty straightforward:
+
+1. Install the Really Simple CAPTCHA extension on your Web site.
+2. Go to your pre-existing form where you want to add the CAPTCHA.
+3. Add these shortcodes:
+
+	[captchac captcha-1] [captchar captcha-1]
+
+4. The team behind Contact Form 7 recommends reCAPTCHA instead of Really Simple CAPTCHA, but the latter seems to work just fine as of 2021-08-30.
+
