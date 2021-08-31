@@ -95,7 +95,7 @@ Vue.component("references", {
                         { name: "YouTube", link: "https://www.youtube.com/watch?v=UIm-YqYKutk" }
                     ],
                     list: [
-                        { name: "vue-api-call.html", link: "vue-coders-tape/vue-api-call.html" }
+                        { name: "vue-api-call.html", link: "vue-coders-tape-api/vue-api-call.html" }
                     ]
                 }
 
