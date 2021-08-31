@@ -79,8 +79,12 @@ Thanks to [hmwebdev](https://github.com/hmwebdev) for this tip.
 
 Thanks to [hmwebdev](https://github.com/hmwebdev) for this tip.
 
+The extension I use for JS is **Simple Custom CSS and JS**.
+
 1. Make sure the code is injected in your , not your header
-2. Write something like **document.body.innerHTML = document.body.innerHTML.replace(/All Projects/g, 'Tous les projects');**
+2. Write something like:
+
+	document.body.innerHTML = document.body.innerHTML.replace(/All Projects/g, 'Tous les projects');
 
 ## Dynamically Translating a Facebook Chat Plugin Depending on the Language of a Site
 
