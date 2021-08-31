@@ -74,11 +74,14 @@ It all depends on what you want to achieve. If you want different apps to access
 
 		$table->string("text")->nullable();
 
-- Create your database:
+- Go to /database/.
+- Create a database called database.sqlite.
+
+- Migrate your database:
 
 		php artisan migrate
 
-## [Server-side setup](https://inertiajs.com/server-side-setup)
+## [Server-side setup](https://inertiajs.com/server-side-setup) (if you're not using Jetstream)
 
 - Open a Terminal window.
 
@@ -97,7 +100,7 @@ It all depends on what you want to achieve. If you want different apps to access
 
     \App\Http\Middleware\HandleInertiaRequests::class,
 
-## [Client-side setup](https://inertiajs.com/client-side-setup)
+## [Client-side setup](https://inertiajs.com/client-side-setup) (if you're not using Jetstream)
 
 - Open a Terminal window.
 
@@ -120,9 +123,9 @@ It all depends on what you want to achieve. If you want different apps to access
 
 - Paste it at the beginning of app/resources/js/app.js after the other import statements.
 
-## Using a CDN file like Tailwind CSS (not ideal, but works)
+## Using a CDN file like Tailwind CSS (if you're not using Jetstream)
 
-Tailwind is a tool similar to Bootstrap
+Tailwind is a tool similar to Bootstrap. Of course, linking to a CDN shouldn't be done in production.
 
 - Go to /resources/views/app.blade.php.
 - Copy this after the other link tag:
