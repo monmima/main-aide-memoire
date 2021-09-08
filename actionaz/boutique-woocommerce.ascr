@@ -203,7 +203,7 @@
                 <subParameter name="value" code="0">0</subParameter>
             </parameter>
             <parameter name="title">
-                <subParameter name="value" code="0">Add new product ‹ Test Env Hugo — WordPress — Mozilla Firefox</subParameter>
+                <subParameter name="value" code="0">Add new product ‹ Test Env — WordPress — Mozilla Firefox</subParameter>
             </parameter>
             <parameter name="useBorders">
                 <subParameter name="value" code="0">true</subParameter>
@@ -354,7 +354,7 @@
                 <subParameter name="value" code="0">0</subParameter>
             </parameter>
             <parameter name="title">
-                <subParameter name="value" code="0">Add new product ‹ Test Env Hugo — WordPress — Mozilla Firefox</subParameter>
+                <subParameter name="value" code="0">Add new product ‹ Test Env — WordPress — Mozilla Firefox</subParameter>
             </parameter>
             <parameter name="useBorders">
                 <subParameter name="value" code="0">true</subParameter>

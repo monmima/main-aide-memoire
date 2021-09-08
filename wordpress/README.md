@@ -117,3 +117,6 @@ Assuming you already have Contact Form 7 installed on your site, the steps are p
 
 4. The team behind Contact Form 7 recommends reCAPTCHA instead of Really Simple CAPTCHA, but the latter seems to work just fine as of 2021-08-30.
 
+## Downloading a site
+
+To download a site or part of it and browse to the folders, use the **WP File Manager** extension.
