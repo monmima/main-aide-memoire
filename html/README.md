@@ -120,7 +120,7 @@ Answer:
 
 blur
 
-
+___
 
 Varia HTML: What are the two tags for a quotation?
 
@@ -128,7 +128,6 @@ Answer:
 
 - &lt;q&gt; (inline)
 - &lt;blockquote&gt; (block)
-
 
 ___
 
@@ -204,8 +203,6 @@ Varia HTML: What tag should you use around the name of a work of art?
 Answer:
 
 &lt;cite&gt;
-
-
 
 ___
 
