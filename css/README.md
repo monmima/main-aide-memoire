@@ -26,8 +26,6 @@ Answer:
 
 The second option.
 
-
-
 ___
 
 Varia CSS: Create a CSS rule to put the div content upside down.
@@ -119,8 +117,8 @@ input[type=password] {
     background-color: red;
 }
 
-
 ___
+
 
 Varia CSS: Create a rule for having a CSS image taking its full size within a div.
 
@@ -165,15 +163,14 @@ Answer:
 
 order
 
-
 ___
+
 
 Varia CSS: How do you get rid of a border?
 
 Answer:
 
 border: 0
-
 
 ___
 
@@ -186,7 +183,6 @@ Answer:
 - p + .note (.note tag sibling of p)
 - p > .note = .note direct child of p tag
 
-
 ___
 
 Varia CSS: How do you change transparency?
@@ -194,7 +190,6 @@ Varia CSS: How do you change transparency?
 Answer:
 
 opacity: 0.5
-
 
 ___
 
@@ -207,7 +202,6 @@ Answer:
 - a[class$="test"] {
 - a[class~="test"] {
 
-
 ___
 
 Varia CSS: What is the CSS priority between IDs, classes and tags?
@@ -217,7 +211,6 @@ Answer:
 1. id
 2. class
 3. tag
-
 
 Varia CSS: What are some of the ways you can justify content in flex?
 
@@ -230,7 +223,6 @@ Answer:
 - space-evenly
 - space-around
 
-
 ___
 
 Varia CSS: What do flex-grow, flex-shrink and flex-basis have in common?
@@ -242,7 +234,6 @@ They apply on a flex child.
 * Flex-basis should be used instead of width.
 ** You can group all three of these like this: 1 1 200px;.
 
-
 ___
 
 Varia CSS: How do you make sure a CSS grid fraction never goes below a certain point?
@@ -251,5 +242,6 @@ Answer:
 
 minmax
 
+___
 
 
