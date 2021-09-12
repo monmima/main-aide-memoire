@@ -1,40 +1,114 @@
-___
 
-Terminal: How do you list the files from a folder?
-
-Answer:
-
-dir / ls
+## Analyse de sites tierces
+https://www.similarweb.com/website/www.lexilogos.com
 
 ___
 
-Terminal: How do you erase a folder with the name "test"?
 
-Answer:
+### WINE
 
-rm -r test/
+https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1
 
-___
-
-Terminal: How do you create a file with the name "test.txt"?
-
-Answer:
-
-touch test.txt
-
-___
-
-Terminal: How do you erase a file with the name "test.txt"?
-
-Answer:
-
-rm test.txt
+        sudo dpkg --add-architecture i386
+        wget -nc https://dl.winehq.org/wine-builds/winehq.key
+        sudo apt-key add winehq.key
+        sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
+        sudo apt update
+        sudo apt install --install-recommends winehq-stable
+        winecfg
 
 ___
 
-Terminal: How do you move a folder with the name "test" to the folder "test2"?
+### Deleting leftover configuration files
 
-Answer:
+https://askubuntu.com/questions/20127/how-to-remove-configuration-files-completely
 
-mv test/ test2/
+Applications usually store configuration data in one of the following hidden folders, which you can delete if you're sure you have no use for the data:
 
+    ~/.application
+    ~/.config/application
+    ~/.cache/application
+    ~/.local/share/application
+
+___
+
+### Chrome
+
+https://itsfoss.com/install-chrome-ubuntu/#install-chrome-terminal
+
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+___
+
+### PHP without Xampp
+
+    sudo apt install php
+    php -S localhost:8000
+
+___
+
+### Brightness Controller
+
+https://learnubuntumate.weebly.com/brightness-controller.html
+
+    sudo add-apt-repository ppa:apandada1/brightness-controller
+    sudo apt-get update
+    sudo apt-get install brightness-controller-simple
+    sudo apt-get install brightness-controller
+
+___
+
+### Debugging PulseAudio so it connects properly
+
+#### Temporary Solution
+
+https://askubuntu.com/questions/879037/pavucontrol-stuck-at-establishing-connection-to-pulseaudio-please-wait
+
+    sudo apt-get update
+    sudo apt-get upgrade
+    sudo apt-get remove --purge alsa-base pulseaudio
+    sudo apt-get install alsa-base pulseaudio pavucontrol
+    sudo alsa force-reload
+    reboot
+
+#### Another solution that might persist
+
+https://livingthelinuxlifestyle.wordpress.com/2019/06/09/solve-problems-with-no-sound-in-linux-mint/
+
+___
+
+### Gimp
+
+    sudo apt install gimp
+
+___
+
+### SQLite browser
+https://sqlitebrowser.org/dl/
+
+    sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser-testing
+    sudo apt-get update
+    sudo apt-get install sqlitebrowser
+
+___
+
+### Varia (one-line installs)
+
+    sudo apt-get install npm
+    sudo apt-get install git
+    sudo apt-get install kate
+    sudo apt install smplayer
+    sudo apt install anki
+
+## Using Commands
+
+| Description of the command       | Command     |
+|--------------|-----------|
+| Listing the files from a folder | dir or ls |
+| Erasing a folder with the name "test" |  rm -r test/
+| Creating a file with the name "test.txt"? |  touch test.txt |
+| Erasing a file with the name "test.txt"? | rm test.txt |
+| Moving a folder with the name "test" to the folder "test2"? | mv test/ test2/ |
+| [Creating a file with the system specifications](https://vitux.com/get-linux-system-and-hardware-details-on-the-command-line/) | sudo lshw -html > [filename.html] |
+    
