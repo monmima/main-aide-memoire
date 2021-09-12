@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <h1>VueJS v-cloak</h1>
+
+        <p>To make sure content doesn't show temporarily (such as the squiggly brackets):
+        <ul>
+            <li>Use a v-cloak attribute</li>
+            <li>Make the v-cloak content invisible with CSS (display: none)</li>
+        </ul>
+
+        <hr>
+
+        <p>{{ myString }}</p>
+
+
+    </div>
+    
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        let app = Vue.createApp({
+            data: function() {
+                return {
+                    myString: "this string is stored in a variable"
+                }
+            }
+        });
+        app.mount("#app");
+    </script>
+</body>
+</html>
