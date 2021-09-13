@@ -194,7 +194,7 @@ or
             },
             methods: {
                 toggle() {
-                    this.visible = !this.visible;
+                    this.visible = !this.visible
                 }
             }
         });
@@ -230,3 +230,107 @@ or
 
     </script>
 
+## Keyup event after pressing Enter
+
+    <div id="app">
+        <input type="text" @keyup.enter="greet(name)" v-model="name">
+    </div>
+
+    [...]
+
+    <script>
+        
+        let app = Vue.createApp({
+            data: function() {
+                return {
+                    name: "name"
+                }
+            },
+            methods: {
+                greet(name) {
+                    console.log(`hello ${name}`);
+                }
+            }
+        });
+
+        app.mount("#app");
+
+    </script>
+
+## Right-click event
+
+    <div id="app">
+        <button @click.right="rightClick">Right-click event button</button>
+    </div>
+
+    [...]
+
+    <script>
+        
+        let app = Vue.createApp({
+            methods: {
+                rightClick() {
+                    console.log(`right-click`);
+                }
+            }
+        });
+
+        app.mount("#app");
+
+    </script>
+
+## Event modifiers
+
+To prevent a submit event from reloading the page:
+
+    <div id="app">
+        <form @submit.prevent="handleSubmit">
+            <input input="email">
+            <input input="password">
+            <button>Log in</button>
+        </form>
+    </div>
+
+    [...]
+
+    <script>
+        
+        let app = Vue.createApp({
+            methods: {
+                handleSubmit() {
+                    console.log("submitted");
+                }
+            }
+        });
+
+        app.mount("#app");
+
+    </script>
+
+## Components
+
+You can create a new component within your main VueJS file.
+
+    <div id="app">
+        <custom-form />
+    </div>
+
+    [...]
+
+    let app = Vue.createApp({
+        data: function() {
+            return {
+
+            }
+        }
+    });
+
+    app.component("custom-form", {
+        template: `
+            <div>
+                input
+            </div>
+        `
+    });
+
+## 

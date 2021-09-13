@@ -7,41 +7,28 @@
     <title>Document</title>
 
     <style>
-
-        [v-cloak] {
-            display: none;
+        input {
+            display: block;
+            margin: 10px;
         }
-
-        .box {
-            background-color: green;
-            height: 100px;
-            width: 100px;
-        }
-        
     </style>
 </head>
 <body>
     <div id="app">
-        <h1>Keyup event</h1>
-
-        <hr>
-
-        <input type="text" @keyup.enter="greet(name)" v-model="name">
-
+        <form @submit.prevent="handleSubmit">
+            <input input="email">
+            <input input="password">
+            <button>Log in</button>
+        </form>
     </div>
     
     <script src="https://unpkg.com/vue@next"></script>
     <script>
         
         let app = Vue.createApp({
-            data: function() {
-                return {
-                    name: "name"
-                }
-            },
             methods: {
-                greet(name) {
-                    console.log(`hello ${name}`);
+                handleSubmit() {
+                    console.log("submitted");
                 }
             }
         });

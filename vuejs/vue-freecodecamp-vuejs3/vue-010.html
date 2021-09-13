@@ -8,25 +8,16 @@
 
     <style>
 
-        [v-cloak] {
-            display: none;
-        }
-
-        .box {
-            background-color: green;
-            height: 100px;
-            width: 100px;
-        }
+        
         
     </style>
 </head>
 <body>
-    <div id="app">
-        <h1>Keyup event</h1>
-
-        <hr>
-
-        <input type="text" @keyup.enter="greet(name)" v-model="name">
+    <div id="app" v-on:submit.prevent="onSubmit">
+        <form action="">
+            <input type="text">
+            <button type="submit">Submit button</button>
+        </form>
 
     </div>
     
@@ -34,14 +25,9 @@
     <script>
         
         let app = Vue.createApp({
-            data: function() {
-                return {
-                    name: "name"
-                }
-            },
             methods: {
-                greet(name) {
-                    console.log(`hello ${name}`);
+                rightClick() {
+                    console.log(`right-click`);
                 }
             }
         });
