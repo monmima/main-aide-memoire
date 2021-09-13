@@ -155,4 +155,78 @@ With v-cloak, your content will show only when it's ready.
 
 ## Toggling
 
-    <button v-on:click="isVisible = !isVisible">Toggle Box</button>
+    <div id="app" v-cloak>
+        <button v-on:click="isVisible = !isVisible">Toggle Box</button>
+
+        <div class="box" v-if="visible"></div>
+    </div>
+
+    [...]
+
+    <script>
+        let app = Vue.createApp({
+            data: function() {
+                return {
+                    visible: true
+                }
+            }
+        });
+
+        app.mount("#app");
+    </script>
+
+or
+
+    <div id="app" v-cloak>
+        <button @click="toggle">Toggle</button>
+
+        <div class="box" v-if="visible"></div>
+    </div>
+
+    [...]
+
+    <script>
+        let app = Vue.createApp({
+            data: function() {
+                return {
+                    visible: true
+                }
+            },
+            methods: {
+                toggle() {
+                    this.visible = !this.visible;
+                }
+            }
+        });
+
+        app.mount("#app");
+    </script>
+
+## Creating a method
+
+    <div id="app" v-cloak>
+        <button @click="addCount">Add to count</button>
+    </div>
+
+    [...]
+
+    <script>
+        
+        let app = Vue.createApp({
+            data: function() {
+                return {
+                    count: 0
+                }
+            },
+            methods: {
+                addCount() {
+                    this.count++;
+                    console.log(this.count);
+                }
+            }
+        });
+
+        app.mount("#app");
+
+    </script>
+
