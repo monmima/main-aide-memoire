@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+
+        .box {
+            background-color: green;
+            height: 100px;
+            width: 100px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <h1>VueJS events and methods - click event</h1>
+
+
+
+        <hr>
+
+        <button v-on:click="isVisible = true">Show Box</button>
+
+        <div class="box" v-if="isVisible"></div>
+
+
+    </div>
+    
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        let app = Vue.createApp({
+            data: function() {
+                return {
+                    myString: "this string is stored in a variable",
+                    isVisible: false
+                }
+            }
+        });
+        app.mount("#app");
+    </script>
+</body>
+</html>
