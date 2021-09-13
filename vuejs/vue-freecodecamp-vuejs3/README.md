@@ -31,7 +31,7 @@
     </body>
     </html>
 
-## String Injection
+## String Injection (binding a string)
 
     <div id="app">
         <p>{{ greeting }}</p>
@@ -312,7 +312,7 @@ To prevent a submit event from reloading the page:
 You can create a new component within your main VueJS file.
 
     <div id="app">
-        <custom-form />
+        <component></component>
     </div>
 
     [...]
@@ -325,12 +325,149 @@ You can create a new component within your main VueJS file.
         }
     });
 
-    app.component("custom-form", {
+    app.component("my-component", {
         template: `
             <div>
-                input
+                component
             </div>
         `
     });
 
-## 
+## Getting data from a form
+
+    <div id="app">
+        <form @submit.prevent="handleSubmit">
+            <input input="email" v-model="email" >
+            <input input="password" v-model="password" >
+            <button>Log in</button>
+        </form>
+    </div>
+
+    [...]
+
+    <script>
+        
+        let app = Vue.createApp({
+            data() {
+                return {
+                    email: "",
+                    password: ""
+                }
+            },
+            methods: {
+                handleSubmit() {
+                    console.log(this.email, this.password, "submitted");
+                }
+            }
+        });
+
+        app.mount("#app");
+
+    </script>
+
+## Props
+
+    <div id="app">
+        <example-props name="test 1"></example-props>
+        <example-props name="test 2"></example-props>
+    </div>
+
+    [...]
+
+    app.component("example-props", {
+        template: `<h3 class="center">{{ message }} {{this.name}}</h3>`,
+        data() {
+            return {
+                message: "Example"
+            }
+        },
+        props: ["name"],
+        mounted() {
+            console.log(`Example ${this.name} instance was mounted!`);
+        }
+    });
+
+## Creating and using a dice component with a props
+
+    <div id="app">
+        <example-props num="4"></example-props>
+        <example-props num="10"></example-props>
+    </div>
+
+    [...]
+
+    <script>
+        let app = Vue.createApp({
+            data: function() {
+                return {
+
+                }
+            }
+        });
+
+        app.component("example-props", {
+            template: `
+                <div class="m-3">
+                    <button @click="throwDice()">Throw a d{{this.num}} dice!</button>
+                    <div class="diceDisplay">{{ diceResult > 0 ? "Result: " + diceResult : "Result: -"}}</div>
+                </div>
+            `
+            data() {
+                return {
+                    diceResult: 0
+                }
+            },
+            props: ["num"],
+            methods: {
+                throwDice(num) {
+                    this.diceResult = Math.floor(Math.random() * this.num + 1);
+                },
+            },
+
+        });
+
+        app.mount("#app");
+    </script>
+
+## Looping through an object and rendering the data in it
+
+    <div id="app">
+        <food></food>
+    </div>
+
+    [...]
+
+    <script>
+        let app = Vue.createApp({ });
+
+        app.component("food", {
+            // the only difference with a component instead of having the code directly in your HTML is the fact you need to create a template
+            template: `
+                <div class="grid">
+                    <figure v-for="(food, index) in favoriteFoods" v-bind:key="index">
+                        <div>
+                            <img v-bind:src="food.img" v-bind:alt="food.img">
+                        </div>
+
+                        <a v-bind:href="food.link" :title="food.name" :class="food.name">{{ food.name }}</a>
+                        <div>{{ food.dfn }}</div>
+                    </figure>
+                </div>`,
+            data() {
+                return {
+                    favoriteFoods: [
+                        { name: "foie gras", dfn: "a pâté made from goose liver (marinated in cognac) and truffles", link: "https://en.wikipedia.org/wiki/Foie_gras", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Foie_gras_en_cocotte.jpg/250px-Foie_gras_en_cocotte.jpg" },
+                        { name: "coq au vin", dfn: "chicken and onions and champignons braised in red wine and seasonings", link: "https://en.wikipedia.org/wiki/Coq_au_vin", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Gourmet_coq_au_vin.jpg/250px-Gourmet_coq_au_vin.jpg" },
+                        { name: "boeuf bourguignon", dfn: "a beef stew braised in red wine", link: "https://en.wikipedia.org/wiki/Beef_bourguignon", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Julia_Child%27s_Boeuf_Bourguignon.jpg/220px-Julia_Child%27s_Boeuf_Bourguignon.jpg" }
+                    ]
+                }
+            },
+            mounted() {
+                console.log("Food instance was mounted!");
+            }
+
+        });
+
+        app.mount("#app");
+    </script>
+
