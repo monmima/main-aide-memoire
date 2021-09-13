@@ -1,4 +1,6 @@
+# VueJS Aide-Mémoire
 
+Part of this aide-mémoire is inspired by content by [Dan Vega](https://www.udemy.com/course/vue-intro) and [Gwendolyn Faraday](https://www.youtube.com/watch?v=FXpIoQ_rT_c).
 
 ## Barebone VueJS 3 with CDN
 
@@ -432,42 +434,70 @@ You can create a new component within your main VueJS file.
 ## Looping through an object and rendering the data in it
 
     <div id="app">
-        <food></food>
+        <ul>
+            <li v-for="friend in friends" v-bind:key="friend.username">
+                {{ friend.name }} | {{ friend.username }}
+            </li>
+        </ul>
     </div>
-
-    [...]
-
+    
     <script>
-        let app = Vue.createApp({ });
-
-        app.component("food", {
-            // the only difference with a component instead of having the code directly in your HTML is the fact you need to create a template
-            template: `
-                <div class="grid">
-                    <figure v-for="(food, index) in favoriteFoods" v-bind:key="index">
-                        <div>
-                            <img v-bind:src="food.img" v-bind:alt="food.img">
-                        </div>
-
-                        <a v-bind:href="food.link" :title="food.name" :class="food.name">{{ food.name }}</a>
-                        <div>{{ food.dfn }}</div>
-                    </figure>
-                </div>`,
+        let app = Vue.createApp({
             data() {
                 return {
-                    favoriteFoods: [
-                        { name: "foie gras", dfn: "a pâté made from goose liver (marinated in cognac) and truffles", link: "https://en.wikipedia.org/wiki/Foie_gras", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Foie_gras_en_cocotte.jpg/250px-Foie_gras_en_cocotte.jpg" },
-                        { name: "coq au vin", dfn: "chicken and onions and champignons braised in red wine and seasonings", link: "https://en.wikipedia.org/wiki/Coq_au_vin", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Gourmet_coq_au_vin.jpg/250px-Gourmet_coq_au_vin.jpg" },
-                        { name: "boeuf bourguignon", dfn: "a beef stew braised in red wine", link: "https://en.wikipedia.org/wiki/Beef_bourguignon", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Julia_Child%27s_Boeuf_Bourguignon.jpg/220px-Julia_Child%27s_Boeuf_Bourguignon.jpg" }
+                    friends: [
+                        {name: 'Evan You', username: 'youyuxi'},
+                        {name: 'Guillaume Chau', username: 'Akryum'},
+                        {name: 'Sarah Drasner', username: 'sarah_edo'},
+                        {name: 'Greg Pollack', username: 'greggpollack'},
                     ]
                 }
-            },
-            mounted() {
-                console.log("Food instance was mounted!");
             }
-
         });
 
         app.mount("#app");
     </script>
 
+## v-for
+
+This code sample writes numbers from 1 to 10 in a bullet list.
+
+    <div id="app">
+        <ul>
+            <li v-for="num in 10">{{ num }}</li>
+        </ul>
+    </div>
+
+## v-bind
+
+Syntax:
+- One way-binding, as opposed to view-model.
+- **v-bind:** or **:**
+
+## Life-cycle methods
+
+    <div id="app">
+        Showing how the lifecycle methods work.
+    </div>
+    
+    <script>
+        let app = Vue.createApp({
+            data() {
+
+            },
+            methods() {
+
+            },
+            created: function() {
+                console.log("created");
+            },
+            mounted: function() {
+                console.log("mounted");
+            },
+            updated: function() {
+                console.log("updated");
+            }
+        });
+
+        app.mount("#app");
+    </script>
