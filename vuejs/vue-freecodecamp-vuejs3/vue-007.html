@@ -7,6 +7,7 @@
     <title>Document</title>
 
     <style>
+
         [v-cloak] {
             display: none;
         }
@@ -27,13 +28,17 @@
 
         <button v-on:click="isVisible = !isVisible">Toggle Box</button>
 
-        <div class="box" v-if="isVisible"></div>
+        <!-- or -->
 
+        <button v-on:click="isVisible = !isVisible">Toggle Box</button>
+
+        <div class="box" v-if="isVisible"></div>
 
     </div>
     
     <script src="https://unpkg.com/vue@next"></script>
     <script>
+        
         let app = Vue.createApp({
             data: function() {
                 return {
@@ -42,7 +47,9 @@
                 }
             }
         });
+
         app.mount("#app");
+
     </script>
 </body>
 </html>
