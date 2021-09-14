@@ -533,3 +533,63 @@ Syntax:
 
         app.mount("#app");
     </script>
+
+## Using vue-router (with VueJS 2)
+
+For now, I just don't quite understand why VueJS 3 won't work with vue-router, so below is what you would do for VueJS 2 and not 3.
+
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue Router</title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>{{ mess }}</h1>
+
+            <!-- i links -->
+            <router-link to="/">Home</router-link>
+            <router-link to="/about">About</router-link>
+            <router-link to="/portfolio">Portfolio</router-link>
+            <router-link to="/contatti">Contatti</router-link>
+
+            <!-- contenitore per il HTML -->
+            <router-view></router-view>
+        </div>
+
+        <!-- VueJS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+        <!-- vue-router -->
+        <script src="https://unpkg.com/vue-router@3.0.2/dist/vue-router.js"></script>
+
+        <script>
+            const Home = { template: `<h1>Contenuto Home</h1>` };
+            const About = { template: `<h1>Contenuto About</h1>` };
+            const Portfolio = { template: `<h1>Contenuto Portfolio</h1>` };
+            const Contatti = { template: `<h1>Contenuto Contatti</h1>` };
+
+            const routes = [
+                { path: "/", component: Home },
+                { path: "/about", component: About },
+                { path: "/portfolio", component: Portfolio },
+                { path: "/contatti", component: Contatti }
+            ];
+
+            const router = new VueRouter({
+                routes // short for `routes: routes`
+            });
+
+            const vm = new Vue ({
+                router,
+                el: "#app",
+                data: {
+                    mess: "Ciao Mondo"
+                }
+            }).$mount("#app");
+        </script>
+    </body>
+    </html>
