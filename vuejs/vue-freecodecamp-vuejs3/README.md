@@ -501,3 +501,35 @@ Syntax:
 
         app.mount("#app");
     </script>
+
+## Working with an API
+
+    <div id="app">
+        <li v-for="item in response" >
+            {{ item.title }}
+        </li>
+    </div>
+    
+    <script>
+        let app = Vue.createApp({
+            data() {
+                return {
+                    response: null
+                }
+            },
+            mounted: function() {
+
+                fetch('https://jsonplaceholder.typicode.com/posts')
+                    .then(res => res.json())
+                    .then(data => this.response = data) // pass the data to the response variable
+                    .then(console.log("test"))
+                    .then(console.log("other test"))
+                    .then(data => console.log(data)) // print to the console
+                .catch(function (err) {
+                    console.log('ERROR CATCHED - ' + err);
+                });
+            }
+        });
+
+        app.mount("#app");
+    </script>
