@@ -100,6 +100,7 @@ ___
     sudo apt-get install kate
     sudo apt install smplayer
     sudo apt install anki
+    sudo apt install kazam
 
 ## Using Commands
 
