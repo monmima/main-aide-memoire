@@ -80,7 +80,7 @@ Add this to a VueJS component:
     </body>
     </html>
 
-## String Injection (binding a string)
+## String Injection (binding a string with v-bind)
 
     <div id="app">
         <p>{{ greeting }}</p>
@@ -768,6 +768,47 @@ The v-once directive sets a string as static HTML.
                     myString: "string of text"
                 }
             }
+        });
+
+        app.mount("#app");
+
+    </script>
+
+## Avoiding props drilling in VueJS WITHOUT using Vuex
+
+You can next a whole bunch of components without having to drill the props. Instead you provide and inject your variables like so.
+
+    <div id="app">
+        <component-x></component-x>
+    </div>
+    
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        
+        let app = Vue.createApp({
+
+        });
+
+        app.component("component-x", {
+            template: `
+                <component-y></component-y>
+            `,
+            provide: {
+                username: "J. Armitage"
+            }
+        });
+
+        app.component("component-y", {
+            template: `
+                <component-z></component-z>
+            `
+        });
+
+        app.component("component-z", {
+            template: `
+                <div>{{ username }}</div>
+            `,
+            inject: ["username"]
         });
 
         app.mount("#app");
