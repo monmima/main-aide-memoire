@@ -99,7 +99,7 @@ Add this to a VueJS component:
         app.mount("#app");
     </script>
 
-## Two-way data binding
+## Two-way data binding (v-model)
 
     <div id="app">
         <div>
@@ -646,7 +646,6 @@ For now, I just don't quite understand why VueJS 3 won't work with vue-router, s
 Please keep in mind that the <code>slot</code> tag is now deprecated. Ideally, you should use the v-slot directive instead.
 
     <div id="app">
-        <!-- nouveau -->
         <buttbutt></buttbutt>
         <buttbutt>Custom</buttbutt>
     </div>
@@ -655,11 +654,7 @@ Please keep in mind that the <code>slot</code> tag is now deprecated. Ideally, y
     <script>
         
         let app = Vue.createApp({
-            data: function() {
-                return {
 
-                }
-            }
         });
 
         app.component("buttbutt", {
@@ -667,19 +662,114 @@ Please keep in mind that the <code>slot</code> tag is now deprecated. Ideally, y
                 <button>
                     <slot>Default</slot>
                 </button>
-            `,
-            data() {
-                return {
+            `
+        });
 
-                }
-            },
-            methods: {
-                handleSubmit() {
-                    console.log("submitted");
+        app.mount("#app");
+
+    </script>
+
+## V-text
+
+The v-text directive is just an alternative to the mustache syntax. Therefore, it is not necessary to use it if you already feel comfortable with mustache (brackets).
+
+    <div id="app">
+        <p v-text="myString"></p>
+        <p>{{ myString }}</p>
+    </div>
+    
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        
+        let app = Vue.createApp({
+            data: function() {
+                return {
+                    myString: "my-string"
                 }
             }
         });
 
-        app.mount("#app");6
+        app.mount("#app");
+
+    </script>
+
+## V-html
+
+As opposed to <code>v-text</code> and <code>{{ mustache }}</code>, <code>v-html</code> injects HTML instead of raw text.
+
+    <div id="app">
+        <p>{{ myString }}</p>
+        <p v-html="myString"></p>
+    </div>
+    
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        
+        let app = Vue.createApp({
+            data: function() {
+                return {
+                    myString: "<h1>my-string</h1>"
+                }
+            }
+        });
+
+        app.mount("#app");
+
+    </script>
+
+## V-once
+
+The v-once directive sets a string as static HTML.
+
+    <div id="app">
+        <p v-once>{{ myString }}</p>
+        <p>{{ myString }}</p>
+        <p><input type="text" v-model="myString"></p>
+    </div>
+    
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        
+        let app = Vue.createApp({
+            data: function() {
+                return {
+                    myString: "string of text"
+                }
+            }
+        });
+
+        app.mount("#app");
+
+    </script>
+
+## Conditionnally changing a class on an input field
+
+    <style>
+        .green {
+            background-color: lightgreen;
+        }
+        .red {
+            background-color: red;
+        }
+    </style>
+
+    [...]
+
+    <div id="app">
+        <input v-model="myString" :class="[ myString.length < 2 ? 'red' : 'green'  ]">
+    </div>
+    
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        
+        let app = Vue.createApp({
+            data: function() {
+                return {
+                    myString: "string of text"
+                }
+            }
+        });
+
+        app.mount("#app");
 
     </script>
