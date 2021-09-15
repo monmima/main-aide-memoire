@@ -20,10 +20,19 @@
 
         app.component("component-x", {
             template: `
+                <div>component x: {{ name }}</div> 
                 <component-y></component-y>
             `,
-            provide: {
-                username: "J. Armitage"
+            data() {
+                return {
+                    name: "J. Armitage"
+                }
+            },
+            provide() {
+                return {
+                    username: this.name
+                }
+
             }
         });
 
@@ -35,7 +44,7 @@
 
         app.component("component-z", {
             template: `
-                <div>{{ username }}</div>
+                <div>component z: {{ username }}</div>
             `,
             inject: ["username"]
         });

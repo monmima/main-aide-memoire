@@ -776,25 +776,29 @@ The v-once directive sets a string as static HTML.
 
 ## Avoiding props drilling in VueJS WITHOUT using Vuex
 
+Source: https://www.youtube.com/watch?v=1oy8dn9xAQE
+
 You can next a whole bunch of components without having to drill the props. Instead you provide and inject your variables like so.
 
-    <div id="app">
-        <component-x></component-x>
-    </div>
-    
-    <script src="https://unpkg.com/vue@next"></script>
-    <script>
-        
         let app = Vue.createApp({
 
         });
 
         app.component("component-x", {
             template: `
+                <div>component x: {{ name }}</div> 
                 <component-y></component-y>
             `,
-            provide: {
-                username: "J. Armitage"
+            data() {
+                return {
+                    name: "J. Armitage"
+                }
+            },
+            provide() {
+                return {
+                    username: this.name
+                }
+
             }
         });
 
@@ -806,7 +810,7 @@ You can next a whole bunch of components without having to drill the props. Inst
 
         app.component("component-z", {
             template: `
-                <div>{{ username }}</div>
+                <div>component z: {{ username }}</div>
             `,
             inject: ["username"]
         });
