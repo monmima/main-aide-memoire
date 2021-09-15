@@ -778,7 +778,7 @@ The v-once directive sets a string as static HTML.
 
 Source: https://www.youtube.com/watch?v=1oy8dn9xAQE
 
-You can next a whole bunch of components without having to drill the props. Instead you provide and inject your variables like so.
+You can nest a whole bunch of components without having to drill the props. Instead you provide and inject your variables like so.
 
         let app = Vue.createApp({
 
