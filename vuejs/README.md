@@ -24,13 +24,23 @@ Run this command to run the project:
 
     npm run serve
 
-## Installing SASS in your project (optional)
+## Installing and using BootStrap 5 in your project (optional)
 
-    npm install -D sass-loader@^10 sass
+    npm install --save bootstrap
+
+- Go to main.js.
+- Go to /src/main.js.
+- Paste this line after all the other imports:
+
+    import "bootstrap/dist/css/bootstrap.min.css";
 
 ## Installing vue-router in your project (optional)
 
     npm i vue-router@next
+
+## Installing SASS in your project (optional)
+
+    npm install -D sass-loader@^10 sass
 
 ## Using SASS in your project
 
@@ -52,6 +62,69 @@ Add this to a VueJS component:
             font-family: "Fire Sans", sans-serif;
         }
     </style>
+
+### Installing the Heroku CLI
+
+1. Install snap ([documentation available on snapcraft](https://snapcraft.io/docs/installing-snap-on-linux-mint))
+
+        sudo rm /etc/apt/preferences.d/nosnap.pref
+        sudo apt update
+        sudo apt install snapd
+
+2. Install Heroku
+
+        snap install --classic heroku
+
+### Preparing your project for a deployment on Heroku
+
+https://dev.to/anjolaogunmefun/deploy-vue-js-projects-to-heroku-1hb5
+
+Go to the Terminal window and type this:
+
+    npm install express serve-static
+
+Go to the root of the project and add this:
+
+    const express = require('express');
+    const serveStatic = require("serve-static")
+    const path = require('path');
+    app = express();
+    app.use(serveStatic(path.join(__dirname, 'dist')));
+    const port = process.env.PORT || 3000;
+    app.listen(port);
+
+Go to your package.json file and add this:
+
+    ,
+    "postinstall": "npm run build",
+    "start": "node server.js"
+
+### Creating a Heroku Project
+
+1. Create a GitHub repository if you don't have one already.
+
+1. Go to https://dashboard.heroku.com/apps.
+1. Create a new project named this way: [my-web-app-name].
+1. Go to the Terminal Window and make sure the app/project is initialized as a Git repository by typing:
+
+        git status
+
+1. On the Heroku web site, you can find more information about the name of your project under the **deploy** tab.
+1. Set a Git remote:
+
+        heroku git:remote -a [my-web-app-name]
+
+1. Push your project to Heroku:
+
+        git push heroku HEAD:master
+
+1. On the Heroku's web site, click on **Open app**, which should be located somewhere in the top right corner of the page of your project
+
+### Updating Your Project
+
+Now all you have to do is to update your remote project and type:
+    
+    git push heroku HEAD:master
 
 ## Barebone VueJS 3 with CDN
 
