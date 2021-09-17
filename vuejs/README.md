@@ -28,6 +28,10 @@ Run this command to run the project:
 
     npm install -D sass-loader@^10 sass
 
+## Installing vue-router in your project (optional)
+
+    npm i vue-router@next
+
 ## Using SASS in your project
 
 Add this to a VueJS component:
