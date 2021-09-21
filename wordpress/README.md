@@ -33,6 +33,16 @@ To rescan a site that has WPML in it, go to your dashboard, and find Localisatio
 
 - You can flush WPML cache in WPML > Support > Troubleshooting (dépannage) > "Clear the cache in WPML" [https://wpml.org/forums/topic/wpml-cache-2/]
 
+## Clearing WordPress Cache
+
+This is either done with an FTP access or with a plug-in. WP Super Cache is a free plug-in.
+
+With WP Super Cache:
+
+1. Go to Settings.
+1. Go to WP Super Cache.
+1. Click on Delete Cache.
+
 ## Translation function with the WPML extension in WordPress
 
 	<?= __('Demander une soumission', 'domain-name') ?>
