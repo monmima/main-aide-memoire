@@ -117,15 +117,24 @@ The procedure belows assumes the browser language looks like fr-FR or en-US and 
 
 ## Adding a CAPTCHA to a form
 
+### Really Simple CAPTCHA
+
 Assuming you already have Contact Form 7 installed on your site, the steps are pretty straightforward:
 
-1. Install the Really Simple CAPTCHA extension on your Web site.
+1. Install the **Really Simple CAPTCHA** extension on your Web site.
 2. Go to your pre-existing form where you want to add the CAPTCHA.
 3. Add these shortcodes:
 
 	[captchac captcha-1] [captchar captcha-1]
 
 4. The team behind Contact Form 7 recommends reCAPTCHA instead of Really Simple CAPTCHA, but the latter seems to work just fine as of 2021-08-30.
+
+## Adding a honeypot to a form
+
+1. Make sure Contact Form 7 is already installed in WordPress.
+2. Install Honeypot for Contact Form 7.
+3. If you want to change the default settings, go to the Dashboard ===> Contact ===> Honeypot.
+4. To add a honeypot input field and block spam bots, go to your form and select the honeypot input field.
 
 ## Downloading a site
 
