@@ -115,9 +115,9 @@ The procedure belows assumes the browser language looks like fr-FR or en-US and 
 
         logged_out_greeting=“Bonjour, comment pouvons-nous vous aider? :parasol:“>
 
-## Adding a CAPTCHA to a form
+## Protecting forms
 
-### Really Simple CAPTCHA
+### Really Simple CAPTCHA (has not worked well for me so far)
 
 Assuming you already have Contact Form 7 installed on your site, the steps are pretty straightforward:
 
@@ -129,7 +129,17 @@ Assuming you already have Contact Form 7 installed on your site, the steps are p
 
 4. The team behind Contact Form 7 recommends reCAPTCHA instead of Really Simple CAPTCHA, but the latter seems to work just fine as of 2021-08-30.
 
-## Adding a honeypot to a form
+### Contact Form 7 with no other extension
+
+1. Go to Dashboard ===> Contact ===> Integration.
+1. Under the reCAPTCHA title, go to Setup Integration.
+1. In a new tab, go to google.com/recaptcha.
+1. Click on the blue Admin Console button.
+1. Fill out the form.
+1. Go back to the Setup Integration page.
+1. Copy and past the data from Google.
+
+### Adding a honeypot to a form
 
 1. Make sure Contact Form 7 is already installed in WordPress.
 2. Install Honeypot for Contact Form 7.
