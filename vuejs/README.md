@@ -36,7 +36,13 @@ Run this command to run the project:
 
 ## Installing vue-router in your project (optional)
 
+Via NPM:
+
     npm i vue-router@next
+
+Via Vue CLI
+
+    vue add router
 
 ## Installing SASS in your project (optional)
 
