@@ -85,25 +85,26 @@ Add this to a VueJS component:
 
 https://dev.to/anjolaogunmefun/deploy-vue-js-projects-to-heroku-1hb5
 
-Go to the Terminal window and type this:
+1. Go to the Terminal window and type this:
 
-    npm install express serve-static
+        npm install express serve-static
 
-Go to the root of the project and add this:
+1. Create a server.js file in the root folder of your project.
+1. Go to the root of the project and add this:
 
-    const express = require('express');
-    const serveStatic = require("serve-static")
-    const path = require('path');
-    app = express();
-    app.use(serveStatic(path.join(__dirname, 'dist')));
-    const port = process.env.PORT || 3000;
-    app.listen(port);
+        const express = require('express');
+        const serveStatic = require("serve-static")
+        const path = require('path');
+        app = express();
+        app.use(serveStatic(path.join(__dirname, 'dist')));
+        const port = process.env.PORT || 3000;
+        app.listen(port);
 
-Go to your package.json file and add this:
+1. Go to your package.json file and add this:
 
-    ,
-    "postinstall": "npm run build",
-    "start": "node server.js"
+        ,
+        "postinstall": "npm run build",
+        "start": "node server.js"
 
 ### Creating a Heroku Project
 
@@ -946,3 +947,10 @@ You can nest a whole bunch of components without having to drill the props. Inst
             </div>
         </template>
 
+## Creating Dynamic Routes
+
+        <ul v-if="response.length > 0">
+            <li v-for="(item, index) in response" v-bind:key="item.title">
+                <router-link :to="`/about/${index + 1}`" :title="item.name">{{ item.name }}</router-link>
+            </li>
+        </ul>
