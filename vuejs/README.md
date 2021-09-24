@@ -639,29 +639,29 @@ Syntax:
             {{ item.title }}
         </li>
     </div>
+
+    [...]
     
     <script>
-        let app = Vue.createApp({
-            data() {
-                return {
-                    response: null
-                }
-            },
-            mounted: function() {
+      export default ({
+          data() {
+              return {
+                  response: null
+              }
+          },
+          mounted: function() {
 
-                fetch('https://jsonplaceholder.typicode.com/posts')
-                    .then(res => res.json())
-                    .then(data => this.response = data) // pass the data to the response variable
-                    .then(console.log("test"))
-                    .then(console.log("other test"))
-                    .then(data => console.log(data)) // print to the console
-                .catch(function (err) {
-                    console.log('ERROR CATCHED - ' + err);
-                });
-            }
-        });
-
-        app.mount("#app");
+              fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0')
+                  .then(res => res.json())
+                  .then(data => this.response = data) // pass the data to the response variable
+                  .then(console.log("test"))
+                  .then(console.log("other test"))
+                  .then(data => console.log(data)) // print to the console
+              .catch(function (err) {
+                  console.log('ERROR CATCHED - ' + err);
+              });
+          }
+      });
     </script>
 
 ## Using vue-router
@@ -920,7 +920,7 @@ You can nest a whole bunch of components without having to drill the props. Inst
         export default ({
             data() {
                 return {
-                id: 0
+                    id: 0
                 }
             },
             mounted() {
@@ -937,3 +937,12 @@ You can nest a whole bunch of components without having to drill the props. Inst
         </template>
 
 1. Remember that you have to use the new path (/:id) to view something in your browser.
+
+## Another way of passing data to the view
+
+        <template>
+            <div class="about">
+                <h1>This is an about page {{ this.$route.params.id }}</h1>
+            </div>
+        </template>
+
