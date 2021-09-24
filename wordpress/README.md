@@ -133,13 +133,18 @@ Assuming you already have Contact Form 7 installed on your site, the steps are p
 
 1. Go to Dashboard ===> Contact ===> Integration.
 1. Under the reCAPTCHA title, go to Setup Integration.
-1. In a new tab, go to google.com/recaptcha.
+1. In a new tab, go to google.com/recaptcha (https://www.google.com/recaptcha/admin/create).
 1. Click on the blue Admin Console button.
 1. Fill out the form.
 1. Go back to the Setup Integration page.
 1. Copy and past the data from Google.
+1. Hide the badge with this:
+
+	.grecaptcha-badge { visibility: hidden; }
 
 ### WPForms with no other extension
+
+Please keep in mind that with WPForms, you might not have a Google badge in the browser that confirms you sucessfully the CAPTCHA to your form.
 
 1. Go to Dashboard ===> Contact ===> Integration.
 1. Find the CAPTCHA tab and click on it.
