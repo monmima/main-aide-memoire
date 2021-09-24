@@ -139,6 +139,15 @@ Assuming you already have Contact Form 7 installed on your site, the steps are p
 1. Go back to the Setup Integration page.
 1. Copy and past the data from Google.
 
+### WPForms with no other extension
+
+1. Go to Dashboard ===> Contact ===> Integration.
+1. Find the CAPTCHA tab and click on it.
+1. Go to https://www.google.com/recaptcha/admin/create.
+1. Fill out the form.
+1. Go back to WordPress.
+1. Copy and past the data from Google.
+
 ### Adding a honeypot to a form
 
 1. Make sure Contact Form 7 is already installed in WordPress.
