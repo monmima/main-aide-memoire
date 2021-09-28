@@ -962,3 +962,10 @@ You can nest a whole bunch of components without having to drill the props. Inst
                 <router-link :to="`/about/${index + 1}`" :title="item.name">{{ item.name }}</router-link>
             </li>
         </ul>
+
+## Changing a favicon
+
+To change a favicon, all you have to do is find the default VueJS default favicon and replace it with a new one. The default favicon is located in two folders:
+
+- dist/
+- public/
