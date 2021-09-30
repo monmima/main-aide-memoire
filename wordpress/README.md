@@ -163,3 +163,16 @@ Please keep in mind that with WPForms, you might not have a Google badge in the 
 ## Downloading a site
 
 To download a site or part of it and browse to the folders, use the **WP File Manager** extension.
+
+## Translating a slider created with Slider Revolution
+
+[WPML allows you to translate revolution sliders without toil](https://wpml.org/documentation/plugins-compatibility/creating-multilingual-sliders-with-revolution-slider-and-wpml/).
+
+## Testing out a Web site locally - Local by Flywheel
+
+In my experience, the easiest way to run WordPress locally is with [Local by Flywheel](https://localwp.com/).
+
+- Go to https://localwp.com/.
+- Click the Download button.
+- Fill out the form. Even though you are asked for an e-mail address, you won't have to use it at a later stage to confirm your identity. The file weights about 140 Mo.
+
