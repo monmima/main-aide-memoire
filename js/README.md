@@ -1,5 +1,25 @@
 # JS aide-mémoire
 
+## Running multiple fetch queries
+
+The VueJS folder of this aide-mémoire has detailed explanations too on how to do this in VueJS.
+
+This info is based on material from [www.pluralsight.com](https://www.pluralsight.com/guides/handling-nested-http-requests-using-the-fetch-api).
+
+    async getFishAndChips() {
+
+        const fish = await fetch(this.fishApiUrl).then(response => response.json());
+
+        console.log(fish);
+
+        const chips = await fetch(this.chipsApiUrl, chipReqOpts).then(response => response.json());
+
+        console.log(chips);
+
+    }
+
+## Random stuff to sort later
+
 Varia JS: What do you use to know if an array has a character or number in it?
 
 Answer:
