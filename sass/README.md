@@ -19,7 +19,7 @@ Info based on the [Learn Sass In 20 Minutes | Sass Crash](https://www.youtube.co
 ## Things to know about SCSS
 
 1. You can write plain old CSS and it will work as intended.
-1. SCSS generates generates all the vendor prefixes so you don't have to (-ms-flex-pack, etc.).
+1. SCSS generates all the vendor prefixes so you don't have to (-ms-flex-pack, etc.).
 
 ## Using variables
 
@@ -106,7 +106,7 @@ Mixin with a parameter:
 
 ## Using extensions
 
-Extensions makes it possible for you to reuse code from a CSS rule without repeating the code in many places. You can also overwrite a statement, as you can see in the code below.
+Extensions make it possible for you to reuse code from a CSS rule without repeating the code in many places. You can also overwrite a statement, as you can see in the code below.
 
     header {
         background-color: lightblue;
