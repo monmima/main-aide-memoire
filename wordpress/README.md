@@ -175,3 +175,14 @@ In my experience, the easiest way to run WordPress locally is with [Local by Fly
 - Click the Download button.
 - Fill out the form. Even though you are asked for an e-mail address, you won't have to use it at a later stage to confirm your identity. The file weights about 140 Mo.
 
+## Sending mail with SMTP
+
+Use WP Mail SMTP by wpforms for this. The icon is a silly-looking pigeon.
+
+**Troubleshooting an undelivered mail issue**
+
+1. Go to Dashboard ===> WP Mail SMTP ===> Settings.
+1. There should be a red message telling you what's wrong.
+1. The issue might just be re-granting a permission.
+1. If so, the process is quick and easy.
+1. You can also send test mails to make sure everything is working fine. There is an Email test tab for this.
