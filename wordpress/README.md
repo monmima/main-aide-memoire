@@ -27,7 +27,7 @@ Thanks to YB for this tip.
 
 To rescan a site that has WPML in it, go to your dashboard, and find Localisation du thème et des plugins under WPML. Then do this:
 
-![Rescannign WPML content](./img/rescan.png)
+![Rescanning WPML content](./img/rescan.png)
 
 ## Clearing WPML Cache
 
@@ -197,6 +197,10 @@ Use WP Mail SMTP by wpforms for this. The icon is a silly-looking pigeon.
 
 ## Using custom icons in Elementor's icon widget
 
-Click on the icon you want to change and then hover the icon in the left-hand panel which appears. An option for changing it to another one should become available.
+1. Edit the icon box.
 
-![Rescannign WPML content](./img/upload-svg.png)
+	![Uploading another icon](./img/edit-icon-box.png)
+
+1. Upload your SVG file.
+
+	![Uploading another icon](./img/upload-svg.png)
