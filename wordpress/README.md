@@ -195,6 +195,8 @@ Use WP Mail SMTP by wpforms for this. The icon is a silly-looking pigeon.
 1. Select a form
 1. Formulaire de contact
 
-## Using custom icons in Elementor
+## Using custom icons in Elementor's icon widget
 
-The icon widget allows you to wither upload an icon library or icons by themselves. Just click on the icon you want to change and then hover the icon in the left-hand panel. An option for changing the icon to another one should appear. 
+Click on the icon you want to change and then hover the icon in the left-hand panel which appears. An option for changing it to another one should become available.
+
+![Rescannign WPML content](./img/upload-svg.png)
