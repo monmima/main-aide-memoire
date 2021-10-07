@@ -186,3 +186,11 @@ Use WP Mail SMTP by wpforms for this. The icon is a silly-looking pigeon.
 1. The issue might just be re-granting a permission.
 1. If so, the process is quick and easy.
 1. You can also send test mails to make sure everything is working fine. There is an Email test tab for this.
+
+## Ninja Form - Where to go to see mail sent through a form
+
+1. Dashboard
+1. Ninja Forms
+1. Submissions
+1. Select a form
+1. Formulaire de contact
