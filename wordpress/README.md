@@ -6,16 +6,12 @@
 
 ## Swapping Paragraphs And Image When On Mobile
 
-```
-@media only screen and (max-width: 769px) {
-	{
+	@media only screen and (max-width: 769px) {
 		.swap-on-mobile {
 			display: flex !important;
 			flex-direction: column-reverse;
 		}
 	}
-}
-```
 
 ## No FTP Access: The Next Best Thing
 
