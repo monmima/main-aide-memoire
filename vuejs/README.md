@@ -497,8 +497,20 @@ You can create a new component within your main VueJS file.
 
         <Component />
 
-1. Import and export your component between the <code>script</code> tag.
-1. 
+1. Import and export your component between the <code>script</code> tags. It should look like this:
+
+        <script>
+            import Dropdown from '../components/Dropdown.vue'
+            import Modal from '../components/Modal.vue'
+
+            export default ({
+                components: {
+                Dropdown,
+                Modal
+                }
+            });
+        </script>
+
 
 ## Getting data from a form
 
