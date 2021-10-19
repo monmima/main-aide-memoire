@@ -1174,6 +1174,6 @@ All you have to do is add a parameter to your view-router component.
 
 ## Possible bugs
 
-If you get this message while trying to load your site on Heroku, it might be because your package.json or /src/main.js changes are not pushed to Github.
+If you get this message while trying to load your site on Heroku, it might be because your package.json or /src/main.js changes are not pushed to Github or because your package.json file does not contain any reference to express (see above for how to install through CLI).
 
 ![Uploading another icon](./img/application-error.png)
