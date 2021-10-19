@@ -96,14 +96,14 @@ https://dev.to/anjolaogunmefun/deploy-vue-js-projects-to-heroku-1hb5
 1. Create a server.js file in the root folder of your project.
 1. Add [the code below](https://stackoverflow.com/questions/69321620/vuejs-3-project-cannot-get-message-with-all-paths-but-root) to server.js (because [Anjolaoluwa Ogunmefun's code](https://dev.to/anjolaogunmefun/deploy-vue-js-projects-to-heroku-1hb5) would of create a **Cannot Get / 404** bug on all non-root pages):
 
-    const express = require('express');
-    const serveStatic = require("serve-static")
-    const path = require('path');
-    app = express();
-    app.use(serveStatic(path.join(__dirname, 'dist')));
-    app.get(/.*/, function (req, res) {
-        res.sendFile(__dirname + "/dist/index.html");
-    });
+        const express = require('express');
+        const serveStatic = require("serve-static")
+        const path = require('path');
+        app = express();
+        app.use(serveStatic(path.join(__dirname, 'dist')));
+        app.get(/.*/, function (req, res) {
+            res.sendFile(__dirname + "/dist/index.html");
+        });
 
 const port = process.env.PORT || 3000;
 app.listen(port);
