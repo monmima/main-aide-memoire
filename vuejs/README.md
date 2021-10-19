@@ -1171,3 +1171,9 @@ All you have to do is add a parameter to your view-router component.
         },
 
 1. The idea is to use <code>window.bootstrap</code> instead of just <code>bootstrap</code> when you create an instance of a Bootstrap modal. Creating an instance of a Bootstrap modal is a necessity if you want to control it via JS.
+
+## Possible bugs
+
+If you get this message, it might be because your package.json or /src/main.js changes are not pushed to Github.
+
+![Uploading another icon](./img/application-error.png)
