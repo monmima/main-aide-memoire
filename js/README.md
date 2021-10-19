@@ -58,125 +58,69 @@ For more information on this topic, please refer to the VueJS part of the aide-m
 
 ## Random stuff to sort later
 
-Varia JS: What do you use to know if an array has a character or number in it?
+### Findout if an array has includes a character or number
 
-Answer:
+    arr = [1, 2, 3, 4]
+    console.log(arr.includes(1));
 
-arr.includes(1);
+### Finding the last position of a character in a string
 
-Example:
+    string.lastIndexOf("@");
 
-arr = [1, 2, 3, 4]
-console.log(arr.includes(1));
 
-___
+### Node.js : Loading the module for writing/reading files
 
-Varia JS: How do you find the last position of a character in a string?
+    var fs = require("fs");
 
-Answer:
+### Node.js: Reading a file and storing its content in a variable
 
-string.lastIndexOf("@");
+    // blocking way
+    var data = fs.readFileSync("file.txt", "utf8");
 
-___
+### Node.js: Writing a file
 
-Node.js: How do you load the module for writing/reading files?
+    fs.writeFileSync("name.txt", "File content.");
 
-Answer:
+### Adding something to the start of an array
 
-var fs = require("fs");
+    // ES5
+    arr.unshift("start");
 
-___
+    // ES6
+    // Spread operator
 
-Node.js: Read a file and store its content in a variable.
+    arr = ["start", ...arr];
 
-Answer:
+### Adding something to the end of an array
 
-// blocking way
-var data = fs.readFileSync("file.txt", "utf8");
+    // ES5
+    arr.push("end");
 
-___
+    // ES6
+    // Spread operator
 
-Node.js: How do you write a file?
+    arr = [...arr, "end"];
 
-Answer:
+### Condition that has only a number in it
 
-fs.writeFileSync("name.txt", "File content.");
+    if (27) {
+        console.log(true);
+    } else {
+        console.log(false);
+    }
 
-___
-
-Varia JS: How do you add something to the start of an array?
-
-var arr = [1, 2, 3, 4];
-
-// your code here
-
-console.log(arr);
-
-Answer:
-
-// ES5
-arr.unshift("start");
-
-// ES6
-// Spread operator
-
-arr = ["start", ...arr];
-
-___
-
-Varia JS: How do you add something to the end of an array?
-
-var arr = [1, 2, 3, 4];
-
-Answer:
-
-// ES5
-arr.push("end");
-
-// ES6
-// Spread operator
-
-arr = [...arr, "end"];
-
-___
-
-Varia JS: What is the output?
-
-if (27) {
-    console.log(true);
-} else {
-    console.log(false);
-}
-
-Answer:
-
-// true
 All numbers other than zero are "truthy".
 They evaluate to "true"
 
-___
+### Creating a barebone JS class
 
-Varia JS: Create a simple JS class.
-
-Answer:
-
-class Test {
-    constructor(string) {
-        this.string = string;
+    class Test {
+        constructor(string) {
+            this.string = string;
+        }
     }
-}
 
-___
-
-Varia JS: Add a simple method to the class.
-    
-class Test {
-    constructor(string) {
-        this.string = string;
-    }
-}
-
-Answer:
+### Adding a simple method to a class
 
 class Test {
     constructor(string) {
@@ -188,46 +132,37 @@ class Test {
     }
 }
 
-___
+### Creating an instance of a class 
 
-Varia JS: Create an instance of this class.
-    
+    class Test {
+        constructor(string) {
+            this.string = string;
+        }
 
-class Test {
-    constructor(string) {
-        this.string = string;
+        printString() {
+            console.log(this.string);
+        }
     }
 
-    printString() {
-        console.log(this.string);
-    }
-}
+    let inst = new Test("myString");
 
-Answer:
+### Creating a call to the method
 
-let inst = new Test("myString");
+    class Test {
+        constructor(string) {
+            this.string = string;
+        }
 
-___
-
-Varia JS: Create a call to the method.
-
-class Test {
-    constructor(string) {
-        this.string = string;
+        printString() {
+            console.log(this.string);
+        }
     }
 
-    printString() {
-        console.log(this.string);
-    }
-}
+    let inst = new Test("myString");
 
-let inst = new Test("myString");
+    inst.printString();
 
-Answer:
-
-inst.printString();
-
-___
+### 
 
 Varia JS: How do you keep only two decimals in a number?
 
