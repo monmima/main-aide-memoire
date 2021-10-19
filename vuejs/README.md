@@ -105,8 +105,8 @@ https://dev.to/anjolaogunmefun/deploy-vue-js-projects-to-heroku-1hb5
             res.sendFile(__dirname + "/dist/index.html");
         });
 
-const port = process.env.PORT || 3000;
-app.listen(port);
+        const port = process.env.PORT || 3000;
+        app.listen(port);
 
 1. Go to your package.json file and add this:
 
