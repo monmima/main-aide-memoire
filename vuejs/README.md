@@ -108,7 +108,7 @@ https://dev.to/anjolaogunmefun/deploy-vue-js-projects-to-heroku-1hb5
         const port = process.env.PORT || 3000;
         app.listen(port);
 
-1. Go to your package.json file and add this:
+1. Go to your package.json file and add this under the **script** part:
 
         ,
         "postinstall": "npm run build",
