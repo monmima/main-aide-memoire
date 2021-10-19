@@ -1174,6 +1174,6 @@ All you have to do is add a parameter to your view-router component.
 
 ## Possible bugs
 
-If you get this message, it might be because your package.json or /src/main.js changes are not pushed to Github.
+If you get this message while trying to load your site on Heroku, it might be because your package.json or /src/main.js changes are not pushed to Github.
 
 ![Uploading another icon](./img/application-error.png)
