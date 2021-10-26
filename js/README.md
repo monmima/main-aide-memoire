@@ -2,8 +2,6 @@
 
 ## Running multiple fetch queries
 
-The VueJS folder of this aide-mémoire has detailed explanations too on how to do this in VueJS.
-
 This info is based on material from [www.pluralsight.com](https://www.pluralsight.com/guides/handling-nested-http-requests-using-the-fetch-api).
 
     async getFishAndChips() {
