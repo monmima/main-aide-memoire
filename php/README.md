@@ -11,6 +11,24 @@ Go to your project folder, open a Terminal window and type:
 
     php -S localhost:1234
 
+## Making PHP arrays readable
+
+Instead of just this:
+
+    var_dump($rows);
+
+Use this:
+
+    echo "<pre>";
+    var_dump($rows);
+    echo "</pre>";
+
+Or even better:
+
+    echo "<pre>";
+    print_r($rows);
+    echo "</pre>";
+
 ## Creating a barebone project (PHP + SQLite)
 
 Thanks to MainlyWebStuff for creating his short [Connecting to a SQLite database with PHP](https://www.youtube.com/watch?v=bR3nxnCGqmY) tutorial, which is basically what this is based on.
@@ -38,7 +56,9 @@ Thanks to MainlyWebStuff for creating his short [Connecting to a SQLite database
                 $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
                 // show it on the screen
-                var_dump($rows);
+                echo "<pre>";
+                print_r($rows);
+                echo "</pre>";
             ?>
         </pre>
 
