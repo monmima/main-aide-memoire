@@ -31,6 +31,8 @@ Or even better:
 
 ## Creating a barebone project (PHP + SQLite) that returns database content to an array
 
+https://www.youtube.com/watch?v=bR3nxnCGqmY&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt3WR&index=2
+
 Thanks to MainlyWebStuff for creating his short [Connecting to a SQLite database with PHP](https://www.youtube.com/watch?v=bR3nxnCGqmY) tutorial, which is basically what this is based on.
 
 1. Create an index.php file.
@@ -66,10 +68,12 @@ Thanks to MainlyWebStuff for creating his short [Connecting to a SQLite database
 1. Create a students_tb table.
 1. Fill the table with content.
 
-## Creating a barebone project (PHP + SQLite) that returns database content as HTML
+## Creating a barebone project (PHP + SQLite) that returns database content as an HTML P tag
+
+https://www.youtube.com/watch?v=JuZMjPRwXPo&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt3WR&index=3
 
     <?php
-        // define PDO - telle about the database file
+        // define PDO - tell about the database file
         $pdo = new PDO("sqlite:database.db");
 
         // write SQL
@@ -82,6 +86,36 @@ Thanks to MainlyWebStuff for creating his short [Connecting to a SQLite database
         foreach($students as $row => $student) {
             echo "<p>" . $student['name'] . "</p>";
         }
+    ?>
+
+## Creating a barebone project (PHP + SQLite) that returns database content as an HTML table
+
+    <?php
+        // define PDO - tell about the database file
+        $pdo = new PDO("sqlite:database.db");
+
+        // write SQL
+        $statement = $pdo->query("SELECT * FROM demo_table");
+
+        // run the SQL
+        $students = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        echo "<table border=1>";
+
+        echo "<tr>";
+            echo "<td>Title</td>";
+            echo "<td>Score</td>";
+        echo "</tr>";
+
+        // show it on the screen as HTML
+        foreach($students as $row => $student) {
+            echo "<tr>";
+                echo "<td>" . $student['name'] . "</td>";
+                echo "<td>" . $student['score'] . "</td>";
+            echo "</tr>";
+        }
+
+        echo "</table>";
     ?>
 
 ## Possible bugs
