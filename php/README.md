@@ -29,12 +29,10 @@ Or even better:
     print_r($rows);
     echo "</pre>";
 
-## Connecting to a SQLite database with PHP
+## SQLite: connecting to the database
 
 https://www.youtube.com/watch?v=bR3nxnCGqmY&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt3WR&index=2
 
-1. Create an index.php file.
-1. Open it and copy and paste this:
 
         <h1>test</h1>
 
@@ -66,7 +64,7 @@ https://www.youtube.com/watch?v=bR3nxnCGqmY&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt
 1. Create a students_tb table.
 1. Fill the table with content.
 
-## Displaying database records as an unordered list using a foreach loop - PHP and SQLITE
+## SQLite: returning an HTML list
 
 https://www.youtube.com/watch?v=JuZMjPRwXPo&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt3WR&index=3
 
@@ -86,7 +84,7 @@ https://www.youtube.com/watch?v=JuZMjPRwXPo&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt
         }
     ?>
 
-## Displaying database records as a HTML table using a foreach loop - PHP and SQLITE
+## SQLite: returning records in a HTML table
 
 https://www.youtube.com/watch?v=1Lhplcvvz-4&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt3WR&index=4
 
@@ -117,6 +115,33 @@ https://www.youtube.com/watch?v=1Lhplcvvz-4&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt
 
         echo "</table>";
     ?>
+
+## SQLite: counting the number of records and finding the lowest score
+
+https://www.youtube.com/watch?v=Ls04HnBngso&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt3WR&index=5
+
+        <?php
+            // https://www.youtube.com/watch?v=JuZMjPRwXPo&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt3WR&index=3
+            
+            // run the app
+
+            // define PDO - telle about the database file
+            $pdo = new PDO("sqlite:database.db");
+
+            // count rows in the movie table
+            $statement = $pdo->query("SELECT COUNT(*) FROM students_tb");
+            $studentCount = $statement->fetchColumn();
+            echo "<p>The number of records is " . $studentCount . ".</p>";
+
+            // find lowest score
+            $statement = $pdo->query("SELECT MIN(score) FROM students_tb");
+            $lowScore = $statement->fetchColumn();
+            echo "<p>The lowest score is " . $lowScore . ".</p>";
+        ?>
+
+## SQLite: 
+
+
 
 ## Possible bugs
 
