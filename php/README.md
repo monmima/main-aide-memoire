@@ -29,11 +29,9 @@ Or even better:
     print_r($rows);
     echo "</pre>";
 
-## Creating a barebone project (PHP + SQLite) that returns database content to an array
+## Connecting to a SQLite database with PHP
 
 https://www.youtube.com/watch?v=bR3nxnCGqmY&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt3WR&index=2
-
-Thanks to MainlyWebStuff for creating his short [Connecting to a SQLite database with PHP](https://www.youtube.com/watch?v=bR3nxnCGqmY) tutorial, which is basically what this is based on.
 
 1. Create an index.php file.
 1. Open it and copy and paste this:
@@ -68,7 +66,7 @@ Thanks to MainlyWebStuff for creating his short [Connecting to a SQLite database
 1. Create a students_tb table.
 1. Fill the table with content.
 
-## Creating a barebone project (PHP + SQLite) that returns database content as an HTML P tag
+## Displaying database records as an unordered list using a foreach loop - PHP and SQLITE
 
 https://www.youtube.com/watch?v=JuZMjPRwXPo&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt3WR&index=3
 
@@ -88,7 +86,9 @@ https://www.youtube.com/watch?v=JuZMjPRwXPo&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt
         }
     ?>
 
-## Creating a barebone project (PHP + SQLite) that returns database content as an HTML table
+## Displaying database records as a HTML table using a foreach loop - PHP and SQLITE
+
+https://www.youtube.com/watch?v=1Lhplcvvz-4&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt3WR&index=4
 
     <?php
         // define PDO - tell about the database file
