@@ -66,8 +66,15 @@ If you have a top bar and a navigation menu on your site, the best is to make th
 If you need to change the background color for your sticky menu, use this:
 
 	.bdt-sticky-fixed {
-			background-color: black;
+		background-color: black;
 	}
+
+If you have just one bar that is not sticky, you can make it this way:
+
+1. Select the whole section corresponding to the menu.
+1. Go to the Advanced tab in the left-hand panel.
+1. Go to the Motion Effects section.
+1. Select "Top" next to "Sticky".
 
 You can do this all in Elementor, no need to create special JS here.
 
