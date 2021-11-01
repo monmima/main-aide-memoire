@@ -142,6 +142,10 @@ https://www.youtube.com/watch?v=Ls04HnBngso&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt
 
 https://www.youtube.com/watch?v=Fg7fih7vi0A&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt3WR&index=7
 
+* To display a page, you would have to type something like this in the address bar:
+
+http://localhost:1234/index.php?id=1
+
     <?php
         // define PDO - tell about the database file
         $db = new PDO("sqlite:database.db");
