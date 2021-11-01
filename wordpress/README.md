@@ -27,7 +27,7 @@ To rescan a site that has WPML in it, go to your dashboard, and find Localisatio
 
 ## Clearing WPML Cache
 
-- You can flush WPML cache in WPML > Support > Troubleshooting (dépannage) > "Clear the cache in WPML" [https://wpml.org/forums/topic/wpml-cache-2/]
+- You can flush WPML cache in WPML > Support (Assistance techhnique) > Troubleshooting (Dépannage) > Clear the cache in WPML (Effacer le cache dans WPML) [https://wpml.org/forums/topic/wpml-cache-2/]
 
 ## Clearing WordPress Cache
 
