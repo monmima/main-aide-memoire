@@ -256,60 +256,17 @@ To display a page, you would have to type something like this in the address bar
             }
         ?>
         
-
     </body>
     </html>
 
 ## SQLite: Deleting a record from a form
 
-Your form page (one.php) should look something like this:
+Your index page (index.php) or whatever page you're using to delete data should have something like this:
 
-    <?php 
-        echo $_GET['id'];
-    ?> 
-
-    <?php
-        // define PDO - tell about the database file
-        $db = new PDO("sqlite:database.db");
-
-        try {
-            $sql = "SELECT * FROM students_tb WHERE id=:myId";
-
-            // prepare statement
-            $statement = $db->prepare($sql);
-
-            // get value from querystring and bind
-            $id = filter_input(INPUT_GET, "id");
-            $statement->bindValue(":myId", $id, PDO::PARAM_INT);
-
-            // execute the query
-            $statement->execute();
-
-            // create array of records
-            $r = $statement->fetch();
-            $db = null;
-
-            // check contents of array
-            if (!$r) {
-                echo "No record found";
-            } else {
-                echo "record found";
-            }
-        }
-
-        catch (PDOException $e) {
-            print "We had an error: " . $e->getMessage() . "<br>";
-            die();
-        }
-    ?>
-
-    <h1><?php echo htmlspecialchars($r['id']); ?></h1>
-    <p>Description: <?php echo htmlspecialchars($r['sname']); ?></p>
-    <p>Score: <?php echo htmlspecialchars($r['score']); ?></p>
-
-    <form action="<?php echo 'delete.php?id=' . htmlspecialchars($r['id']) ?>" method="POST">
-        <button type="submit" name="delete">Delete this record</button>
-    </form>
+    // show it on the screen as HTML
+    foreach($students as $row => $student) {
+        echo "<li><a href=\"/one.php?id=" . $student['id']  . "\">" . $student['sname'] . "</a> - <a href='delete.php?id=" . $student['id']  . "'>Erase this record</a></li>";
+    }
 
 The deletion page (delete.php) should look like this:
 
