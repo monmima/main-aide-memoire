@@ -72,14 +72,14 @@ https://www.youtube.com/watch?v=JuZMjPRwXPo&list=PLU70qqWW4frENsWYAm-tAKp2ZJQ_dt
         $pdo = new PDO("sqlite:database.db");
 
         // write SQL
-        $statement = $pdo->query("SELECT * FROM demo_table");
+        $statement = $pdo->query("SELECT * FROM students_tb");
 
         // run the SQL
         $students = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         // show it on the screen as HTML
         foreach($students as $row => $student) {
-            echo "<p>" . $student['name'] . "</p>";
+            echo "<p>" . $student['sname'] . "</p>";
         }
     ?>
 
@@ -182,7 +182,7 @@ To display a page, you would have to type something like this in the address bar
         ?>
 
         <h1><?php echo htmlspecialchars($r['id']); ?></h1>
-        <p>Description: <?php echo htmlspecialchars($r['name']); ?></p>
+        <p>Description: <?php echo htmlspecialchars($r['sname']); ?></p>
         <p>Score: <?php echo htmlspecialchars($r['score']); ?></p>
 
 ## SQLite: Inserting a record from a form
@@ -256,6 +256,113 @@ To display a page, you would have to type something like this in the address bar
             }
         ?>
         
+
+    </body>
+    </html>
+
+## SQLite: Deleting a record from a form
+
+Your form page (one.php) should look something like this:
+
+    <?php 
+        echo $_GET['id'];
+    ?> 
+
+    <?php
+        // define PDO - tell about the database file
+        $db = new PDO("sqlite:database.db");
+
+        try {
+            $sql = "SELECT * FROM students_tb WHERE id=:myId";
+
+            // prepare statement
+            $statement = $db->prepare($sql);
+
+            // get value from querystring and bind
+            $id = filter_input(INPUT_GET, "id");
+            $statement->bindValue(":myId", $id, PDO::PARAM_INT);
+
+            // execute the query
+            $statement->execute();
+
+            // create array of records
+            $r = $statement->fetch();
+            $db = null;
+
+            // check contents of array
+            if (!$r) {
+                echo "No record found";
+            } else {
+                echo "record found";
+            }
+        }
+
+        catch (PDOException $e) {
+            print "We had an error: " . $e->getMessage() . "<br>";
+            die();
+        }
+    ?>
+
+    <h1><?php echo htmlspecialchars($r['id']); ?></h1>
+    <p>Description: <?php echo htmlspecialchars($r['sname']); ?></p>
+    <p>Score: <?php echo htmlspecialchars($r['score']); ?></p>
+
+    <form action="<?php echo 'delete.php?id=' . htmlspecialchars($r['id']) ?>" method="POST">
+        <button type="submit" name="delete">Delete this record</button>
+    </form>
+
+The deletion page (delete.php) should look like this:
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Student</title>
+        <style>
+            label, input {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Delete student from database</h1>
+        
+        <?php
+            // get the parameter called id for the URL
+            $id = $_GET['id'];
+
+            try {
+                $db = new PDO("sqlite:database.db");
+                // $sql = "INSERT INTO students_tb (sname, score) VALUES (:sname, :score)";
+                $sql = "DELETE FROM students_tb WHERE id = $id";
+
+                // DELETE FROM students_tb WHERE id = 1
+
+                $stat = $db->prepare($sql);
+                
+                $success = $stat->execute();
+
+                // does the value exist?
+                if ($success) {
+                    echo "The student has been deleted from the database.";
+                } else {
+                    echo "The student has NOT been deleted from the database.";
+                }
+
+                $db = null;
+
+            } catch (PDOException $e) {
+                // for development
+                print "We had an error: " . $e->getMessage() . "<br>";
+                die();
+            }
+
+
+        ?>
+        
+        <p><a href="/">Go back to the main page.</a></p>
 
     </body>
     </html>
