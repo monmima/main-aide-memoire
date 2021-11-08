@@ -241,13 +241,21 @@ ___
         }
     }
 
-.test {
-    /* your rule here */
-    background-color: lightgreen;
-    height: 10px;
-    width: 100px;
-}
+    .test {
+        animation: spin 3s infinite;
+        background-color: lightgreen;
+        height: 10px;
+        width: 100px;
+    }
 
-Answer:
+## Writing a date in a footer the semantic way
 
-animation: spin 3s infinite;
+    <footer>
+        <time datetime="2021-11">November 2021</time>
+    </footer>
+
+## Selecting all children from a parent
+
+    .parent-selector > * {
+        text-decoration: underline;
+    }
