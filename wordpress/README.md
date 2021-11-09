@@ -120,6 +120,8 @@ The procedure belows assumes the browser language looks like fr-FR or en-US and 
 
 ## Protecting forms
 
+To access the administration for all the reCAPTCHAs you have created, go to https://www.google.com/recaptcha/admin/.
+
 ### Really Simple CAPTCHA (has not worked well for me so far)
 
 Assuming you already have Contact Form 7 installed on your site, the steps are pretty straightforward:
