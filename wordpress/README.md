@@ -223,4 +223,4 @@ This is very useful, but some older version of WordPress won't work very well wi
 ## Using Facebook Pixel
 
 - Add the Facebook for Wordpress extension by Facebook.
-- 
+- There might be a message lost in all the other messages near the top of the page saying that Facebook needs to be configured first before you use the extension. Just search for Facebook in the page to find it.
