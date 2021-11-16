@@ -215,3 +215,12 @@ Use WP Mail SMTP by wpforms for this. The icon is a silly-looking pigeon.
 "Google Tag Manager is a tag management system created by Google to manage JavaScript and HTML tags used for tracking and analytics on websites." - Wikipedia
 
 If you have to deal with Google Tag Manager, use the extension by Thomas Geiger. To make sure the changes are effective, purge the cache or disable the cache extension if it doesn't allow you to purge the cache. You'll have to do the latter for LiteSpeed Cache.
+
+## Synching menus with WPML
+
+This is very useful, but some older version of WordPress won't work very well with that. You should test this out with a staging extension.
+
+## Using Facebook Pixel
+
+- Add the Facebook for Wordpress extension by Facebook.
+- 
