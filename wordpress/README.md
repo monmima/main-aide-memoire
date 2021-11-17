@@ -13,9 +13,9 @@
 		}
 	}
 
-## No FTP Access: The Next Best Thing
+## Translating a slider created with Slider Revolution
 
-"Forget using FTP or cPanel! Use our [wp file manager](https://filemanagerpro.io/) plugin to take full control of your Wordpress website."
+[WPML allows you to translate revolution sliders without toil](https://wpml.org/documentation/plugins-compatibility/creating-multilingual-sliders-with-revolution-slider-and-wpml/).
 
 ## Rescanning A Site With WPML
 
@@ -24,6 +24,10 @@ Thanks to YB for this tip.
 To rescan a site that has WPML in it, go to your dashboard, and find Localisation du thème et des plugins under WPML. Then do this:
 
 ![Rescanning WPML content](./img/rescan.png)
+
+## Synching menus with WPML
+
+This is very useful, but some older version of WordPress won't work very well with that. You should test this out with a staging extension.
 
 ## Clearing WPML Cache
 
@@ -168,10 +172,6 @@ Please keep in mind that with WPForms, you might not have a Google badge in the 
 
 To download a site or part of it and browse to the folders, use the **WP File Manager** extension.
 
-## Translating a slider created with Slider Revolution
-
-[WPML allows you to translate revolution sliders without toil](https://wpml.org/documentation/plugins-compatibility/creating-multilingual-sliders-with-revolution-slider-and-wpml/).
-
 ## Testing out a Web site locally - Local by Flywheel
 
 In my experience, the easiest way to run WordPress locally is with [Local by Flywheel](https://localwp.com/).
@@ -216,11 +216,15 @@ Use WP Mail SMTP by wpforms for this. The icon is a silly-looking pigeon.
 
 If you have to deal with Google Tag Manager, use the extension by Thomas Geiger. To make sure the changes are effective, purge the cache or disable the cache extension if it doesn't allow you to purge the cache. You'll have to do the latter for LiteSpeed Cache.
 
-## Synching menus with WPML
-
-This is very useful, but some older version of WordPress won't work very well with that. You should test this out with a staging extension.
-
 ## Using Facebook Pixel
 
 - Add the Facebook for Wordpress extension by Facebook.
 - There might be a message lost in all the other messages near the top of the page saying that Facebook needs to be configured first before you use the extension. Just search for Facebook in the page to find it.
+
+## No FTP Access: The Next Best Thing
+
+"Forget using FTP or cPanel! Use our [wp file manager](https://filemanagerpro.io/) plugin to take full control of your Wordpress website."
+
+## Enabling debug mode in WordPress
+
+wp-config.php - define("wp_debug", true)
