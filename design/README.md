@@ -2,3 +2,4 @@
 
 - Smash Magazine
 - Awwwards
+- Design principles
