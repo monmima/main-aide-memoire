@@ -168,7 +168,6 @@ Given an array of strings, return another array containing all of its longest st
 
 Answer
 
-
     let maxLen = 0;
     let resArr = [];
 
