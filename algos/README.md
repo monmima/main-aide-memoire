@@ -1,6 +1,6 @@
 # 100-algorithms-challenge_dylan-israel
 
-Dylan Israel uses VS Code with the Quokka extension to output code directly in the interface.
+Dylan Israel uses VS Code with the Quokka extension to get the output in real time. If you go to his [Web site](http://www.dylanisrael.com/) before buying his class on Udemy, you'll find a coupon code.
 
 ## Algos
 
@@ -23,7 +23,7 @@ For instance, for <code>[2, 4, 7, 6]</code>, <code>4</code> and <code>7</code> a
 
 Answer:
 
-<pre><div style="color: black;">
+<pre><div style="color: #161616; background-color: #161616;">
 
 const isEven = arr.length % 2 === 0;
 
