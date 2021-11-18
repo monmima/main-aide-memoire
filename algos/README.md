@@ -106,3 +106,80 @@ Answer
     output.push(wall);
 
     return output;
+
+## 4.
+
+**Score: 0.5/1 - 50 %**
+
+Return the sum of a two-digit number.
+
+    function addTwoDigits() {
+        // your code here
+    }
+
+    // console.log(addTwoDigits(29));
+
+Answer
+
+
+    let res = nums.toString().split("");
+
+    return parseInt(res[0]) + parseInt(res[1]);
+
+or
+
+    let res = nums.toString().split("");
+
+    return res.reduce((a, b) => {
+        return parseInt(a) + parseInt(b);
+    });
+
+## 5.
+
+Given an array of integers, find the pair of adjacent elements that has the highest product and return that product.
+
+    function adjacentElementsProduct() {
+        // your code here
+    }
+
+    console.log(adjacentElementsProduct([3, 6, -2, -5, 7, 3]));
+
+Answer
+
+    let highest = 0;
+
+    for (let i = 0; i < arr.length - 1; i++) {
+        currSum = arr[i] * arr[i + 1];
+
+        highest = currSum > highest ? currSum : highest;
+    }
+
+    return highest;
+
+## 6.
+
+Given an array of strings, return another array containing all of its longest strings.
+
+    function allLongestStrings(arr) {
+        // your code here
+    }
+
+    console.log(allLongestStrings(["aba", "aa", "ad", "vcd", "aba"]));
+
+Answer
+
+
+    let maxLen = 0;
+    let resArr = [];
+
+    for (str of arr) {
+        maxLen = str.length > maxLen ? str.length : maxLen;
+    }
+
+    for (str of arr) {
+        if (str.length === 3) {
+            resArr.push(str);
+        }
+    }
+
+    return resArr;
