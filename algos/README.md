@@ -75,18 +75,6 @@ Answer
 
     return total;
 
-## Template
-
-**Score: [...] - [...]**
-
-[Description]
-
-    [...]
-
-Answer
-
-    [...]
-
 ## 3.
 
 **Score: 1/1 - 100 %**
