@@ -6,7 +6,7 @@ Dylan Israel uses VS Code with the Quokka extension to get the output in real ti
 
 ### 1. Return the median value
 
-**0.5 - 50 %**
+**Score: 0.5 - 50 %**
 
 Return the value in the middle of an array. If two values are in the middle (if the number of values in the array is even), return the first value of these.
 
@@ -23,20 +23,66 @@ For instance, for <code>[2, 4, 7, 6]</code>, <code>4</code> and <code>7</code> a
 
 Answer:
 
-<pre><div style="color: #161616; background-color: #161616;">
+    const isEven = arr.length % 2 === 0;
 
-const isEven = arr.length % 2 === 0;
+    let middle;
 
-let middle;
+    if (isEven) {
+        middle = Math.floor(arr.length / 2) - 1;
+    } else {
+        middle = Math.floor(arr.length / 2);
+    }
 
-if (isEven) {
-    middle = Math.floor(arr.length / 2) - 1;
-} else {
-    middle = Math.floor(arr.length / 2);
-}
+    return arr[middle];
 
-return arr[middle];
+## 2.1
 
-</div></pre>
+**Score: 1 - 100 %**
 
-dsfdsf
+Write a function that returns the sum of two numbers.
+
+    function add (num1, num2) {
+        // your code here
+    }
+
+    // console.log(add(1, 2)); // 3
+    // console.log(add(3, 2)); // 5
+
+Answer
+
+    return num1 + num2;
+
+## 2.2
+
+**Score: 1 - 100 %**
+
+Write a function that returns the sum of all numbers regardless of # of params.
+
+    function add2 (...param) {
+        // your code here
+    }
+
+    console.log(add2(1, 2, 3, 4, 5)); // 15
+    console.log(add2(2, 3)); // 5
+
+Answer
+
+    let total = 0;
+
+    param.forEach((num) => {
+        total += num;
+    });
+
+    return total;
+
+## Template
+
+**Score: [...] - [...]**
+
+[Description]
+
+    [...]
+
+Answer
+
+    [...]
