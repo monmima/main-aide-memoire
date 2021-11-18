@@ -6,7 +6,7 @@ Dylan Israel uses VS Code with the Quokka extension to get the output in real ti
 
 ### 1. Return the median value
 
-**Score: 0.5 - 50 %**
+**Score: 0.5/1 - 50 %**
 
 Return the value in the middle of an array. If two values are in the middle (if the number of values in the array is even), return the first value of these.
 
@@ -37,7 +37,7 @@ Answer:
 
 ## 2.1
 
-**Score: 1 - 100 %**
+**Score: 1/1 - 100 %**
 
 Write a function that returns the sum of two numbers.
 
@@ -54,7 +54,7 @@ Answer
 
 ## 2.2
 
-**Score: 1 - 100 %**
+**Score: 1/1 - 100 %**
 
 Write a function that returns the sum of all numbers regardless of # of params.
 
@@ -86,3 +86,35 @@ Answer
 Answer
 
     [...]
+
+## 3.
+
+**Score: 1/1 - 100 %**
+
+Given a rectangular matrix of characters, add a border of asterisks to it.
+
+    function addBorder() {
+        // your code here
+    }
+
+    // console.log(addBorder(["abc", "def"]));
+
+Answer
+
+    const lenOfWall = str[0].length + 2;
+    let wall = "";
+    let output = [];
+
+    // to avoid a loop, use repeat()
+    wall = "*".repeat(lenOfWall);
+
+    // add intermediary rows
+    str.forEach((row) => {
+        output.push(`*${row}*`);
+    });
+
+    // add first and last rows
+    output.unshift(wall);
+    output.push(wall);
+
+    return output;
