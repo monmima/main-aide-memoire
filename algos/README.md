@@ -168,17 +168,17 @@ Given an array of strings, return another array containing all of its longest st
 
 Answer
 
-    let maxLen = 0;
-    let resArr = [];
+    let longestLen = 0;
+    let longestWords = [];
 
     for (str of arr) {
-        maxLen = str.length > maxLen ? str.length : maxLen;
+        longestLen = str.length > longestLen ? str.length : longestLen;
     }
 
     for (str of arr) {
-        if (str.length === 3) {
-            resArr.push(str);
+        if (str.length === longestLen) {
+            longestWords.push(str);
         }
     }
 
-    return resArr;
+    return longestWords;
