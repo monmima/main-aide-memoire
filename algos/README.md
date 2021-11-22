@@ -216,6 +216,8 @@ Answer
 
 ## 8.
 
+**Score: 0/1 - 50 %**
+
 Given a string, replace each of its characters by the next one in the English alphabety (z would be replace by a).
 
     function alphabetShift() {
@@ -243,3 +245,4 @@ Answer
 
     return newWord.join("");
 
+9. 
