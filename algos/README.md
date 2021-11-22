@@ -231,7 +231,7 @@ Answer
     const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     let newWord = [];
 
-    for (i of str) {
+    for (let i of str) {
         let newIndex = alphabet.indexOf(i) + 1;
         let currChar = alphabet[newIndex];
 
@@ -245,4 +245,32 @@ Answer
 
     return newWord.join("");
 
-9. 
+## 9.
+
+**Score: 1/1 - 100 %**
+
+Check whether the given string is a subsequence of the plaintext alphabet.
+
+    function alphabetSubsequence(str) {
+        // your code here
+    }
+
+    console.log(alphabetSubsequence("effg"));
+    console.log(alphabetSubsequence("cdcd"));
+    console.log(alphabetSubsequence("acd"));
+    console.log(alphabetSubsequence("bxz"));
+
+Answer
+
+    // your code here
+    let mem = "";
+
+    for (let i of str) {
+        if (i <= mem) {
+            return false;
+        }
+
+        mem = i;
+    }
+
+    return true;
