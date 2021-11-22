@@ -158,6 +158,8 @@ Answer
 
 ## 6.
 
+**Score: 1/1 - 100 %**
+
 Given an array of strings, return another array containing all of its longest strings.
 
     function allLongestStrings(arr) {
@@ -182,3 +184,62 @@ Answer
     }
 
     return longestWords;
+
+## 7.
+
+**Score: 1/1 - 100 %**
+
+Given a sequence of integers, as an array, determine whether it is possible to obtain a strictly increasing sequence by removing no more than one element from the array.
+
+    function almostIncreasingSequence(arr) {
+        // your code here
+    }
+
+    console.log(almostIncreasingSequence([1, 3, 2, 1]));
+    console.log(almostIncreasingSequence([1, 3, 2]));
+
+Answer
+    
+    let nbErr = 0;
+    let lastItem = 0;
+
+    for (let item of arr) {
+        if (item <= lastItem) {
+            nbErr++;
+        }
+
+        lastItem = item;
+    }
+
+    // return errCount.length <= 1;    
+    return nbErr <= 1;    
+
+## 8.
+
+Given a string, replace each of its characters by the next one in the English alphabety (z would be replace by a).
+
+    function alphabetShift() {
+        // your code here
+    }
+
+    console.log(alphabetShift("crazy"));
+
+Answer
+
+    const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    let newWord = [];
+
+    for (i of str) {
+        let newIndex = alphabet.indexOf(i) + 1;
+        let currChar = alphabet[newIndex];
+
+        // if old char was z
+        if (newIndex === 26) {
+            currChar = "a";
+        }
+
+        newWord.push(currChar);
+    }
+
+    return newWord.join("");
+
