@@ -28,7 +28,7 @@ Remote Image:
 ___
 
 
-## Others
+## Varia
 
 | Markdown | Effect |
 |--------------|-----------|
@@ -47,7 +47,3 @@ https://ghost.org/changelog/markdown/
 
 [1]: https://en.wikipedia.org/wiki/Fox "Wikipedia: Fox"
 [2]: https://en.wikipedia.org/wiki/Dog "Wikipedia: Dog"
-
-## Using real HTML
-
-<p style="color: yellow;">This text should be yellow.</p>
