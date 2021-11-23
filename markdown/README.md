@@ -39,12 +39,6 @@ ___
 | \[Email link\]\(mailto:name@domain.com\) | [Email link](mailto:name@domain.com) |
 | \`Inline code\` | `Inline code` |
 
-## Imbedding HTML
-
-https://ghost.org/changelog/markdown/
-
-<button class="button-save large" onclick="alert('test')">Big Fat Button</button>
-
 ## References
 
 https://ghost.org/changelog/markdown/
@@ -54,3 +48,6 @@ https://ghost.org/changelog/markdown/
 [1]: https://en.wikipedia.org/wiki/Fox "Wikipedia: Fox"
 [2]: https://en.wikipedia.org/wiki/Dog "Wikipedia: Dog"
 
+## Using real HTML
+
+<p style="color: yellow;">This text should be yellow.</p>
