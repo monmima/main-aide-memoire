@@ -228,3 +228,21 @@ If you have to deal with Google Tag Manager, use the extension by Thomas Geiger.
 ## Enabling debug mode in WordPress
 
 wp-config.php - define("wp_debug", true)
+
+## Using Flexible Shipping with WooCommerce
+
+If you want to use multiple shipping rate depending on what a customer bought (e.g., free shipping under x $), you need to use an extension like Flexible Shipping by WP Desk. It's free. Here is what you need to do to have free shipping above a certain amount of money in purchase:
+
+1. Go to WooCommerce.
+1. Go to Settings.
+1. Go to Shipping.
+1. Find "Nom de la zone".
+1. Click on "Edit".
+1. Click on "Ajouter une méthode de livraison".
+1. Select "Flexible Shipping" from the drop-down menu.
+1. Edit the new item under "Nom de la zone".
+1. Change the method title (it will show up on the checkout page of your site).
+1. Add new rules. For instance, if you want free shipping above 88,99, you should use two rules like this:
+
+![Flexible shipping](./img/flexible-shipping.png)
+
