@@ -231,7 +231,7 @@ wp-config.php - define("wp_debug", true)
 
 ## Using Flexible Shipping with WooCommerce
 
-If you want to use multiple shipping rate depending on what a customer bought (e.g., free shipping under x $), you need to use an extension like Flexible Shipping by WP Desk. It's free. Here is what you need to do to have free shipping above a certain amount of money in purchase:
+If you want to use multiple shipping rate depending on what a customer bought (e.g., free shipping under x $), you need to use an extension like **Flexible Shipping by WP Desk**. It's free. Here is what you need to do to have free shipping above a certain amount of money in purchase:
 
 1. Go to WooCommerce.
 1. Go to Settings.
