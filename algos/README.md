@@ -245,7 +245,7 @@ Answer
 
     return newWord.join("");
 
-## 9.
+## 9. Alphabet Sub Sequence
 
 **Score: 1/1 - 100 %**
 
@@ -274,3 +274,57 @@ Answer
     }
 
     return true;
+
+## 10. Alternating sum
+
+**Score: 1/1 - 100 %**
+
+Add the even-indexed numbers and the odd-indexed numbers and return an array with the sum of the numbers.
+
+    function alternatingSums(arr) {
+        // your code here
+    }
+
+    console.log(alternatingSums([50, 60, 60, 45, 70])); // 105, 180
+
+Answer
+
+    let odd = 0;
+    let even = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        // even
+        if ((i + 1) % 2) {
+            even += arr[i];
+            console.log(i);
+        // odd
+        } else {
+            odd += arr[i];
+        }
+    }
+
+    return [even, odd];
+
+# 11. Are Equally Strong
+
+Source: CodeFights
+
+**Score: x/1 - x %**
+
+    function areEquallyStrong(myLeft, myRight, friendsLeft, friendsRight) {
+        // your code here
+    }
+
+    console.log(areEquallyStrong(10, 15, 15, 10)); // true
+    console.log(areEquallyStrong(15, 10, 15, 10)); // true
+    console.log(areEquallyStrong(15, 10, 15, 9)); // false
+
+Answer
+
+    const myStrongest = myLeft >= myRight ? myLeft : myRight;
+    const myWeakest = myLeft < myRight ? myLeft : myRight;
+
+    const hisStrongest = hisLeft >= hisRight ? hisLeft : hisRight;
+    const hisWeakest = hisLeft < hisRight ? hisLeft : hisRight;
+
+    return (myStrongest === hisStrongest) && (myWeakest === hisWeakest);
