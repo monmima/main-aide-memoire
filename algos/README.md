@@ -309,7 +309,7 @@ Answer
 
 Source: CodeFights
 
-**Score: x/1 - x %**
+**Score: 1/1 - 100 %**
 
     function areEquallyStrong(myLeft, myRight, friendsLeft, friendsRight) {
         // your code here
