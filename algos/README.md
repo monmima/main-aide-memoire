@@ -328,3 +328,46 @@ Answer
     const hisWeakest = hisLeft < hisRight ? hisLeft : hisRight;
 
     return (myStrongest === hisStrongest) && (myWeakest === hisWeakest);
+
+# 12. Are Similar
+
+Source: CodeFights
+
+**Score: 0/1 - 0 %**
+
+Two arrays are called similar if one can be obtained from another by swapping one pair of elements in one of the arrays.
+
+Given two arrays a and b, check whether they are similar.
+
+    function areSimilar(a, b) {
+        // your code here
+    }
+
+    console.log(areSimilar([1, 2, 3], [1, 2, 3])); // true
+    console.log(areSimilar([1, 2, 3], [2, 1, 3])); // true
+    console.log(areSimilar([1, 2, 2], [2, 1, 1])); // true
+
+Answer:
+
+    let newA = [];
+    let newB = [];
+
+    if (a.toString() === b.toString()) {
+        return true;
+    }
+
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] !== b[i]) {
+            newA.push(a[i]);
+            newB.push(b[i]);
+        }
+    }
+
+    // there should be no more than two items in array
+    // since only 2 items can be swapped
+    // thus, the items in the new array should be the 
+    if (newA.length === 2 && newA.toString() === newB.reverse().toString()) {
+        return true;
+    }
+
+    return false;
