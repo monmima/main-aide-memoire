@@ -246,3 +246,6 @@ If you want to use multiple shipping rate depending on what a customer bought (e
 
 ![Flexible shipping](./img/flexible-shipping.png)
 
+## Using Themify - WooCommerce Product Filter
+
+"Themify - WooCommerce Product Filter" is a great extension for the creation of filters with WooCommerce.
