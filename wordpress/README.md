@@ -260,3 +260,7 @@ If you want to use multiple shipping rate depending on what a customer bought (e
 ## Using Themify - WooCommerce Product Filter
 
 "Themify - WooCommerce Product Filter" is a great extension for the creation of filters with WooCommerce.
+
+## Building your own customized template
+
+Understrap is an excellent starting point/theme for building your own site template. You can download it from Github or add it directly through WordPress
