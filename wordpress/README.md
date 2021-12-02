@@ -1,5 +1,16 @@
 # Varia
 
+## Changing your navigation menu
+
+If you're having trouble changing your main navigation, go to:
+
+1. Dashboard
+1. Menu
+1. Click on the "Gérer les emplacements" tab
+1. Select the name of the menu you would like to display instead of the old one.
+
+![Rescanning WPML content](./img/gerer-les-menus.png)
+
 ## Adding shortcode in PHP/WordPress
 
 	do_shortcode()
