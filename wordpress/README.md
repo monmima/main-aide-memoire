@@ -74,25 +74,6 @@ With WP Super Cache:
 
 	<?php endif; ?>
 
-## Creating A Sticky Menu With Elementor
-
-If you have a top bar and a navigation menu on your site, the best is to make the navigaton menu sticky, but not the top bar. Otherwise the top bar and the navigation menu are going to overlap.
-
-If you need to change the background color for your sticky menu, use this:
-
-	.bdt-sticky-fixed {
-		background-color: black;
-	}
-
-If you have just one bar that is not sticky, you can make it this way:
-
-1. Select the whole section corresponding to the menu.
-1. Go to the Advanced tab in the left-hand panel.
-1. Go to the Motion Effects section.
-1. Select "Top" next to "Sticky".
-
-You can do this all in Elementor, no need to create special JS here.
-
 ## A Quick and Dirty Way of Injecting JS into WordPress
 
 Thanks to [hmwebdev](https://github.com/hmwebdev) for this tip.
@@ -211,16 +192,6 @@ Use WP Mail SMTP by wpforms for this. The icon is a silly-looking pigeon.
 1. Select a form
 1. Formulaire de contact
 
-## Using custom icons in Elementor's icon widget
-
-1. Edit the icon box.
-
-	![Uploading another icon](./img/edit-icon-box.png)
-
-1. Upload your SVG file.
-
-	![Uploading another icon](./img/upload-svg.png)
-
 ## Using Google Tag Manager
 
 "Google Tag Manager is a tag management system created by Google to manage JavaScript and HTML tags used for tracking and analytics on websites." - Wikipedia
@@ -264,3 +235,42 @@ If you want to use multiple shipping rate depending on what a customer bought (e
 ## Building your own customized template
 
 Understrap is an excellent starting point/theme for building your own site template. You can download it from Github or add it directly through WordPress
+
+## Building a header in Elementor
+
+https://elementor.com/help/create-headers/
+
+Building a header in the free version of Elementor is possible, but you'll make your life much easier with Elementor Pro.
+
+1. Go to your dashboard
+1. Go to the Templates/Modèles tab
+1. Click on Theme Builders
+
+## Creating A Sticky Menu With Elementor
+
+If you have a top bar and a navigation menu on your site, the best is to make the navigaton menu sticky, but not the top bar. Otherwise the top bar and the navigation menu are going to overlap.
+
+If you need to change the background color for your sticky menu, use this:
+
+	.bdt-sticky-fixed {
+		background-color: black;
+	}
+
+If you have just one bar that is not sticky, you can make it this way:
+
+1. Select the whole section corresponding to the menu.
+1. Go to the Advanced tab in the left-hand panel.
+1. Go to the Motion Effects section.
+1. Select "Top" next to "Sticky".
+
+You can do this all in Elementor, no need to create special JS here.
+
+## Using custom icons in Elementor's icon widget
+
+1. Edit the icon box.
+
+	![Uploading another icon](./img/edit-icon-box.png)
+
+1. Upload your SVG file.
+
+	![Uploading another icon](./img/upload-svg.png)
