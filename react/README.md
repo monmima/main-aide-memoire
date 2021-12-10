@@ -6,7 +6,7 @@ Type this command:
 
     npx create-react-app [folder-name]
 
-You could also use static HTML with React injected into it. See [Add React to a Website](https://reactjs.org/docs/add-react-to-a-website.html) for more information.
+You could also use static HTML with React injected into it. See [Add React to a Website](https://reactjs.org/docs/add-react-to-a-website.html) (from the official documentation) for more information.
 
 ## Running a React project
 
