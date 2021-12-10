@@ -94,3 +94,20 @@ The examples below do the same thing. The difference is that one sample uses a c
 
     export default TestComponent;
 
+## Using default props
+
+    import React from "react";
+
+    const TestComponent = (props) => {
+        return (
+            <div>
+                <h1>Hello {props.name}!</h1>
+            </div>
+        )
+    };
+
+    TestComponent.defaultProps = {
+        name: "dude"
+    };
+
+    export default TestComponent;
