@@ -4,6 +4,8 @@ https://www.similarweb.com/website/www.lexilogos.com
 
 ### Removing Slack
 
+There is an installer file, but for the removal of Slack, the only option seems to be the Terminal window.
+
         sudo snap remove slack
 
 ___
