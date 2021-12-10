@@ -60,3 +60,41 @@ JavaScript code can be returned from JSX like so:
     }
 
     export default TestComponent;
+
+## Passing props to a stateless functional component
+
+This code sample is inspired material from [freeCodeCamp](https://www.freecodecamp.org/learn/front-end-libraries/react/) and [akashshakya](https://github.com/akashshakya/freecodecamp-react-solution/blame/master/all-in-one.jsx)'s answer key.
+
+    // 14. Pass Props to a Stateless Functional Component
+
+    import React from "react";
+
+    const CurrentDate = (props) => {
+        return (
+            <div>
+                { /* change code below this line */ }
+                {/* //   passing up the props called date here */}
+                <p>The current date is: {props.date}</p>
+                { /* change code above this line */ }
+            </div>
+        );
+    };
+
+    class TestComponent extends React.Component {
+        constructor(props) {
+            super(props);
+        }
+        render() {
+            return (
+                <div>
+                <h3>What date is it?</h3>
+                { /* change code below this line */ }
+                {/* // adding the props date that take return value of date() function  */}
+                <CurrentDate date={Date()}/>
+                { /* change code above this line */ }
+                </div>
+            );
+        }
+    };
+
+    export default TestComponent;
