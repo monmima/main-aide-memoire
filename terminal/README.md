@@ -2,6 +2,10 @@
 ## Analyse de sites tierces
 https://www.similarweb.com/website/www.lexilogos.com
 
+### Removing Slack
+
+        sudo snap remove slack
+
 ___
 
 
