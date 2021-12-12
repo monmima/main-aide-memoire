@@ -4,7 +4,7 @@
 
 This info is based on material from [www.pluralsight.com](https://www.pluralsight.com/guides/handling-nested-http-requests-using-the-fetch-api).
 
-    async getFishAndChips() {
+    async function getFishAndChips() {
 
         const fish = await fetch(this.fishApiUrl).then(response => response.json());
 
