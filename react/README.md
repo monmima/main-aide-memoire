@@ -146,3 +146,229 @@ Example 2
     };
 
     export default TestComponent;
+
+## Handling Events
+
+https://reactjs.org/docs/handling-events.html
+
+Example 1
+
+    import React from "react";
+
+    function TestComponent() {
+        function handleSubmit(e) {
+            e.preventDefault();
+            console.log('You clicked submit.');
+        }
+
+        return (
+            <form onSubmit={handleSubmit}>
+                <button type="submit">Submit</button>
+            </form>
+        );
+    }
+
+    export default TestComponent;
+
+Example 2
+
+import React from "react";
+
+    class TestComponent extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = { isToggleOn: true };
+
+            // This binding is necessary to make `this` work in the callback
+            this.handleClick = this.handleClick.bind(this);  }
+
+            handleClick() {
+                this.setState(prevState => ({
+                    isToggleOn: !prevState.isToggleOn
+                })); 
+            }
+
+            render() {
+                return (
+                    <button onClick={this.handleClick}>
+                        {this.state.isToggleOn ? 'ON' : 'OFF'}
+                    </button>
+                );
+            }
+
+    }
+
+    export default TestComponent;
+
+## Condtional rendering
+
+Code sample found on freeCodeCamp
+
+    import React from "react";
+
+    class TestComponent extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                display: true
+            }
+            this.toggleDisplay = this.toggleDisplay.bind(this);
+        }
+        toggleDisplay() {
+            this.setState({
+                display: !this.state.display
+            });
+        }
+        render() {
+            // change code below this line
+            if (this.state.display){
+                return (
+                    <div>
+                        <button onClick={this.toggleDisplay}>Toggle Display</button>
+                        <h1>Displayed!</h1>
+                    </div>
+                );
+            } else {
+                return (
+                    <div>
+                        <button onClick={this.toggleDisplay}>Toggle Display</button>
+                    </div>
+                );
+            }
+        }
+    };
+
+    export default TestComponent;
+
+## Using a CDN instead of create-react-app
+
+Add the following to the body of your HTML page:
+
+    <div id="root">Loading React...</div>
+
+    <!--CDN libraries-->
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js" crossorigin></script>
+
+    <!--other code-->
+    <script type="text/babel" src="../js/Fcc001.js"></script>
+
+You could code use the following to force the type of your props, but it's optional:
+
+    <script src="https://unpkg.com/prop-types@15.6/prop-types.min.js" crossorigin></script>
+
+Create a file named /js/Fcc001.js and copy the following code in it:
+
+    // 1. Create a Simple JSX Element
+    // https://www.freecodecamp.org/learn/front-end-libraries/react/create-a-simple-jsx-element
+
+    const JSX = <h1>Hello JSX!</h1>;
+
+    ReactDOM.render(JSX, document.querySelector("#root"));
+
+## Using an API
+
+Example 1
+
+https://www.youtube.com/watch?v=hzLDsxPGctY
+
+    import React from "react";
+
+    class TestComponent extends React.Component {
+
+        constructor(props) {
+            super(props);
+
+            this.state = {
+                items: [],
+                isLoaded: false
+            }
+        }
+
+        componentDidMount() {
+            fetch("https://jsonplaceholder.typicode.com/posts")
+            
+            .then(res => res.json())
+            .then(json => {
+                this.setState({
+                    isLoaded: true,
+                    items: json,
+                })
+            });
+        }
+
+        render() {
+
+            var { isLoaded, items } = this.state;
+
+            if (!isLoaded) {
+                return <div>Loading...</div>
+            }
+
+            else {
+                return (
+                    <div className = "App">
+
+                        {items.map(item => (
+                            <div key = {item.id} >
+                                <h3>{item.title}</h3>
+                                <p>{item.body}</p>
+                            </div>
+                        ))}
+
+                    </div>
+                );
+            }
+
+        }
+    }
+
+    export default TestComponent;
+
+Example 2
+
+https://www.youtube.com/watch?v=T3Px88x_PsA
+
+    import React from "react";
+
+    class TestComponent extends React.Component {
+        // default values
+        state = {
+            loading: true,
+            person: null
+        }
+
+        // This is the best place to fetch your data.
+        async componentDidMount() {
+            const URL = "https://api.randomuser.me/";
+
+            const response = await fetch(URL);
+
+            const data = await response.json();
+
+            // grabbing the first result
+            this.setState({person: data.results[0], loading: false })
+
+            console.log(data.results);
+        }
+
+        render() {
+            return <div>
+                {/* conditionally showing data */}
+                { this.state.loading || !this.state.person ? (<div>loading...</div>) : (<div>
+
+                    <div>{this.state.person.name.title}</div>
+                    <div>{this.state.person.name.first}</div>
+                    <div>{this.state.person.name.last}</div>
+                    <div>
+                        <img src={this.state.person.picture.large} />
+                    </div>
+
+                </div>) }
+            </div>;
+        }
+        
+    }
+
+    export default TestComponent;
