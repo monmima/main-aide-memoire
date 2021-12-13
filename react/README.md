@@ -111,3 +111,38 @@ The examples below do the same thing. The difference is that one sample uses a c
     };
 
     export default TestComponent;
+
+## Styling components in React
+
+Example 1
+
+    import React from "react";
+
+    const headerStyle = {
+        background-color: white;
+        color: 'yellow'
+    }
+
+    const TestComponent = (props) => {
+        return (
+            <div>
+                <h1 style={headerStyle}>Hello!</h1>
+            </div>
+        )
+    };
+
+    export default TestComponent;
+
+Example 2
+
+    import React from "react";
+
+    const TestComponent = (props) => {
+        return (
+            <div>
+                <h1 style={{color: "red", background: "white"}}>Hello!</h1>
+            </div>
+        )
+    };
+
+    export default TestComponent;
