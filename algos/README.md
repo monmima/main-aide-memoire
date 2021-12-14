@@ -339,7 +339,7 @@ Source: CodeFights
 
 Two arrays are called similar if one can be obtained from another by swapping one pair of elements in one of the arrays.
 
-Given two arrays a and b, check whether they are similar.
+Given two arrays a and b, check whether they are similar or not.
 
     function areSimilar(a, b) {
         // your code here
@@ -405,3 +405,5 @@ Answer
     }
 
 23. Array Conversion
+
+Source: CodeFights
