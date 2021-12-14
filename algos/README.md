@@ -2,9 +2,11 @@
 
 Dylan Israel uses VS Code with the Quokka extension to get the output in real time. If you go to his [Web site](http://www.dylanisrael.com/) before buying his class on Udemy, you'll find a coupon code.
 
+The numbers given below follow the numbering used by Dyland Israel in his class on Udemy.
+
 ## Algos
 
-### 1. Return the median value
+### 10. Absolute Values Sum Minization (returning the median value)
 
 **Score: 0.5/1 - 50 %**
 
@@ -35,7 +37,7 @@ Answer:
 
     return arr[middle];
 
-## 2.1
+## 11. Add (part 1)
 
 **Score: 1/1 - 100 %**
 
@@ -52,7 +54,7 @@ Answer
 
     return num1 + num2;
 
-## 2.2
+## 11. Add (part 2)
 
 **Score: 1/1 - 100 %**
 
@@ -75,7 +77,7 @@ Answer
 
     return total;
 
-## 3.
+## 12. Add border
 
 **Score: 1/1 - 100 %**
 
@@ -107,7 +109,7 @@ Answer
 
     return output;
 
-## 4.
+## 13. Add two digits
 
 **Score: 0.5/1 - 50 %**
 
@@ -134,7 +136,7 @@ or
         return parseInt(a) + parseInt(b);
     });
 
-## 5.
+## 14. Adjacent elements products
 
 Given an array of integers, find the pair of adjacent elements that has the highest product and return that product.
 
@@ -156,7 +158,7 @@ Answer
 
     return highest;
 
-## 6.
+## 15. All longest strings
 
 **Score: 1/1 - 100 %**
 
@@ -185,7 +187,7 @@ Answer
 
     return longestWords;
 
-## 7.
+## 16. Almost increasing sequence
 
 **Score: 1/1 - 100 %**
 
@@ -214,11 +216,11 @@ Answer
     // return errCount.length <= 1;    
     return nbErr <= 1;    
 
-## 8.
+## 17. Alphabet shift
 
 **Score: 0/1 - 50 %**
 
-Given a string, replace each of its characters by the next one in the English alphabety (z would be replace by a).
+Given a string, replace each of its characters by the next one in the English alphabet (z would be replace by a).
 
     function alphabetShift() {
         // your code here
@@ -245,7 +247,7 @@ Answer
 
     return newWord.join("");
 
-## 9. Alphabet Sub Sequence
+## 18. Alphabet Sub Sequence
 
 **Score: 1/1 - 100 %**
 
@@ -275,7 +277,7 @@ Answer
 
     return true;
 
-## 10. Alternating sum
+## 19. Alternating sum
 
 **Score: 1/1 - 100 %**
 
@@ -305,7 +307,7 @@ Answer
 
     return [even, odd];
 
-# 11. Are Equally Strong
+# 20. Are Equally Strong
 
 Source: CodeFights
 
@@ -329,7 +331,7 @@ Answer
 
     return (myStrongest === hisStrongest) && (myWeakest === hisWeakest);
 
-# 12. Are Similar
+# 21. Are Similar
 
 Source: CodeFights
 
@@ -345,7 +347,7 @@ Given two arrays a and b, check whether they are similar.
 
     console.log(areSimilar([1, 2, 3], [1, 2, 3])); // true
     console.log(areSimilar([1, 2, 3], [2, 1, 3])); // true
-    console.log(areSimilar([1, 2, 2], [2, 1, 1])); // true
+    console.log(areSimilar([1, 2, 2], [2, 1, 1])); // false
 
 Answer:
 
@@ -371,3 +373,35 @@ Answer:
     }
 
     return false;
+
+# 22. Array change
+
+Source: CodeFights
+
+**Score: 0/1 - 0 %**
+
+Algorithm challenge available at CodeFights
+
+You are given an array of integers. On each move you are allowed to increase exactly one of its element by one. Find the minimal number of moves required to obtain a strictly increasing sequence from the input.
+
+    function arrayChange(inputArray: number[]): number {
+        // your code here
+    }
+
+    console.log(arrayChange([1, 1, 1])); // 3
+
+Answer
+
+    if (arr[i] >= arr[i + 1]) {
+        // checking the difference between current number and next one
+        const difference = (arr[i] + 1) - (arr[i + 1]);
+        console.log(difference);
+
+        // changing the next number in the array
+        arr[i + 1] = arr[i] + 1;
+        
+        // adding to the count
+        count += difference;
+    }
+
+23. Array Conversion
