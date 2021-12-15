@@ -407,3 +407,52 @@ Answer
 23. Array Conversion
 
 Source: CodeFights
+
+**Score: 0/1 - 0 %**
+
+Given an array of 2k integers (for some integer k) perform the following operations until the array contains only one element:
+
+- On the 1st, 3rd, 5th, etc. iterations (1-based) replace each pair of consecutive elements with their sum;
+- On the 2nd, 4th, 6th, etc. iterations replace each pair of consecutive elements with their product. After the algorithm has finished, there will be a single element left in the array. Return that element.
+
+    function arrayConversion(inputArr) {
+        // your code here
+    }
+
+    console.log(arrayConversion([1, 2, 3, 4, 5, 6, 7, 8])); // 186
+
+Answer
+
+    function arrayConversion(inputArr) {
+        let isOdd = true;
+
+        console.log(3)
+
+        while(inputArr.length !== 1) {
+            inputArr = sumProduct(inputArr, isOdd);
+            isOdd = !isOdd;
+        }
+
+        return inputArr[0];
+    }
+
+    function sumProduct(nums, isOdd) {
+        const sumProducts = [];
+
+        if (isOdd) {
+            // iterate by two to get pairs
+            for (let i = 0; i < nums.length; i += 2) {
+                sumProducts.push(nums[i] + nums[i + 1]);
+            }
+        } else {
+            for (let i = 0; i < nums.length; i += 2) {
+                sumProducts.push(nums[i] * nums[i + 1]);
+            }
+        }
+
+        return sumProducts;
+    }
+
+24. Array Max Consecutive Sum
+
+Source: CodeFights
