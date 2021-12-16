@@ -16,7 +16,7 @@ This info is based on material from [www.pluralsight.com](https://www.pluralsigh
 
     }
 
-    getFishAndChips()
+    getFishAndChips();
 
 ## Sorting an object based on a certain key
 
