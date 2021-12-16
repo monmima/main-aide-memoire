@@ -27,14 +27,7 @@ TestModelController.php:
     {
         public function index()
         {
-            // $karaokes = Karaoke::all();
-
-            // return view("index", [
-            //     "karaokes" => $karaokes
-            // ]);
-
-            return "This is your page.";
-            
+            return "This is your page.";            
         }
     }
 
