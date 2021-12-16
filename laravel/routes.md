@@ -1,6 +1,6 @@
-## Working with routes in Laravel
+# Working with routes in Laravel
 
-### Passing a string to the view without a database
+## Passing a string to the view without a database
 
 Add this to your web.php file:
 
