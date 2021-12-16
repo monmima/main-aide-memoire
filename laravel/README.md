@@ -441,8 +441,6 @@ To this:
 
         Route::get('/pizzas', 'App\Http\Controllers\PizzaController@index');
 
-
-
 ### Getting a token in the address bar instead of storing/updating the database
 
 - Something is likely to be wrong with your form. This could be caused by:
