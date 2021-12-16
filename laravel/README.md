@@ -77,7 +77,7 @@ Thanks to Ceed Media for his [YouTube tutorial](https://www.youtube.com/watch?v=
 
         sudo apt-get install php-xml
 
-17. Download the lastest dependencies
+17. Go to the project folder and downloaad the lastest dependencies
 
         composer update
 
@@ -643,8 +643,6 @@ This assumes your controller has already been created.
 
     }
 
-- Change **return view("index"** to **return inertia("index"** if you are using InertiaJS instead of Blade.
-
 ## How to load assets (CSS, JS, etc.)
 
 There are three ways of loading assets in Laravel.
@@ -667,7 +665,7 @@ If you don't want to populate your database manually, you have several options.
 
 The optimal way is to use a seeder because you don't necessarily want to populate your database when you're in production. The easy solution is to use a migration or a route.
 
-### Populating your database with a migration or a route
+## Populating your database with a migration or a route
 
 - Go to web.php or your migration file (/database/migrations/) depending on how you want your database to be populated.
 - Import your model at the beginning of the file (this assumes your model is called NewMessage):
@@ -710,3 +708,25 @@ The optimal way is to use a seeder because you don't necessarily want to populat
 
 		return ("Populated the database.");
 	});
+
+## Working with routes in Laravel
+
+### Passing a string to the view without a database
+
+Add this to your web.php file:
+
+    Route::get('/example', function () {
+        $string = "This is my super string!";
+        return view('test', compact("string"));
+    });
+
+The full content of your resources/view/test.blade.php file:
+
+    <header>
+        <h1>{{ $string }}</h1>
+    </header>
+
+
+
+
+
