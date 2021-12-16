@@ -6,7 +6,7 @@ This info is based on material from [www.pluralsight.com](https://www.pluralsigh
 
     async function getFishAndChips() {
 
-        const fish = await fetch(this.fishApiUrl).then(response => response.json());
+        const fish = await fetch(http://127.0.0.1:8000/testx).then(response => response.json());
 
         console.log(fish);
 
@@ -15,6 +15,8 @@ This info is based on material from [www.pluralsight.com](https://www.pluralsigh
         console.log(chips);
 
     }
+
+    getFishAndChips()
 
 ## Sorting an object based on a certain key
 
