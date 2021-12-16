@@ -138,170 +138,6 @@ If you have formatted your computer or are using another computer and want to us
 
 ___
 
-
-## Using And Running MySQL On Linux Mint
-
-Obviously, you can use Microsoft, Linux or the Macintosh operating system to run this project, but I'm keeping these steps below just in case I get stuck again, and I use Linux Mint as my main OS.
-
-1. Download XAMPP for Linux from https://www.apachefriends.org/download.html
-2. Run the .run file as a root user
-3. To run XAMPP, go to /opt/lampp/ as a root user
-4. Go to localhost/dashboard/ or go to localhost/phpmyadmin
-5. Double-click on manager-linux-x64.run
-6. Create a database and then import the content into it if needs be (you cannot create a database directly from a file you want to import)
-7. Go to the .env file and make sure your environment variables look like this:
-
-        DB_CONNECTION=mysql
-        DB_HOST=127.0.0.1
-        DB_PORT=3306
-        DB_DATABASE=name_of_my_database
-        DB_USERNAME=root
-        DB_PASSWORD=
-
-8. Go to root folder, open a Terminal window and type:
-
-        php artisan migrate
-
-9. If everything went fine, your database should now have a few tables that were automatically created such as failed_jobs, etc.
-
-Notes:
-
-- Apparently, the path can be a bit different from one Linux distro to the other.
-- If your Apache server won't start (red dot next to it in XAMPP), run this command:
-
-        sudo systemctl stop apache2
-
-- If the above really won't work, I suggest restarting your computer, and then running the same command.
-
-___
-
-## Using SQLite locally on Linux Mint
-
-https://www.codementor.io/@goodnesskay/developing-locally-using-sqlite-with-laravel-on-ubuntu-8s8358503
-
-Thanks to [Coder's Tape
-](https://www.youtube.com/watch?v=kWmnQvznkUI) for creating his tutorial on YouTube on how to change the default SQL database settings to SQLite.
-
-1. Go to the .env file
-2. Replace **DB_CONNECTION=mysql** with **DB_CONNECTION=sqlite**
-3. Erase all the other database-related lines (all lines starting with the prefix "DB_") such as DB_HOST=127.0.0.1, DB_PASSWORD=, etc.
-4. Create a database through the Terminal or manually
-
-        touch database/database.sqlite
-
-5. Update Composer
-
-        composer update
-
-6. Install possibly missing dependencies
-
-        composer require doctrine/dbal
-
-7. Go to the .env file and make sure your environment variables look like this:
-
-        DB_CONNECTION=sqlite
-
-8. Go to the root folder, open a Terminal window and type:
-
-        php artisan migrate
-
-9. If everything went fine, your database should nonw have a few tables that were automatically created such as failed_jobs, etc.
-
-___
-
-## Heroku
-
-My references here were a [tutorial on YouTube by Jonny Kalambay](https://www.youtube.com/watch?v=MxfxiR8TVNU) and an answer on the [Trailblazer Community](https://trailblazers.salesforce.com/answers?id=9064S000000DHq1QAG).
-
-Also, for the details that pertain to Laravel in particular, [codigofacilito and his tutorial on YouTube](https://www.youtube.com/watch?v=GE2Kmy8WL3g) were very useful to me. By the way his tutorial is in Spanish. He also explains how to upload a PostgreSQL database to the project at the end of his video.
-
-### Installing the CLI
-
-1. Install snap ([documentation available on snapcraft](https://snapcraft.io/docs/installing-snap-on-linux-mint))
-
-        sudo rm /etc/apt/preferences.d/nosnap.pref
-        sudo apt update
-        sudo apt install snapd
-
-2. Install Heroku
-
-        snap install --classic heroku
-
-### Creating a Heroku Project
-
-1. Go to Heroku
-    - https://dashboard.heroku.com/apps
-2. Create a new project such as [my-web-app-name]
-3. Go to the Terminal Window and make sure the app/project is initialized as a Git repository by typing:
-
-        git status
-
-4. On the Heroku web site, you can find more information about the name of your project under the **deploy** tab.
-5. Create a file named **Procfile** (no extension) at the root of your project. It should contain this:
-    - web: vendor/bin/heroku-php-apache2 public/
-6. Go to the .env file. You'll need to copy and paste a series of lines to the Terminal window.
-
-        heroku git:remote -a [my-web-app-name]
-
-        heroku config:add APP_NAME=Laravel
-
-        heroku config:add APP_ENV=production
-
-        heroku config:add APP_KEY=...
-
-        heroku config:add APP_DEBUG=true
-
-        heroku config:add APP_URL=http://[my-web-app-name].test
-
-7. Push your project to Heroku:
-
-        git push heroku HEAD:master
-
-8. On the Heroku's web site, click on **Open app**, which should be located somewhere in the top right corner of the page of your project
-9. Now you should see your /resources/views/app.blade.php should.
-11. See below if you want to use SQLite as a database in Heroku.
-
-### Updating Your Project
-
-Now all you have to do is to update your remote project and type:
-    
-    git push heroku HEAD:master
-
-### Using SQLite in Heroku
-
-Your app might run perfectly locally. Setting it up so it runs remotely as well is slightly more complicated.
-
-The first thing you have to keep in mind if you use a combination of SQLite and Heroku, you will overwrite your remote database with each redeployment, thus resetting it to what you have locally.
-
-For more information on using Heroku and SQLite, please visit [David Tang's Deploying Laravel with SQLite to Heroku article](https://davidtang.io/deploying-laravel-with-sqlite-to-heroku/). 
-
-Here are the steps you have to follow:
-
-1. Make sure you are on the right branch and the features you want are on the main branch too.
-2. Delete .sqlite reference from the .gitignore file located within the /database folder.
-3. Add **"ext-pdo_sqlite": "*"** to the **require** block in **composer.json**
-4. Open a Terminal window
-5. Run this:
-
-        composer update
-
-6. Type these lines one by one to set your environment variables:
-
-        heroku config:add APP_NAME=Laravel
-        heroku config:add APP_ENV=production
-        heroku config:add APP_DEBUG=true
-        heroku config:add DB_CONNECTION=sqlite
-        heroku config:add
-
-7. Type these lines one by one as well, correcting them with the correct information:
-
-        heroku config:add APP_URL=https://app-name.com/
-        heroku config:add APP_KEY=...
-
-8. Finally, I used to type **heroku config:add DB_DATABASE=database** in the Terminal, but this created a bug. This is probably a **step to avoid**. It apparently created the bug where I would get a message about **PRAGMA**, **foreign keys**, and the online app **not connecting to the database** properly.
-
-___
-
 ## Downloading A Laravel Project From Github And Setting It Up
 
 This information was found on [stackoverflow](http://stackoverflow.com/questions/48116952/ddg#48117041).
@@ -337,12 +173,6 @@ This will create the:
 - Migration
 - Project model
 - Controller
-
-### Redoing A Migration
-
-If you want to drop previously-created columns in your database and recreate them, use this command:
-
-        php artisan migrate:fresh
 
 ## Creating A Controller By Itself
 
@@ -542,7 +372,9 @@ So for instance, your /resources/views/app.blade.php file should have a line lik
 
 	<link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
 
+## API, CORS and Laravel
 
+If a page in your project renders data as JSON, by default, Laravel will know how to handle this properly. This means you won't get CORS errors.
 
 
 
