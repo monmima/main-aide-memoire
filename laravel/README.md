@@ -431,13 +431,17 @@ Then run:
 
 ### Target class [PizzaController] does not exist.
 
-- Make sure you are using the right namespace. The namespace is not working the same way in older versions of Laravel. Go to your web.php file and change this:
+Make sure you are using the right namespace. The namespace is not working the same way in older versions of Laravel. Please keep in mind that the string "Controller" should come right before the @ sign.
+
+Go to your web.php file and change this:
 
         Route::get('/pizzas', 'PizzaController@index');
 
-- To this:
+To this:
 
         Route::get('/pizzas', 'App\Http\Controllers\PizzaController@index');
+
+
 
 ### Getting a token in the address bar instead of storing/updating the database
 
