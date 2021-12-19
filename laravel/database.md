@@ -47,12 +47,13 @@ The optimal way is to use a seeder because you don't necessarily want to populat
 
 - If you're using a route instead, if should look like this:
 
-	// to populate the database
-	Route::get("/pop", function () {
-		NewMessage::create(["message" => "testala"]);
+        // to populate the database
 
-		return ("Populated the database.");
-	});
+        Route::get("/pop", function () {
+                NewMessage::create(["message" => "testala"]);
+
+                return ("Populated the database.");
+        });
 
 ## Redoing A Migration
 
