@@ -27,7 +27,9 @@ Also, for the details that pertain to Laravel in particular, [codigofacilito and
 
 4. On the Heroku web site, you can find more information about the name of your project under the **deploy** tab.
 5. Create a file named **Procfile** (no extension) at the root of your project. It should contain this:
-    - web: vendor/bin/heroku-php-apache2 public/
+        
+        web: vendor/bin/heroku-php-apache2 public/
+
 6. Go to the .env file. You'll need to copy and paste a series of lines to the Terminal window.
 
         heroku git:remote -a [my-web-app-name]
@@ -80,7 +82,6 @@ Here are the steps you have to follow:
         heroku config:add APP_ENV=production
         heroku config:add APP_DEBUG=true
         heroku config:add DB_CONNECTION=sqlite
-        heroku config:add
 
 7. Type these lines one by one as well, correcting them with the correct information:
 
