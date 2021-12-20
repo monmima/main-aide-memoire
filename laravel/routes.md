@@ -35,7 +35,7 @@ web.php:
 
     Route::get('/test2', 'App\Http\Controllers\TestModelController@index');
 
-## Returning data from the database as JSON
+## Returning all data from the database as JSON
 
 For this to work, the first thing you need to do is to make sure you have:
 
@@ -82,3 +82,26 @@ web.php
 
         }
     }
+
+## Returning one record from the database as JSON
+
+This assumes that you have created a model and a controller using this command:
+
+    php artisan make:model Character -mc
+
+/app/Http/CharacterController.php:
+
+    // show one record as JSON
+    public function edit($id)
+    {
+        $character = Character::findOrFail($id);
+
+        return [
+            "character" => $character,
+        ];
+    }
+
+/app/web.php:
+
+    Route::get('/{id}/edit', "App\Http\Controllers\CharacterController@edit");
+
