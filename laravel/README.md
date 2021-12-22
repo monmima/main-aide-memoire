@@ -94,11 +94,27 @@ ___
 
 ### Creating a Project and Running it
 
-    laravel new [my-web-app-name]
-    php artisan key:generate
-    php artisan serve
+Make sure you have the correct dependencies installed:
 
-Now go to your browser and type http://localhost:8000/ in the address bar.
+1. Make sure Composer is installed.
+
+        composer -V
+
+1. Make sure NPM is installed.
+
+        npm -v
+
+1. Make sure PHP is installed.
+
+        php -v
+
+1. Now to install Laravel, run these commands:
+
+        laravel new [my-web-app-name]
+        php artisan key:generate
+        php artisan serve
+
+1. Now go to your browser and type http://localhost:8000/ in the address bar.
 
 ___
 
