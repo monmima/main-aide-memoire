@@ -19,7 +19,7 @@ The full content of your resources/view/test.blade.php file:
 
 This assumes that you have created a model and a controller using this command:
 
-    php artisan make:model TestModel -mc
+    php artisan make:model TestModel -mc --resource
 
 TestModelController.php:
 
@@ -42,7 +42,7 @@ For this to work, the first thing you need to do is to make sure you have:
 1. A database
 1. A migration file, which is automatically created with the correct name if you use this command:
     
-    php artisan make:model TestModel -mc
+        php artisan make:model TestModel -mc --resource
 
 1. A database with content in it (or you'll just return empty an empty JSON array)
 
@@ -87,7 +87,7 @@ web.php
 
 This assumes that you have created a model and a controller using this command:
 
-    php artisan make:model Character -mc
+    php artisan make:model Character -mc --resource
 
 /app/Http/CharacterController.php:
 

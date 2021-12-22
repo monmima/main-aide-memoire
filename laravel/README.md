@@ -108,7 +108,7 @@ Make sure you have the correct dependencies installed:
 
         php -v
 
-1. To set up a new project using VueJS, go see the VueJS part of this aide-mémoire.
+1. To set up a new project using VueJS instead of Blade, go see the VueJS part of this aide-mémoire.
 1. Now to install Laravel, run these commands:
 
         laravel new [my-web-app-name]
@@ -181,7 +181,9 @@ ___
 
 To generate multiples files in a single command, use:
 
-        php artisan make:model ModelName -mc
+        php artisan make:model ModelName -mc --resource
+
+The resource flag is what pre-generates the methods in your controller for you different routes (/photos/create, /photos/{id}/edit, etc.). A similar flag is --api.
 
 Note: In **-mc**, **m** stands for ***migration*** and **c** stands for ***controller***. You can also add **api** to the end of the string if you want to use AJAX.
 
@@ -210,7 +212,7 @@ ___
 
 1. To create a new model, migration and controller, type this in your terminal:
 
-        php artisan make:model Category -mc
+        php artisan make:model Category -mc --resource
 
 2. Find the place in your new migration that looks like this:
 
