@@ -7,7 +7,7 @@ Naran Code.
 
 1. Create your project
 
-        composer create-project laravel/laravel laravel-vue-test
+        composer create-project laravel/laravel [name-of-your-project-folder]
 
 1. Install your dependencies
 
