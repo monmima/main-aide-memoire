@@ -108,6 +108,7 @@ Make sure you have the correct dependencies installed:
 
         php -v
 
+1. To set up a new project using VueJS, go see the VueJS part of this aide-mémoire.
 1. Now to install Laravel, run these commands:
 
         laravel new [my-web-app-name]
