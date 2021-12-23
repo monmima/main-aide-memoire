@@ -1,9 +1,9 @@
-# Installing VueJS 3 in a Laravel project
+# Working with VueJS 3 in a Laravel project
 
-The content of this file is based on "[How to install vue 3 in laravel 8 from scratch - Laravel vuejs tutorial | Vue 3 | Laravel 8](https://www.youtube.com/watch?v=_-58QQci57o)" by 
+## Step-by-step directions to install VueJS in a Laravel project
+
+The content of this section is based on "[How to install vue 3 in laravel 8 from scratch - Laravel vuejs tutorial | Vue 3 | Laravel 8](https://www.youtube.com/watch?v=_-58QQci57o)" by 
 Naran Code.
-
-## Step by step directions
 
 1. Create your project
 
@@ -108,3 +108,71 @@ If at any point you run into an error because, your version of NodeJS is not the
 1. Type this command
 
     node --version
+
+## Creating a simple VueJS and Laravel to-do list
+
+The content of this section is based on Scrypster's [Todo List App with Laravel and Vue.js](https://www.youtube.com/watch?v=UHSipe7pSac).
+
+1. Create your controller, migration and model using the following command. The --resource flag prepares the methods inside of your controller.
+
+        php artisan make:model Item -mc --resource
+
+1. Create a database file if you don't have one yet. The **database.md** part of this tutorial will provide you with more details about this step. You will also have to change your root/.env file.
+1. Go to your new migration file.
+1. The up() method should look like this:
+
+        public function up()
+        {
+                Schema::create('items', function (Blueprint $table) {
+                $table->id();
+                $table->string("name");
+                $table->boolean("completed")->default(false);
+                $table->timestamp("completed_at")->nullable();
+                $table->timestamps();
+                });
+        }
+
+1. Run your migration with this command:
+
+        php artisan migrate
+
+1. Go to your new controller file to make sure it was created.
+1. Now that your controller is created, go to your routes/api.php file.
+1. At this to your controller imports:
+
+        use App\Http\Controllers\ItemController;
+
+1. Append this to the file (at the end):
+
+        Route::get("/items", [ItemController::class, "index"]);
+        Route::get("/items")->group( function() {
+                Route::post("/store", [ItemController::class, "store"]);
+                Route::put("/{id}", [ItemController::class, "update"]);
+                Route::delete("/{id}", [ItemController::class, "destroy"]);
+        });
+
+1. Go back to /app/Http/Controllers/ItemController.php.
+1. Make sure the following import in present in the file. Depending on how you create your controller (at the same time as your migration and model or not), it might or might not be present in the file.
+
+        use App\Models\Item;
+
+1. Update the controller so the index method looks like this:
+
+        public function index()
+        {
+                return Item::OrderBy("created_at", "DESC")->get();
+        }
+
+1. Update the controller so the store function looks like this:
+
+        public function store(Request $request)
+        {
+                $newItem = new Item;
+                $newItem->name = $request->Item["name"];
+                $newItem->save();
+
+                return $newItem;
+        }
+
+1. Open up Postman. Another folder in this aide-mémoire has information about how to use and install Postman.
+1. 
