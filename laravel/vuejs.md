@@ -109,9 +109,17 @@ If at any point you run into an error because, your version of NodeJS is not the
 
     node --version
 
+___
+
 ## Creating a simple VueJS and Laravel to-do list
 
 The content of this section is based on Scrypster's [Todo List App with Laravel and Vue.js](https://www.youtube.com/watch?v=UHSipe7pSac).
+
+1. Create a barebone project using this command:
+
+        laravel new todolist
+
+1. Prepare your database. Use the database.md part of this aide-mémoire if needed.
 
 1. Create your controller, migration and model using the following command. The --resource flag prepares the methods inside of your controller.
 
