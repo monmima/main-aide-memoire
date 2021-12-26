@@ -121,7 +121,7 @@ ___
 
 ## Deleting Your Dependencies To Move A Project Around
 
-All dependencies are stored in your **vendor** and **node_module** subfolders. To reinstall your dependencies, for instance after downloading your project from a git repository, use **composer update** and **npm install**.
+All dependencies are stored in your **vendor/** and **node_module/** subfolders. To reinstall your dependencies, for instance after downloading your project from a git repository, use **composer update** and **npm install**.
 
 ___
 
