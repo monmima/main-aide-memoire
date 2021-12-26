@@ -376,7 +376,7 @@ https://devcenter.heroku.com/articles/getting-started-with-php#set-up
 
         composer install
 
-1. Create a .gitignore file and add /vendor to it.
+1. Create a .gitignore file and add vendor/ to it.
 1. Log into your Heroku account and create a project.
 1. Create a git remote by using a command like this one:
 
