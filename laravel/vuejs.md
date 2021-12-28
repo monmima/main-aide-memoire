@@ -151,7 +151,7 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 1. Append this to the file (at the end):
 
         Route::get("/items", [ItemController::class, "index"]);
-        Route::prefix("/items")->group( function() {
+        Route::prefix("/item")->group( function() {
 			Route::post("/store", [ItemController::class, "store"]);
 			Route::put("/{id}", [ItemController::class, "update"]);
 			Route::delete("/{id}", [ItemController::class, "destroy"]);
@@ -174,11 +174,23 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 		public function store(Request $request)
 		{
 			$newItem = new Item;
-			$newItem->name = $request->Item["name"];
+			$newItem->name = $request->item["name"];
 			$newItem->save();
 
 			return $newItem;
 		}
 
 1. Open up Postman. Another folder in this aide-mémoire has information about how to use and install Postman.
-1. Check the route for /api/items. This should return a JSON array (or an empty JSON array if it was not populated).
+1. Check the route for /api/items and perform a GET request. This should return a JSON array (or an empty JSON array since it has not been populated so far).
+1. Prepare the route for /api/item/store.
+1. Add a Content-Type () application/json header to the request.
+1. Go to the body tab in Postman and then select the **raw** option.
+1. Pass this request:
+
+		{
+			"item": {
+				"name": "Take out the trash"
+			}
+		}
+
+		
