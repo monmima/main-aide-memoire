@@ -138,13 +138,13 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
                 });
         }
 
-1. Run your migration with this command:
+1. Run your migration with this command. The :fresh forces a new migration if one was already done.
 
-        php artisan migrate
+        php artisan migrate:fresh
 
 1. Go to your new controller file to make sure it was created.
 1. Now that your controller is created, go to your routes/api.php file.
-1. At this to your controller imports:
+1. Add this to your controller imports:
 
         use App\Http\Controllers\ItemController;
 
