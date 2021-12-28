@@ -151,7 +151,7 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 1. Append this to the file (at the end):
 
         Route::get("/items", [ItemController::class, "index"]);
-        Route::get("/items")->group( function() {
+        Route::prefix("/items")->group( function() {
 			Route::post("/store", [ItemController::class, "store"]);
 			Route::put("/{id}", [ItemController::class, "update"]);
 			Route::delete("/{id}", [ItemController::class, "destroy"]);
@@ -181,4 +181,4 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 		}
 
 1. Open up Postman. Another folder in this aide-mémoire has information about how to use and install Postman.
-1. 
+1. Check the route for /api/items. This should return a JSON array (or an empty JSON array if it was not populated).
