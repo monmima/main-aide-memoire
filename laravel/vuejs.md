@@ -162,35 +162,121 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 
         use App\Models\Item;
 
-1. Update the controller so the index method looks like this:
+1. Completing your index() and store() methods.
+	1. Update the controller so the index method looks like this:
 
-        public function index()
-        {
-			return Item::OrderBy("created_at", "DESC")->get();
-        }
-
-1. Update the controller so the store function looks like this:
-
-		public function store(Request $request)
-		{
-			$newItem = new Item;
-			$newItem->name = $request->item["name"];
-			$newItem->save();
-
-			return $newItem;
-		}
-
-1. Open up Postman. Another folder in this aide-mémoire has information about how to use and install Postman.
-1. Check the route for /api/items and perform a GET request. This should return a JSON array (or an empty JSON array since it has not been populated so far).
-1. Type the route in Postman address bar route [root]/api/item/store.
-1. Add a "Content-Type" and "application/json" header to the request.
-1. Go to the body tab in Postman and then select the **raw** option.
-1. Pass this request:
-
-		{
-			"item": {
-				"name": "Take out the trash"
+			public function index()
+			{
+				return Item::OrderBy("created_at", "DESC")->get();
 			}
-		}
 
-		
+	1. Update the controller so the store function looks like this:
+
+			public function store(Request $request)
+			{
+				$newItem = new Item;
+				$newItem->name = $request->item["name"];
+				$newItem->save();
+
+				return $newItem;
+			}
+
+	1. Open up Postman. Another folder in this aide-mémoire has information about how to use and install Postman.
+	1. Check the route for /api/items and perform a GET request. This should return a JSON array (or an empty JSON array since it has not been populated so far).
+	1. Type the route in Postman address bar route [root]/api/item/store.
+	1. Add a "Content-Type" and "application/json" header to the request.
+	1. Go to the body tab in Postman and then select the **raw** option.
+	1. Pass this request:
+
+			{
+				"item": {
+					"name": "Take out the trash"
+				}
+			}
+
+	1. Go to the app/Http/Controllers/ItemController.php file.
+	1. Add this import statement at the beginning of the file:
+
+			use Illuminate\Support\Carbon;
+
+1. Completing your update() method.
+    1. Find the update() method.
+    1. Add these lines to the function (please bear in mind that the way the function below is declared is sligthly different from the way the --resource flag creates your function):
+
+			public function update(Request $request, $id)
+			{
+				// using find() instead of findOrFail() allows you to specify what you want to happen if the item isn't found
+				$existingItem = Item::find( $id );
+
+				if ( $existingItem ) {
+				// if true, set to true
+				// otherwise, set to false
+				$existingItem->completed = $request->item["completed"] ? true : false;
+
+				// if true, set to Carbon::now() (current time)
+				// otherwise, set to null
+				$existingItem->completed_at = $request->item["completed"] ? Carbon::now() : null;
+
+				$existingItem->save();
+				
+				return $existingItem;
+				}
+
+				// if item is not found
+				return "Item not found.";
+			}
+
+	1. Go to Postman.
+	1. Select the option "Put" for the query type.
+	1. Input the following URL for your query (assuming you have a record with id 1):
+
+        	http://127.0.0.1:8000/api/item/1
+        
+
+	1. Add a "Content-Type" and "application/json" header to the request.
+	1. Go to the body tab in Postman and then select the **raw** option.
+	1. Pass this request:
+
+			{
+				"item": {
+					"completed": true
+				}
+			}
+
+	1. Now try the same, but with a non-existent id and you should get this output instead:
+
+			Item not found.
+
+1. Completing your delete() method.
+    1. Replace your current delete method with the following:
+
+			public function destroy($id)
+			{
+				// using find() instead of findOrFail() allows you to specify what you want to happen if the item isn't found
+				$existingItem = Item::find( $id );
+
+				if ( $existingItem ) {
+				$existingItem->delete();
+				return "Item successfully deleted.";
+				}
+
+				return "Item not found.";
+			}
+
+	1. Go to Postman.
+	1. Select the option "Delete" for the query type.
+	1. Input the following URL for your query (assuming you have a record with id 1):
+
+        	http://127.0.0.1:8000/api/item/1
+
+	1. Your item should not be deleted from the database and should get this message:
+
+			Item successfully deleted.
+        
+	1. Make sure you get the correct message for a query for a not existing id:
+
+			Item not found.
+
+	1. You should also make sure that this query works fine with a GET request (the deleted records should be gone now):
+
+			http://127.0.0.1:8000/api/items
