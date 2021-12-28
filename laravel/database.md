@@ -115,10 +115,6 @@ Thanks to [Coder's Tape
 
         composer require doctrine/dbal
 
-1. Go to the .env file and make sure your environment variables look like this:
-
-        DB_CONNECTION=sqlite
-
 1. Add this line to the require block in your composer.json file:
 
         "ext-pdo_sqlite": "*"
