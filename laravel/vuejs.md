@@ -122,20 +122,20 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 1. Prepare a database if you don't have one yet. The **database.md** part of this tutorial will provide you with more details about this step. You will also have to change your [root folder]/.env file.
 1. Create your controller, migration and model using the following command. The --resource flag prepares the methods inside of your controller.
 
-        php artisan make:model Item -mc --resource
+		php artisan make:model Item -mc --resource
 
 1. Go to  app/database/migrations/[new-migration-file].
 1. The up() method should look like this:
 
         public function up()
         {
-                Schema::create('items', function (Blueprint $table) {
+			Schema::create('items', function (Blueprint $table) {
                 $table->id();
                 $table->string("name");
                 $table->boolean("completed")->default(false);
                 $table->timestamp("completed_at")->nullable();
                 $table->timestamps();
-                });
+			});
         }
 
 1. Run your migration with this command. The :fresh forces a new migration if one was already done.
@@ -143,8 +143,8 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
         php artisan migrate:fresh
 
 1. Go to your new controller file to make sure it was created.
-1. Now that your controller is created, go to your routes/api.php file.
-1. Add this to your controller imports:
+1. Now that your controller was created, go to your routes/api.php file.
+1. Add this to your API routes (routes/api.php):
 
         use App\Http\Controllers\ItemController;
 
@@ -152,13 +152,13 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 
         Route::get("/items", [ItemController::class, "index"]);
         Route::get("/items")->group( function() {
-                Route::post("/store", [ItemController::class, "store"]);
-                Route::put("/{id}", [ItemController::class, "update"]);
-                Route::delete("/{id}", [ItemController::class, "destroy"]);
+			Route::post("/store", [ItemController::class, "store"]);
+			Route::put("/{id}", [ItemController::class, "update"]);
+			Route::delete("/{id}", [ItemController::class, "destroy"]);
         });
 
-1. Go back to /app/Http/Controllers/ItemController.php.
-1. Make sure the following import in present in the file. Depending on how you create your controller (at the same time as your migration and model or not), it might or might not be present in the file.
+1. Go to /app/Http/Controllers/ItemController.php.
+1. Make sure the following import is present in the file. Depending on how you create your controller (at the same time as your migration and model or not), it might or might not be present in the file.
 
         use App\Models\Item;
 
@@ -166,19 +166,19 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 
         public function index()
         {
-                return Item::OrderBy("created_at", "DESC")->get();
+			return Item::OrderBy("created_at", "DESC")->get();
         }
 
 1. Update the controller so the store function looks like this:
 
-        public function store(Request $request)
-        {
-                $newItem = new Item;
-                $newItem->name = $request->Item["name"];
-                $newItem->save();
+		public function store(Request $request)
+		{
+			$newItem = new Item;
+			$newItem->name = $request->Item["name"];
+			$newItem->save();
 
-                return $newItem;
-        }
+			return $newItem;
+		}
 
 1. Open up Postman. Another folder in this aide-mémoire has information about how to use and install Postman.
 1. 
