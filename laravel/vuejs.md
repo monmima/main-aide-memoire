@@ -119,14 +119,12 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 
         laravel new todolist
 
-1. Prepare your database. Use the database.md part of this aide-mémoire if needed.
-
+1. Prepare a database if you don't have one yet. The **database.md** part of this tutorial will provide you with more details about this step. You will also have to change your [root folder]/.env file.
 1. Create your controller, migration and model using the following command. The --resource flag prepares the methods inside of your controller.
 
         php artisan make:model Item -mc --resource
 
-1. Create a database file if you don't have one yet. The **database.md** part of this tutorial will provide you with more details about this step. You will also have to change your root/.env file.
-1. Go to your new migration file.
+1. Go to  app/database/migrations/[new-migration-file].
 1. The up() method should look like this:
 
         public function up()
