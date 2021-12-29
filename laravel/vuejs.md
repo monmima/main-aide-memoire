@@ -280,3 +280,69 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 	1. You should also make sure that this query works fine with a GET request (the deleted records should be gone now):
 
 			http://127.0.0.1:8000/api/items
+
+1. Working with Vue
+
+	1. Go to your Terminal window.
+	1. Install your NPM dependencies:
+
+			npm i
+
+	1. Install VueJS:
+
+			npm i vue
+
+	1. Go back to VS Code.
+	1. Go to resources/js/.
+	1. Create a new folder called **vue/**. This is where you are going to store all of your Vue files.
+	1. Create a new file called **resources/js/vue/app.vue**.
+	1. Add the following content to your new file:
+	
+			<template>
+				<div>
+					Hello
+				</div>
+			</template>
+
+			<script>
+			export default {
+
+			}
+			</script>
+
+	1. Go to **resources/js/app.js**.
+	1. The only content this file has for now is this:
+
+			require('./bootstrap');
+
+	1. Append the following to this file:
+
+			import Vue from "vue";
+
+			import App from "./vue/app";
+
+			// create a new Vue instance
+			const app = new Vue(
+				el: "#app",
+				components, { App }
+			);
+
+1. Now that you have created a new Vue instance, you want to tell your app to use it.
+	1. Go to **resources/js/views/welcome.blade.php**.
+	1. Delete all the style-related content.
+	1. Delete all the content within the **&lt;body&gt;** tags.
+	1. Delete the class on the **&lt;body&gt;** tag.
+	1. Add this between the **&lt;body&gt;** tags:
+
+			<div id="app">
+				<app></app>
+			</div>
+
+			</!-- mix is for recompiling the code every time a change happens in resource/js/app.js and put it in public/js -->
+			<script src="{{ mix("js/app.js") }}"></script>
+
+	1. To confirm that everything is working fine, open up a Terminal window and type the following. This is gonna do hot reload for you.
+
+			npm run hot
+
+	1. Now if you go back to your browser, and reload your app, you should see the message "Hello".
