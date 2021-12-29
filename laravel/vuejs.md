@@ -295,7 +295,7 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 	1. Go back to VS Code.
 	1. Go to resources/js/.
 	1. Create a new folder called **vue/**. This is where you are going to store all of your Vue files.
-	1. Create a new file called **resources/js/vue/app.vue**.
+	1. Create a new file called **resources/js/vue/app.vue**. Make sure your follow this directory tree or you are going to receive a **can't resolve** error.
 	1. Add the following content to your new file:
 	
 			<template>
@@ -319,13 +319,13 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 
 			import Vue from "vue";
 
-			import App from "./vue/app";
+			import App from "./vue/app.vue";
 
 			// create a new Vue instance
-			const app = new Vue(
+			const app = new Vue({
 				el: "#app",
-				components, { App }
-			);
+				components: { App }
+			});
 
 1. Now that you have created a new Vue instance, you want to tell your app to use it.
 	1. Go to **resources/js/views/welcome.blade.php**.
@@ -339,10 +339,31 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 			</div>
 
 			</!-- mix is for recompiling the code every time a change happens in resource/js/app.js and put it in public/js -->
-			<script src="{{ mix("js/app.js") }}"></script>
+			<script src="{{ mix('js/app.js') }}"></script>
+
+	1. Go to [root]/webpack.mix.js.
+	1. Find this code:
+
+			mix.js('resources/js/app.js', 'public/js')
+				.postCss('resources/css/app.css', 'public/css', [
+					//
+				]);
+
+	1. Use this instead:
+
+			mix.js('resources/js/app.js', 'public/js').vue()
+				.postCss('resources/css/app.css', 'public/css', [
+					//
+				]);
 
 	1. To confirm that everything is working fine, open up a Terminal window and type the following. This is gonna do hot reload for you.
 
 			npm run hot
 
+	1. Start a server for you app if it's not already running:
+
+			php artisan serve
+
 	1. Now if you go back to your browser, and reload your app, you should see the message "Hello".
+
+1. More than a simple "hello" message: setting up your components.
