@@ -459,23 +459,22 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 	1. Go back to your browser and make sure your modifications are reflected in the app.
 
 1. Adding FontAwesome to your project9
-	1. Add FontAwesome to your project. The last line assumes you are using VueJS 2. Otherwise, you just have to replace the **2** with a **3**.
+	1. Add FontAwesome to your project. Yup, it's **@fortawesome/** with an **r** and not a **n**. Also, the last line assumes you are using VueJS 2. Otherwise, you just have to replace the **2** with a **3**.
 
-		npm i --save @fontawesome/fontawesome-svg-core
-		npm i --save @fontawesome/fontawesome-solid-svg-icons
-		npm i --save @fontawesome/vue-fontawesome@2
+		npm i --save @fortawesome/fontawesome-svg-core
+		npm i --save @fortawesome/free-solid-svg-icons
+		npm i --save @fortawesome/vue-fontawesome@2
 
 	1. Go to /resources/js/app.js.
-	1. Add this code to your file after the other import statements:
+	1. Append this code to your file after the other import statements:
 
-		import Vue from 'vue'
-		import App from './App.vue'
+			import { library } from '@fortawesome/fontawesome-svg-core';
+			import { faPlusSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
+			import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-		import { library } from '@fortawesome/fontawesome-svg-core'
-		import { faPlusSquare, faTrash } from '@fortawesome/free-solid-svg-icons'
-		import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+			library.add(faPlusSquare, faTrash)
 
-		library.add(faPlusSquare, faTrash)
+			Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 1. Completing your form
 	1. Go to **resources/js/vue/addItemVue.vue**.
