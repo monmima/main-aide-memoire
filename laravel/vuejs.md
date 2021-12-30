@@ -366,4 +366,118 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 
 	1. Now if you go back to your browser, and reload your app, you should see the message "Hello".
 
-1. More than a simple "hello" message: setting up your components.
+1. More than a simple "hello" message: creating your components
+	1. Create a file called **resources/js/vue/addItemVue.vue**.
+	1. Paste the following in it:
+			
+			<template>
+				<div>
+					Form
+				</div>
+			</template>
+
+			<script>
+			export default {
+
+			}
+			</script>
+
+	1. Create a file called **resources/js/vue/listView.vue**.
+	1. Paste the following in it:
+			
+			<template>
+				<div>
+					List View
+				</div>
+			</template>
+
+			<script>
+			export default {
+
+			}
+			</script>
+
+	1. Create a file called **resources/js/vue/listItem.vue**.
+	1. Paste the following in it:
+			
+			<template>
+				<div>
+					List Item
+				</div>
+			</template>
+
+			<script>
+			export default {
+
+			}
+			</script>
+
+	1. Go to **resources/js/vue/app.vue**.
+	1. If you still haven't installed an extension like Laravel Extension Pack by Winnie Lin, maybe you should now. This extension helps you autocomplete the names of folders and file. First time I tried, the code below didn't seem to work so I had to rewrite manually the path of imported files (import statements).
+	1. Change the file so it looks like this and loads all of your new components:
+
+			<template>
+				<div class="todo-list-container">
+					<div class="heading">
+						<h2 id="title">Todo List</h2>
+						<add-item-form />
+					</div>
+
+					<list-view />
+				</div>
+
+			</template>
+
+			<script>
+			import addItemForm from "./addItemVue.vue";
+			import listView from "./listView.vue";
+
+			export default {
+				components: {
+					addItemForm,
+					listView
+				}
+			}
+			</script>
+
+			<style scoped>
+				#title {
+					text-align: center;
+				}
+
+				.heading {
+					background: #e6e6e6;
+					padding: 10px;
+				}
+
+				.todo-list-container {
+					margin: auto;
+					width: 350px;
+				}
+			</style>
+
+	1. Go back to your browser and make sure your modifications are reflected in the app.
+
+1. Adding FontAwesome to your project9
+	1. Add FontAwesome to your project. The last line assumes you are using VueJS 2. Otherwise, you just have to replace the **2** with a **3**.
+
+		npm i --save @fontawesome/fontawesome-svg-core
+		npm i --save @fontawesome/fontawesome-solid-svg-icons
+		npm i --save @fontawesome/vue-fontawesome@2
+
+	1. Go to /resources/js/app.js.
+	1. Add this code to your file after the other import statements:
+
+		import Vue from 'vue'
+		import App from './App.vue'
+
+		import { library } from '@fortawesome/fontawesome-svg-core'
+		import { faPlusSquare, faTrash } from '@fortawesome/free-solid-svg-icons'
+		import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+		library.add(faPlusSquare, faTrash)
+
+1. Completing your form
+	1. Go to **resources/js/vue/addItemVue.vue**.
+	1. Change the existing code so it looks like this:
+
