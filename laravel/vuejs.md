@@ -115,6 +115,15 @@ ___
 
 The content of this section is based on Scrypster's [Todo List App with Laravel and Vue.js](https://www.youtube.com/watch?v=UHSipe7pSac).
 
+### Running this app
+
+To run this app, you need to use these two commands in two different Terminal windows:
+
+	npm run hot
+	php artisan serve
+
+### Steps to follow
+
 1. Create a barebone project using this command:
 
         laravel new todolist
