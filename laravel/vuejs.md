@@ -42,7 +42,7 @@ Naran Code.
             <h1>test</h1>
         </template>
 
-1. Go to /resources/js/app.js
+1. Go to **/resources/js/app.js**.
 1. Paste this in it
 
         require('./bootstrap');
@@ -704,3 +704,45 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 				width: 350px;
 			}
 		</style>
+
+1. Creating the updateCheck() and trashcan() functions
+	1. Go to **resources/js/vue/listItem.vue**.
+	1. Change the export section so that it looks like this:
+
+			props: ["item"],
+			methods: {
+				updateCheck() {
+					axios.put("api/item/" + this.item.id, {
+						// getting the whole item
+						item: this.item
+					})
+					.then(response => {
+						if (response.status === 200) {
+							// telling the parent component that this item has changed
+							this.$emit("itemchanged")
+						}
+					})
+					.catch(error => {
+						console.log(error);
+					})
+				}
+			}
+
+	1. Go to **resources/js/vue/listView.vue**.
+	1. Change the &lt;list-view /&gt; so it looks like this:
+
+            <list-item
+                :item="item"
+                class="item"
+                v-on:itemchanged="$emit('reloadlist')"
+            />
+
+	1. Go to **resources/js/vue/app.vue**.
+	1. Change the &lt;list-item /&gt; so it looks like this:
+
+			<!-- in a larger application, you would use state to do this -->
+			<list-view
+				:items="items"
+				v-on:reloadlist="getList()"
+			/>
+
