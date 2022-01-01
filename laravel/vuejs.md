@@ -376,7 +376,7 @@ To run this app, you need to use these two commands in two different Terminal wi
 	1. Now if you go back to your browser, and reload your app, you should see the message "Hello".
 
 1. More than a simple "hello" message: creating your components
-	1. Create a file called **resources/js/vue/addItemVue.vue**.
+	1. Create a file called **resources/js/vue/addItemForm.vue**.
 	1. Paste the following in it:
 			
 			<template>
@@ -438,7 +438,7 @@ To run this app, you need to use these two commands in two different Terminal wi
 			</template>
 
 			<script>
-			import addItemForm from "./addItemVue.vue";
+			import addItemForm from "./addItemForm.vue";
 			import listView from "./listView.vue";
 
 			export default {
@@ -487,7 +487,7 @@ To run this app, you need to use these two commands in two different Terminal wi
 
 1. Completing your form so you can insert new records from the input field instead of using Postman
 
-	1. Go to **resources/js/vue/addItemVue.vue**.
+	1. Go to **resources/js/vue/addItemForm.vue**.
 	1. Change the existing code so it looks like this:
 
 			<template>
@@ -667,7 +667,7 @@ To run this app, you need to use these two commands in two different Terminal wi
 		</template>
 
 		<script>
-		import addItemForm from "./addItemVue.vue";
+		import addItemForm from "./addItemForm.vue";
 		import listView from "./listView.vue";
 
 		export default {
@@ -714,7 +714,7 @@ To run this app, you need to use these two commands in two different Terminal wi
 			}
 		</style>
 
-1. Creating the updateCheck() and trashcan() functions
+1. Creating the updateCheck() method
 	1. Go to **resources/js/vue/listItem.vue**.
 	1. Change the export section so that it looks like this:
 
@@ -755,3 +755,45 @@ To run this app, you need to use these two commands in two different Terminal wi
 				v-on:reloadlist="getList()"
 			/>
 
+1. Creating the trashcan() method
+	1. Go to **resources/js/vue/listItem.vue**.
+	1. Add this new method right after updateCheck().
+
+			removeItem() {
+				axios.delete("api/item/" + this.item.id)
+				.then(response => {
+					if (response.status === 200) {
+						this.$emit("itemchanged");
+					}
+				})
+				.catch(error => {
+					console.log(error);
+				})
+			}
+
+1. Refreshing the app right after a new record has been created
+
+	1. Go to **resources/js/vue/addItemForm.vue**.
+	1. Find these lines:
+
+            .then( response => {
+                this.items = response.data
+            })
+
+	1. Change them to this:
+
+			if (response.status === 201) {
+				this.item.name = ""
+				this.$emit("reloadlist");
+			}
+
+	1. Go to **resources/js/vue/app.vue**.
+	1. Find these lines:
+
+            <add-item-form />
+
+	1. Change it to this:
+
+            <add-item-form
+                v-on:reloadlist="getList()"
+            />
