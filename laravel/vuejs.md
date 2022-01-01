@@ -476,7 +476,8 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 
 			Vue.component("font-awesome-icon", FontAwesomeIcon);
 
-1. Completing your form
+1. Completing your form so you can insert new records from the input field instead of using Postman
+
 	1. Go to **resources/js/vue/addItemVue.vue**.
 	1. Change the existing code so it looks like this:
 
@@ -551,3 +552,155 @@ The content of this section is based on Scrypster's [Todo List App with Laravel 
 					font-size: 20px;
 				}
 			</style>
+
+1. Displaying your records in the front-end
+
+	1. Go to **resources/js/vue/listView.vue**.
+	1. Change the content from the file to this:
+
+			<template>
+				<div>
+					<div v-for="( item, index ) in items" :key="index">
+						<list-item
+							:item="item"
+							class="item"
+						/>
+					</div>
+
+				</div>
+			</template>
+
+			<script>
+			import listItem from "./listItem";
+			import ListItem from './listItem.vue';
+
+			export default {
+				props: ["items"],
+				components: {
+					listItem,
+					ListItem
+				}
+			}
+			</script>
+
+			<style scoped>
+				.item {
+					background: #e6e6e6;
+					margin-top: 5px;
+					padding: 5px;
+				}
+			</style>
+
+1. Go to **resources/js/vue/listItem.vue**.
+1. Change the content from the file to this:
+
+		<template>
+			<div class="item">
+				<input
+					type="checkbox"
+					@change="updateCheck()"
+					v-model="item.completed"
+				/>
+
+				<span :class="[item.completed ? 'completed' : '', 'item-text']">{{ item.name }}</span>
+
+				<button @click="removeItem()" class="trashcan">
+					<font-awesome-icon icon="trash" />
+				</button>
+			</div>
+		</template>
+
+		<script>
+		export default {
+			props: ["item"]
+		}
+		</script>
+
+		<style scoped>
+			.completed {
+				color: #999999;
+				text-decoration: line-through;
+			}
+
+			.item {
+				display: flex;
+
+				align-items: center;
+				justify-content: center;
+			}
+
+			.item-text {
+				margin-left: 20px;
+				width: 100%;
+			}
+
+			.trashcan {
+				background: #e6e6e6;
+				border: none;
+				color: #ff0000;
+				outline: none;
+			}
+		</style>
+
+1. Go to **resources/js/vue/app.vue**.
+1. Change the content from the file to this:
+
+		<template>
+			<div class="todo-list-container">
+				<div class="heading">
+					<h2 id="title">Todo List</h2>
+					<add-item-form />
+				</div>
+
+				<list-view :items="items" />
+			</div>
+
+		</template>
+
+		<script>
+		import addItemForm from "./addItemVue.vue";
+		import listView from "./listView.vue";
+
+		export default {
+			components: {
+				addItemForm,
+				listView
+			},
+			data: function() {
+				return {
+					items: []
+				}
+			},
+			methods: {
+				getList() {
+					axios.get("api/items")
+					.then( response => {
+						this.items = response.data
+					})
+					.catch( error => {
+						console.log(error);
+					})
+				}
+			},
+			created() {
+				this.getList();
+				console.log(this.items);
+			}
+		}
+		</script>
+
+		<style scoped>
+			#title {
+				text-align: center;
+			}
+
+			.heading {
+				background: #e6e6e6;
+				padding: 10px;
+			}
+
+			.todo-list-container {
+				margin: auto;
+				width: 350px;
+			}
+		</style>
