@@ -1,12 +1,19 @@
 
-## Analyse de sites tierces
-https://www.similarweb.com/website/www.lexilogos.com
+
 
 ### Removing Slack
 
 There is an installer file, but for the removal of Slack, the only option seems to be the Terminal window.
 
         sudo snap remove slack
+
+___
+
+## Fichier listant les caractéristiques d'un ordi
+
+https://vitux.com/get-linux-system-and-hardware-details-on-the-command-line/
+
+    sudo lshw -html > [filename.html]
 
 ___
 
@@ -53,6 +60,19 @@ ___
     php -S localhost:8000
 
 ___
+
+## smplayer
+
+    sudo apt install smplayer
+
+___
+
+## Anki
+
+    sudo apt install anki
+
+___
+
 
 ### Brightness Controller
 
