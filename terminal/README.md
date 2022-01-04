@@ -1,7 +1,22 @@
+# Terminal Aide-Mémoire
 
+## Linux version
 
+To find out what version of Linux you are running, use this command:
 
-### Removing Slack
+    cat /etc/os-release
+
+## Invisible files in folder
+
+If you have invisible files in a folder, it's probably because you don't have the reading rights you need.
+
+Use this command to get the proper rights:
+
+    sudo chmod -R 777 [TAB]
+
+The tabulation above is used to select the subfolder whose rights you want to change.
+
+## Removing Slack
 
 There is an installer file, but for the removal of Slack, the only option seems to be the Terminal window.
 
@@ -18,7 +33,7 @@ https://vitux.com/get-linux-system-and-hardware-details-on-the-command-line/
 ___
 
 
-### WINE
+## WINE
 
 https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1
 
@@ -32,7 +47,7 @@ https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1
 
 ___
 
-### Deleting leftover configuration files
+## Deleting leftover configuration files
 
 https://askubuntu.com/questions/20127/how-to-remove-configuration-files-completely
 
@@ -45,7 +60,7 @@ Applications usually store configuration data in one of the following hidden fol
 
 ___
 
-### Chrome
+## Chrome
 
 https://itsfoss.com/install-chrome-ubuntu/#install-chrome-terminal
 
@@ -54,7 +69,7 @@ https://itsfoss.com/install-chrome-ubuntu/#install-chrome-terminal
 
 ___
 
-### PHP without Xampp
+## PHP without Xampp
 
     sudo apt install php
     php -S localhost:8000
@@ -74,7 +89,7 @@ ___
 ___
 
 
-### Brightness Controller
+## Brightness Controller
 
 https://learnubuntumate.weebly.com/brightness-controller.html
 
@@ -85,9 +100,9 @@ https://learnubuntumate.weebly.com/brightness-controller.html
 
 ___
 
-### Debugging PulseAudio so it connects properly
+## Debugging PulseAudio so it connects properly
 
-#### Temporary Solution
+### Temporary Solution
 
 https://askubuntu.com/questions/879037/pavucontrol-stuck-at-establishing-connection-to-pulseaudio-please-wait
 
@@ -98,19 +113,19 @@ https://askubuntu.com/questions/879037/pavucontrol-stuck-at-establishing-connect
     sudo alsa force-reload
     reboot
 
-#### Another solution that might persist
+### Another solution that might persist
 
 https://livingthelinuxlifestyle.wordpress.com/2019/06/09/solve-problems-with-no-sound-in-linux-mint/
 
 ___
 
-### Gimp
+## Gimp
 
     sudo apt install gimp
 
 ___
 
-### SQLite browser
+## SQLite browser
 https://sqlitebrowser.org/dl/
 
     sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser-testing
@@ -119,7 +134,7 @@ https://sqlitebrowser.org/dl/
 
 ___
 
-### Varia (one-line installs)
+## Varia (one-line installs)
 
     sudo apt-get install npm
     sudo apt-get install git
