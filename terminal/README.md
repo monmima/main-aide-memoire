@@ -119,12 +119,21 @@ ___
 
 By the way, installing NPM also installs Node.js on your system.
 
+    sudo apt update
     sudo apt-get install npm
     sudo apt-get install git
     sudo apt install smplayer
     sudo apt install anki
     sudo apt install kazam
     sudo apt install gimp
+
+## Installing Snap
+
+On Ubuntu, this is slightly more complicated. In Ubuntu, installing Snap is a one-liner.
+
+    sudo rm /etc/apt/preferences.d/nosnap.pref
+    sudo apt install snapd
+
 
 ## Using Commands
 
