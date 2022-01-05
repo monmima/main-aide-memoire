@@ -37,13 +37,13 @@ ___
 
 https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1
 
-        sudo dpkg --add-architecture i386
-        wget -nc https://dl.winehq.org/wine-builds/winehq.key
-        sudo apt-key add winehq.key
-        sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
-        sudo apt update
-        sudo apt install --install-recommends winehq-stable
-        winecfg
+    sudo dpkg --add-architecture i386
+    wget -nc https://dl.winehq.org/wine-builds/winehq.key
+    sudo apt-key add winehq.key
+    sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
+    sudo apt update
+    sudo apt install --install-recommends winehq-stable
+    winecfg
 
 ___
 
@@ -118,6 +118,8 @@ ___
 ## Varia (one-line installs)
 
 By the way, installing NPM also installs Node.js on your system.
+
+Also, the VS Code shortcut might not show in the start menu until you reboot your computer.
 
     sudo apt update
     sudo apt-get install npm
