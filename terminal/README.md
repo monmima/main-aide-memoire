@@ -129,6 +129,7 @@ Also, the VS Code shortcut might not show in the start menu until you reboot you
     sudo apt install kazam
     sudo apt install gimp
     sudo snap install --classic code
+    sudo snap install slack --classic
 
 ## Installing Snap
 
