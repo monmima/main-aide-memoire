@@ -133,10 +133,20 @@ Also, the VS Code shortcut might not show in the start menu until you reboot you
 
 ## Installing Snap
 
+https://github.com/averkij/a-studio
+
 On Ubuntu, this is slightly more complicated. In Ubuntu, installing Snap is a one-liner.
 
     sudo rm /etc/apt/preferences.d/nosnap.pref
     sudo apt install snapd
+
+# Installing Lingtrain Alignment Studio
+
+To install Lingtrain Alignment Studio, go to the [Lingtrain Alignment Studio Github page](https://github.com/averkij/a-studio). You'll have to install Docker on your system. If Docker gives you error message, try to place <code>sudo</code> before every command and that should do the trick.
+
+    sudo apt install docker.io
+    sudo docker pull lingtrain/aligner:v6
+    docker run -v C:\app\data:/app/data -v C:\app\img:/app/static/img -p 80:80 lingtrain/aligner:v6
 
 
 ## Using Commands
