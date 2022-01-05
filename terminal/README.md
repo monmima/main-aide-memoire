@@ -76,26 +76,12 @@ ___
 
 ___
 
-## smplayer
-
-    sudo apt install smplayer
-
-___
-
-## Anki
-
-    sudo apt install anki
-
-___
-
 
 ## Brightness Controller
 
 https://learnubuntumate.weebly.com/brightness-controller.html
 
     sudo add-apt-repository ppa:apandada1/brightness-controller
-    sudo apt-get update
-    sudo apt-get install brightness-controller-simple
     sudo apt-get install brightness-controller
 
 ___
@@ -119,11 +105,6 @@ https://livingthelinuxlifestyle.wordpress.com/2019/06/09/solve-problems-with-no-
 
 ___
 
-## Gimp
-
-    sudo apt install gimp
-
-___
 
 ## SQLite browser
 https://sqlitebrowser.org/dl/
@@ -136,12 +117,14 @@ ___
 
 ## Varia (one-line installs)
 
+By the way, installing NPM also installs Node.js on your system.
+
     sudo apt-get install npm
     sudo apt-get install git
-    sudo apt-get install kate
     sudo apt install smplayer
     sudo apt install anki
     sudo apt install kazam
+    sudo apt install gimp
 
 ## Using Commands
 
