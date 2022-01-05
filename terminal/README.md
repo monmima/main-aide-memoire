@@ -140,21 +140,27 @@ On Ubuntu, this is slightly more complicated. In Ubuntu, installing Snap is a on
     sudo rm /etc/apt/preferences.d/nosnap.pref
     sudo apt install snapd
 
-## Installing Python
-
-This might be necessary for using Lingtrain Alignment Studio.
-
-    sudo apt-get update
-    sudo apt-get install python3 python3-venv python3-pip
-
 ## Installing Lingtrain Alignment Studio
 
-To install Lingtrain Alignment Studio, go to the [Lingtrain Alignment Studio Github page](https://github.com/averkij/a-studio). You'll have to install Docker on your system. If Docker gives you error message, try to place <code>sudo</code> before every command and that should do the trick.
+https://github.com/averkij/a-studio
 
-    sudo apt install docker.io
-    sudo docker pull lingtrain/aligner:v6
-    docker run -v C:\app\data:/app/data -v C:\app\img:/app/static/img -p 80:80 lingtrain/aligner:v6
+1. Open a Terminal window.
+2. Install docker with this command:
 
+        sudo apt install docker.io
+
+3. Install Lingtrain Alignment Studio using the following command. I had to add **sudo** since I was running into permission issues.
+
+        sudo docker pull lingtrain/aligner:v6
+
+4. Go to the **tmp/** folder at the very root on the system and create a **test/** folder inside to basically create this path **tmp/test/**.
+5. Run the app with this other command:
+
+        sudo docker run -v /tmp/test -v /tmp/test -p 80:80 lingtrain/aligner:v6
+
+6. Open a browser and type this in the address bar.
+
+        localhost
 
 ## Using Commands
 
