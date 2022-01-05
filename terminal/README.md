@@ -126,6 +126,7 @@ By the way, installing NPM also installs Node.js on your system.
     sudo apt install anki
     sudo apt install kazam
     sudo apt install gimp
+    sudo snap install --classic code
 
 ## Installing Snap
 
