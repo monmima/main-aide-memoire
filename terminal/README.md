@@ -76,18 +76,6 @@ ___
 
 ___
 
-## smplayer
-
-    sudo apt install smplayer
-
-___
-
-## Anki
-
-    sudo apt install anki
-
-___
-
 
 ## Brightness Controller
 
