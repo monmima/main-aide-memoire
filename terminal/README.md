@@ -133,8 +133,6 @@ Also, the VS Code shortcut might not show in the start menu until you reboot you
 
 ## Installing Snap
 
-https://github.com/averkij/a-studio
-
 On Ubuntu, this is slightly more complicated. In Ubuntu, installing Snap is a one-liner.
 
     sudo rm /etc/apt/preferences.d/nosnap.pref
