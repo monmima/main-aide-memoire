@@ -37,13 +37,13 @@ ___
 
 https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1
 
-        sudo dpkg --add-architecture i386
-        wget -nc https://dl.winehq.org/wine-builds/winehq.key
-        sudo apt-key add winehq.key
-        sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
-        sudo apt update
-        sudo apt install --install-recommends winehq-stable
-        winecfg
+    sudo dpkg --add-architecture i386
+    wget -nc https://dl.winehq.org/wine-builds/winehq.key
+    sudo apt-key add winehq.key
+    sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
+    sudo apt update
+    sudo apt install --install-recommends winehq-stable
+    winecfg
 
 ___
 
@@ -82,8 +82,6 @@ ___
 https://learnubuntumate.weebly.com/brightness-controller.html
 
     sudo add-apt-repository ppa:apandada1/brightness-controller
-    sudo apt-get update
-    sudo apt-get install brightness-controller-simple
     sudo apt-get install brightness-controller
 
 ___
@@ -107,11 +105,6 @@ https://livingthelinuxlifestyle.wordpress.com/2019/06/09/solve-problems-with-no-
 
 ___
 
-## Gimp
-
-    sudo apt install gimp
-
-___
 
 ## SQLite browser
 https://sqlitebrowser.org/dl/
@@ -124,12 +117,50 @@ ___
 
 ## Varia (one-line installs)
 
+By the way, installing NPM also installs Node.js on your system.
+
+Also, the VS Code shortcut might not show in the start menu until you reboot your computer.
+
+    sudo apt update
     sudo apt-get install npm
     sudo apt-get install git
-    sudo apt-get install kate
     sudo apt install smplayer
     sudo apt install anki
     sudo apt install kazam
+    sudo apt install gimp
+    sudo snap install --classic code
+    sudo snap install slack --classic
+
+## Installing Snap
+
+https://github.com/averkij/a-studio
+
+On Ubuntu, this is slightly more complicated. In Ubuntu, installing Snap is a one-liner.
+
+    sudo rm /etc/apt/preferences.d/nosnap.pref
+    sudo apt install snapd
+
+## Installing Lingtrain Alignment Studio
+
+https://github.com/averkij/a-studio
+
+1. Open a Terminal window.
+2. Install docker with this command:
+
+        sudo apt install docker.io
+
+3. Install Lingtrain Alignment Studio using the following command. I had to add **sudo** since I was running into permission issues.
+
+        sudo docker pull lingtrain/aligner:v6
+
+4. Go to the **tmp/** folder at the very root on the system and create a **test/** folder inside to basically create this path **tmp/test/**.
+5. Run the app with this other command:
+
+        sudo docker run -v /tmp/test -v /tmp/test -p 80:80 lingtrain/aligner:v6
+
+6. Open a browser and type this in the address bar.
+
+        localhost
 
 ## Using Commands
 
