@@ -18,10 +18,11 @@ This is where I store useful algos that are not from Dylan Israel's tutorials.
 
         for (word of text) {
             if (!wordObj.hasOwnProperty(word)) {
-                // console.log(wordObj.hasOwnProperty(word));
+                // word in object
                 console.log(word);
                 wordObj[`${word}`] = 1;
             } else {
+                // word not already in object
                 wordObj.hasOwnProperty(word);
                 wordObj[`${word}`]++;
             }
