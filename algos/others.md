@@ -38,7 +38,7 @@ This is where I store useful algos that are not from Dylan Israel's tutorials.
 
 This algorithm was created with the help of information found on [stackoverflow](https://stackoverflow.com/questions/1069666/sorting-object-property-by-values).
 
-    function sortObj (obj) {
+    function sortObj(obj) {
         let sortable = [];
 
         for (let item in obj) {
@@ -61,5 +61,15 @@ This algorithm was created with the help of information found on [stackoverflow]
         }
     ));
 
+## Turning an object into an array
+
+    let myObj = {
+        "a": 1,
+        "b": 2
+    }
+
+    const myArr = Object.entries(myObj);
+
+    console.log(myArr); // [ [ 'a', 1 ], [ 'b', 2 ] ]
 
 
