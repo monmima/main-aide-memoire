@@ -72,4 +72,23 @@ This algorithm was created with the help of information found on [stackoverflow]
 
     console.log(myArr); // [ [ 'a', 1 ], [ 'b', 2 ] ]
 
+## Finding common values between two arrays
 
+    const arrA = ["harry", "potter", "hagrid"];
+    const arrB = ["hermione", "potter", "ron"];
+
+    function storeCommonValues(arrA, arrB) {
+        const commonArr =  [];
+
+        for (i of arrA) {
+            console.log(i);
+
+            if (arrB.indexOf(i) > -1) {
+                commonArr.push(i);
+            }
+        }
+
+        return commonArr;
+    }
+
+    console.log(storeCommonValues(arrA, arrB)); // [ "potter" ]
