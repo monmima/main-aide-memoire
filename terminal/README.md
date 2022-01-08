@@ -122,6 +122,7 @@ By the way, installing NPM also installs Node.js on your system.
 Also, the VS Code shortcut might not show in the start menu until you reboot your computer.
 
     sudo apt update
+    sudo apt-get install gcolor
     sudo apt-get install npm
     sudo apt-get install git
     sudo apt install smplayer
