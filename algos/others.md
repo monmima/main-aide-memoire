@@ -83,6 +83,7 @@ This algorithm was created with the help of information found on [stackoverflow]
         for (i of arrA) {
             console.log(i);
 
+            // -1 if value is not in arrB
             if (arrB.indexOf(i) > -1) {
                 commonArr.push(i);
             }
