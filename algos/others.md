@@ -126,4 +126,4 @@ This algorithm was created with the help of information found on [stackoverflow]
         return commonObj;
     }
 
-    console.log(storeCommonValues(obj1, obj2)); // [ "potter" ]
+    console.log(storeCommonValues(obj1, obj2)); // { harry: 20, fred: 5 }
