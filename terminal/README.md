@@ -81,8 +81,8 @@ By the way, installing NPM also installs Node.js on your system.
 1. Install Brightness Controller. This info was [found here](https://learnubuntumate.weebly.com/brightness-controller.html).
 
         sudo add-apt-repository ppa:apandada1/brightness-controller
-        sudo apt-get update
-        sudo apt-get install brightness-controller-light
+        sudo apt-get update       
+        sudo apt-get install brightness-controller-simple
 
 1. Install Gpick, the color picker.
 
