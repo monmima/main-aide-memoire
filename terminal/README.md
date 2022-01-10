@@ -20,7 +20,7 @@ The tabulation above is used to select the subfolder whose rights you want to ch
 
 There is an installer file, but for the removal of Slack, the only option seems to be the Terminal window.
 
-        sudo snap remove slack
+	sudo snap remove slack
 
 ___
 
@@ -42,15 +42,6 @@ Applications usually store configuration data in one of the following hidden fol
     ~/.config/application
     ~/.cache/application
     ~/.local/share/application
-
-___
-
-## Chrome
-
-https://itsfoss.com/install-chrome-ubuntu/#install-chrome-terminal
-
-    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 ___
 
@@ -113,10 +104,6 @@ By the way, installing NPM also installs Node.js on your system.
 
         sudo apt install anki
 
-1. Install Kazam.
-
-        sudo apt install kazam
-
 1. Install Gimp.
 
         sudo apt install gimp
@@ -150,27 +137,36 @@ By the way, installing NPM also installs Node.js on your system.
         sudo apt install --install-recommends winehq-stable
         winecfg
 
-## Installing Lingtrain Alignment Studio
+## Optional installs
 
-https://github.com/averkij/a-studio
+1. Install Kazam.
 
-1. Open a Terminal window.
-2. Install docker with this command:
+		sudo apt install kazam
 
-        sudo apt install docker.io
+1. Install Chrome. The info was found [here](https://itsfoss.com/install-chrome-ubuntu/#install-chrome-terminal).
 
-3. Install Lingtrain Alignment Studio using the following command. I had to add **sudo** since I was running into permission issues.
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo dpkg -i google-chrome-stable_current_amd64.deb
 
-        sudo docker pull lingtrain/aligner:v6
+1. Install [Lingtrain Alignment Studio](https://github.com/averkij/a-studio).
 
-4. Go to the **tmp/** folder at the very root on the system and create a **test/** folder inside to basically create this path **tmp/test/**.
-5. Run the app with this other command:
+    1. Open a Terminal window.
+	1. Install docker with this command:
 
-        sudo docker run -v /tmp/test -v /tmp/test -p 80:80 lingtrain/aligner:v6
+			sudo apt install docker.io
 
-6. Open a browser and type this in the address bar.
+	1. Install Lingtrain Alignment Studio using the following command. I had to add **sudo** since I was running into permission issues.
 
-        localhost
+        	sudo docker pull lingtrain/aligner:v6
+
+	1. Go to the **tmp/** folder at the very root on the system and create a **test/** folder inside to basically create this path **tmp/test/**.
+	1. Run the app with this other command:
+
+			sudo docker run -v /tmp/test -v /tmp/test -p 80:80 lingtrain/aligner:v6
+
+	1. Open a browser and type this in the address bar.
+
+			localhost
 
 ## Using Commands
 
