@@ -80,7 +80,7 @@ This algorithm was created with the help of information found on [stackoverflow]
     function storeCommonValues(arrA, arrB) {
         const commonArr =  [];
 
-        for (i of arrA) {
+        for (let i of arrA) {
             console.log(i);
 
             // -1 if value is not in arrB
@@ -93,3 +93,37 @@ This algorithm was created with the help of information found on [stackoverflow]
     }
 
     console.log(storeCommonValues(arrA, arrB)); // [ "potter" ]
+
+## Finding commons values between two objects
+
+    const obj1 = {
+        "harry": 20,
+        "hermione": 15,
+        "ron": 10,
+        "fred": 5
+    };
+
+    const obj2 = {
+        "harry": 20,
+        "hermione": 16,
+        "fred": 5
+    };
+
+    function storeCommonValues(obj1, obj2) {
+        const commonObj = {};
+
+        for (const item in obj1) {
+            console.log(`${item}: ${obj1[item]}`);
+
+            console.log(obj2[item]);
+
+            if (obj2[item] !== undefined && (obj1[item] === obj2[item])) {
+                console.log(true);
+                commonObj[item] = obj1[item];
+            }
+        }
+
+        return commonObj;
+    }
+
+    console.log(storeCommonValues(obj1, obj2)); // [ "potter" ]
