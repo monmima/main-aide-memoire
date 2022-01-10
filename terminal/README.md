@@ -20,7 +20,7 @@ The tabulation above is used to select the subfolder whose rights you want to ch
 
 There is an installer file, but for the removal of Slack, the only option seems to be the Terminal window.
 
-        sudo snap remove slack
+	sudo snap remove slack
 
 ___
 
@@ -29,21 +29,6 @@ ___
 https://vitux.com/get-linux-system-and-hardware-details-on-the-command-line/
 
     sudo lshw -html > [filename.html]
-
-___
-
-
-## WINE
-
-https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1
-
-    sudo dpkg --add-architecture i386
-    wget -nc https://dl.winehq.org/wine-builds/winehq.key
-    sudo apt-key add winehq.key
-    sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
-    sudo apt update
-    sudo apt install --install-recommends winehq-stable
-    winecfg
 
 ___
 
@@ -60,30 +45,10 @@ Applications usually store configuration data in one of the following hidden fol
 
 ___
 
-## Chrome
-
-https://itsfoss.com/install-chrome-ubuntu/#install-chrome-terminal
-
-    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    sudo dpkg -i google-chrome-stable_current_amd64.deb
-
-___
-
 ## PHP without Xampp
 
     sudo apt install php
     php -S localhost:8000
-
-___
-
-
-## Brightness Controller
-
-https://learnubuntumate.weebly.com/brightness-controller.html
-
-    sudo add-apt-repository ppa:apandada1/brightness-controller
-    sudo apt-get install brightness-controller
-
 ___
 
 ## Debugging PulseAudio so it connects properly
@@ -105,61 +70,103 @@ https://livingthelinuxlifestyle.wordpress.com/2019/06/09/solve-problems-with-no-
 
 ___
 
-
-## SQLite browser
-https://sqlitebrowser.org/dl/
-
-    sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser-testing
-    sudo apt-get update
-    sudo apt-get install sqlitebrowser
-
-___
-
-## Varia (one-line installs)
+## Installing software
 
 By the way, installing NPM also installs Node.js on your system.
 
-Also, the VS Code shortcut might not show in the start menu until you reboot your computer.
+1. Type this command.
 
-    sudo apt update
-    sudo apt-get install gcolor
-    sudo apt-get install npm
-    sudo apt-get install git
-    sudo apt install smplayer
-    sudo apt install anki
-    sudo apt install kazam
-    sudo apt install gimp
-    sudo snap install --classic code
-    sudo snap install slack --classic
+        sudo apt update
 
-## Installing Snap
+1. Install Brightness Controller. This info was [found here](https://learnubuntumate.weebly.com/brightness-controller.html).
 
-On Ubuntu, this is slightly more complicated. In Ubuntu, installing Snap is a one-liner.
+        sudo add-apt-repository ppa:apandada1/brightness-controller
+        sudo apt-get update       
+        sudo apt-get install brightness-controller-simple
 
-    sudo rm /etc/apt/preferences.d/nosnap.pref
-    sudo apt install snapd
+1. Install Gpick, the color picker.
 
-## Installing Lingtrain Alignment Studio
+        sudo apt-get install gpick
 
-https://github.com/averkij/a-studio
+1. Install NPM.
 
-1. Open a Terminal window.
-2. Install docker with this command:
+        sudo apt-get install npm
 
-        sudo apt install docker.io
+1. Install Git.
 
-3. Install Lingtrain Alignment Studio using the following command. I had to add **sudo** since I was running into permission issues.
+        sudo apt-get install git
 
-        sudo docker pull lingtrain/aligner:v6
+1. Install SMPlayer.
 
-4. Go to the **tmp/** folder at the very root on the system and create a **test/** folder inside to basically create this path **tmp/test/**.
-5. Run the app with this other command:
+        sudo apt install smplayer
 
-        sudo docker run -v /tmp/test -v /tmp/test -p 80:80 lingtrain/aligner:v6
+1. Install Anki.
 
-6. Open a browser and type this in the address bar.
+        sudo apt install anki
 
-        localhost
+1. Install Gimp.
+
+        sudo apt install gimp
+
+1. Install Snap, which will be used to install VS Code and Slack, by installing Snap first and also deleting a file that prevents Snap from being installed on Linux Mint.
+
+        sudo apt install snapd
+        sudo rm /etc/apt/preferences.d/nosnap.pref
+
+1. Install VS Code. The VS Code shortcut might not show in the start menu until you reboot your computer.
+
+        sudo snap install --classic code
+
+1. Install Slack.
+
+        sudo snap install slack --classic
+
+1. Install [SQLite browser](https://sqlitebrowser.org/dl/).
+
+        sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser-testing
+        sudo apt-get update
+        sudo apt-get install sqlitebrowser
+
+1. Install WINE. The info on this topice was found [here](https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1]).
+
+        sudo dpkg --add-architecture i386
+        wget -nc https://dl.winehq.org/wine-builds/winehq.key
+        sudo apt-key add winehq.key
+        sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
+        sudo apt update
+        sudo apt install --install-recommends winehq-stable
+        winecfg
+
+## Optional installs
+
+1. Install Kazam.
+
+		sudo apt install kazam
+
+1. Install Chrome. The info was found [here](https://itsfoss.com/install-chrome-ubuntu/#install-chrome-terminal).
+
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+1. Install [Lingtrain Alignment Studio](https://github.com/averkij/a-studio).
+
+    1. Open a Terminal window.
+	1. Install docker with this command:
+
+			sudo apt install docker.io
+
+	1. Install Lingtrain Alignment Studio using the following command. I had to add **sudo** since I was running into permission issues.
+
+        	sudo docker pull lingtrain/aligner:v6
+
+	1. Go to the **tmp/** folder at the very root on the system and create a **test/** folder inside to basically create this path **tmp/test/**.
+	1. Run the app with this other command:
+
+			sudo docker run -v /tmp/test -v /tmp/test -p 80:80 lingtrain/aligner:v6
+
+	1. Open a browser and type this in the address bar.
+
+			localhost
 
 ## Using Commands
 
