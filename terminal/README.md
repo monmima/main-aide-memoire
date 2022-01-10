@@ -32,21 +32,6 @@ https://vitux.com/get-linux-system-and-hardware-details-on-the-command-line/
 
 ___
 
-
-## WINE
-
-https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1
-
-    sudo dpkg --add-architecture i386
-    wget -nc https://dl.winehq.org/wine-builds/winehq.key
-    sudo apt-key add winehq.key
-    sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
-    sudo apt update
-    sudo apt install --install-recommends winehq-stable
-    winecfg
-
-___
-
 ## Deleting leftover configuration files
 
 https://askubuntu.com/questions/20127/how-to-remove-configuration-files-completely
@@ -73,17 +58,6 @@ ___
 
     sudo apt install php
     php -S localhost:8000
-
-___
-
-
-## Brightness Controller
-
-https://learnubuntumate.weebly.com/brightness-controller.html
-
-    sudo add-apt-repository ppa:apandada1/brightness-controller
-    sudo apt-get install brightness-controller
-
 ___
 
 ## Debugging PulseAudio so it connects properly
@@ -105,39 +79,76 @@ https://livingthelinuxlifestyle.wordpress.com/2019/06/09/solve-problems-with-no-
 
 ___
 
-
-## SQLite browser
-https://sqlitebrowser.org/dl/
-
-    sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser-testing
-    sudo apt-get update
-    sudo apt-get install sqlitebrowser
-
-___
-
-## Varia (one-line installs)
+## Installing software
 
 By the way, installing NPM also installs Node.js on your system.
 
-Also, the VS Code shortcut might not show in the start menu until you reboot your computer.
+1. Type this command.
 
-    sudo apt update
-    sudo apt-get install gcolor
-    sudo apt-get install npm
-    sudo apt-get install git
-    sudo apt install smplayer
-    sudo apt install anki
-    sudo apt install kazam
-    sudo apt install gimp
-    sudo snap install --classic code
-    sudo snap install slack --classic
+        sudo apt update
 
-## Installing Snap
+1. Install Brightness Controller. This info was [found here](https://learnubuntumate.weebly.com/brightness-controller.html).
 
-On Ubuntu, this is slightly more complicated. In Ubuntu, installing Snap is a one-liner.
+        sudo add-apt-repository ppa:apandada1/brightness-controller
+        sudo apt-get update
+        sudo apt-get install brightness-controller-light
 
-    sudo rm /etc/apt/preferences.d/nosnap.pref
-    sudo apt install snapd
+1. Install Gpick, the color picker.
+
+        sudo apt-get install gpick
+
+1. Install NPM.
+
+        sudo apt-get install npm
+
+1. Install Git.
+
+        sudo apt-get install git
+
+1. Install SMPlayer.
+
+        sudo apt install smplayer
+
+1. Install Anki.
+
+        sudo apt install anki
+
+1. Install Kazam.
+
+        sudo apt install kazam
+
+1. Install Gimp.
+
+        sudo apt install gimp
+
+1. Install Snap, which will be used to install VS Code and Slack, by installing Snap first and also deleting a file that prevents Snap from being installed on Linux Mint.
+
+        sudo apt install snapd
+        sudo rm /etc/apt/preferences.d/nosnap.pref
+
+1. Install VS Code. The VS Code shortcut might not show in the start menu until you reboot your computer.
+
+        sudo snap install --classic code
+
+1. Install Slack.
+
+        sudo snap install slack --classic
+
+1. Install [SQLite browser](https://sqlitebrowser.org/dl/).
+
+        sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser-testing
+        sudo apt-get update
+        sudo apt-get install sqlitebrowser
+
+1. Install WINE. The info on this topice was found [here](https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1]).
+
+        sudo dpkg --add-architecture i386
+        wget -nc https://dl.winehq.org/wine-builds/winehq.key
+        sudo apt-key add winehq.key
+        sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
+        sudo apt update
+        sudo apt install --install-recommends winehq-stable
+        winecfg
 
 ## Installing Lingtrain Alignment Studio
 
