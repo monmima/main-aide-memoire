@@ -22,13 +22,9 @@ Moving to a new branch | git checkout my-new-branch-name
 Moving to the main/master branch | git checkout master
 Deleting a branch which has not been merged | git branch -D my-branch-to-delete
 Deleting a branch which has been merged | git branch -d my-branch-to-delete
-Deleting a branch and then check out | git checkout -b my-new-branch 
-
-## Merging Branches
-
-Action | Command
------------- | -------------
-To merge a branch (you need to be in the branch where your other branch is going to get merged, which is typically the master branch) | git merge my-secondary-main-branch | git merge my-new-feature-branch
+Deleting a branch and then check out | git checkout -b my-new-branch
+Merging a branch (you need to be in the branch where your other branch is going to get merged, which is typically the master branch) | git merge my-secondary-main-branch | git merge my-new-feature-branch
+Unadding and uncommiting a change | git reset HEAD~
 
 ## Solving Merging Conflicts
 
@@ -39,12 +35,6 @@ To merge a branch (you need to be in the branch where your other branch is going
 5. git commit (without a message)
 6. In the scary merge screen, type **SHIFT + :**
 7. wq
-
-## Unadding and uncommiting a change to the master branch
-
-Action | Command
------------- | -------------
-To unadd and uncommit a change | git reset HEAD~
 
 ## Creating an SSH key on Linux Mint
 
