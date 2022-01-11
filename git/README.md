@@ -15,13 +15,14 @@ Branching is used to test out new features without messing up the main branch.
 
 Action | Command
 ------------ | -------------
-To display the log of changes to the branch | git log --oneline
-To create a new branch | git branch my-new-branch-name
-To show all the branches, to see what branch you're on | git branch -a
-To move to a new branch | git checkout my-new-branch-name
-To delete a branch which has not been merged | git branch -D my-branch-to-delete
-To delete a branch which has been merged | git branch -d my-branch-to-delete
-To create a branch and then check out | git checkout -b my-new-branch
+Displaying the log of changes to the branch | git log --oneline
+Creating a new branch | git branch my-new-branch-name
+Showing all the branches, to see what branch you're on | git branch -a
+Moving to a new branch | git checkout my-new-branch-name
+Moving to the main/master branch | git checkout master
+Deleting a branch which has not been merged | git branch -D my-branch-to-delete
+Deleting a branch which has been merged | git branch -d my-branch-to-delete
+Deleting a branch and then check out | git checkout -b my-new-branch 
 
 ## Merging Branches
 
