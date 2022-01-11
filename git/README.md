@@ -4,27 +4,22 @@ The content of this Git Aide-Mémoire is heavily inspired by [The Net Ninja's Yo
 
 ______
 
-## Configuring Git
-
-    $ git config --global user.name "monmima"
-    $ git config --global user.email monmima@example.com
-
-## Creating Branches
-
-Branching is used to test out new features without messing up the main branch.
+## List of commands
 
 Action | Command
 ------------ | -------------
+Setting username. | $ git config --global user.name "monmima"
+Setting user emaill. | $ git config --global user.email example@example.com
 Displaying the log of changes to the branch | git log --oneline
-Creating a new branch | git branch my-new-branch-name
-Showing all the branches, to see what branch you're on | git branch -a
-Moving to a new branch | git checkout my-new-branch-name
-Moving to the main/master branch | git checkout master
-Deleting a branch which has not been merged | git branch -D my-branch-to-delete
-Deleting a branch which has been merged | git branch -d my-branch-to-delete
-Deleting a branch and then check out | git checkout -b my-new-branch
-Merging a branch (you need to be in the branch where your other branch is going to get merged, which is typically the master branch) | git merge my-secondary-main-branch | git merge my-new-feature-branch
-Unadding and uncommiting a change | git reset HEAD~
+Creating a new branch. Branching is used to test out new features without messing up the main branch. | git branch my-new-branch-name
+Showing all the branches, to see what branch you're on. | git branch -a
+Moving to a new branch. | git checkout my-new-branch-name
+Moving to the main/master branch. | git checkout master
+Deleting a branch which has not been merged. | git branch -D my-branch-to-delete
+Deleting a branch which has been merged. | git branch -d my-branch-to-delete
+Deleting a branch and then check out. | git checkout -b my-new-branch
+Merging a branch (you need to be in the branch where your other branch is going to get merged, which is typically the master branch). | git merge my-secondary-main-branch | git merge my-new-feature-branch
+Unadding and uncommiting a change. | git reset HEAD~
 
 ## Solving Merging Conflicts
 
