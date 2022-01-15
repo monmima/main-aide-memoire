@@ -21,9 +21,7 @@
             }
         }
 
-module.exports = { myFavWord, myFavAnimal, SomeObject }
-
-module.exports = { SomeObject }
+        module.exports = { myFavWord, myFavAnimal, SomeObject }
 
 1. Create a file called **main.js** and paste this in it.
 
