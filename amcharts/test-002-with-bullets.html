@@ -26,14 +26,14 @@
     
     <script>
         /**
-         * génère la puce à l'extrémité de la ligne jaune
+         * Creating the yellow bullet at the tip of the range (horizontal line)
          */
-        function generePuce (whatRange, whatPosition) {
+        function createBullet (whatRange, whatPosition) {
             whatRange.bullet = new am4core.Circle();
             whatRange.bullet.width = 15;
             whatRange.bullet.height = 11;
             whatRange.bullet.fill = am4core.color('#DCD267');
-            whatRange.bullet.tooltipText = "Text à afficher";
+            whatRange.bullet.tooltipText = "Text to display";
             whatRange.bullet.dy = whatPosition;
         }
 
@@ -65,7 +65,7 @@
         series.dataFields.categoryY = "category";
 
         /**
-         * Création de la ligne verticale
+         * Create vertical line
          */
         var range = valueAxis.axisRanges.create();
         range.value = 1000;
@@ -78,20 +78,19 @@
         //range.label.align = "right";
         range.label.verticalCenter = "bottom";
 
-        // important, pour que la ligne verticale "Goal" se trouve dessus de la barre horizontale
+        // important, to make sure the vertical "Goal" line sits on top of the blue bars
         range.grid.above = true;
 
         var range2 = valueAxis.axisRanges.create();
         range2.value = 1000;
 
-        // important, pour que la ligne verticale "Threshold" se trouve dessus de la barre horizontale
-        range2.grid.above = true;
-
         /**
-         * appel fonction créant les puces
+         * Calling the function that create bullets
          */
-        generePuce(range, 0);
-        generePuce(range2, -235);
+        createBullet(range, 0);
+        createBullet(range2, -235);
+
+        console.log(range2);
 
     </script>
 </body>
