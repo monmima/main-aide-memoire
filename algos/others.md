@@ -162,22 +162,3 @@ function sortObj(obj) {
 }
 
 console.log(sortObj(myObj)); // { harry: '20', hermione: '16', fred: '5' }
-
-## Creating a directory if it's non-existent
-
-https://attacomsian.com/blog/nodejs-create-directory
-
-    createOutputDirectory(dir) {
-        // create new directory
-        try {
-            // first check if directory already exists
-            if (!fs.existsSync(dir)) {
-                fs.mkdirSync(dir);
-                console.log(`Created ${dir}/.`);
-            } else {
-                console.log(`Found pre-existing ${dir}/.`);
-            }
-        } catch (err) {
-            console.log(err);
-        }
-    }
