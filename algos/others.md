@@ -127,3 +127,57 @@ This algorithm was created with the help of information found on [stackoverflow]
     }
 
     console.log(storeCommonValues(obj1, obj2)); // { harry: 20, fred: 5 }
+
+## Sorting an object by turning it into an array and back to an object
+
+const myObj = {
+    "fred": 5,
+    "harry": 20,
+    "hermione": 16
+};
+
+function sortObj(obj) {
+    const arr = [];
+    let sortedObj = {};
+
+    // creating arr from obj
+    for (let item in obj) {
+        arr.push([[`${item}`], [`${obj[item]}`]]);
+    }
+
+    // sorting arr
+    arr.sort(function(a, b) {
+        return b[1] - a[1];
+    });
+
+    // turning arr into obj again
+    for (let i of arr) {
+        // exclusing strings shorter than 4
+        if (i[0][0].length >= 4) {
+            sortedObj[ i[0] ] = i[1][0];
+        }
+    }
+
+    return sortedObj;
+}
+
+console.log(sortObj(myObj)); // { harry: '20', hermione: '16', fred: '5' }
+
+## Creating a directory if it's non-existent
+
+https://attacomsian.com/blog/nodejs-create-directory
+
+    createOutputDirectory(dir) {
+        // create new directory
+        try {
+            // first check if directory already exists
+            if (!fs.existsSync(dir)) {
+                fs.mkdirSync(dir);
+                console.log(`Created ${dir}/.`);
+            } else {
+                console.log(`Found pre-existing ${dir}/.`);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }
