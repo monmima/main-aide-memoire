@@ -6,3 +6,5 @@
 | [^\d] | non-digit character | 
 | \W | punctuation | 
 | \s | space | 
+| $1 | matched regexp in JavaScript |
+| \1 | matched regexp in Python |

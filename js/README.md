@@ -701,16 +701,6 @@ location.replace("https://www.protonmail.com");
 
 ___
 
-Varia JS: What characters do you use to reuse a matched regexp pattern?
-
-Answer:
-
-$1 // JS
-&bsol;1 // text editor
-&bsol;&bsol;1 // Python
-
-___
-
 Varia JS: How do you add a prop to the instance of the class?
 
 class Test {
@@ -873,14 +863,6 @@ Varia JS: What is the easiest way to repeat a string?
 Answer:
 
 str.repeat(3);
-
-___
-
-Varia JS: How do you remove all punctuations in a string?
-
-Answer:
-
-"This is an airport.".replace(/&bsol;W/g, " ");
 
 ___
 
