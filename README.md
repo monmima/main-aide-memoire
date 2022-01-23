@@ -1,5 +1,5 @@
 # Aide-Mémoire
 
-This is a general aide-mémoire I use when the amount of information I want to remember on a specific topic is limited. I also want to centralize my notes when I'm likely to refer to them often.
+There are many things to remember in the field of computer science and sometimes it takes time to find again what you once found on the Internet.
 
-See subfolders for more information about each individual topic.
+The purpose of this aide-mémoire is to help me answers I might have quicker than using a search engine.
