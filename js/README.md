@@ -18,40 +18,6 @@ This info is based on material from [www.pluralsight.com](https://www.pluralsigh
 
     getFishAndChips();
 
-## Sorting an object based on a certain key
-
-        // https://gist.github.com/prof3ssorSt3v3/c46004e96c9182eb3b706852776e3c4f
-        // https://www.youtube.com/watch?v=AmQ1OX7XBJw
-
-        const people = [
-            { id: 12, name: "Billy", dob: "1998-10-05" },
-            { id: 123, name: "Bart", dob: "1993-02-15" },
-            { id: 45, name: "Belinda", dob: "1996--01-31" },
-            { id: 67, name: "Bonnie", dob: "1998-04-09" },
-            { id: 89, name: "Brenda", dob: "1996-07-08" },
-            { id: 34, name: "Bobby", dob: "1994-09-12" },
-            { id: 234, name: "Blake", dob: "2000-01-01" }
-        ];
-
-        const log = console.log;
-
-        log("\n\n built-in sort method");
-        log(people.sort());
-
-        log('\n\n sort by name');
-        log(people.sort(byName));
-
-        function byName(a, b) {
-            //alphabetically by name
-            if (a.name > b.name) {
-                return 1;
-            } else if (b.name > a.name) {
-                return -1;
-            } else {
-                return 0;
-            }
-        }
-
 ## Triggering a Bootstrap modal through JS
 
 For more information on this topic, please refer to the VueJS part of the aide-mémoire, which has a section called Triggering a Bootstrap modal through JS too.
