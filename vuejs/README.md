@@ -36,13 +36,23 @@ Run this command to run the project:
 
 ## Installing vue-router in your project (optional)
 
+The second command creates a simple menu with the Home and About pages in it. This might not be the case with the first command.
+
+### Option 1
+
 Via NPM:
 
     npm i vue-router@next
 
-Via Vue CLI
+### Option 2
 
-    vue add router
+1. Install Via Vue CLI.
+
+        vue add router
+
+2. Answer yes when given this prompt:
+
+        Use history mode for router? y
 
 ## Installing SASS in your project (optional)
 
