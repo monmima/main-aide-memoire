@@ -2,6 +2,10 @@
 
 This is where I store useful algos that are not from Dylan Israel's tutorials.
 
+## Sorting arrays of objects
+
+Keep in mind that sorting dates, numbers and strings might not work the same way. To find out more about this topic, go to [JavaScript Tutorial](https://www.javascripttutorial.net/array/javascript-sort-an-array-of-objects/).
+
 ## Counting how many times the same word is repeated in a text
 
     function countWords(text) {
