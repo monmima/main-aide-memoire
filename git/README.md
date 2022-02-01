@@ -71,3 +71,9 @@ This is probably very much like what you'd have to do on any other machine (Wind
 
         git remote add origin git@github.com:monmima/[project-name].git
         git push --set-upstream origin master
+
+## Storing a password so you don't have to type it every time
+
+Thanks to [freeCodeCamp for this information](https://www.freecodecamp.org/news/how-to-fix-git-always-asking-for-user-credentials/).
+
+        git config --global credential.helper store
