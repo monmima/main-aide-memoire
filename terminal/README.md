@@ -127,7 +127,7 @@ By the way, installing NPM also installs Node.js on your system.
         sudo apt-get update
         sudo apt-get install sqlitebrowser
 
-1. Install WINE. The info on this topice was found [here](https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1]).
+1. Install WINE. The info on this topic was found [here](https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1]).
 
         sudo dpkg --add-architecture i386
         wget -nc https://dl.winehq.org/wine-builds/winehq.key
