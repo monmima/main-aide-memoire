@@ -8,19 +8,35 @@ Run this command to install Vue CLI:
 
     sudo npm -g i @vue/cli
 
-## Creating a VueJS project with the CLI
+## Creating a VueJS project
 
-Run this command to create the project folder:
+The easiest way to add Vuex in a project is to install it from the get-go:
 
-    vue create project-name
+1. Open a Terminal window.
+1. Type this:
 
-Or run this command to create the project in the current directory:
+        vue create [my-name]
 
-    vue create .
+1. You can also type this if you're already in the project folder:
 
-Select **Default (Vue 3)** and press Enter.
+        vue create .
 
-Run this command to run the project:
+1. Select **Manually select features**.
+1. Use the spacebar to enable features such as Vuex and Vue-router. I recommand:
+
+    - Babel
+    - Router
+    - Vuex
+    - CSS Pre-processors
+    - **Uncheck** Linter / Formatter
+
+1. Select 3.x for the version you use.
+1. Answer **Y** to **Use history mode for router?**.
+1. **At the end of the process, you'll be asked to save your options as a preset. If you didn't get to choose any of the options above, maybe that's because you have set a preset already.** 
+
+## Running a project
+
+Run this command to run a project:
 
     npm run serve
 
@@ -54,9 +70,23 @@ Via NPM:
 
         Use history mode for router? y
 
+### Option 3 - the best one in my opinion
+
+Just select the manual installation after using this command:
+
+    vue create [my-project]
+
 ## Installing SASS in your project (optional)
 
+### Option 1
+
     npm install -D sass-loader@^10 sass
+
+### Option 2
+
+Just select the manual installation after using this command:
+
+    vue create [my-project]
 
 ## Using SASS in your project
 
