@@ -108,10 +108,10 @@ By the way, installing NPM also installs Node.js on your system.
 
         sudo apt install gimp
 
-1. Install Snap, which will be used to install VS Code and Slack, by installing Snap first and also deleting a file that prevents Snap from being installed on Linux Mint.
+1. Install Snap, which will be used to install VS Code and Slack. The first step to install Snap on Linux Mint is deleting a file that prevents Snap from being installed.
 
-        sudo apt install snapd
         sudo rm /etc/apt/preferences.d/nosnap.pref
+        sudo apt install snapd
 
 1. Install VS Code. The VS Code shortcut might not show in the start menu until you reboot your computer.
 
@@ -127,7 +127,7 @@ By the way, installing NPM also installs Node.js on your system.
         sudo apt-get update
         sudo apt-get install sqlitebrowser
 
-1. Install WINE. The info on this topice was found [here](https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1]).
+1. Install WINE. The info on this topic was found [here](https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1]).
 
         sudo dpkg --add-architecture i386
         wget -nc https://dl.winehq.org/wine-builds/winehq.key
