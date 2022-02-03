@@ -10,4 +10,4 @@ PrimeVue doesn't like when you try to customize its default style. To force a ne
 
 ## Refs and undefined errors
 
-With refs, it's easy to run into undefined errors. To avoid them, you can use <code>$nextTick()</code>.
+With refs, it's easy to run into undefined errors. To avoid them, you can use <code>$nextTick()</code> if it's not possible to use the <code>mounted()</code> lifecycle hook.
