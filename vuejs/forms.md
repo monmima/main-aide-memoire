@@ -70,16 +70,16 @@ Paste this code in your view:
     export default defineComponent({
         name: 'About',
         computed: {
-        superColorCode: {
-            get () {
-                return this.$store.state.colorCode;
-            },
-            set (newValue) {
-                console.log("I'm triggered every time the text value in the text input is changed.");
-                console.log(newValue);
-                this.$store.commit("setColorCode", newValue);
+            superColorCode: {
+                get () {
+                    return this.$store.state.colorCode;
+                },
+                set (newValue) {
+                    console.log("I'm triggered every time the text value in the text input is changed.");
+                    console.log(newValue);
+                    this.$store.commit("setColorCode", newValue);
+                }
             }
-        }
         }
     })
     </script>
@@ -111,7 +111,7 @@ Paste this in your store. You store should have been created at the moment you u
     },
     mutations: {
         setColorCode (state, newValue) {
-        state.colorCode = newValue;
+            state.colorCode = newValue;
         }
     },
     actions: {
