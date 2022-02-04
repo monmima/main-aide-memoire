@@ -8,3 +8,10 @@
 ## Kanban
 
 1. Go to Board, in the left-hand panel.
+
+## fatal: Authentication failed for '[repository]'
+
+1. Go to Azure.
+1. Go to Repos.
+1. Click on the Clone button (top-right corner).
+1. If you're using HTTPS, the solution seems to be to generate a new password.
