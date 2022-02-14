@@ -1,9 +1,3 @@
-# Emitting Events
-
-The principle behind emitting event is to pass it back up to its parent. It's basically the opposite of a props.
-
-For instance, this is what you might want to use if you have an <code>input</code> component in a form.
-
 ## Emitting an event without using $emit
 
 The following example is from a [Tutorial by Code Step By Step
