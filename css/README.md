@@ -1,58 +1,6 @@
 # CSS Aide-Mémoire
 
-## Fonts - useful links
-
-- [dafont.com](https://www.dafont.com)
-- [Font Squirrel](https://www.fontsquirrel.com/) (generator)
-
-## Using media queries
-
-    /*MEDIA QUERIES*/
-    @media screen and (max-width: 759px) {
-        body
-        {
-            font-size: 0.8em;         
-        }
-        /* NO MORE GRID HERE, ONLY FLEX */
-        main {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-    }
-    @media screen and (min-width: 760px) and (max-width: 960px) {
-        body
-        {
-            font-size: 1em;
-        }
-        div, figure, figcaption {
-            width: 150px;
-        }
-    }
-    @media screen and (min-width: 961px) and (max-width: 1100px) {
-        body
-        {
-            font-size: 1.2em;
-        }
-        div, figure, figcaption {
-            width: 200px;
-        }
-    }
-    @media screen and (min-width: 1100px) {
-        body
-        {
-            font-size: 1.3em;
-        }
-        div, figure, figcaption {
-            width: 250px;
-        }
-    }
-
-## Loading fonts
-
-- @font-face (local)
-- &lt;link&gt; tag (remote)
+This is a CSS aide-mémoire. Some work needs to be done to sort the information in the README.MD file.
 
 ___
 
@@ -81,13 +29,6 @@ ___
 
 ___
 
-## Creating a CSS rule to add a clover <strong>before the a div tag</strong>.
-
-    div:before {
-        content: "&#92;2618&#92;0a";
-    }
-
-___
 
 ## Creating a rule making images responsive.
 
@@ -104,19 +45,6 @@ ___
     input {
         appearance: none;
     }
-
-___
-
-## What are the 5 pseudo-selectors for the <code>a</code> tag (love f... hate)?
-
-Answer:
-
-- a:link
-- a:visited
-- a:focus
-- a:hover
-- a:active
-
 
 ___
 
@@ -176,15 +104,6 @@ ___
 
 ___
 
-## Targeting a <code>p</code> tag and a <code>.note</code> class?
-
-- p.note (p tag with a .note class)
-- p .note (.note class child of p tag)
-- p + .note (.note tag sibling of p)
-- p > .note = .note direct child of p tag
-
-___
-
 ## Changing transparency
 
     opacity: 0.5
@@ -197,25 +116,6 @@ ___
 - a[class^="test"] {
 - a[class$="test"] {
 - a[class~="test"] {
-
-___
-
-## CSS priority between IDs, classes and tags
-
-1. id
-2. class
-3. tag
-
-___
-
-## Justifying content in flex
-
-- flex-start
-- flex-end
-- center
-- space-between
-- space-evenly
-- space-around
 
 ___
 
@@ -233,24 +133,6 @@ ___
 Use **minmax**.
 
 ___
-
-## Creating a simple spin keyframe animation
-    
-    @keyframes spin {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    .test {
-        animation: spin 3s infinite;
-        background-color: lightgreen;
-        height: 10px;
-        width: 100px;
-    }
 
 ## Writing a date in a footer the semantic way
 
