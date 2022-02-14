@@ -7,56 +7,56 @@ This is very useful to break down a form into input components.
 This is the code for the parent component:
 
     <template>
-    <div>
+      <div>
         <h1>{{ message }}</h1>
         <Input :msg="message" @messageChanged="this.message" />
-    </div>
+      </div>
     </template>
 
     <script>
     import Input from '@/components/Input.vue'
 
     export default {
-        components: {
+      components: {
         Input
-        },
-        data() {
+      },
+      data() {
         return {
-            message: "This is a great message."
+          message: "This is a great message."
         }
-        }
+      }
     }
     </script>
 
 This is the code for the child component. In this example, the component is called <code>Input.vue</code>.
 
     <template>
-    <div>
+      <div>
         <!-- would create a mutation error message -->
         <!-- <input type="text" v-model="msg"> -->
 
         <input type="text" :value="msg" @input="changeMessage">
         <p>{{ message }}</p>
-    </div>
+      </div>
     </template>
 
     <script>
     export default {
-    props: ['msg'],
-    data() {
+      props: ['msg'],
+      data() {
         return {
-        message: ""
+          message: ''
         }
-    },
-    methods: {
+      },
+      methods: {
         changeMessage(event) {
-        // getting the value in the message variable
-        this.message = event.target.value;
-        // passing the value to the parent
-        // first argument = name of the event
-        // second argument = value or values to pass
-        this.$emit('messageChanged', this.message);
+          // getting the value in the message variable
+          this.message = event.target.value;
+          // passing the value to the parent
+          // first argument = name of the event
+          // second argument = value or values to pass
+          this.$emit('messageChanged', this.message);
         }
-    }
+      }
     }
     </script>
