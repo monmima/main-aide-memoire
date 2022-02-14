@@ -41,24 +41,24 @@ Parent component:
 Child component:
 
     <template>
-        <h2>User component:</h2>
-        <button @click="getUser(userName)">Send user name to parent</button>
+    <div>
+        <h1>{{ message }}</h1>
+        <Input :msg="message" @messageChanged="message = $event" />
+    </div>
     </template>
 
     <script>
-    import { defineComponent } from '@vue/composition-api'
+    import Input from '@/components/Input.vue'
 
-    export default defineComponent({
-        name: "User",
-        data () {
-            return {
-                userName: "Peter"
-            }
+    export default {
+        components: {
+        Input
         },
-        props: {
-            getUser:Function
+        data() {
+        return {
+            message: "This is a great message."
         }
-    })
+        }
+    }
     </script>
-
 
