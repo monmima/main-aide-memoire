@@ -1,27 +1,5 @@
 # JS aide-mémoire
 
-## Running multiple fetch queries
-
-This info is based on material from [www.pluralsight.com](https://www.pluralsight.com/guides/handling-nested-http-requests-using-the-fetch-api).
-
-    async function getFishAndChips() {
-
-        const fish = await fetch(http://127.0.0.1:8000/testx).then(response => response.json());
-
-        console.log(fish);
-
-        const chips = await fetch(this.chipsApiUrl, chipReqOpts).then(response => response.json());
-
-        console.log(chips);
-
-    }
-
-    getFishAndChips();
-
-## Triggering a Bootstrap modal through JS
-
-For more information on this topic, please refer to the VueJS part of the aide-mémoire, which has a section called Triggering a Bootstrap modal through JS too.
-
 ## Random stuff to sort later
 
 ### Findout if an array has includes a character or number
@@ -32,7 +10,6 @@ For more information on this topic, please refer to the VueJS part of the aide-m
 ### Finding the last position of a character in a string
 
     string.lastIndexOf("@");
-
 
 ### Node.js : Loading the module for writing/reading files
 
@@ -77,26 +54,6 @@ For more information on this topic, please refer to the VueJS part of the aide-m
 
 All numbers other than zero are "truthy".
 They evaluate to "true"
-
-### Creating a barebone JS class
-
-    class Test {
-        constructor(string) {
-            this.string = string;
-        }
-    }
-
-### Adding a simple method to a class
-
-class Test {
-    constructor(string) {
-        this.string = string;
-    }
-
-    returnString() {
-        return this.string;
-    }
-}
 
 ### Creating an instance of a class 
 
@@ -190,13 +147,7 @@ Answer:
 
 ___
 
-Varia JS: How can you listen to every keypress?
 
-Answer:
-
-document.addEventListener("keydown", function(e) {
-    console.log(e.key);
-});
 
 ___
 
@@ -439,14 +390,6 @@ console.log(5 / []);
 Answer:
 
 Infinity
-
-___
-
-Varia JS: How do you find the type of an array?
-
-Answer:
-
-const x = Array.isArray([1, 2]]);
 
 ___
 
@@ -752,25 +695,6 @@ Answer:
 
 ___
 
-Varia JS: What is the difference between map(), filter(), and reduce()?
-
-Answer:
-
-- map() creates a copy of an array
-- filter() filters out items from an array
-- reduce() allows you to combine map() and filter() AND can be used to add up all values from an array
-
-___
-
-Varia JS: How do you flatten an array?
-
-Answer:
-
-arr.flat(1));
-
-* To flatten everything deeply, you can use arr.flat(Infinity)."
-
-___
 
 Varia JS: What is the output?
 
@@ -816,21 +740,6 @@ String(num)
 
 ___
 
-Varia JS: How do you generate a random number between 1 and 10?
-
-Answer:
-
-Math.floor(Math.random() * 10 + 1)
-
-___
-
-Varia JS: What is the easiest way to repeat a string?
-
-Answer:
-
-str.repeat(3);
-
-___
 
 Varia JS: How do you sort a string array?
 
@@ -840,53 +749,6 @@ arr.sort()
 
 ___
 
-Varia JS: How do you turn a number of type string to a number of type number?
-
-Answer:
-
-parseInt("33")
-
-___
-
-Varia JS: How do you eliminate duplicates in an array?
-
-Answer:
-
-[...new Set(arr)]
-
-___
-
-Varia JS: How do you get the positive value of a number?
-
-Answer:
-
-Math.abs(-1)
-
-___
-
-Varia JS: How do you get the last item from an array?
-
-Answer:
-
-arr[arr.length - 1]
-
-___
-
-Varia JS: How do you get the first character of a string?
-
-Answer:
-
-str[0]
-
-___
-
-Varia JS: How do you sort an array of numbers?
-
-Answer:
-
-arr.sort(function(a, b) { return a - b });
-
-___
 
 Varia JS: How do get all characters from a string but the first one?
 
@@ -932,14 +794,6 @@ removeEventListener
 
 ___
 
-Varia JS: How do you enable disable a class?
-
-Answer:
-
-- classList.toggle
-
-___
-
 Varia JS: What is the difference between a basic objet and a JSON object?
 
 Answer:
@@ -966,8 +820,4 @@ Answer:
 
 ___
 
-Varia JS: How do you get an attribute from an HTML tag?
 
-Answer:
-
-document.[...].getAttribute("class");
