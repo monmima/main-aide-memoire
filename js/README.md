@@ -130,27 +130,6 @@ animation: spin 3s infinite;
 
 ___
 
-Varia JS: What is the output?
-    
-if (true) {
-    var varVar = 1;
-    let letVar = 2;
-}
-
-console.log(varVar);
-console.log(letVar);
-
-Answer:
-
-- 1
-- Uncaught ReferenceError: letVar is not defined
-
-___
-
-
-
-___
-
 Varia JS: Declare two variables (x and y) on one line.
 
 Answer:
@@ -158,20 +137,6 @@ Answer:
 let x = 50, y = 6;
 
 This may seem shorter, but is also less readable.
-
-___
-
-Varia JS: What is the output?
-    
-function test () {
-    console.log("string");
-}
-
-console.log(test);
-
-Answer:
-
-function test()
 
 ___
 
@@ -240,34 +205,6 @@ var multiply = (x, y) => x * y;
 
 ___
 
-Varia JS: What is the output?
-
-console.log(test());
-
-const test = () => {
-    return "test";
-}
-
-Answer:
-
-Uncaught ReferenceError: can't access lexical declaration 'test' before initialization
-
-___
-
-Varia JS: What is the output?
-
-console.log(test());
-
-function test() {
-    return "test";
-}
-
-Answer:
-
-test
-
-___
-
 Varia JS: Store the following regexp in a variable.
 
 /blues?/gi
@@ -313,98 +250,12 @@ function multiply(a, b = 100) {
 
 ___
 
-Varia JS: What is the output?
-
-console.log(typeof "test");
-
-Answer:
-
-string
-
-___
-
-Varia JS: What is the output?
-
-console.log(typeof [1, 2, 3]);
-
-Answer:
-
-object
-
-___
-
-Varia JS: What is the output?
-
-console.log(typeof null);
-
-Answer:
-
-object
-This is a bug in ES6.
-___
 
 Varia JS: How do you stop the submission of a form when the submit button is clicked?
 
 Answer:
 
 event.preventDefault()
-
-___
-
-Varia JS: What is the output?
-
-const area = undefined * 5;
-console.log(area);
-
-Answer:
-
-NaN
-
-___
-
-Varia JS: What is the output?
-
-let area = (5)
-console.log(area);
-
-Answer:
-
-5
-
-___
-
-Varia JS: What is the output?
-
-console.log(100 / 0);
-
-Answer:
-
-Infinity
-
-___
-
-Varia JS: What is the output?
-
-console.log(5 / []);
-
-Answer:
-
-Infinity
-
-___
-
-Varia JS: What is the output?
-
-function print() {
-    console.log("Hello world");
-}
-
-console.log(typeof print);
-
-Answer:
-
-function
-
 
 ___
 
@@ -536,18 +387,6 @@ These are two different types.
 
 ___
 
-Varia JS: What is the output?
-
-let A = 5;
-let a = 6;
-
-a === A;
-
-Answer:
-
-false
-
-___
 
 Varia JS: What do you use to know if a number is positive, negative or zero?
 
@@ -567,21 +406,6 @@ Answer:
 - copy an old one (with a map loop, etc.)
 
 * creating a new one with "const badArr = new Array()" is a bad practice
-
-___
-
-Varia JS: What is the output?
-
-console.log(0.2 + 0.1)
-
-Answer:
-
-0.30000000000000004
-
-One thing that can be done to solve this issues is:
-console.log((0.2 + 0.1).toFixed(2))
-
-Another possibility is to validate with a server-side language.
 
 ___
 
@@ -640,50 +464,6 @@ Answer:
 
 ___
 
-Varia JS: What is the output?
-
-console.log(0 / 0);
-
-Answer:
-
-NaN
-
-___
-
-Varia JS: What is the output?
-
-console.log(typeof NaN);
-
-Answer:
-
-number
-
-This would be the solution to really find out:
-
-console.log(isNaN(NaN)) // true
-
-___
-
-Varia JS: What is the output?
-
-console.log(parseInt("hellos"));
-
-Answer:
-
-NaN
-
-___
-
-Varia JS: What is the output?
-
-console.log(0 / 0);
-
-Answer:
-
-NaN
-
-___
-
 Varia JS: What is the difference between splice() and slice()?
 
 Answer:
@@ -695,20 +475,6 @@ Answer:
 
 ___
 
-
-Varia JS: What is the output?
-
-console.log("3" + 4);
-console.log("4" / "2");
-console.log("4" - "3");
-
-Answer:
-
-console.log("3" + 4); // 34
-console.log("4" / "2"); // 2
-console.log("4" - "3"); // 1
-
-___
 
 Varia JS: Add a line to print the id to the console.
 
@@ -728,27 +494,6 @@ console.log(this.id);
 
 ___
 
-Varia JS: How do you turn a number to a string?
-
-Answer:
-
-num.toString()
-
-// or
-
-String(num)
-
-___
-
-
-Varia JS: How do you sort a string array?
-
-Answer:
-
-arr.sort()
-
-___
-
 
 Varia JS: How do get all characters from a string but the first one?
 
@@ -762,27 +507,11 @@ str.slice(1)
 
 ___
 
-Varia JS: How do you get the index of an item in an array?
-
-Answer:
-
-arr.indexOf("a")
-
-___
-
 Varia JS: What does the every function do?
 
 Answer:
 
 The every function check if all elements in an array pass a test.
-
-___
-
-Varia JS: How do you add stuff to the middle of an array?
-
-Answer:
-
-With .splice()
 
 ___
 
@@ -800,14 +529,6 @@ Answer:
 
 - objet pur =  nom: "Golf"
 - objet JSON = "nom": "Golf"
-
-___
-
-Varia JS: Should you use <code>eval</code>?
-
-Answer:
-
-No. People say that "eval is evil (possibility of code injection, etc.).
 
 ___
 
