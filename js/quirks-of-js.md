@@ -49,8 +49,9 @@ ___
     console.log(0.2 + 0.1) // 0.30000000000000004
 
 
-One thing that can be done to solve this issues is:
-console.log((0.2 + 0.1).toFixed(2))
+One thing that can be done to solve this issue is:
+
+    console.log((0.2 + 0.1).toFixed(2))
 
 Another possibility is to validate with a server-side language.
 
@@ -111,5 +112,18 @@ ___
     function test() {
         return "test";
     }
+
+___
+
+
+    if (27) {
+        console.log(true);
+    } else {
+        console.log(false);
+    }
+
+All numbers other than zero are "truthy".
+
+They evaluate to "true".
 
 ___

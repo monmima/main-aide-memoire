@@ -1,4 +1,4 @@
-### Creating a simple class with a method
+# Creating a simple class with a method
 
 class Test {
     constructor(string) {
