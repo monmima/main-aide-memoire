@@ -6,5 +6,5 @@ The output is a number matching the width of the screen in pixels.
 
 You can also use window.clientWidth.
 
-- window.innerWidth = excludes scroolbars
-- document.documentElement.clientWidth = includes scrollbars
+- window.innerWidth = includes scroolbars
+- document.documentElement.clientWidth = excludes scrollbars
