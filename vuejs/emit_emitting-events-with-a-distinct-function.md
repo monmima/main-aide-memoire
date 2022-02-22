@@ -1,4 +1,4 @@
-# Emitting events with $emit()
+# Emitting events with $emit() - example 1
 
 The content below is from a [tutorial by Academind on YouTube](https://www.youtube.com/watch?v=PPmg7ntQjzc).
 
