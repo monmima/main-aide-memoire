@@ -10,37 +10,7 @@
 1. Add these two domain names, assuming you are working **locally**. 
     - 127.0.0.1
     - localhost
-1. Copy your site/public key and secret key.
-1. Create a component called Captcha.vue.
-1. Paste this code in your new component.
-
-        <template>
-          <button @click="recaptcha">Execute recaptcha</button>
-        </template>
-
-        <script>
-        import { VueReCaptcha, useReCaptcha } from 'vue-recaptcha-v3'
-
-        // For more options see below
-
-        export default {
-          name: 'EndroitFiltre',
-          methods: {
-            async recaptcha () {
-              // (optional) Wait until recaptcha has been loaded.
-              await this.$recaptchaLoaded()
-
-              // Execute reCAPTCHA with action "login".
-              const token = await this.$recaptcha('login')
-
-              // Do stuff with the received token.
-
-              return token;
-            }
-          }
-        }
-        </script>
-
+1. Copy your site/public key and secret key somewhere or keep your Google tab open.
 1. Go to main.ts.
 1. Add this import statement:
 
@@ -51,7 +21,7 @@
         app.use(VueReCaptcha, { siteKey: 'your-site/public-key-right-here' })
 
 1. Go to Login.vue.
-1. Make sure your login function is an async one by adding async in front of it. The start of your login function should look like this. The second and third lines are added as well.
+1. Make sure your login function is an async one by adding <code>async</code> in front of it. The start of your login function should look like this. The second and third lines are added as well.
 
         async login () {
           const token = await this.$recaptcha('login')
