@@ -21,7 +21,7 @@
         app.use(VueReCaptcha, { siteKey: 'your-site/public-key-right-here' })
 
 1. Go to Login.vue.
-1. Make sure your login function is an async one by adding <code>async</code> in front of it. The start of your login function should look like this. The second and third lines are added as well.
+1. Make sure your login function is an async one by adding <code>async</code> in front of it. The start of your login function should look like this. The second and third lines are added as well. Don't take the last line into accound if you don't need to perform.
 
         async login () {
           const token = await this.$recaptcha('login')
