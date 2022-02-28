@@ -18,10 +18,10 @@
 
 1. After the import statements, create an instance of VueReCaptcha like so:
 
-        app.use(VueReCaptcha, { siteKey: 'your-site/public-key-right-here' })
+        app.use(VueReCaptcha, { siteKey: 'paste-your-site/public-key-here' })
 
 1. Go to Login.vue.
-1. Make sure your login function is an async one by adding <code>async</code> in front of it. The start of your login function should look like this. The second and third lines are added as well. Don't take the last line into accound if you don't need to perform.
+1. Make sure your login function is an async one by adding <code>async</code> in front of it. The start of your login function should look like this. The second line is mandatory and the third one is optional. Don't take it into account if you don't need to perform debugging.
 
         async login () {
           const token = await this.$recaptcha('login')
@@ -40,13 +40,13 @@
 1. Find your login() function.
 1. Add this to the login() function:
 
-        $credentials = request(['email', 'password', 'token']);//["email" => $request["email"], "password" => $request["password"]];//request(['email', 'password']);
+        $credentials = request(['email', 'password', 'token']);
         $body = [
             'response' => $credentials['token'],
             'secret' => 'paste-your-secret-key-here'
         ];
         $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', $body);
-        return response($response, 412);
+        return response($response, 200);
 
 ## Getting more info
 
