@@ -82,7 +82,7 @@ I had the help of a coworker to produce this aide-mémoire on CAPTCHAs.
                 return $this->respondWithToken($token);
         }
 
-1. You could paste your secret key directly in the code above, but the best practice is to use an environement variable call it like it's done above.
+1. You could paste your secret key directly in the code above, but the best practice is to use an environement variable call like it's done above.
 1. Then you need to go to .env (at the root of your Laravel folder) and to add the name of your environment variable like so. The name of the variable is arbitrary, but has to match your auth file (see code above) and your .env file (see code below).
 
         RECAPTCHA_SECRET_KEY="insert-your-secret-key-here"
