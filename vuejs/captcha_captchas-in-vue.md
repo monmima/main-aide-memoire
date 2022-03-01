@@ -87,6 +87,10 @@ I had the help of a coworker to produce this aide-mémoire on CAPTCHAs.
 
         RECAPTCHA_SECRET_KEY="insert-your-secret-key-here"
 
+1. You should also add an empty variable of the same name in your /.env.example
+
+        RECAPTCHA_SECRET_KEY=""
+
 ## Getting more info
 
 More information about this topic can be found here:
