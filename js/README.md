@@ -34,34 +34,6 @@ num.toFixed(2);
 
 ___
 
-Varia JS: How do you give a shadow to a <code>div</code>?
-
-div {
-    &lt;!--  code here --&gt;
-}
-
-Answer:
-
-box-shadow: 5px 5px;
-
-// or
-
-box-shadow: 5px 5px 5px;
-
-___
-
-Varia JS: What is the difference?
-
-1. box-shadow: 5px 5px 5px;
-2. box-shadow: 5px 5px 5px inset;
-
-Answer:
-
-1. Outer shadow.
-2. Inner shadow.
-
-___
-
 
 Varia JS: How do you find the value of the first element greater than 10?
 
@@ -81,14 +53,6 @@ require
 
 ES6
 import
-
-___
-
-Varia JS: How can you tell if a variable called <code>x</code> is an integer?
-
-Answer:
-
-const newVar = Number.isInteger(x);
 
 ___
 
@@ -118,16 +82,6 @@ Answer:
 Math.sign(20); // 1
 Math.sign(-20); // -1
 Math.sign(0); // 0
-
-___
-
-Varia JS: Write a barebone IIFE.
-
-Answer:
-
-(function() {
-    console.log("my logic");
-})();
 
 ___
 

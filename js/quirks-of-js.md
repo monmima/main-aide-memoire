@@ -19,10 +19,6 @@ ___
 
 ___
 
-    console.log(typeof "test"); // string
-
-___
-
     console.log(typeof null); // object
     (This is a bug in ES6.)
 
