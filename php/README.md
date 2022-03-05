@@ -2,8 +2,17 @@
 
 ## Preparing your system.
 
-    sudo apt install php
-    sudo apt-get install php7.4-sqlite
+1. Install PHP.
+
+        sudo apt install php
+
+1. Find out what version of PHP your are running.
+
+        php --version
+
+1. Install the the SQLite driver for your version of PHP. **This assumes that you are running version 7.4 of PHP.**
+
+        sudo apt-get install php7.4-sqlite3
 
 ## Running a project
 
@@ -330,71 +339,4 @@ You can find more information about how to update a record using both SQLite and
 
 - https://stackoverflow.com/questions/69860263/updating-sqlite-database-with-php?noredirect=1#comment123490521_69860263
 - https://github.com/monmima/php-sqlite-crud
-
-## Deploying your project on Heroku
-
-https://devcenter.heroku.com/articles/getting-started-with-php#set-up
-
-1. Make sure PHP, composer, git and Heroku are installed by running these commands:
-
-        php -v
-
-        composer -V
-
-        git --version
-
-        heroku --version
-
-1. Update information on packages:
-
-        sudo apt update
-
-1. If the Heroku CLI is not installed, use this command:
-
-        sudo snap install heroku --classic
-
-1. If Composer is not installed, use this command:
-
-        composer install
-
-1. Create a file called composer.json and paste the following in it:
-
-        {
-            "require" : {
-                "silex/silex": "^2.0.4",
-                "monolog/monolog": "^1.22",
-                "twig/twig": "^2.0",
-                "symfony/twig-bridge": "^3",
-                "ext-pdo_sqlite": "*"
-            },
-            "require-dev": {
-                "heroku/heroku-buildpack-php": "*"
-            }
-        }
-
-1. Run this command in your project root to create /vendor and composer.lock:
-
-        composer install
-
-1. Create a .gitignore file and add vendor/ to it.
-1. Log into your Heroku account and create a project.
-1. Create a git remote by using a command like this one:
-
-        heroku git:remote -a php-sqlite-crud
-
-1. Push your local files to Heroku using this command:
-
-        git push heroku HEAD:master
-
-## Possible bugs
-
-___
-
-### PDOException: could not find driver in [path to your project]
-
-If you run into this bug, it's probably because you have not installed php7.4-sqlite. See above for more about this.
-
-___
-
-
 
