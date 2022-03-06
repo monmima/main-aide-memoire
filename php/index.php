@@ -1,11 +1,8 @@
 <?php
-	// MULTIDIMENSIONAL ARRAYS (array within an array)
+        $people = ["Brad" => "brad@email.com", "Jose" => "jose@email.com", "William" => "william@email.com"];
 
-	$cars = array(
-		array("red", 20, 10),
-		array("green", 20, 10),
-		array("blue", 20, 10)
-	);
-
-	echo $cars[1][0];
-?>
+        foreach($people as $person => $email) {
+            echo "$person: $email";
+            echo "<br>";
+        }
+    ?>
