@@ -1,8 +1,11 @@
 <?php
-    $string1 = "Hello";
-    $string2 = "World!";
+	// MULTIDIMENSIONAL ARRAYS (array within an array)
 
-    echo $string1 . " " . $string2;
-    echo "<br>";
-    echo "$string1 $string2";
+	$cars = array(
+		array("red", 20, 10),
+		array("green", 20, 10),
+		array("blue", 20, 10)
+	);
+
+	echo $cars[1][0];
 ?>

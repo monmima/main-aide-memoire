@@ -2,7 +2,9 @@
 
 Some of the content of this aide-mémoire is inspired by Brad Traversy's [PHP Front To Back](https://youtu.be/9p9siksrSoU) series.
 
-## Preparing your system - assuming you are using Linux Mint/Ubuntu.
+## Preparing your system
+
+This assumes you are using Linux Mint or Ubuntu.
 
 1. Install PHP.
 
