@@ -1,30 +1,34 @@
-<?php
+# Conditions
 
-    # CONDITIONALS
+## Operators
 
-    // https://www.youtube.com/watch?v=x6UDhaHVaeY
+All the operators are pretty straightforward, except maybe for the last one, which is an exclusive **or**.
 
-    /**
-     * == (like with JS)
-     * === (like with JS)
-     * <
-     * >
-     * <=
-     * >=
-     * !=
-     * !==
-     */
+* ==
+* ===
+* <
+* \>
+* <=
+* \>=
+* !=
+* !==
+* &&
+* ||
+* xor
+
+## If... else if... else statement
 
     $num = 4;
+
     if ($num == 5) {
         echo "5 passed";
     } else if ($num == 6) {
-        echo "six passed";
+        echo "6 passed";
     } else {
-        echo "did not pass";
+        echo "not 5 nor 6";
     }
 
-    # NESTING IF
+## Nested if statement
 
     $num = 6;
 
@@ -34,30 +38,21 @@
         }
     }
 
-    # LOGICAL OPERATORS
-
-    /*
-        and && --- one or the other
-        or || --- one or the other
-        xor --- exclusive or; one or the other is true, but not both
-    */
-
-    # SWITCH
+## Switch statement
 
     $favColor = "red";
 
     switch ($favColor) {
         case "red":
             echo "Your favorite color is red";
-        break;
+            break;
         case "blue":
             echo "Your favorite color is blue";
-        break;
+            break;
         case "green":
             echo "Your favorite color is green";
-        break;
+            break;
         default:
             echo "Your favorite color is something else.";
-        break;
+            break;
     }
-?>
