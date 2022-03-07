@@ -9,7 +9,9 @@
 ## Printing inside a tag
 
     <h1>
-        <?php echo "test"; ?>
+        <?php
+            echo "test";
+        ?>
     </h1>
 
 ## Print and echo
