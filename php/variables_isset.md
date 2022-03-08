@@ -1,3 +1,4 @@
+# Checking if a variable is set or not
 
     <?php
         $test = 5;
