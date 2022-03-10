@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Tutorial</title>
-</head>
-<body>
+# Forms and getting user input: example 2
 
-    <form action="part-012.php" method="GET">
+<code>action</code> is the name of the php page that we want to be able to handle with this form.
 
+    <form action="index.php" method="GET">
         Color: <input type="text" name="color"><br>
 
         Plural noun: <input type="text" name="pluralNoun"><br>
@@ -16,7 +10,6 @@
         Celebrity: <input type="text" name="celebrity"><br>
     
         <button type="submit">Submit</button>
-
     </form>
 
     <?php
@@ -30,6 +23,3 @@
 
         echo "I love $celebrity <br>";
     ?>
-
-</body>
-</html>

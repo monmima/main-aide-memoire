@@ -1,6 +1,6 @@
 # Getting user input
 
-<code>action</code> is the name of the php page that we want to be able to handle this form.
+<code>action</code> is the name of the php page that we want to be able to handle with this form.
 
 In this case, the name of the current page is **index.php**.
 

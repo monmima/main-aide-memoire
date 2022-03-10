@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Tutorial</title>
-</head>
-<body>
-    <form action="index.php" method="post">
+# Forms: handling checkboxes
 
-        <!-- "fruits[]" means that you store checkbox data inside of an array -->
+<code>fruits[]</code> means that you store the data from your checkboxes inside of an array.
+
+    <form action="index.php" method="post">
         Apples: <input type="checkbox" name="fruits[]" value="apples"><br>
 
         Oranges: <input type="checkbox" name="fruits[]" value="oranges"><br>
@@ -24,6 +18,3 @@
 
         print_r($fruits);
     ?>
-
-</body>
-</html>

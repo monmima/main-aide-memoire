@@ -1,4 +1,4 @@
-# Getting user input: example 1
+# Forms and getting user input: example 1
 
 ## A simple calculator
 
