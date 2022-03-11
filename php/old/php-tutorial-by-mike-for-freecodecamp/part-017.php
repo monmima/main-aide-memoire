@@ -7,7 +7,7 @@
 </head>
 <body>
     <p>This form returns the grade of a student, which is stored in an array.</p>
-    <form action="part-017.php" method="POST">
+    <form action="index.php" method="POST">
 
         <input type="text" name="student">
 

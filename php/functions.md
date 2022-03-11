@@ -8,6 +8,17 @@
 
     simpleFunction(); // "Hello World"
 
+## Function with a parameter
+
+    <?php
+        function sayHi($whatName) {
+            echo "Hello $whatName<br>";
+        }
+        
+        sayHi("John");
+        sayHi("Melody");
+    ?>
+
 ## Function with default parameter
 
     function sayHello($name = "default") {

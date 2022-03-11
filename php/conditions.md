@@ -15,6 +15,7 @@ All the operators are pretty straightforward, except maybe for the last one, whi
 * &&
 * ||
 * xor
+* !$myVar
 
 ## If... else if... else statement
 
