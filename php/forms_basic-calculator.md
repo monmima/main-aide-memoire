@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Tutorial</title>
-</head>
-<body>
-    <form action="part-022.php" method="post">
+# Forms: a basic calculator
+
+    <form action="index.php" method="post">
 
         <!-- STEP is used to allow decimal points --> 
         First num: <input type="number" step="0.00001" name="num1"><br>
@@ -36,5 +30,3 @@
         }
 
     ?>
-</body>
-</html>

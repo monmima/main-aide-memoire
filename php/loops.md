@@ -18,12 +18,11 @@
 ## While loop
 
     <?php
-        $i = 0;
+        $index = 1;
 
-        while ($i < 10) {
-            echo $i;
-            echo "<br> ";
-            $i++;
+        while($index <= 5) {
+            echo "$index <br>";
+            $index++;
         }
     ?>
 
@@ -32,14 +31,12 @@
 This type loop isn't used so much. Brad Traversy never uses this. This type of loop is always gonna run at least once no matter what.
 
     <?php
-        $i = 0;
-        do {
-            echo $i;
-            echo "<br>";
-            $i++;
-        }
+        $index = 1;
 
-        while($i < 10);
+        do {
+            echo "$index <br>";
+            $index++;
+        } while($index <= 5);
     ?>
 
 # For each loop
