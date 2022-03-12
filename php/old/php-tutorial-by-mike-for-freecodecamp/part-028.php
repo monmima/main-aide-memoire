@@ -14,7 +14,6 @@
         $wordCount = 400;
     
         include "part-028-article-header.php"
-        
     ?>
     
 </body>
