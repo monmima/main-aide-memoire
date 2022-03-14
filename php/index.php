@@ -1,30 +1,34 @@
+<!-- https://www.youtube.com/watch?v=OK_JCtrrv-c&t=13557s -->
+
 <?php
-    class Book {
-        public $title;
-        public $author;
-        public $pages;
 
-        function __construct($bookName, $bookAuthor, $bookPages) {
-            echo "New book <strong>" . $bookName . "</strong> created.<br>";
-
-            $this->title = $bookName; 
-            $this->author = $bookAuthor;
-            $this->pages = $bookPages;
-        }
+class Chef {
+    function makeChicken() {
+        echo "The chef makes chicken <br>";
     }
 
-    // creating an instance of the class
-    $book1 = new Book("Harry Potter", "JK Rowling", 400);
+    function makeSalad() {
+        echo "The chef makes salad <br>";
+    }
 
-    // creating another instance of the same class
-    $book2 = new Book("The Hobbit", "Tolkien", 700);
+    function makeSpecialDish() {
+        echo "The chef makes BBQ ribs <br>";
+    }
+}
 
-    // echoing out data from the instances
-    echo "$book1->title<br>";
-    echo "$book1->author<br>";
-    echo "$book1->pages<br>";
+class ItalianChef extends Chef {
+    function makePasta() {
+        echo "The chef makes Pasta <br>";
+    }
 
-    echo "$book2->title<br>";
-    echo "$book2->author<br>";
-    echo "$book2->pages<br>";
+    // overriding a function
+    function makeSpecialDish() {
+        echo "The chef makes chicken parm <br>";
+    }
+}
+
+$italianChef = new ItalianChef;
+$italianChef->makeChicken();
+$italianChef->makePasta();
+
 ?>

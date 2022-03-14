@@ -2,6 +2,8 @@
 
 See **classes_constructors** to learn more about the efficient way of passing data to a class. The way of doing it in the example below does work, but is not the most efficient since you have to create a new instance of a class with four lines instead of just one.
 
+Usually you use "public" and "private" instead of "var" in a class.
+
     <?php
         // creating a class
         class Book {

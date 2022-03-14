@@ -1,6 +1,6 @@
 # PHP Aide-Mémoire
 
-Some of the content of this aide-mémoire is inspired by Brad Traversy's [PHP Front To Back](https://youtu.be/9p9siksrSoU) series and Mike Dane's [freeCodeCamp tutorial on YouTube](https://www.youtube.com/watch?v=OK_JCtrrv-c).
+A big chunk of the content of this aide-mémoire is inspired by Brad Traversy's [PHP Front To Back](https://youtu.be/9p9siksrSoU) series and Mike Dane's [freeCodeCamp tutorial on YouTube](https://www.youtube.com/watch?v=OK_JCtrrv-c).
 
 ## Preparing your system
 

@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Tutorial</title>
-</head>
-<body>
+# Classes and inheritance
 
+The idea of inheritance is that the child of a class can do exactly the same as the parent class, on top of other stuff you define in it.
 
     <?php
 
@@ -40,6 +34,3 @@
         $italianChef->makePasta();
 
     ?>
-    
-</body>
-</html>

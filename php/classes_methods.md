@@ -1,19 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Tutorial</title>
-</head>
-<body>
+# Classes and methods
 
+Usually you use "public" and "private" instead of "var" in a class.
 
     <?php
         class Student {
-            // usually you use "public" and "private" instead of "var"; to learn more about this, see the next tutorial
-            var $name;
-            var $major;
-            var $gpa;
+            
+            public $name;
+            public $major;
+            public $gpa;
 
             function __construct($name, $major, $gpa) {
                 $this->name = $name;
@@ -22,7 +16,7 @@
             }
 
             function hasHonors() {
-                // whenever you return true or false values, PHP is not going to be able to print out "true" or "false" so you have to print these out as strings
+                // Whenever you return true or false values, PHP is not going to be able to print out "true" or "false" so you have to print these out as strings.
                 if ($this->gpa >= 3.5) {
                     return "true";
                 } else {
@@ -36,9 +30,4 @@
 
         echo $student1->hasHonors() . "<br>";
         echo $student2->hasHonors() . "<br>";
-
-
     ?>
-    
-</body>
-</html>
