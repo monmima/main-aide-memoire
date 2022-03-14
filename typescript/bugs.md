@@ -1,20 +1,14 @@
 # Bugs
 
-To disable alert messages in Typescript, use a comment like this:
+To disable alert messages in Typescript and ESLint, use a comment like this at the start of the script (after the <code>script</code> tag) to ignore alerts for the whole file:
 
     /* eslint-disable */
-    let test;
-    test = 5;
-    console.log(test);
+    // @ts-nocheck
 
-    // début fetch
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0')
-      .then(res => res.json())
-      // @ts-ignore
-      .then(console.log(test))
-      .catch(function (err) {
-        console.log('ERROR CATCHED - ' + err);
-      });
+You can also be more specific like this:
+
+    /* eslint-disable */
+    // @ts-ignore
     /* eslint-enable */
 
-Your comment might have to be inserted between **eslint-disable** and **eslint-disable** itself.
+<code>@ts-ignore</code> helps you ignore the next line.
