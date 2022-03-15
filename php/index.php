@@ -1,49 +1,64 @@
 <?php
-    // https://www.youtube.com/watch?v=EHfr-edosmA
+    // get and post
 
-    // echo date("d"); // day
-    // echo date("m"); // month
-    // echo date("Y"); // year
-    // echo date("l"); // day of the week
-
-    // echo date("Y/m/d");
-    // echo date("Y-m-d");
-
-    // echo date("h"); // hour
-    // echo date("i"); // minutes
-    // echo date("s"); // seconds
-    // echo date("a"); // AM or PM
-
-    // default time zone
-    // echo date("h:i:sa");
-
-    // set time zone
-
-    // date_default_timezone_set("America/New_York");
-    // echo date("h:i:sa");
+    // https://www.youtube.com/watch?v=cIFUH3Qnd6s&list=PLillGF-Rfqbap2IB6ZS4BBBcYPagAjpjn&index=11
 
     /**
-     * Unix timestamp is a long integer containing the number of seconds between the Unix Epoch (January 1 1970 00:00:00 GMT) and the time specified.
+     * To prevent certains attacks, you can use "htmlentities"
+     * 
+     * Remember you also have to change the method of the form (POST or GET)
      */
-    $timestamp = mktime(10, 14, 54, 9, 10, 1981);
+    // if (isset($_GET["name"])) {
+    //     echo $_GET["name"];
+    //     $name = htmlentities($_GET["name"]);
+    //     echo $name;
+    // }
 
-    // echo $timestamp;
+    /**
+     * If you don't want data to be visible in the URL, then you want t use POST.
+     * 
+     * Remember you also have to change the method of the form (POST or GET)
+     */
+    if(isset($_POST["name"])) {
+        // print_r($_POST);
+        $name = htmlentities($_POST["name"]);
+        echo $name;
+    };
 
-    // echo date("Y-m-d h:i:sa", $timestamp);
+    /**
+     * REQUEST is not used very much. You want to stick with GET and POST.
+     * 
+     * $_REQUEST works whether the value is POST or GET
+     */
+    // if(isset($_REQUEST["name"])) {
+    //     print_r($_REQUEST);
+    //     $name = htmlentities($_REQUEST["name"]);
+    //     echo $name;
+    // };
 
-    # STRING TO TIME
-
-    // $timestamp2 = strtotime("7:00pm March 22 2016");
-
-    // echo $timestamp2;
-    // echo date("Y-m-d h:i:sa", $timestamp2);
-
-    // $timestamp3 = strtotime("tomorrow");
-    // echo date("Y-m-d h:i:sa", $timestamp3);
-
-    // $timestamp4 = strtotime("next Sunday");
-    // echo date("Y-m-d h:i:sa", $timestamp4);
-
-    $timestamp5 = strtotime("+2 Months");
-    echo date("Y-m-d h:i:sa", $timestamp5);
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+</head>
+<body>
+    <form method="POST">
+        <div>
+            <p><label for="">Name</label></p>
+            <input type="text" name="name">
+        </div>
+        <div>
+            <p><label for="">Email</label></p>
+            <input type="email" name="email">
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+
+</body>
+</html>
