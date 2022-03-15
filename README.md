@@ -10,3 +10,6 @@ The purpose of this aide-mémoire is to help me find answers quicker than using 
 - Promises
 - Forms in VueJS
 - reCAPTCHA
+- [Conditional imports in JS](https://stackoverflow.com/questions/36367532/how-can-i-conditionally-import-an-es6-module)
+
+        const mymodule = await import(modulename);
