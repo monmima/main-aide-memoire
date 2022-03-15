@@ -1,5 +1,7 @@
 ## Working with an API
 
+**GET** (not **POST**) request below.
+
     <div id="app">
         <li v-for="item in response" v-bind:key="item.title">
             {{ item.title }}
