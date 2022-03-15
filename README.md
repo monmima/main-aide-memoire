@@ -9,3 +9,4 @@ The purpose of this aide-mémoire is to help me find answers quicker than using 
 - TypeScript and DTO
 - Promises
 - Forms in VueJS
+- reCAPTCHA
