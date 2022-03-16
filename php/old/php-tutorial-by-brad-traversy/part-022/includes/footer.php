@@ -1,1 +1,0 @@
-<footer class="d-flex justify-content-center">This is the footer.</footer>
