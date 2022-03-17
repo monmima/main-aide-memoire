@@ -29,15 +29,11 @@ All the operators are pretty straightforward, except maybe for the last one, whi
         echo "not 5 nor 6";
     }
 
-## Nested if statement
+## Ternary operator
 
-    $num = 6;
+    $loggedIn = true;
 
-    if ($num > 5) {
-        if ($num < 10) {
-            echo "<br>greater than five; less than 10";
-        }
-    }
+    echo $loggedIn ? "You are logged in" : "You are NOT logged in";
 
 ## Switch statement
 
@@ -57,3 +53,6 @@ All the operators are pretty straightforward, except maybe for the last one, whi
             echo "Your favorite color is something else.";
             break;
     }
+
+## Ternary operator
+

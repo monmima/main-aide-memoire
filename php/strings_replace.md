@@ -3,5 +3,5 @@
     <?php
         $string = "Giraffe Academy";
         
-        echo str_replace("Giraffe", "Panda", $string);
+        echo str_replace("Giraffe", "Panda", $string); // Panda Academy
     ?>
