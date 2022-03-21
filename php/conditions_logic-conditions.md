@@ -35,6 +35,12 @@ All the operators are pretty straightforward, except maybe for the last one, whi
 
     echo $loggedIn ? "You are logged in" : "You are NOT logged in";
 
+The ternary operator can also be used to set a variable
+
+    $isRegistered = ($loggedIn == true) ? true : false;
+
+    echo $isRegistered;
+
 ## Switch statement
 
     $favColor = "red";
@@ -53,6 +59,3 @@ All the operators are pretty straightforward, except maybe for the last one, whi
             echo "Your favorite color is something else.";
             break;
     }
-
-## Ternary operator
-
