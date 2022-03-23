@@ -2,6 +2,8 @@
 
 Usually you use "public" and "private" instead of "var" in a class.
 
+Usually you use "public" (can be accessed anywhere outside of the class), "protected" (only in class or class that extends the one you created) and "private" (only this class) instead of "var" in a class.
+
     <?php
         class Student {
             

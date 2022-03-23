@@ -2,7 +2,7 @@
 
 It's better to use constructors like in the example below because it leads to cleaner code. You can create instances in just one line of code instead of many lines like in the basic example (**classes_the-basics.md**).
 
-Usually you use "public" and "private" instead of "var" in a class.
+Usually you use "public" (can be accessed anywhere outside of the class), "protected" (only in class or class that extends the one you created) and "private" (only this class) instead of "var" in a class.
 
     <?php
         class Book {
