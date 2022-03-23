@@ -21,6 +21,7 @@ Deleting a branch and then check out. | git checkout -b my-new-branch
 Merging a branch (you need to be in the branch where your other branch is going to get merged, which is typically the master branch). | git merge my-secondary-main-branch | git merge my-new-feature-branch
 Unadding and uncommiting a change. | git reset HEAD~
 Pulling recent changes in the main branch into a secondary branch. | git pull origin master
+Unmerging branch, for instance to avoid having to deal with a conflict. | git merge --abort
 
 ## Solving Merging Conflicts
 
