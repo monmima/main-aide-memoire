@@ -1,4 +1,4 @@
-# Classes: using getters and setters or how to access a private variable
+# Classes, getters and setters
 
 This is a simple example of how to use setters and getters in PHP.
 

@@ -1,4 +1,4 @@
-# Classes: using getters and setters or how to access a private variable
+# Classes, getters and setters
 
 Heavily inspired by a [tutorial by Mike Dane](https://www.youtube.com/watch?v=OK_JCtrrv-c&t=13557s).
 
