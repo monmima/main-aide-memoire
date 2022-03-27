@@ -95,7 +95,7 @@ Notes:
 
 - If the above really won't work, I suggest restarting your computer, and then running the same command.
 
-___
+---
 
 ## Using SQLite locally on Linux Mint
 

@@ -9,7 +9,7 @@ I'd like to thank WPTuts for his YouTube tutorials named [Advanced Custom Fields
 
 I encourage you to check out [WPTuts's on Youtube](https://www.youtube.com/user/ipixeltutorials).
 
-___
+---
 
 ## Your Plugins and Theme
 

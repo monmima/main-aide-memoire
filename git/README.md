@@ -2,7 +2,7 @@
 
 The content of this Git Aide-Mémoire is heavily inspired by [The Net Ninja's YouTube tutorials on Git](https://www.youtube.com/watch?v=fQLK8Ib_SKk).
 
-______
+------
 
 ## List of commands
 

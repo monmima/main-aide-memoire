@@ -1,6 +1,6 @@
 # Laravel Aide-Mémoire
 
-___
+---
 
 ## A Word of Thanks
 
@@ -12,7 +12,7 @@ I am indebted to many people for being able to create this aide-mémoire. I had 
 
 On top of that, I had to wrap my head around the ways of Laravel, and this was made possible thanks to [Jeffrey Way from Laracast](https://laracasts.com/series/laravel-8-from-scratch). His tutorial is crisp, comes with all the code in a Github repository and is explained is plain terms. And on top of that, it's free.
 
-___
+---
 
 ## Installing Laravel on Linux Mint
 
@@ -84,13 +84,13 @@ Thanks to Ceed Media for his [YouTube tutorial](https://www.youtube.com/watch?v=
 18. Use CTRL + H in the project folder
 19. Rename **.env.example** to **.env** (there might already be a file with this name and therefore this step might be useless)
 
-___
+---
 
 ### The Net Ninja Way
 
 The Net Ninja installs Laravel globally in [one of his tutorials](https://www.youtube.com/watch?v=E74_WZpjeKA) with **composer global require laravel/installer**. This means that you can create Laravel projects wherever you want.
 
-___
+---
 
 ### Creating a Project and Running it
 
@@ -117,13 +117,13 @@ Make sure you have the correct dependencies installed:
 
 1. Now go to your browser and type http://localhost:8000/ in the address bar.
 
-___
+---
 
 ## Deleting Your Dependencies To Move A Project Around
 
 All dependencies are stored in your **vendor/** and **node_module/** subfolders. To reinstall your dependencies, for instance after downloading your project from a git repository, use **composer update** and **npm install**.
 
-___
+---
 
 ## Using An Existing Laravel Project On Another Machine
 
@@ -153,7 +153,7 @@ If you have formatted your computer or are using another computer and want to us
 
         npm install
 
-___
+---
 
 ## Downloading A Laravel Project From Github And Setting It Up
 
@@ -173,5 +173,5 @@ and **DB_HOST=127.0.0.1** for this project).
 
         php artisan serve 
 
-___
+---
 

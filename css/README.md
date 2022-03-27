@@ -2,7 +2,7 @@
 
 This is a CSS aide-mémoire. Some work needs to be done to sort the information in the README.MD file.
 
-___
+---
 
 ## Position: relative versus margin
 
@@ -19,7 +19,7 @@ versus
         margin-left: -30px;
     }
 
-___
+---
 
 ## Creating a CSS rule to put the div content upside down.
 
@@ -27,7 +27,7 @@ ___
         transform: scaleY(-1);
     }
 
-___
+---
 
 
 ## Creating a rule making images responsive.
@@ -38,7 +38,7 @@ ___
         width: 100%;
     }
 
-___
+---
 
 ## Removing the default style from an <code>input</code> field?
 
@@ -46,7 +46,7 @@ ___
         appearance: none;
     }
 
-___
+---
 
 ## Using a selector for an <code>li</code> tag which has a class
 
@@ -54,7 +54,7 @@ ___
         color: red;
     }
 
-___
+---
 
 ## Using a selector for a <code>password input</code> tag
 
@@ -68,7 +68,7 @@ or
         background-color: red;
     }
 
-___
+---
 
 
 ## Creating a rule for a CSS image to take its full size within a div.
@@ -77,7 +77,7 @@ ___
         background-size: 100% 100%;
     }
 
-___
+---
 
 
 ## CSS What is the purpose of <strong>right 20px</strong> and <strong>30%</strong> below?
@@ -89,26 +89,26 @@ Answer:
 - right 20px = position
 - 30% = size
 
-___
+---
 
 ## Changing the order of items in CSS grid and flex
 
 Use **order**.
 
-___
+---
 
 
 ## Getting rid of a border
 
     border: 0
 
-___
+---
 
 ## Changing transparency
 
     opacity: 0.5
 
-___
+---
 
 ## Writing a selector for a class beginning/ending/containing a string?
 
@@ -117,7 +117,7 @@ ___
 - a[class$="test"] {
 - a[class~="test"] {
 
-___
+---
 
 ## What do flex-grow, flex-shrink and flex-basis have in common?
 
@@ -126,13 +126,13 @@ They apply on a flex child.
 - Flex-basis should be used instead of width.
 - You can group all three of these like this: 1 1 200px;.
 
-___
+---
 
 ## Making sure a CSS grid fraction never goes below a certain point
 
 Use **minmax**.
 
-___
+---
 
 ## Writing a date in a footer the semantic way
 

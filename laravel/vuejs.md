@@ -109,7 +109,7 @@ If at any point you run into an error because, your version of NodeJS is not the
 
     node --version
 
-___
+---
 
 ## Creating a simple VueJS and Laravel to-do list
 

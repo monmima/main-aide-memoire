@@ -22,7 +22,7 @@ There is an installer file, but for the removal of Slack, the only option seems 
 
 	sudo snap remove slack
 
-___
+---
 
 ## Fichier listant les caractéristiques d'un ordi
 
@@ -30,7 +30,7 @@ https://vitux.com/get-linux-system-and-hardware-details-on-the-command-line/
 
     sudo lshw -html > [filename.html]
 
-___
+---
 
 ## Deleting leftover configuration files
 
@@ -43,13 +43,13 @@ Applications usually store configuration data in one of the following hidden fol
     ~/.cache/application
     ~/.local/share/application
 
-___
+---
 
 ## PHP without Xampp
 
     sudo apt install php
     php -S localhost:8000
-___
+---
 
 ## Debugging PulseAudio so it connects properly
 
@@ -68,7 +68,7 @@ https://askubuntu.com/questions/879037/pavucontrol-stuck-at-establishing-connect
 
 https://livingthelinuxlifestyle.wordpress.com/2019/06/09/solve-problems-with-no-sound-in-linux-mint/
 
-___
+---
 
 ## Installing software
 
