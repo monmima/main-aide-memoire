@@ -2,8 +2,6 @@
 
 ## Tables
 
-https://markdown.land/markdown-table
-
 | Column 1 | Column 2 | Column 3 |
 |--------------|-----------|------------|
 | Row 1 | abc | def |
@@ -23,9 +21,27 @@ Remote Image:
 
 > To be or not to be, that is the question.
 
+## Multi-line quote
+
+> To be or not to be,
+>
+> that is the question.
+
 ## Horizontal rule
 
-___
+---
+
+## Syntax highlight
+
+    dfasdf
+
+or
+
+```
+text
+
+more text
+```
 
 
 ## Varia
@@ -35,15 +51,7 @@ ___
 | \*\*Bold characters\*\* | **Bold characters** |
 | \*Italics\* | *Italics* |
 | \*\*\*Italic and bold text\*\*\* | ***Italic and bold text*** |
+| \~\~Strikethrough text\~\~ | ~~strikethrough text~~ |
 | \[Link\]\(www.link.com\) | [Link](www.link.com) |
 | \[Email link\]\(mailto:name@domain.com\) | [Email link](mailto:name@domain.com) |
 | \`Inline code\` | `Inline code` |
-
-## References
-
-https://ghost.org/changelog/markdown/
-
-**The quick brown [fox][1], jumped over the lazy [dog][2].**
-
-[1]: https://en.wikipedia.org/wiki/Fox "Wikipedia: Fox"
-[2]: https://en.wikipedia.org/wiki/Dog "Wikipedia: Dog"
