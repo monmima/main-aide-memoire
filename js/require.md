@@ -28,5 +28,5 @@ So if you run Terminal window and type this:
 Your output should be this:
 
 > Hello, World
-
+>
 > test string
