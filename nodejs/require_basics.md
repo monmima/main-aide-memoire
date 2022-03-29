@@ -1,6 +1,6 @@
-# Require and exports
+# Require
 
-Here is a basic example on how requiring and exporting works.
+Here is a basic example on how `require()` works.
 
 We will suppose you have a folder with two files located at the root level, your main file **index.js** and a module file called **file1.js**.
 
