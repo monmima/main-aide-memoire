@@ -6,7 +6,7 @@ The purpose of this aide-mémoire is to help me find answers quicker than using 
 
 ## Stuff to study
 
-- TypeScript and DTO
+- TypeScript: DTOs = interfaces?
 - Ajax
 - Promises
 - Forms in VueJS
