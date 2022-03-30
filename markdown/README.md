@@ -23,9 +23,11 @@ Remote Image:
 
 ## Multi-line quote
 
-> To be or not to be,
->
-> that is the question.
+<blockquote>
+To be or not to be,
+
+that is the question.
+</blockquote>
 
 ## Horizontal rule
 
