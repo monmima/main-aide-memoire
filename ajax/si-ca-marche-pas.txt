@@ -1,3 +1,0 @@
-utiliser chrome
-utiliser le live server
-utiliser le fichier en local pour tester s'il ne se charge pas
