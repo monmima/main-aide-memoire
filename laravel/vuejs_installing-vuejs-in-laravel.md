@@ -77,12 +77,12 @@ Paste this in it
         </body>
         </html>
 
-1. Type this command
+1. Type this command.
 
         npm run watch
 
 1. Press CTRL + C to exit the watch mode.
-1. Run this command
+1. Run this command.
 
         php artisan serve
 
