@@ -7,7 +7,11 @@ Naran Code.
 
 1. Create your project
 
-        composer create-project laravel/laravel [name-of-your-project-folder]
+		composer create-project laravel/laravel [name-of-your-project-folder]
+
+	or
+
+		laravel new [name-of-your-project-folder]
 
 1. Go to the root folder for the project.
 
@@ -86,4 +90,4 @@ Paste this in it
 1. Press CTRL + C to exit the watch mode.
 1. Run this command.
 
-        php artisan serve
+		php artisan serve
