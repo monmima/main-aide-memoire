@@ -9,6 +9,8 @@ Naran Code.
 
         composer create-project laravel/laravel [name-of-your-project-folder]
 
+1. Go to the root folder for the project.
+
 1. Install your dependencies
 
         npm i
@@ -77,7 +79,7 @@ Paste this in it
         </body>
         </html>
 
-1. Type this command.
+1. Type this command to build what you have.
 
         npm run watch
 
@@ -85,7 +87,3 @@ Paste this in it
 1. Run this command.
 
         php artisan serve
-
-1. Maybe this other command will do the trick too:
-
-        npm run watch
