@@ -13,5 +13,7 @@ Based on a [tutorial by Steve Griffith](https://www.youtube.com/watch?v=C9gehlXh
 1. Run N
 
         sudo n stable
+
+1. Before checking for the version of NPM, close you Terminal window and reopen it. This way, you will be sure the version number was updated.
         
 You could also replace **stable** with **latest** or with a specific version number such a **7.1.2**.
