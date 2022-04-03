@@ -66,14 +66,11 @@ Thanks to Ceed Media for his [YouTube tutorial](https://www.youtube.com/watch?v=
 
 1. Create a Laravel project
 
-        laravel [project-name]
+        laravel new [project-name]
 
 1. Go to the project folder and download the lastest dependencies
 
         composer update
-
-1. Use CTRL + H in the project folder
-1. Rename **.env.example** to **.env** (there might already be a file with this name and therefore this step might be useless)
 
 ---
 
