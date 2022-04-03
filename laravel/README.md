@@ -22,67 +22,58 @@ Thanks to Ceed Media for his [YouTube tutorial](https://www.youtube.com/watch?v=
 
         sudo apt-get update
 
-2. Install curl
+1. Install curl
 
         sudo apt install curl
 
-3. Install PHP
+1. Install PHP
 
         sudo apt install php
 
-4. Install Composer
+1. Install Composer
 
         curl -s https://getcomposer.org/installer | php
 
-5. Move the file
+1. Move the file
 
         sudo mv composer.phar /usr/local/bin/composer
 
-6. Confirm Composer is installed
+1. Confirm Composer is installed
 
         composer
 
-7. Install Laravel
+1. Install Laravel
 
         composer global require laravel/installer
 
-8. Edit .bashrc
+1. Open the etc/ folder in administrator mode.
 
-        nano .bashrc
+1. Edit bash.bashrc.
 
-9. Under "esac", type:
+1. Under "esac", copy and paste this:
 
         export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 
-10. Use CTRL + X to save
-11. Press Enter to confirm the name of the file
+1. Go back to a Terminal window
 
-12. Refresh the file:
-
-        source ~/.bashrc
-
-13. Install Laravel
-
-        laravel (to install laravel)
-
-14. Go to the Desktop folder
-
-        cd Desktop
-
-15. Install php-mbstring
+1. Install php-mbstring
 
         sudo apt-get install php-mbstring
 
-16. Install php-xml
+1. Install php-xml
 
         sudo apt-get install php-xml
 
-17. Go to the project folder and downloaad the lastest dependencies
+1. Create a Laravel project
+
+        laravel [project-name]
+
+1. Go to the project folder and download the lastest dependencies
 
         composer update
 
-18. Use CTRL + H in the project folder
-19. Rename **.env.example** to **.env** (there might already be a file with this name and therefore this step might be useless)
+1. Use CTRL + H in the project folder
+1. Rename **.env.example** to **.env** (there might already be a file with this name and therefore this step might be useless)
 
 ---
 
