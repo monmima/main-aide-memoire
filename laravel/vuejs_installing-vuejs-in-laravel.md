@@ -81,8 +81,8 @@ Paste this in it
 
         npm run watch
 
-1. Press CTRL + C to exit the watch mode
-Run this command
+1. Press CTRL + C to exit the watch mode.
+1. Run this command
 
         php artisan serve
 
