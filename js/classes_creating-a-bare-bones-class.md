@@ -1,4 +1,4 @@
-# Creating a barebone JS class
+# Creating a bare-bones JS class
 
     class Test {
         constructor(string) {

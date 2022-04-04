@@ -1,4 +1,4 @@
-## Barebone VueJS 3 with CDN
+## Bare-bones VueJS 3 with CDN
 
     <!DOCTYPE html>
     <html lang="en">

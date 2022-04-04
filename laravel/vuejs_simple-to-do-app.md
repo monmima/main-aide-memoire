@@ -11,7 +11,7 @@ To run this app, you need to use these two commands in two different Terminal wi
 
 ## Steps to follow
 
-1. Create a barebone project using this command:
+1. Create a bare-bones project using this command:
 
         laravel new todolist
 

@@ -1,6 +1,6 @@
-# PHP and SQLite barebone project - without XAMPP
+# PHP and SQLite bare-bones project - without XAMPP
 
-This is a barebone project which shows that you can connect PHP to a SQLite database without installing XAMPP on your system.
+This is a bare-bones project which shows that you can connect PHP to a SQLite database without installing XAMPP on your system.
 
 Thanks to MainlyWebStuff for creating his short [Connecting to a SQLite database with PHP](https://www.youtube.com/watch?v=bR3nxnCGqmY) tutorial, which is basically what this is based on.
 
