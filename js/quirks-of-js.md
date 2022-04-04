@@ -2,49 +2,45 @@
 
     console.log(0 / 0); // NaN
 
-___
+---
 
     console.log(typeof NaN); // number
     console.log(isNaN(NaN)) // true
 
-___
+---
 
     console.log(parseInt("hellos")); // NaN
 
-___
+---
 
     console.log("3" + 4); // 34
     console.log("4" / "2"); // 2
     console.log("4" - "3"); // 1
 
-___
-
-    console.log(typeof "test"); // string
-
-___
+---
 
     console.log(typeof null); // object
     (This is a bug in ES6.)
 
-___
+---
 
     console.log(100 / 0); // Infinity
 
-___
+---
 
     console.log(5 / []); // Infinity
 
-___
+---
 
     let area = (5)
     console.log(area); // 5
 
-___
+---
 
     const area = undefined * 5;
     console.log(area); // NaN
 
-___
+---
 
     console.log(0.2 + 0.1) // 0.30000000000000004
 
@@ -55,11 +51,11 @@ One thing that can be done to solve this issue is:
 
 Another possibility is to validate with a server-side language.
 
-___
+---
 
     console.log(typeof [1, 2, 3]); // object
 
-___
+---
 
 
     let A = 5;
@@ -67,7 +63,7 @@ ___
 
     a === A; // false
 
-___
+---
 
     function test () {
         console.log("string");
@@ -75,7 +71,7 @@ ___
 
     console.log(test); // function test()
 
-___
+---
 
     console.log(test());
 
@@ -87,7 +83,7 @@ Result:
 
     Uncaught ReferenceError: can't access lexical declaration 'test' before initialization
 
-___
+---
 
     function print() {
         console.log("Hello world");
@@ -95,7 +91,7 @@ ___
 
     console.log(typeof print); // function
 
-___
+---
 
     if (true) {
         var varVar = 1;
@@ -105,7 +101,7 @@ ___
     console.log(varVar); // 1
     console.log(letVar); // Uncaught ReferenceError: letVar is not defined
 
-___
+---
 
     console.log(test()); // test
 
@@ -113,7 +109,7 @@ ___
         return "test";
     }
 
-___
+---
 
 
     if (27) {
@@ -126,4 +122,4 @@ All numbers other than zero are "truthy".
 
 They evaluate to "true".
 
-___
+---

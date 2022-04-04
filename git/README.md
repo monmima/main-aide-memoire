@@ -2,7 +2,7 @@
 
 The content of this Git Aide-Mémoire is heavily inspired by [The Net Ninja's YouTube tutorials on Git](https://www.youtube.com/watch?v=fQLK8Ib_SKk).
 
-______
+------
 
 ## List of commands
 
@@ -21,6 +21,7 @@ Deleting a branch and then check out. | git checkout -b my-new-branch
 Merging a branch (you need to be in the branch where your other branch is going to get merged, which is typically the master branch). | git merge my-secondary-main-branch | git merge my-new-feature-branch
 Unadding and uncommiting a change. | git reset HEAD~
 Pulling recent changes in the main branch into a secondary branch. | git pull origin master
+Unmerging branch, for instance to avoid having to deal with a conflict. | git merge --abort
 
 ## Solving Merging Conflicts
 
@@ -71,9 +72,3 @@ This is probably very much like what you'd have to do on any other machine (Wind
 
         git remote add origin git@github.com:monmima/[project-name].git
         git push --set-upstream origin master
-
-## Storing a password so you don't have to type it every time
-
-Thanks to [freeCodeCamp for this information](https://www.freecodecamp.org/news/how-to-fix-git-always-asking-for-user-credentials/).
-
-        git config --global credential.helper store

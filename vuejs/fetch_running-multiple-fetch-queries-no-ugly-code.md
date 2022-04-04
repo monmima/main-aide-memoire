@@ -1,5 +1,7 @@
 ## Running multiple fetch queries without having ugly code
 
+**GET** (not **POST**) requests below.
+
 This code sample is inspired by [material from www.pluralsight.com](https://www.pluralsight.com/guides/handling-nested-http-requests-using-the-fetch-api).
 
     <script>

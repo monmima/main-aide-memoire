@@ -22,7 +22,7 @@ The easiest way to add Vuex in a project is to install it from the get-go:
         vue create .
 
 1. Select **Manually select features**.
-1. Use the spacebar to enable features such as Vuex and Vue-router. I recommand:
+1. Use the spacebar to enable features such as Vuex and Vue-router. I recommend:
 
     - Babel
     - Router

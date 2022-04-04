@@ -10,7 +10,7 @@ I was influenced by my own [Node and MongoDB CRUD Aide-Mémoire](https://github.
 
 This has been deployed on [Heroku](https://node-and-sqlite.herokuapp.com/) if you want to see what is looks like without downloading it and running it on your machine.
 
-___
+---
 
 ## A Word of Thanks
 
@@ -26,7 +26,7 @@ Many thanks to [Dev Theory](https://www.youtube.com/watch?v=ueCT4HlQDwQ) for his
 
 By the way, Dev Theory's tutorials are in French.
 
-___
+---
 
 ## Technical Stuff
 
@@ -60,7 +60,7 @@ Once you feel comfortable with Node.js and SQLite, then you'll be ready for EJS.
 
 If you do want to learn EJS, it's pretty straightforward. A good place to start is this aide-mémoire and another is [WalkthroughCode's EJS tutorial](https://github.com/monmima/node-ejs-tutorial-by-walkthroughcode).
 
-___
+---
 
 ## Running this project under Linux Mint
 
@@ -81,7 +81,7 @@ Open a Terminal window and follow these steps:
 1. Type npm install
 2. Type **npm run serve** or **npm run start**
 
-___
+---
 
 ## Deploying the project on Heroku from Linux Mint
 

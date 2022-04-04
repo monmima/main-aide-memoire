@@ -2,6 +2,8 @@
 
 This info is based on material from [www.pluralsight.com](https://www.pluralsight.com/guides/handling-nested-http-requests-using-the-fetch-api).
 
+**GET** and not **POST** requests below.
+
     async function getFishAndChips() {
 
         const fish = await fetch(http://127.0.0.1:8000/testx).then(response => response.json());

@@ -144,3 +144,7 @@ This part of my aide-mémoire is inspired by Brad Traversy's [Sass Crash Course]
     .no2 {
         @include border(bottom);
     }
+
+## Talking to a child component even in a scope style sheet
+
+    ::v-deep(div) {

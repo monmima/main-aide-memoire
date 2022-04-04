@@ -1,6 +1,6 @@
 # Laravel Aide-Mémoire
 
-___
+---
 
 ## A Word of Thanks
 
@@ -12,7 +12,7 @@ I am indebted to many people for being able to create this aide-mémoire. I had 
 
 On top of that, I had to wrap my head around the ways of Laravel, and this was made possible thanks to [Jeffrey Way from Laracast](https://laracasts.com/series/laravel-8-from-scratch). His tutorial is crisp, comes with all the code in a Github repository and is explained is plain terms. And on top of that, it's free.
 
-___
+---
 
 ## Installing Laravel on Linux Mint
 
@@ -22,75 +22,63 @@ Thanks to Ceed Media for his [YouTube tutorial](https://www.youtube.com/watch?v=
 
         sudo apt-get update
 
-2. Install curl
+1. Install curl
 
         sudo apt install curl
 
-3. Install PHP
+1. Install PHP
 
         sudo apt install php
 
-4. Install Composer
+1. Install Composer
 
         curl -s https://getcomposer.org/installer | php
 
-5. Move the file
+1. Move the file
 
         sudo mv composer.phar /usr/local/bin/composer
 
-6. Confirm Composer is installed
+1. Confirm Composer is installed
 
         composer
 
-7. Install Laravel
+1. Install Laravel
 
         composer global require laravel/installer
 
-8. Edit .bashrc
+1. Open the etc/ folder in administrator mode.
 
-        nano .bashrc
+1. Edit bash.bashrc.
 
-9. Under "esac", type:
+1. Under "esac", copy and paste this:
 
         export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 
-10. Use CTRL + X to save
-11. Press Enter to confirm the name of the file
+1. Go back to a Terminal window
 
-12. Refresh the file:
-
-        source ~/.bashrc
-
-13. Install Laravel
-
-        laravel (to install laravel)
-
-14. Go to the Desktop folder
-
-        cd Desktop
-
-15. Install php-mbstring
+1. Install php-mbstring
 
         sudo apt-get install php-mbstring
 
-16. Install php-xml
+1. Install php-xml
 
         sudo apt-get install php-xml
 
-17. Go to the project folder and downloaad the lastest dependencies
+1. Create a Laravel project
+
+        laravel new [project-name]
+
+1. Go to the project folder and download the lastest dependencies
 
         composer update
 
-18. Use CTRL + H in the project folder
-19. Rename **.env.example** to **.env** (there might already be a file with this name and therefore this step might be useless)
-
-___
+---
 
 ### The Net Ninja Way
 
 The Net Ninja installs Laravel globally in [one of his tutorials](https://www.youtube.com/watch?v=E74_WZpjeKA) with **composer global require laravel/installer**. This means that you can create Laravel projects wherever you want.
 
-___
+---
 
 ### Creating a Project and Running it
 
@@ -117,13 +105,13 @@ Make sure you have the correct dependencies installed:
 
 1. Now go to your browser and type http://localhost:8000/ in the address bar.
 
-___
+---
 
 ## Deleting Your Dependencies To Move A Project Around
 
 All dependencies are stored in your **vendor/** and **node_module/** subfolders. To reinstall your dependencies, for instance after downloading your project from a git repository, use **composer update** and **npm install**.
 
-___
+---
 
 ## Using An Existing Laravel Project On Another Machine
 
@@ -153,7 +141,7 @@ If you have formatted your computer or are using another computer and want to us
 
         npm install
 
-___
+---
 
 ## Downloading A Laravel Project From Github And Setting It Up
 
@@ -173,5 +161,5 @@ and **DB_HOST=127.0.0.1** for this project).
 
         php artisan serve 
 
-___
+---
 

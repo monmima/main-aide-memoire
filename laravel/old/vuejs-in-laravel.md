@@ -37,7 +37,7 @@ You may also run this command once and NPM will update your app as you go:
 
 	npm run watch
 
-___
+---
 
 ## How to do it
 
@@ -119,6 +119,6 @@ https://www.youtube.com/watch?v=QmCM17uwTSw&list=PLeeuvNW2FHVhcBTW9XK05nXIoSKV4Q
 
 		<router-view></router-view>
 
-___
+---
 
 
