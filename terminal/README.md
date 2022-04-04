@@ -179,3 +179,11 @@ By the way, installing NPM also installs Node.js on your system.
 | Moving a folder with the name "test" to the folder "test2"? | mv test/ test2/ |
 | [Creating a file with the system specifications](https://vitux.com/get-linux-system-and-hardware-details-on-the-command-line/) | sudo lshw -html > [filename.html] |
     
+## Teamviewer
+
+1. Go to https://www.teamviewer.com/en-us/download/linux/
+1. Download Teamviewer.
+
+## Remmina
+
+1. Go to https://remmina.org/how-to-install-remmina/#ubuntu and follow the instructions.
