@@ -8,6 +8,8 @@ They should not be confused with route params, who look like this:
 
 > http://localhost:8080/jobs/1
 
+You HomeView.vue component:
+
     <template>
       <h1>Home page</h1>
 
