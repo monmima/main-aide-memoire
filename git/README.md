@@ -72,3 +72,23 @@ This is probably very much like what you'd have to do on any other machine (Wind
 
         git remote add origin git@github.com:monmima/[project-name].git
         git push --set-upstream origin master
+
+## Renaming a branch
+
+Based on information from [Linuxize](https://linuxize.com/post/how-to-rename-local-and-remote-git-branch/).
+
+1. Start by switching to the local branch which you want to rename:
+
+        git checkout <old_name>
+
+1. Rename the local branch by typing:
+
+        git branch -m <new_name>
+
+1. If you’ve already pushed the `<old_name>` branch to the remote repository, push the `<new_name>` local branch and reset the upstream branch:
+
+        git push origin -u <new_name>
+
+1. Delete the `<old_name>` remote branch:
+
+        git push origin --delete <old_name>
