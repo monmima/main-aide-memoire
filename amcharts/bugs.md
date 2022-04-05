@@ -1,13 +1,5 @@
 # Bugs
 
-## Truncated label on X axis
-
-If your last label is truncated on the X axis, try adding a margin to the right of your chart.
-
-    chart.paddingRight = 30;
-
-The problem:
-
 ![Truncated label before](img/truncated-label-before-1.png)
 
 The solution:
