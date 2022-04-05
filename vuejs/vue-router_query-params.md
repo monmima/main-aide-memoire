@@ -13,9 +13,10 @@ You HomeView.vue component:
     <template>
       <h1>Home page</h1>
 
-      <router-link :to="{ path:'/', query: { name: 'test' } }">
+      <router-link :to="{ path:'/', query: { name: 'John Connor', age: '30' } }">
         Query param link. Click on this see the URL change.
       </router-link>
 
-      <h4>This is User... {{$route.query.name}}</h4>
+      <h4>User name... {{$route.query.name}}</h4>
+      <h4>User age... {{$route.query.age}}</h4>
     </template>
