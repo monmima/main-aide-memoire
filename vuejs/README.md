@@ -8,6 +8,26 @@ Run this command to install Vue CLI:
 
     sudo npm -g i @vue/cli
 
+## Upgrading NodeJS/NPM
+
+If you have not update NodeJS/NPM, you will probably need to do this. Based on a [tutorial by Steve Griffith](https://www.youtube.com/watch?v=C9gehlXhS6U).
+
+1. Clear out the cache
+
+        npm cache clean -f
+
+1. Install N
+
+        sudo npm install -g n
+
+1. Run N
+
+        sudo n stable
+
+1. Before checking for the version of NPM, close you Terminal window and reopen it. This way, you will be sure the version number was updated.
+        
+You could also replace **stable** with **latest** or with a specific version number such a **7.1.2**.
+
 ## Creating a VueJS project
 
 The easiest way to add Vuex in a project is to install it from the get-go:
