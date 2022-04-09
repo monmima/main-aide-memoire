@@ -10,7 +10,7 @@ This is a basic JS function:
 
 And this is the same function adapted to TypeScript.
 
-The first two instances of `number` are the parameters and the last one is the output. So all three should be numbers.
+The first two instances of `number` are the parameters and the last one is the output. So all three should be of type `number`.
 
     function add (num1: number, num2: number): number {
       return num1 + num2;
