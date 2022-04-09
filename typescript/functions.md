@@ -17,3 +17,11 @@ The first two instances of `number` are the parameters and the last one is the o
     }
 
     console.log(add(3, 3)); // 6
+
+If your function returns nothing, you just use the keyword `void`.
+
+    function log(message: string | number): void {
+      console.log(message);
+    }
+
+    log([1, 2, 3,]);
