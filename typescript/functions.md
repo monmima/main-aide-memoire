@@ -25,3 +25,12 @@ If your function returns nothing, you just use the keyword `void`.
     }
 
     log([1, 2, 3,]);
+
+You can use interfaces with a function. And you can reuse an interface on similar functions:
+
+    interface MathFunc {
+			(x: number, y: number): number
+    }
+
+    const add: MathFunc = (x: number, y: number): number => x + y;
+    const sub: MathFunc = (x: number, y: number): number => x - y;
