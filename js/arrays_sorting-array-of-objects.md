@@ -1,6 +1,6 @@
 # Arrays: sorting an array of objects
 
-Code inspired by content from [Love2Dev](https://love2dev.com/blog/javascript-remove-from-array/).
+Code inspired by content from [JavaScript Tutorial](https://www.javascripttutorial.net/array/javascript-sort-an-array-of-objects/).
 
     // creating the data
     let data = [
