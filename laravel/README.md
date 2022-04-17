@@ -18,31 +18,31 @@ On top of that, I had to wrap my head around the ways of Laravel, and this was m
 
 Thanks to Ceed Media for his [YouTube tutorial](https://www.youtube.com/watch?v=cVecpIbonnU) on how to install Laravel on Linx Mint. The steps he follows are below.
 
-1. Update your system
+1. Update your system.
 
         sudo apt-get update
 
-1. Install curl
+1. Install curl.
 
         sudo apt install curl
 
-1. Install PHP
+1. Install PHP.
 
         sudo apt install php
 
-1. Install Composer
+1. Install Composer.
 
         curl -s https://getcomposer.org/installer | php
 
-1. Move the file
+1. Move the file.
 
         sudo mv composer.phar /usr/local/bin/composer
 
-1. Confirm Composer is installed
+1. Confirm Composer is installed.
 
         composer
 
-1. Install Laravel
+1. Install Laravel.
 
         composer global require laravel/installer
 
@@ -54,21 +54,21 @@ Thanks to Ceed Media for his [YouTube tutorial](https://www.youtube.com/watch?v=
 
         export PATH="$PATH:$HOME/.config/composer/vendor/bin"
 
-1. Go back to a Terminal window
+1. Go back to a Terminal window.
 
-1. Install php-mbstring
+1. Install php-mbstring.
 
         sudo apt-get install php-mbstring
 
-1. Install php-xml
+1. Install php-xml.
 
         sudo apt-get install php-xml
 
-1. Create a Laravel project
+1. Create a Laravel project. You might have to close the Terminal window you have used so far because you might receive you an error message, as if Laravel had not been installed yet.
 
         laravel new [project-name]
 
-1. Go to the project folder and download the lastest dependencies
+1. Go to the project folder and download the lastest dependencies.
 
         composer update
 
