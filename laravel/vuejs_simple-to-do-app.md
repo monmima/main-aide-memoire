@@ -15,7 +15,7 @@ To run this app, you need to use these two commands in two different Terminal wi
 
         laravel new todolist
 
-1. Prepare a database if you don't have one yet. The **database.md** part of this aide-mémoire will provide you with more details about this step. You will also have to change your [root folder]/.env file.
+1. Prepare a database if you don't have one yet. Files such as **databases_sqlite.md** or **databases_sql.md** in this aide-mémoire will provide you with more details about this step. You will also have to change your **.env file** at the root of your Laravel project.
 1. Create your controller, migration and model using the following command. The --resource flag prepares the methods inside of your controller.
 
 		php artisan make:model Item -mc --resource
