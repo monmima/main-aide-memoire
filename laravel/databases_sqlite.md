@@ -6,23 +6,20 @@ Thanks to [Coder's Tape
 ](https://www.youtube.com/watch?v=kWmnQvznkUI) for creating his tutorial on YouTube on how to change the default SQL database settings to SQLite.
 
 1. Go to the .env file.
-1. Find this string:
+1. Find this:
 
 		DB_CONNECTION=mysql
-		
-1. Replace it with this string:
-
-		DB_CONNECTION=sqlite
-
-1. Delete all other lines starting with the prefix **DB_**.
-
 		DB_HOST=127.0.0.1
 		DB_PORT=3306
-		DB_DATABASE=[your-project-name]
+		DB_DATABASE=todo
 		DB_USERNAME=root
 		DB_PASSWORD=
 
-1. Create a database through the Terminal or manually
+1. Replace the above with this:
+
+		DB_CONNECTION=sqlite
+
+1. Create a database through the Terminal or manually. **Use the .sqlite extension instead of .db or Laravel will tell you the file does not exists since it will look for a .sqlite extension.**
 
         touch database/database.sqlite
 
@@ -47,7 +44,7 @@ Thanks to [Coder's Tape
 
 		sudo apt-get install php-sqlite3
 
-1. Go to the root folder, open a Terminal window and type:
+1. Open a Terminal window **from within VS Code** and type the following command. **If you use an independant Terminal window, you will get an error message.** You should be in the root folder when typing this.
 
         php artisan migrate
 
