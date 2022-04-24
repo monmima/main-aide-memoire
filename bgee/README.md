@@ -12,6 +12,10 @@ https://baldursgate.fandom.com/wiki/Console#Baldur.27s_Gate:_Enhanced_Edition
 
 </blockquote>
 
+Open the cheat console with this shortcut:
+
+      CTRL + SPACEBAR
+
 ## Removing the XP cap
 
 https://forums.beamdog.com/discussion/10212/a-simple-xp-cap-remover-now-compatible-with-siege-of-dragonspear/p8
@@ -32,7 +36,7 @@ Edit: @mlnevese if you want to add those to the first page of the thread, I woul
 
 [ASaferCapXP](https://forums.beamdog.com/uploads/editor/tl/mdxp4wy3c606.zip)</blockquote>
 
-Once your done you should have the four unzipped files from the link above in this location:
+Once you're done you should have the four unzipped files from the link above in this location:
 
 - /home/**[your-user-name]**/.wine/drive_c/GOG Games/Baldur's Gate - Enhanced Edition/override/
 
