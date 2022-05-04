@@ -53,10 +53,6 @@ Another possibility is to validate with a server-side language.
 
 ---
 
-    console.log(typeof [1, 2, 3]); // object
-
----
-
 
     let A = 5;
     let a = 6;
@@ -108,18 +104,3 @@ Result:
     function test() {
         return "test";
     }
-
----
-
-
-    if (27) {
-        console.log(true);
-    } else {
-        console.log(false);
-    }
-
-All numbers other than zero are "truthy".
-
-They evaluate to "true".
-
----
