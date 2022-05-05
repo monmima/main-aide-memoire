@@ -10,8 +10,18 @@
     <div id="my-div" class="my-class">my div</div>
 
     <script>
-        console.log(typeof parseInt("33"));
-        console.log(typeof "33");
+        class Test {
+            constructor(string) {
+                this.string = string;
+            }
+
+            printString() {
+                console.log(this.string);
+            }
+        }
+
+        let inst = new Test("myString");
+        inst.printString();
         
     </script>
 </body>
