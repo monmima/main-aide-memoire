@@ -54,29 +54,6 @@ Answer
 
     return num1 + num2;
 
-## 11. Add (part 2)
-
-**Score: 1/1 - 100 %**
-
-Write a function that returns the sum of all numbers regardless of # of params.
-
-    function add2 (...param) {
-        // your code here
-    }
-
-    console.log(add2(1, 2, 3, 4, 5)); // 15
-    console.log(add2(2, 3)); // 5
-
-Answer
-
-    let total = 0;
-
-    param.forEach((num) => {
-        total += num;
-    });
-
-    return total;
-
 ## 12. Add border
 
 **Score: 1/1 - 100 %**
