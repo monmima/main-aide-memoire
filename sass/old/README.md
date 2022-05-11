@@ -16,6 +16,23 @@ Info based on the [Learn Sass In 20 Minutes | Sass Crash](https://www.youtube.co
 
 1. You should see the text "Watch Sass" in the blue bar at the bottom of the VS Code window. Click on it to start the live SASS compiler.
 
+## Things to know about SCSS
+
+1. You can write plain old CSS and it will work as intended.
+1. SCSS generates all the vendor prefixes so you don't have to (-ms-flex-pack, etc.).
+
+## Using variables
+
+    $primaryBtn: rgb(56, 146, 142);
+
+    header button {
+        background: $primaryBtn;
+    }
+
+    .contact button {
+        background: $primaryBtn;
+    }
+
 ## Nesting CSS rules
 
 Code with no nesting:
@@ -46,6 +63,60 @@ Nested code:
                 content: " $";
             }
         }
+    }
+
+## Importing files into your main .scss one
+
+You can keep different parts of your code in different files. For instance, your variables could be separated from the rest of your code.
+
+1. Create a file in the same folder as the main one starting with an underscore (e.g., _variables.scss).
+1. Import the new file into the main one this way (without the underscore):
+
+        @import "./variables";
+
+    or this way:
+
+        @import "./variables.scss";
+
+Having subfiles in a folder would probably work just fine too.
+
+## Using mixins
+
+Basic mixin example:
+
+    @mixin myMixIn() {
+        background: lightblue;
+        height: 100vh;
+    }
+
+    header {
+        @include myMixIn();
+    }
+
+Mixin with a parameter:
+
+    @mixin myMixIn($color) {
+        background: $color;
+        height: 100vh;
+    }
+
+    header {
+        @include myMixIn(blue);
+    }
+
+## Using extensions
+
+Extensions make it possible for you to reuse code from a CSS rule without repeating the code in many places. You can also overwrite a statement, as you can see in the code below.
+
+    header {
+        background-color: lightblue;
+        height: 100vh;
+    }
+
+    footer {
+        @extend header;
+
+        background-color: lightgreen;
     }
 
 ## Using operators
