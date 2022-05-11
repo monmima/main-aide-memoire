@@ -1,3 +1,0 @@
-# Removing event listeners
-
-    removeEventListener
