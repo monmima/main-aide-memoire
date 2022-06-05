@@ -3,6 +3,7 @@
 ## Types of arrays
 
 * Indexed
+* Associative
 * Multi-dimensional
 
 ### Indexed arrays
@@ -24,6 +25,12 @@ Second way of creating an indexed array.
 
         var_dump($cars); // array(3) { [0]=> string(3) "red" [1]=> string(5) "green" [2]=> string(4) "blue" } 
     ?>
+
+## Associative arrays
+
+	$people = array("Brad" => 35, "Jose" => 32, "William" => 37);
+
+	echo $people["Brad"]; // 35
 
 ## Multidimensional arrays (arrays within arrays)
 
