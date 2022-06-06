@@ -44,7 +44,7 @@ Thanks to [Coder's Tape
 
 		sudo apt-get install php-sqlite3
 
-1. Open a Terminal window **from within VS Code** and type the following command. **If you use an independant Terminal window, you will get an error message.** You should be in the root folder when typing this.
+1. Open a Terminal window **at the root of your project** and type the following command.
 
         php artisan migrate
 

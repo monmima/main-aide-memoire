@@ -46,7 +46,7 @@ Thanks to Ceed Media for his [YouTube tutorial](https://www.youtube.com/watch?v=
 
         composer global require laravel/installer
 
-1. Open the etc/ folder in administrator mode.
+1. Open the /etc/ folder in administrator mode, at root of your system.
 
 1. Edit bash.bashrc.
 

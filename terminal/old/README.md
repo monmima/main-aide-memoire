@@ -70,6 +70,73 @@ https://livingthelinuxlifestyle.wordpress.com/2019/06/09/solve-problems-with-no-
 
 ---
 
+## Installing software
+
+By the way, installing NPM also installs Node.js on your system.
+
+1. Type this command.
+
+        sudo apt update
+
+1. Install Brightness Controller. This info was [found here](https://learnubuntumate.weebly.com/brightness-controller.html).
+
+        sudo add-apt-repository ppa:apandada1/brightness-controller
+        sudo apt-get update       
+        sudo apt-get install brightness-controller-simple
+
+1. Install Gpick, the color picker.
+
+        sudo apt-get install gpick
+
+1. Install NPM.
+
+        sudo apt-get install npm
+
+1. Install Git.
+
+        sudo apt-get install git
+
+1. Install SMPlayer.
+
+        sudo apt install smplayer
+
+1. Install Anki.
+
+        sudo apt install anki
+
+1. Install Gimp.
+
+        sudo apt install gimp
+
+1. Install Snap, which will be used to install VS Code and Slack. The first step to install Snap on Linux Mint is deleting a file that prevents Snap from being installed.
+
+        sudo rm /etc/apt/preferences.d/nosnap.pref
+        sudo apt install snapd
+
+1. Install VS Code. The VS Code shortcut might not show in the start menu until you reboot your computer.
+
+        sudo snap install --classic code
+
+1. Install Slack.
+
+        sudo snap install slack --classic
+
+1. Install [SQLite browser](https://sqlitebrowser.org/dl/).
+
+        sudo add-apt-repository -y ppa:linuxgndu/sqlitebrowser-testing
+        sudo apt-get update
+        sudo apt-get install sqlitebrowser
+
+1. Install WINE. The info on this topic was found [here](https://www.linuxbabe.com/linux-mint/install-wine-linux-mint-19-1]).
+
+        sudo dpkg --add-architecture i386
+        wget -nc https://dl.winehq.org/wine-builds/winehq.key
+        sudo apt-key add winehq.key
+        sudo apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
+        sudo apt update
+        sudo apt install --install-recommends winehq-stable
+        winecfg
+
 ## Optional installs
 
 1. Install Kazam.
@@ -121,3 +188,22 @@ https://livingthelinuxlifestyle.wordpress.com/2019/06/09/solve-problems-with-no-
 
 1. Go to https://remmina.org/how-to-install-remmina/#ubuntu and follow the instructions.
 
+## Upgrading NodeJS/NPM
+
+Based on a [tutorial by Steve Griffith](https://www.youtube.com/watch?v=C9gehlXhS6U).
+
+1. Clear out the cache
+
+        npm cache clean -f
+
+1. Install N
+
+        sudo npm install -g n
+
+1. Run N
+
+        sudo n stable
+
+1. Before checking for the version of NPM, close you Terminal window and reopen it. This way, you will be sure the version number was updated.
+        
+You could also replace **stable** with **latest** or with a specific version number such a **7.1.2**.
