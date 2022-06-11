@@ -37,23 +37,6 @@ Answer:
 
     return arr[middle];
 
-## 11. Add (part 1)
-
-**Score: 1/1 - 100 %**
-
-Write a function that returns the sum of two numbers.
-
-    function add (num1, num2) {
-        // your code here
-    }
-
-    // console.log(add(1, 2)); // 3
-    // console.log(add(3, 2)); // 5
-
-Answer
-
-    return num1 + num2;
-
 ## 12. Add border
 
 **Score: 1/1 - 100 %**
