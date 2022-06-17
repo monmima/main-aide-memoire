@@ -2,7 +2,6 @@
 
     npm install --save bootstrap
 
-- Go to main.js.
 - Go to /src/main.js.
 - Paste this line after all the other imports:
 
