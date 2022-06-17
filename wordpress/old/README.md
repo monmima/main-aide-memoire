@@ -160,6 +160,18 @@ Please keep in mind that with WPForms, you might not have a Google badge in the 
 3. If you want to change the default settings, go to the Dashboard ===> Contact ===> Honeypot.
 4. To add a honeypot input field and block spam bots, go to your form and select the honeypot input field.
 
+## Downloading a site
+
+To download a site or part of it and browse to the folders, use the **WP File Manager** extension.
+
+## Testing out a Web site locally - Local by Flywheel
+
+In my experience, the easiest way to run WordPress locally is with [Local by Flywheel](https://localwp.com/).
+
+- Go to https://localwp.com/.
+- Click the Download button.
+- Fill out the form. Even though you are asked for an e-mail address, you won't have to use it at a later stage to confirm your identity. The file weights about 140 Mo.
+
 ## Sending mail with SMTP
 
 Use WP Mail SMTP by wpforms for this. The icon is a silly-looking pigeon.
