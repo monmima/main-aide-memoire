@@ -1,11 +1,5 @@
 # Terminal Aide-Mémoire
 
-## Linux version
-
-To find out what version of Linux you are running, use this command:
-
-    cat /etc/os-release
-
 ## Invisible files in folder
 
 If you have invisible files in a folder, it's probably because you don't have the reading rights you need.
@@ -21,14 +15,6 @@ The tabulation above is used to select the subfolder whose rights you want to ch
 There is an installer file, but for the removal of Slack, the only option seems to be the Terminal window.
 
 	sudo snap remove slack
-
----
-
-## Fichier listant les caractéristiques d'un ordi
-
-https://vitux.com/get-linux-system-and-hardware-details-on-the-command-line/
-
-    sudo lshw -html > [filename.html]
 
 ---
 
@@ -49,6 +35,7 @@ Applications usually store configuration data in one of the following hidden fol
 
     sudo apt install php
     php -S localhost:8000
+
 ---
 
 ## Debugging PulseAudio so it connects properly
@@ -68,39 +55,6 @@ https://askubuntu.com/questions/879037/pavucontrol-stuck-at-establishing-connect
 
 https://livingthelinuxlifestyle.wordpress.com/2019/06/09/solve-problems-with-no-sound-in-linux-mint/
 
----
-
-## Optional installs
-
-1. Install Kazam.
-
-		sudo apt install kazam
-
-1. Install Chrome. The info was found [here](https://itsfoss.com/install-chrome-ubuntu/#install-chrome-terminal).
-
-        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-        sudo dpkg -i google-chrome-stable_current_amd64.deb
-
-1. Install [Lingtrain Alignment Studio](https://github.com/averkij/a-studio).
-
-    1. Open a Terminal window.
-	1. Install docker with this command:
-
-			sudo apt install docker.io
-
-	1. Install Lingtrain Alignment Studio using the following command. I had to add **sudo** since I was running into permission issues.
-
-        	sudo docker pull lingtrain/aligner:v6
-
-	1. Go to the **tmp/** folder at the very root on the system and create a **test/** folder inside to basically create this path **tmp/test/**.
-	1. Run the app with this other command:
-
-			sudo docker run -v /tmp/test -v /tmp/test -p 80:80 lingtrain/aligner:v6
-
-	1. Open a browser and type this in the address bar.
-
-			localhost
-
 ## Using Commands
 
 | Description of the command       | Command     |
@@ -111,13 +65,4 @@ https://livingthelinuxlifestyle.wordpress.com/2019/06/09/solve-problems-with-no-
 | Erasing a file with the name "test.txt"? | rm test.txt |
 | Moving a folder with the name "test" to the folder "test2"? | mv test/ test2/ |
 | [Creating a file with the system specifications](https://vitux.com/get-linux-system-and-hardware-details-on-the-command-line/) | sudo lshw -html > [filename.html] |
-    
-## Teamviewer
-
-1. Go to https://www.teamviewer.com/en-us/download/linux/
-1. Download Teamviewer.
-
-## Remmina
-
-1. Go to https://remmina.org/how-to-install-remmina/#ubuntu and follow the instructions.
 
