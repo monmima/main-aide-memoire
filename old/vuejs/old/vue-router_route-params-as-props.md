@@ -9,9 +9,9 @@ To use a route parameters as props instead of refering to the route object, you 
         {
           path: '/jobs/:id',
           name: 'JobDetails',
-          component: JobDetails,
+          component: HomeView,
           props: true
-        }
+        },
 
 1. Refer to the name of the props instead of the name of the route and make sure your component where you pass the props has a props array. The code which is commented out is left on purpose so you can compare.
 
