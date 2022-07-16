@@ -1,7 +1,7 @@
 # Capitalizing first letters only
 
-    <?php
-        $output = ucwords("hello world");
-
-        echo $ouput; // Hello World
-    ?>
+<?php
+    $str = "hello world";
+    $ans = ucwords($str);
+    echo $ouput; // Hello World
+?>
