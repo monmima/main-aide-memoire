@@ -1,9 +1,8 @@
 <?php
-    $string1 = "Hello";
-    $string2 = "World!";
+    $cars = ["a", "b", "c"];
+    $cars[] = "yellow";
 
-    $ans = $string1 . " " . $string2;
-    $ans = "$string1 $string2";
-
-    echo $ans;
+    echo "<pre>";
+    print_r($cars);
+    echo "</pre>";
 ?>
