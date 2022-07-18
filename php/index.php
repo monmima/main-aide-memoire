@@ -1,8 +1,5 @@
-<?php
-    $cars = ["a", "b", "c"];
-    $cars[] = "yellow";
+<?php $loggedIn = true; ?>
 
-    echo "<pre>";
-    print_r($cars);
-    echo "</pre>";
-?>
+<?php if ($loggedIn === false) { ?>
+  <h1>Welcome guest</h1> 
+<?php } ?>
